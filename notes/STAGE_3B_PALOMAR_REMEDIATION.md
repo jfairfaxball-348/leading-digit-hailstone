@@ -77,10 +77,10 @@ comparison `2^1054 < 3^665`. The upper side follows from the minimum floor,
 the correction ceiling 19, the product window, and the exact integer
 comparison
 
-[
-  (3cdot5{,}000{,}001+19)^{306}
+\[
+  (3\cdot5{,}000{,}001+19)^{306}
   < 2^{485}5{,}000{,}001^{306}.
-]
+\]
 
 Lean checks these finite arithmetic facts directly with `norm_num`; no Python
 certificate is trusted by the selected theorem.
@@ -125,6 +125,8 @@ novelty audit.
   DOI 10.4064/aa117-1-3.
 - Franz Wegner, *The Collatz Problem generalized to 3x+k*, arXiv:2101.08060
   (2021).
+- Jeffrey C. Lagarias, *The 3x+1 Problem: An Overview*, in *The Ultimate
+  Challenge: The 3x+1 Problem* (AMS, 2010), arXiv:2111.02635.
 - `tangentproofs/eliahou-collatz-bounds`, a current public Lean
   formalization of Eliahou's ordinary-Collatz cycle bounds.
 - Targeted web searches for leading-digit, decimal-digit, radix-dependent,
@@ -155,8 +157,8 @@ arithmetic dynamics, Diophantine cycle restrictions, and formalized
 computational number theory. The selected result is a genuine restriction on
 hypothetical cycles of a state-dependent digit-sensitive map; unlike the
 rejected valuation-burst substitution, its content is the interaction between
-a cyclic product identity, decimal leading-digit correction bounds, a verified
-minimum scale, and a Farey gap.
+a cyclic product identity, decimal leading-digit correction bounds, an explicit
+minimum-scale hypothesis motivated by the separate census, and a Farey gap.
 
 Whether this clears Palomar's editorial floor is ultimately Palomar's decision.
 This repository records the positive mathematical case without claiming
