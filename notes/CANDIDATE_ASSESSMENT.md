@@ -14,15 +14,15 @@ Strong enough to justify study. The leading digit is a genuinely nonperiodic sta
 
 ## Computational robustness
 
-Strong as finite evidence, not as proof. Exhaustive testing through 5,000,000, targeted boundary tests, a search for long runs of v2=1, and 50/100/200-digit constructed starts all converge to the same observed cycle under their explicit protocols.
+Strong as finite evidence, not as proof. Exhaustive testing through 5,000,000 is supplemented by 9,000 decimal-boundary starts through exponent 500 and deliberately constructed long weak-division starts. None of those finite protocols produced a competing cycle or cap hit.
 
 ## Structural richness
 
-Strong. Exact 2-adic residue classes, decimal-sector affine pieces, boundary jumps, almost-unique odd inverse images, an accelerated-cycle equation, and the non-RCWA result give several independent mathematical handles.
+Strong. Exact 2-adic residue classes, decimal-sector affine pieces, boundary jumps, almost-unique odd inverse images, an accelerated-cycle equation, the non-RCWA result, and the elementary existence of arbitrarily long consecutive v2=1 accelerated runs give several independent mathematical handles. The last fact is especially useful because it proves that long local growth stretches cannot simply be bounded away.
 
 ## Distinctiveness from nearby rules
 
-Meaningful but mixed. The frozen rule is the only one-cycle member of the five tested global shifts through 100,000, while 11 of 18 one-coordinate perturbations develop multiple cycles. However, 7 of 18 one-coordinate perturbations also show one observed cycle, so the frozen rule is not uniquely isolated.
+Meaningful but mixed. The frozen rule is the only one-cycle member of the five tested global shifts through 1,000,000, while 11 of 18 one-coordinate perturbations already develop multiple cycles through 100,000. However, all seven one-coordinate perturbations that were one-cycle at 100,000 remain one-cycle through 1,000,000; six still feed the same distinguished 7-cycle. Thus finite convergence-like behaviour is locally robust in several directions, and the frozen rule is not uniquely isolated.
 
 ## Prior-art risk
 
