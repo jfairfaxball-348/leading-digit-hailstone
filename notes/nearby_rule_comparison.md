@@ -38,11 +38,21 @@ Results through 100,000:
 
 Thus the frozen behavior is not generic in this immediate coordinate neighborhood, but it is not uniquely isolated either.
 
+## One-million-seed extension
+
+The five global shifts were re-run through seeds 1..1,000,000. Their observed cycle counts remained exactly 2, 4, 1, 4, and 3 for b=-3,-1,1,3,5 respectively, with no cap hits.
+
+The seven one-coordinate perturbations that had only one observed cycle through 100,000 were also extended through 1,000,000. All seven still had exactly one observed cycle and no cap hits. Six still fed the distinguished 7-cycle; the d=3,+2 perturbation still fed its distinct 15-cycle.
+
+This extension strengthens an important caution: finite single-attractor behavior is locally robust in several directions. The frozen rule is therefore not distinctive merely because a moderate finite census sees one attractor.
+
+Reproduce the extension with scripts/extend_nearby_rules.py. Machine-readable output is data/nearby_rule_extension_1m.json.
+
 ## Interpretation
 
 This experiment supports **distinctiveness**, not uniqueness.
 
-The strongest finite contrast is the global-shift family: b=1 is the only tested member with one observed cycle through 100,000. The one-coordinate family is more nuanced and is important precisely because it prevents over-selling that observation: convergence-like behavior survives in a substantial minority of nearby rules.
+The strongest finite contrast is the global-shift family: b=1 is the only tested member with one observed cycle through 1,000,000. The one-coordinate family is more nuanced and is important precisely because it prevents over-selling that observation: convergence-like behavior survives in a substantial minority of nearby rules, and all seven 100,000-seed one-cycle survivors remained one-cycle through 1,000,000.
 
 There is not enough evidence to call the frozen rule a phase-boundary point in any formal or asymptotic sense. A defensible statement is only that the tested neighborhood contains a mixture of single-attractor and multi-attractor behavior, with the frozen rule lying next to both kinds.
 
