@@ -1,7 +1,7 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "project_title": "Leading-Digit Hailstone Dynamics",
-  "phase": "CONJECTURE_DISCOVERY_PILOT",
+  "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
   "frozen_object": {
     "domain": "positive integers",
     "base": 10,
@@ -124,5 +124,75 @@
     "Arbitrarily long initial v2=1 runs exist by an elementary construction, so local growth stretches cannot be ruled out by a uniform bound.",
     "The distinguished 7-cycle is old 5x+1 behavior and is not evidence of novelty.",
     "Current prior-art work has not located an exact or mathematically equivalent full-map construction, but negative search evidence is insufficient for a novelty claim."
-  ]
+  ],
+  "programme_stage_status": {
+    "1_proof_conjecture_research": "ACTIVE_HIGHEST_PRIORITY",
+    "2_lean_formalisation": "ACTIVE_IN_PARALLEL",
+    "3_final_prior_art_audit": "ACTIVE_IN_PARALLEL_NOT_FINAL",
+    "4_palomar": "NOT_STARTED",
+    "5_research_paper": "NOT_STARTED",
+    "6_arxiv_submission": "NOT_STARTED"
+  },
+  "current_research_objective": "Determine as much rigorous mathematics as possible about the frozen system while continuously attempting to falsify or sharpen universal convergence.",
+  "active_attack_lines": [
+    "accelerated odd dynamics and deterministic/blockwise descent",
+    "cycle exclusion from valuation words, leading-digit words, and exact cycle identities",
+    "inverse dynamics and inverse-tree coverage",
+    "decimal-sector geometry",
+    "mechanism-targeted computation"
+  ],
+  "stage_1_progress": {
+    "elementary_facts": [
+      "Exact multiplicative accelerated-cycle identity: 2^R/3^q = product_i(1+c_i/(3x_i)).",
+      "If M is the minimum odd state of a cycle then 1 < 2^R/3^q <= (1+19/(3M))^q.",
+      "For odd x>19, accelerated r=1 steps strictly increase and r>=2 steps strictly decrease.",
+      "A large accelerated-cycle minimum leaves with r=1 and is entered with r>=2.",
+      "After s consecutive r=1 steps, one-step return to the pre-run height requires 2^(r+s)>3^(s+1)."
+    ],
+    "bounded_exact_consequence": {
+      "statement": "Any different positive accelerated cycle consistent with the exhaustive 5,000,000-seed census must contain at least 971 odd states.",
+      "basis": "5M minimum-element exclusion plus exact integer verification of the multiplicative cycle window for q=1..970.",
+      "claim_type": "FINITE_EXACT_ARITHMETIC_CONSEQUENCE"
+    },
+    "mechanism_targeted_computation": {
+      "constructed_initial_v2_one_runs": [
+        32,
+        50,
+        100
+      ],
+      "first_non_one_valuations": [
+        2,
+        3,
+        2
+      ],
+      "accelerated_steps_to_first_below_start": [
+        51,
+        128,
+        304
+      ],
+      "interpretation": "These examples do not exhibit one-step giant compensation; recovery is distributed across a longer block.",
+      "claim_type": "FINITE_COMPUTATION"
+    },
+    "proof_direction_update": "Cycle Diophantine constraints strengthened. One-step weak-run compensation weakened as a general strategy; multi-step block compensation is the higher-value descent target.",
+    "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses powers-of-2/powers-of-3 Diophantine approximation; no novelty claim is made for this strategy."
+  },
+  "current_lean_status": "BRANCH_AFFINE_LEMMAS_CI_VERIFIED_GREEN",
+  "immediate_stage_1_targets": [
+    "Issue #10: exclude or sharply constrain structured one-minimum accelerated cycles",
+    "derive multi-step block compensation inequalities after arbitrary weak runs",
+    "formalise leading-digit interval/bounds and accelerated definitions in Lean",
+    "continue prior-art equivalence search without novelty claims"
+  ],
+  "synchronized_date": "2026-09-26",
+  "current_ci_status": {
+    "python": "GREEN",
+    "lean": "GREEN",
+    "verified_on_research_branch": "research/post-pilot-cycle-constraints",
+    "verification_note": "Python and Lean PR workflows passed after Stage-1 code, data, tests, and Lean changes."
+  },
+  "highest_value_next_target": {
+    "issue": 10,
+    "title": "Exclude structured one-minimum accelerated cycles",
+    "reason": "This class directly combines the new q>=971 product-window bound, the valuation direction lemma, weak-run block formulas, and decimal-sector consistency while remaining substantially more structured than arbitrary cycles."
+  }
 }

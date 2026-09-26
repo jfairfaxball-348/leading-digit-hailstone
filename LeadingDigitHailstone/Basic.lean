@@ -28,9 +28,25 @@ def inDistinguishedCycle (n : ℕ) : Prop :=
 def LeadingDigitHailstoneConjecture : Prop :=
   ∀ n : ℕ, 0 < n → ∃ k : ℕ, inDistinguishedCycle ((T^[k]) n)
 
+/-- The even branch simplifies exactly to division by two. -/
+theorem T_of_even (n : ℕ) (heven : n % 2 = 0) : T n = n / 2 := by
+  simp [T, heven]
+
+/-- The odd branch simplifies exactly to the leading-digit affine rule. -/
+theorem T_of_odd (n : ℕ) (hodd : n % 2 = 1) :
+    T n = 3 * n + 2 * leadingDigit n + 1 := by
+  have hne : n % 2 ≠ 0 := by omega
+  simp [T, hne]
+
+/-- On a fixed leading-digit sector, the odd branch is affine with constant correction. -/
+theorem T_of_odd_leadingDigit (n d : ℕ) (hodd : n % 2 = 1)
+    (hld : leadingDigit n = d) :
+    T n = 3 * n + 2 * d + 1 := by
+  rw [T_of_odd n hodd, hld]
+
 theorem odd_maps_to_even (n : ℕ) (hodd : n % 2 = 1) : T n % 2 = 0 := by
-  unfold T
-  split <;> omega
+  rw [T_of_odd n hodd]
+  omega
 
 theorem cycle_1_to_6 : T 1 = 6 := by native_decide
 theorem cycle_6_to_3 : T 6 = 3 := by native_decide

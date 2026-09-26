@@ -1,45 +1,78 @@
-# Conjecture-Discovery Roadmap
+# Research Programme Roadmap
 
-This project is not gated on proof readiness. Its purpose is to decide whether the frozen rule supports a worthwhile, distinctive, and plausibly novel Collatz-adjacent conjecture.
+The conjecture-discovery pilot is complete. The project gate remains **CANDIDATE_DISTINCTIVE_CONJECTURE**: the frozen object is sufficiently substantive to justify a full mathematical programme, while historical novelty remains unresolved.
 
-## Tasks
+The project is now organized as a staged research programme. These stages are not a one-way checklist: mathematical counterexamples, formalisation failures, or prior-art discoveries may send the work back to an earlier stage.
 
-### 0 — Scaffold and exact reproduction
-Freeze the object, implement it independently twice, reproduce incoming finite claims, and make all finite evidence reproducible.
+## Stage 1 — Mathematical proof / conjecture research — ACTIVE
 
-### 1 — Finite census and adversarial testing
-Extend exact finite testing, but prioritize falsification: competing cycles, decimal boundaries, long first descents, high excursions, low-v2 growth, inverse searches, and constructed large starts.
+Primary objective:
 
-### 2 — Structural mathematics
-Record elementary exact facts about decimal sectors, parity, 2-adic valuation, inverse images, accelerated cycles, and boundary jumps. Structural work is valuable because it diagnoses whether the object is mathematically substantive, not because a proof is required.
+> Determine as much rigorous mathematics as possible about the frozen dynamical system, while continuously attempting to falsify or sharpen the universal-convergence conjecture.
 
-### 3 — Prior-art audit
-Search for exact and equivalent constructions across generalized Collatz maps, state-dependent and piecewise-affine maps, radix/digit dynamics, automata/transducers, OEIS, papers, theses, recreational sources, repositories, MathOverflow/Math StackExchange, and older bibliographies.
+Legitimate outcomes include a proof, a substantial partial theorem, exclusion of important counterexample classes, a stronger invariant, another cycle, an escaping orbit, a corrected conjecture, or a rigorous obstruction to a natural proof strategy.
 
-Classify every serious candidate as: exact match; equivalent formulation; direct superclass containing the object essentially for free; close analogue; thematic only; irrelevant.
+Current parallel attack lines:
 
-### 4 — Nearby-rule comparison
-Use a small principled comparison family fixed in advance. Do not parameter-fish. The frozen rule remains primary.
+1. accelerated odd dynamics and deterministic descent mechanisms;
+2. positive-cycle exclusion via valuation words, leading-digit words, and exact cycle identities;
+3. inverse dynamics and inverse-tree coverage;
+4. decimal-sector geometry and boundary crossing;
+5. computation used only for theorem discovery and targeted falsification.
 
-### 5 — Compact formal specification
-Formalise the domain, leading digit, map, iteration, cycle, conjecture proposition, seven cycle transitions, and elementary facts such as odd inputs mapping to even outputs. Do not turn the pilot into a Lean proof programme.
+The theorem that arbitrarily long initial exact-v2=1 runs exist permanently rules out arguments that assume a uniform bound on weak-division streaks.
 
-### 6 — Candidate assessment
-Choose exactly one current gate:
+Current highest-value target: **Issue #10 — exclude or sharply constrain structured one-minimum accelerated cycles**, coupling the new cycle product window and q>=971 bound to rise/fall valuation blocks and rigorous decimal digit-word consistency.
 
-- REJECT_PRIOR_ART
-- REJECT_GENERIC
-- REJECT_UNINTERESTING
-- CONTINUE_AUDIT
-- CANDIDATE_DISTINCTIVE_CONJECTURE
-- CANDIDATE_NOVEL_CONJECTURE
+## Stage 2 — Lean formalisation — ACTIVE ALONGSIDE STAGE 1
 
-CANDIDATE_DISTINCTIVE_CONJECTURE means the object is worth presenting and continuing to test as a named conjecture candidate, while novelty remains unresolved.
+Formalisation proceeds with the mathematics rather than after it.
 
-CANDIDATE_NOVEL_CONJECTURE requires a substantially stronger prior-art audit than failure of literal-formula searches.
+Keep separate:
 
-## Current gate
+- exact definitions/specification;
+- elementary proved lemmas;
+- substantial proved mathematics;
+- finite computational statements;
+- the unproved central conjecture.
 
-CANDIDATE_DISTINCTIVE_CONJECTURE, dated 2026-09-26.
+Priorities are leading-digit interval lemmas, branch simplification theorems, fixed-leading-digit affine form, 2-adic congruence statements, decimal-boundary lemmas, inverse-image lemmas, accelerated-map definitions, the cycle equation, and stable Stage-1 theorems.
 
-The next highest-value work is continued equivalence-focused prior-art audit and targeted falsification, not an attempt to prove universal convergence.
+The universal conjecture remains a Prop. No sorry placeholders are permitted merely to simulate progress. Lean CI must remain green.
+
+## Stage 3 — Final comprehensive prior-art audit — ACTIVE IN PARALLEL, NOT FINAL
+
+The pilot audit is substantial but not a novelty determination.
+
+Before any historical novelty or priority claim, search exact and mathematically equivalent descriptions across generalized Collatz/Syracuse literature, an+b and 3x+k systems, RCWA and periodically linear maps, state-dependent piecewise-affine maps, radix/digit dynamics, leading-digit rules, automata/transducers, OEIS, bibliographies, theses, books, proceedings, recreational sources, forums, code repositories, and non-English/poorly indexed literature where practical.
+
+Classify plausible sources as exact match, equivalent formulation, direct superclass, close analogue, thematic only, or irrelevant.
+
+The final assessment must distinguish novelty of the map, the universal-convergence conjecture, individual structural theorems, and the distinguished 7-cycle. The cycle is already known 5x+1 prior art.
+
+## Stage 4 — Palomar — NOT STARTED
+
+Do not infer or invent the meaning of Palomar. Inspect repository/project conventions or tooling when this stage becomes timely.
+
+Entry conditions include stable definitions, numbered theorem/conjecture inventory, reproducible evidence, clean bibliographic records, explicit open questions, and machine-checkable formal statements where practical.
+
+## Stage 5 — Research paper — NOT STARTED
+
+Do not begin manuscript packaging while major mathematical or novelty questions remain unresolved.
+
+A future manuscript should clearly separate definitions, theorems, conjectures, finite computation, heuristics, literature facts, and novelty claims. It should be a mathematical research paper rather than a computation-only note.
+
+## Stage 6 — arXiv submission — NOT STARTED
+
+Submission is the end of the pipeline, not a target driving the mathematics.
+
+Prerequisites include a stable paper, complete bibliography, reproducible repository, explicit computational protocols, accurate Lean status, appropriate authorship/acknowledgements, and a final prior-art check with no unsupported novelty language.
+
+## Current research gate
+
+- Pilot gate: **CANDIDATE_DISTINCTIVE_CONJECTURE**
+- Current phase: **STAGE_1_MATHEMATICAL_RESEARCH**
+- Novelty status: **UNRESOLVED_DO_NOT_CLAIM**
+- Central conjecture: unchanged and explicitly unproved.
+
+The immediate programme is to deepen the mathematics and try to break the conjecture, not to rush toward publication packaging.

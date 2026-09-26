@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "claim_type": "FINITE_EXACT_ARITHMETIC_CERTIFICATE",
+  "premise": "any different positive cycle has minimum odd state >= 5000001",
+  "premise_source": "exhaustive seed census through 5000000",
+  "necessary_inequality": "1 < 2^R/3^q <= ((3M+19)/(3M))^q",
+  "minimum_odd_state_used": 5000001,
+  "max_correction_used": 19,
+  "q_excluded_through": 970,
+  "first_q_not_excluded_by_this_coarse_inequality": 971,
+  "minimal_R_at_first_not_excluded_q": 1539,
+  "interpretation": "Any different positive accelerated cycle consistent with the 5M minimum-element exclusion must contain at least 971 odd states. q=971 is not asserted to be realizable."
+}

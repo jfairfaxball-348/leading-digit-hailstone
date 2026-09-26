@@ -167,3 +167,20 @@ This is meaningful prior art against any broad claim that radix-aware or digital
 The Caucal–Rispal and Stérin–Woods papers strengthen the representation-side prior art: affine Collatz-like arithmetic and ordinary Collatz can be described through digit transducers or automata. The Gonçalves–Greenfeld–Madrid paper strengthens the modern fixed-parameter generalized-Collatz comparison. Mondal–Ghosh strengthens the radix-aware comparison.
 
 None of these sources is currently classified as an exact match, equivalent formulation, or informative direct superclass containing the frozen leading-digit-controlled map essentially for free. They therefore **reduce the scope of any eventual distinctiveness claim** without resolving the novelty question. The audit status remains: no exact/equivalent full-map match identified; novelty unresolved.
+
+## Stage-1 addendum: cycle-exclusion methodology
+
+Shalom Eliahou, “The 3x+1 problem: new lower bounds on nontrivial cycle lengths,” Discrete Mathematics 118 (1993), 45–56, DOI 10.1016/0012-365X(93)90052-U, derives strong lower bounds for nontrivial ordinary Collatz cycles using the requirement that powers of 2 and 3 approximate one another extremely closely, together with continued fractions for log_2(3) and a verified lower bound on the minimum cycle element.
+
+John L. Simons and Benne de Weger, “Theoretical and computational bounds for m-cycles of the 3n+1-problem,” Acta Arithmetica 117 (2005), 51–70, DOI 10.4064/aa117-1-3, develops this cycle-exclusion line further using transcendental number theory and computational Diophantine approximation.
+
+**Classification: methodological prior art / close analogue, not prior art for the frozen map.**
+
+The Stage-1 multiplicative identity for the frozen system,
+
+2^R / 3^q = product_i (1 + c_i/(3x_i)),
+
+and the resulting large-minimum approximation window are a map-specific version of a classical Collatz-cycle strategy: a hypothetical large cycle forces a ratio of powers of 2 and 3 to lie extremely close to 1. This strategy must therefore not be described as a novel proof method.
+
+What remains specific to the frozen system is the state-dependent correction word c_i=2L(x_i)+1, its decimal-sector consistency constraints, and the interaction with the map's valuation and inverse structure. Whether any individual theorem obtained from those extra constraints is historically new remains unresolved pending the final audit.
+
