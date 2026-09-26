@@ -385,7 +385,7 @@ Since `3<=c_j<=19`,
 Therefore:
 
 > **Terminally anchored guide theorem.**  Every state of any finite exact-r=1
-> segment lies less than 19 below one homogeneous `(3/2))-orbit obtained by
+> segment lies less than 19 below one homogeneous `(3/2)`-orbit obtained by
 > back-scaling the terminal state.  The absolute discrepancy bound is uniform
 > in the segment length and in the scale of the states.
 
