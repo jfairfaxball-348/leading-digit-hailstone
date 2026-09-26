@@ -176,12 +176,18 @@
     "proof_direction_update": "Cycle Diophantine constraints strengthened. One-step weak-run compensation weakened as a general strategy; multi-step block compensation is the higher-value descent target.",
     "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses powers-of-2/powers-of-3 Diophantine approximation; no novelty claim is made for this strategy."
   },
-  "current_lean_status": "BRANCH_AFFINE_LEMMAS_ADDED_CI_PENDING",
+  "current_lean_status": "BRANCH_AFFINE_LEMMAS_CI_VERIFIED_GREEN",
   "immediate_stage_1_targets": [
     "derive multi-step block compensation inequalities after arbitrary weak runs",
     "combine q>=971 with valuation-word and decimal-sector consistency",
     "formalise leading-digit interval/bounds and accelerated definitions in Lean",
     "continue prior-art equivalence search without novelty claims"
   ],
-  "synchronized_date": "2026-09-26"
+  "synchronized_date": "2026-09-26",
+  "current_ci_status": {
+    "python": "GREEN",
+    "lean": "GREEN",
+    "verified_on_research_branch": "research/post-pilot-cycle-constraints",
+    "verification_note": "Python and Lean PR workflows passed after Stage-1 code, data, tests, and Lean changes."
+  }
 }
