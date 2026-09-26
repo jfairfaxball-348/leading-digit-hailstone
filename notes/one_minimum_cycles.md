@@ -157,48 +157,114 @@ For M=5,000,001, the exact rational upper bound is
 
 which is strictly less than 2. Therefore, for each fixed q, at most one integer R can satisfy (11): it must be the least integer with 2^R>3^q.
 
-## Exact bounded consequence from the 5M census
+## Exact bounded consequences from the 5M census
 
 The script
 
 scripts/structured_one_minimum_bound.py
 
-checks (11) using integer arithmetic only. Its recorded certificate is
+first checks (11) using integer arithmetic only.
+
+At M=5,000,001, the product-window survivors through q=400,000 are exactly:
+
+| q | R | required a >= 2q-R |
+|---:|---:|---:|
+| 79,335 | 125,743 | 32,927 |
+| 158,670 | 251,486 | 65,854 |
+| 190,537 | 301,994 | 79,080 |
+| 269,872 | 427,737 | 112,007 |
+| 349,207 | 553,480 | 144,934 |
+| 381,074 | 603,988 | 158,160 |
+
+This enumeration is exact. A safe 17-bit integer prefilter is used only to skip values that cannot possibly meet the rational window; every retained possibility is decided by the full cross-multiplied integer inequality.
+
+### Each surviving q forces a finite minimum range
+
+For fixed q and R, inequality (11) becomes an upper bound on M because
+
+B(M)=M(M-19)/(M^2-57M+361)
+
+is strictly decreasing on the relevant range. An exact discrete check is
+
+N(M+1)D(M)-N(M)D(M+1)
+=
+-38(M^2-18M+171)
+<
+0,
+
+where N(M)=M(M-19) and D(M)=M^2-57M+361.
+
+Therefore each product-window survivor has a largest possible minimum M_max. Exact binary search gives:
+
+| q | M_max |
+|---:|---:|
+| 79,335 | 10,369,168 |
+| 158,670 | 5,184,598 |
+| 190,537 | 589,078,792 |
+| 269,872 | 10,189,804 |
+| 349,207 | 5,139,366 |
+| 381,074 | 294,539,410 |
+
+These are theorem-driven finite ranges, not arbitrary search cutoffs.
+
+### Exact decimal-sector / 2-adic symbolic exclusion
+
+The script then checks whether any odd M in
+
+5,000,001 <= M <= M_max
+
+can sustain the required initial r=1 rise block.
+
+It does **not** enumerate every seed. It maintains cells of initial M values for which:
+
+- the current rise digit word is fixed;
+- the exact affine formula
+  2^i x_i = 3^i M + A_i
+  is fixed;
+- M lies in one exact residue class modulo 2^(i+1).
+
+At each step, every cell is split across every decimal leading-digit sector intersecting the affine image interval. For each resulting sector, the two lifts modulo 2^(i+2) are tested, and only the unique lift giving exact valuation r=1 is retained.
+
+Thus the symbolic procedure is exactly the intersection described in (12): decimal interval consistency plus exact binary lifting. If the cell set becomes empty after s steps, no seed in the complete stated M range has s consecutive r=1 accelerated steps.
+
+For the six product-window survivors above, the first impossible rise lengths are:
+
+| q | required rise length | first impossible rise length |
+|---:|---:|---:|
+| 79,335 | 32,927 | 21 |
+| 158,670 | 65,854 | 17 |
+| 190,537 | 79,080 | 29 |
+| 269,872 | 112,007 | 21 |
+| 349,207 | 144,934 | 17 |
+| 381,074 | 158,160 | 28 |
+
+Every product-window survivor through q=400,000 is therefore excluded.
+
+> **Finite structured-cycle corollary.** Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q>=400,001.
+
+This is an explicitly bounded structured-class exclusion, not a global no-cycle theorem.
+
+There is also a uniform rise-length consequence. Because the structured product bound is <2, any surviving q has the unique possible total valuation
+
+R = bit_length(3^q).
+
+Multiplying 3^q by 3 changes this bit length by either 1 or 2, so
+
+k(q)=2q-R
+
+is nondecreasing. At q=400,001,
+
+k(400,001)=166,015.
+
+Hence every remaining structured cycle under the same census premise must have at least
+
+a>=166,015
+
+consecutive exact-r=1 rise steps.
+
+The machine-readable certificate is
 
 data/structured_one_minimum_bound.json.
-
-It verifies:
-
-- q=1,...,79,334 are excluded by the structured uniform product window;
-- q=79,335 is the first period not excluded by this necessary inequality;
-- at q=79,335 the unique possible total valuation is R=125,743.
-
-Therefore:
-
-> **Bounded structured-cycle corollary.** Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must contain at least 79,335 odd states.
-
-This is not a global cycle exclusion, and q=79,335 is not asserted to be realizable.
-
-Equation (6) also yields a rise-length consequence. Any such surviving structured cycle must have
-
-a >= 32,927.
-
-The exact certificate proves this uniformly for q>=79,335 by comparing the homogeneous lower ratio 2^(2q-a)/3^q with the rational bound (11). At the first surviving period,
-
-q=79,335,  R=125,743,
-
-so
-
-a-E=32,927,
-
-and therefore
-
-a=32,927+E,
-b=46,408-E,
-
-with 0 <= E <= 46,407.
-
-This sharply reduces the first surviving structured period to a family indexed by the distribution of fall excess valuations and the digit word, but it does not enumerate that family.
 
 ## Turning-point congruences
 
@@ -250,8 +316,8 @@ This is an exact finite check **only after** the digit and decade ranges have th
 
 ## Research status
 
-The one-rise/one-fall class is **substantially constrained, not globally excluded**.
+The one-rise/one-fall class is **excluded through q=400,000 under the existing 5M minimum premise, but not globally excluded**.
 
-The strongest new theorem-level ingredient is the period-independent product envelope (11). The strongest finite exact consequence is q>=79,335 under the existing 5M minimum premise, together with a>=32,927.
+The strongest theorem-level ingredient is the period-independent product envelope (11). The strongest finite exact consequence combines that theorem with exact product-window enumeration and exact symbolic decimal/2-adic rise-word coverage to give q>=400,001 and a>=166,015.
 
-The next high-value target is to attack the first surviving period q=79,335 using its fixed R=125,743 and relation a-E=32,927, combining exact decimal interval consistency with exact 2-adic valuation lifting. A rigorous exclusion of that period would move the structured lower bound to the next admissible Diophantine period without pretending to cover arbitrary cycles.
+The next high-value target is to extend the exact structured exclusion beyond q=400,000 without turning the period scan into an undirected computation. The preferred route is to enumerate the next Diophantine product-window survivors and use their theorem-derived M_max ranges with the same exact symbolic digit/residue checker; if a survivor ceases to be eliminated quickly, analyze that specific word family mathematically.
