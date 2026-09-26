@@ -292,6 +292,33 @@ def cells_after_rises(
     return cells
 
 
+def rise_residue_for_digits(digits: tuple[int, ...]) -> int:
+    """Return the unique starting residue for a fixed exact-r=1 digit word.
+
+    If A_s is the exact affine additive term after s prescribed rises, then
+    all s exact-r=1 parity conditions are equivalent to
+
+      3^s M + A_s == 2^s (mod 2^(s+1)).
+
+    The reverse implication follows by reducing the terminal congruence one
+    step at a time: because every correction c_i is odd, a congruence
+    Y_{i+1}=3Y_i+c_i*2^i == 2^(i+1) (mod 2^(i+2)) forces
+    Y_i == 2^i (mod 2^(i+1)). Since 3 is invertible modulo powers of two,
+    the terminal condition gives one explicit starting residue.
+    """
+    rises = len(digits)
+    additive = 0
+
+    for step, digit in enumerate(digits):
+        correction = 2 * digit + 1
+        additive = 3 * additive + correction * (1 << step)
+
+    modulus = 1 << (rises + 1)
+    three_to_s = pow(3, rises, modulus)
+    inverse = pow(three_to_s, -1, modulus)
+    return (inverse * ((1 << rises) - additive)) % modulus
+
+
 def terminal_representatives(
     lo: int,
     hi: int,
@@ -307,7 +334,11 @@ def terminal_representatives(
         if width >= modulus:
             raise AssertionError("terminal cell is not narrower than its modulus")
 
-        representative = _first_congruent(cell.lo, cell.residue, modulus)
+        explicit_residue = rise_residue_for_digits(cell.digits)
+        if explicit_residue != cell.residue % modulus:
+            raise AssertionError("iterative lift disagrees with explicit residue formula")
+
+        representative = _first_congruent(cell.lo, explicit_residue, modulus)
         if representative > cell.hi:
             raise AssertionError("surviving terminal cell has no representative")
 
