@@ -1,5 +1,5 @@
 {
-  "schema_version": 11,
+  "schema_version": 12,
   "project_title": "Leading-Digit Hailstone Dynamics",
   "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
   "frozen_object": {
@@ -158,7 +158,10 @@
       "For a fixed exact-r=1 rise word, the unique residues satisfy rho_(s+1)=rho_s+b_s*2^(s+1); the lift bits b_s are exactly the successive binary digits of the required starting residue above its forced odd bit.",
       "Bounded-range residue locking: for starts M<=U, at B=floor(log_2 U) the congruence forces M=rho_B, and every later compatible lift bit is zero.",
       "Combining bit-length locking with decimal-boundary localization gives at most 180*B*(ceil(log_10((U+19)/L))+1)+1 starts surviving B rises in [L,U]; for fixed L this is O((log U)^2) candidate compression.",
-      "After locking, x_s=1+2H_s exactly, and b_s=0 is equivalent to the deterministic accelerated numerator at x_s having valuation one; hence symbolic lift/decimal branching is unnecessary after lock depth."
+      "After locking, x_s=1+2H_s exactly, and b_s=0 is equivalent to the deterministic accelerated numerator at x_s having valuation one; hence symbolic lift/decimal branching is unnecessary after lock depth.",
+      "Post-lock normalized corridor: if X_0=X and 2 X_(j+1)=3 X_j+c_j with 3<=c_j<=19 through an exact-r=1 tail, then Z_j=(2/3)^j X_j satisfies Z_(j+1)-Z_j=(c_j/3)(2/3)^j and 3(1-(2/3)^t)<=Z_t-X<=19(1-(2/3)^t)<19.",
+      "Post-lock decimal-boundary corridor: if the actual leading digit at time t differs from that of the homogeneous rational (3/2)^t X, some decimal boundary C=d*10^k satisfies the exact integer inequality X*3^t<C*2^t<(X+19)*3^t.",
+      "Exact-r=1 same-sector control: a decimal sector with leading digit d>=2 is exited after one step; the digit-1 sector supplies at most two consecutive source states; six consecutive exact-r=1 steps cross at least one power-of-ten boundary."
     ],
     "bounded_exact_consequence": {
       "statement": "Any different positive accelerated cycle consistent with the exhaustive 5,000,000-seed census must contain at least 971 odd states.",
@@ -184,7 +187,7 @@
       "interpretation": "These examples do not exhibit one-step giant compensation; recovery is distributed across a longer block.",
       "claim_type": "FINITE_COMPUTATION"
     },
-    "proof_direction_update": "Post-lock residue ambiguity has now been eliminated completely: once M=rho_B, the carry satisfies x_s=1+2H_s and a zero lift is exactly one deterministic valuation-one accelerated step. Thus exact symbolic branching is needed only through lock depth; later tail certification is direct orbit following of the finite locked candidate set. A finite exact tail-6 example rules out universal constant bounds <=5. The next Farey record is excluded by this lock-and-follow certificate, so the remaining target is a scale-aware F(B) or F(M) tail theorem rather than further symbolic lift control.",
+    "proof_direction_update": "Post-lock decimal geometry now has a fixed normalized corridor of width less than 19. Any disagreement with the homogeneous (3/2)^t leading-digit itinerary requires an exact scaled decimal-boundary hit inside (X,X+19), while same-sector runs are locally bounded. A complete exact own-bit lock scan through B=220 finds 96 locked starts and 41 positive post-lock tails, maximum observed tail 6, with no boundary-corridor hit or homogeneous-digit mismatch in any positive tail. This finite diagnostic shows that boundary proximity is not necessary for the observed tails. No F(B) or F(M) theorem follows; the sharper target is scale-aware parity/congruence control along a phase-frozen digit itinerary.",
     "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses powers-of-2/powers-of-3 Diophantine approximation; no novelty claim is made for this strategy.",
     "structured_cycle_consequence": {
       "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q >= 1,643,749,725,074 and at least 682,217,775,335 consecutive r=1 rise steps.",
@@ -365,7 +368,7 @@
         "post-lock zero-lift continuation is exactly deterministic accelerated orbit following, so no symbolic branching is needed after lock depth"
       ],
       "finite_exact_route_falsification": {
-        "start": 43574304770317398119,
+        "start": 43574304770317400000,
         "bit_length_lock_depth": 65,
         "total_exact_r1_rises": 71,
         "post_lock_tail": 6,
@@ -383,13 +386,44 @@
         "next_required_rise": 682217775335
       },
       "limitation": "The reduction removes symbolic branching after lock but does not prove any scale-aware bound on deterministic tail length."
+    },
+    "post_lock_scale_geometry": {
+      "claim_type": "ELEMENTARY_THEOREMS_PLUS_FINITE_EXACT_SYMBOLIC_AND_DIRECT_DIAGNOSTIC",
+      "theorem_level": [
+        "for an exact-r=1 post-lock segment, the normalized state Z_t=(2/3)^t X_t remains in [X+3(1-(2/3)^t), X+19(1-(2/3)^t)], a corridor of width less than 19 above the lock state",
+        "a mismatch between the actual and homogeneous leading digits at time t requires a decimal boundary C with X*3^t<C*2^t<(X+19)*3^t",
+        "an exact-r=1 source in a leading-digit sector d>=2 exits that sector in one step; digit 1 persists for at most two consecutive sources; six exact-r=1 steps cross a power-of-ten boundary"
+      ],
+      "finite_exact_diagnostic": {
+        "bit_depth_range": [
+          1,
+          220
+        ],
+        "maximum_start_exclusive": "3369993333393829974333376885877453834204643052817571560137951281152",
+        "own_bit_locked_candidate_count": 96,
+        "positive_tail_candidate_count": 41,
+        "tail_histogram": {
+          "0": 55,
+          "1": 16,
+          "2": 13,
+          "3": 7,
+          "4": 1,
+          "5": 3,
+          "6": 1
+        },
+        "maximum_observed_post_lock_tail": 6,
+        "positive_tail_boundary_hit_candidate_count": 0,
+        "positive_tail_homogeneous_digit_mismatch_candidate_count": 0,
+        "certificate": "data/post_lock_scale_geometry.json"
+      },
+      "limitation": "The finite maximum tail 6 through B=220 is not a universal bound. No explicit scale-aware F(B) or F(M) has been proved, and neither cycle frontier changes."
     }
   },
   "current_lean_status": "POST_LOCK_CARRY_AND_VALUATION_IDENTITIES_CI_VERIFIED_GREEN",
   "immediate_stage_1_targets": [
-    "Issue #10: prove a scale-aware quantitative bound F(B) or F(M) on deterministic post-lock valuation-one tails, or produce a rigorous family showing such a route is too weak",
-    "exploit x_s=1+2H_s to study decimal phase/discrepancy and congruence information without further symbolic lift branching",
-    "use further Farey records mainly as stress tests or consequences of a tail theorem rather than as the primary research direction",
+    "Issue #10: prove a scale-aware parity/congruence obstruction for deterministic post-lock valuation-one tails once the decimal itinerary is frozen to the homogeneous (3/2)^t phase",
+    "combine carry parity with exact homogeneous leading-digit words, mixed 2^m5^n congruences, or another unbounded scale coordinate",
+    "extend exact own-bit lock diagnostics primarily to falsify candidate F(B) bounds or find a tail longer than 6; use further Farey records only as secondary stress tests",
     "continue prior-art equivalence search without novelty claims"
   ],
   "synchronized_date": "2026-09-26",
@@ -402,7 +436,7 @@
   },
   "highest_value_next_target": {
     "issue": 10,
-    "title": "Bound deterministic post-lock tails by scale",
-    "reason": "Post-lock lift ambiguity is gone: x_s=1+2H_s and zero lift is exactly a deterministic valuation-one accelerated step. A constant bound <=5 is false, so the next target is a rigorous scale-aware F(B) or F(M) bound, likely using decimal phase/discrepancy or scale-aware congruence information."
+    "title": "Control phase-frozen post-lock parity by scale",
+    "reason": "The width-19 normalized corridor and exact B<=220 diagnostic show that observed positive post-lock tails can have completely frozen homogeneous leading-digit itineraries with no decimal-boundary near-hit. The remaining obstruction is the exact valuation-one parity/congruence condition along that scale-dependent itinerary; no F(B) or F(M) theorem is yet known."
   }
 }
