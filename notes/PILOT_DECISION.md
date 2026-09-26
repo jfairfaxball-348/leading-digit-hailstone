@@ -16,7 +16,7 @@ Exact finite evidence is substantial for a pilot but remains finite: all starts 
 
 The small comparison experiment is discriminating rather than uniformly flattering. Every nonfrozen global shift c_b(d)=2d+b tested at b=-3,-1,3,5 develops multiple observed cycles through 100,000. Among 18 single-digit +/-2 perturbations, 11 develop multiple observed cycles and 7 still show one observed cycle. Thus convergence-like behaviour is neither universal nor uniquely isolated in this neighbourhood.
 
-Adversarial tests aimed at decimal boundaries and repeated minimal 2-adic contraction did not break the frozen rule under their explicit finite protocols, including 50-, 100-, and 200-digit constructed starts.
+Adversarial tests aimed at decimal boundaries and repeated minimal 2-adic contraction did not break the frozen rule under their explicit finite protocols: all 3,600 starts d*10^k +/- 1 for d=1..9, k=1..200 entered the distinguished cycle, as did the constructed 50-, 100-, and 200-digit starts.
 
 ## Why this is not CANDIDATE_NOVEL_CONJECTURE
 
