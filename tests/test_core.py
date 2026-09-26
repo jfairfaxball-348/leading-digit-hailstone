@@ -55,6 +55,26 @@ class CoreTests(unittest.TestCase):
                 self.assertEqual(step(n), m)
             self.assertIn(2 * m, inverse_preimages(m))
 
+    def test_single_digit_odd_branch_matches_5x_plus_1(self):
+        for n in (1, 3, 5, 7, 9):
+            self.assertEqual(step(n), 5 * n + 1)
+
+    def test_decimal_boundary_jumps(self):
+        for k in range(1, 7):
+            power = 10 ** k
+            self.assertEqual(step(power + 1) - step(power - 1), -10)
+            for d in range(2, 10):
+                boundary = d * power
+                self.assertEqual(step(boundary + 1) - step(boundary - 1), 8)
+
+    def test_odd_preimage_exception(self):
+        for m in range(1, 100_001):
+            odd = [n for n in inverse_preimages(m) if n % 2 == 1]
+            if m == 36:
+                self.assertEqual(odd, [7, 11])
+            else:
+                self.assertLessEqual(len(odd), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

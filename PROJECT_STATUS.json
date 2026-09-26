@@ -27,10 +27,10 @@
   "tasks": {
     "0_scaffold": "COMPLETE",
     "1_independent_reproduction": "PARTIAL_COMPLETE_RANDOM_ORIGINAL_NON_REPLAYABLE",
-    "2_dynamical_census": "NOT_STARTED",
-    "3_structural_decomposition": "STARTED_ELEMENTARY_NOTES",
-    "4_cycle_search": "NOT_STARTED",
-    "5_prior_art_audit": "NOT_STARTED",
+    "2_dynamical_census": "STARTED_EXHAUSTIVE_TO_5000000",
+    "3_structural_decomposition": "STARTED_MULTIPLE_ELEMENTARY_RESULTS",
+    "4_cycle_search": "STARTED_ACCELERATED_CYCLE_CONSTRAINTS",
+    "5_prior_art_audit": "STARTED_INITIAL_EQUIVALENCE_AUDIT",
     "6_pilot_decision": "NOT_STARTED"
   },
   "pilot_gate": null,
@@ -41,5 +41,28 @@
     "CONTINUE_COMPUTATIONAL",
     "CONTINUE_STRUCTURAL",
     "CONTINUE_PROOF_TARGET"
-  ]
+  ],
+  "latest_finite_census": {
+    "range": [
+      1,
+      5000000
+    ],
+    "all_enter_distinguished_cycle": true,
+    "other_cycle_observed": false,
+    "record_cycle_entry_time": {
+      "seed": 4625895,
+      "steps": 713
+    },
+    "record_excursion_ratio": {
+      "seed": 4449695,
+      "max_excursion": 1265270503548
+    },
+    "record_first_descent": {
+      "seed": 2862607,
+      "steps": 342,
+      "range_start": 2
+    },
+    "evidence_type": "FINITE_COMPUTATION"
+  },
+  "prior_art_status": "INITIAL_AUDIT_ONLY; CYCLE_HAS_5X_PLUS_1_PRIOR_ART; FULL_MAP_NOVELTY_UNRESOLVED"
 }
