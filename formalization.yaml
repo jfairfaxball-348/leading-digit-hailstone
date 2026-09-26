@@ -1,0 +1,104 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Leading-Digit Hailstone Dynamics"
+  description: >-
+    Formalisation of a leading-decimal-digit-dependent integer dynamical
+    system. The Palomar entry records the elementary family
+    n_k = 2*10^k - 1, whose odd-branch numerator has exact 2-adic valuation
+    k+1 and accelerated quotient 3*5^k, establishing unbounded single
+    odd-branch valuation bursts. The repository also specifies the universal
+    convergence claim only as an unproved conjecture.
+  authors:
+    - name: "John Fairfax-Ball"
+      github: "jfairfaxball-348"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - name: "John Fairfax-Ball"
+      github: "jfairfaxball-348"
+
+classification:
+  arxiv: ["math.DS", "math.NT"]
+  msc2020: ["11B37"]
+
+sources:
+  - title: "Stage 1 final adversarial stress test and exit gate"
+    id: "https://github.com/jfairfaxball-348/leading-digit-hailstone/blob/72e9e445264c5c1bd0178e6961820edb4d6f7f22/notes/STAGE_1_FINAL_STRESS_TEST.md"
+    type: "research note"
+    location: "notes/STAGE_1_FINAL_STRESS_TEST.md, section New theorem-level red-team result"
+    relationship: "formalizes"
+    note: >-
+      The compared Lean declaration formalizes the theorem-level
+      valuation-burst family recorded in this pinned pre-Palomar source.
+      This provenance statement does not assert historical novelty; novelty
+      remains unresolved.
+
+status:
+  scope: >-
+    The compared Palomar theorem proves only the exact arithmetic family
+    n_k = 2*10^k - 1: its decimal-sector bounds, numerator factorisation,
+    exact divisibility by 2^(k+1) but not 2^(k+2), and quotient 3*5^k.
+    It does not prove that all positive integers converge to the distinguished
+    cycle, and it does not formalize the large finite Stage-1 stress-test
+    certificates as theorem proofs.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["GPT-5.6 Sol"]
+      framework: "ChatGPT"
+      tool_setup: >-
+        AI-assisted Lean proof drafting, repository editing, CI inspection,
+        and Palomar packaging through a GitHub connector. Formal checking is
+        performed by Lean/Mathlib, lake comparator, independent kernels in the
+        Palomar toolchain, and GitHub Actions.
+      cost:
+        wall_time: "not separately tracked"
+        spend_usd: "subscription-based / not separately tracked"
+        hardware: "hosted tools and GitHub Actions"
+      prompting_notes: >-
+        Stage-gated prompts required preservation of the unproved convergence
+        conjecture, no novelty claim, and verification of one exact immutable
+        commit before owner registration.
+  spend_usd: "subscription-based / not separately tracked"
+  notes: >-
+    Material AI assistance was used. Human author and responsible-maintainer
+    fields name only the human repository owner. The owner retains the
+    registration decision.
+
+fidelity:
+  divergences: >-
+    The Challenge expresses leading digit 1 by the exact decimal-sector bounds
+    10^k <= n_k < 2*10^k and then writes the resulting odd-branch numerator as
+    3*n_k+3. This avoids importing the project-private leadingDigit definition
+    into the trusted Challenge while preserving the cited theorem's arithmetic
+    content.
+
+review:
+  status: "self-assessed"
+  reviewers: []
+  notes: >-
+    The statement/proof correspondence is self-audited and is subjected to
+    Lean CI, lake comparator, kernel replay, and the official Palomar full
+    mechanical preflight. No independent mathematical peer review is claimed.
+
+alignment:
+  namespace: "LeadingDigitHailstonePalomar"
+  statements:
+    - source: "Stage 1 final adversarial stress test and exit gate, New theorem-level red-team result"
+      lean: "LeadingDigitHailstonePalomar.valuationBurstFamily"
+      module: "Challenge"
+      status: "proved"
+      note: >-
+        The decimal interval forces ordinary leading digit 1; the remaining
+        conjuncts state the exact odd-branch numerator factorisation,
+        exact two-adic divisibility, and accelerated quotient.
+
+acknowledgements: >-
+  Lean 4 and Mathlib provide the proof environment. The Palomar policy,
+  template, and reusable verification workflow informed the packaging and
+  mechanical checks.

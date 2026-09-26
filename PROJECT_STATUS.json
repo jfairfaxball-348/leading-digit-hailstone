@@ -1,7 +1,7 @@
 {
-  "schema_version": 15,
+  "schema_version": 16,
   "project_title": "Leading-Digit Hailstone Dynamics",
-  "phase": "STAGE_3_PALOMAR_PREPARATION",
+  "phase": "STAGE_3_PALOMAR_REGISTRATION_PREPARATION",
   "frozen_object": {
     "domain": "positive integers",
     "base": 10,
@@ -214,12 +214,12 @@
   "programme_stage_status": {
     "1_red_team_mathematical_exploration": "COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST",
     "2_lean_formalisation": "COMPLETE_FORMAL_SPECIFICATION_AUDITED",
-    "3_palomar": "NEXT_PRIMARY_STAGE_INSPECT_CONVENTIONS_FIRST",
+    "3_palomar": "PALOMAR_PACKAGE_READY_FOR_PREFLIGHT",
     "4_final_novelty_prior_art_audit": "AFTER_PALOMAR",
     "5_research_paper": "NOT_STARTED",
     "6_arxiv_submission": "NOT_STARTED"
   },
-  "current_research_objective": "Inspect repository/project conventions and available tooling for Palomar, define the exact Stage-3 procedure from those sources, then run it without reopening Stage-1 universal-convergence proof research.",
+  "current_research_objective": "Run the pinned official Palomar full mechanical preflight, merge only after the package is mechanically clean, then require the same full preflight to pass on the exact merged main commit without any later commit.",
   "active_attack_lines": [
     "Lean audit of positive-integer domain and decimal leading-digit specification",
     "Lean audit of the frozen map and distinguished 7-cycle",
@@ -543,20 +543,21 @@
       "note": "notes/STAGE_1_FINAL_STRESS_TEST.md"
     }
   },
-  "current_lean_status": "STAGE_2_COMPLETE_EXACT_SPECIFICATION_SORRY_FREE",
+  "current_lean_status": "STAGE_3_PALOMAR_PACKAGE_READY_FOR_PREFLIGHT",
   "immediate_stage_1_targets": [],
   "synchronized_date": "2026-09-26",
   "current_ci_status": {
     "python": "GREEN",
     "lean": "GREEN",
-    "verified_on_research_branch": "research/stage2-lean-formalisation-audit",
-    "verified_commit": "927fc20f864146a3c4f6b01090a74664eddf6962",
-    "verification_note": "Both pull-request workflows passed on the code-bearing Stage-2 formalisation commit 927fc20f864146a3c4f6b01090a74664eddf6962. Documentation/status commits follow; both workflows must be green again on the final PR head before merge."
+    "comparator": "GREEN",
+    "verified_on_research_branch": "research/stage3-palomar-preparation",
+    "verified_commit": "c476f9c4137c81c4a123970bb88eca8de9892d4b",
+    "verification_note": "Lean/Mathlib v4.35.0-rc2 migration is green; committed lake-manifest.json is stable under lake update; lake build, Python unit tests, scripts/verify_implementations.py, no-sorry guard outside Challenge, and Palomar-style lake comparator all passed on this commit."
   },
   "highest_value_next_target": {
     "stage": 3,
-    "title": "Inspect and define the Palomar stage",
-    "reason": "Stage 2 has audited the frozen Lean object and unproved conjecture. The roadmap explicitly requires inspection of repository/project conventions and tooling before Palomar is defined or run."
+    "title": "Run official Palomar full preflight",
+    "reason": "The root package and local mechanical checks are complete. The next gate is the pinned PalomarSubmission full predictive verifier on the complete Stage-3 snapshot, followed by the same verifier on the exact merged main commit."
   },
   "stage_1_exit_gate": {
     "status": "COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST",
@@ -575,11 +576,12 @@
     "interpretation": "Stage 1 is intentionally frozen. The conjecture survived the declared research/falsification programme but remains unproved; future proof breakthroughs are welcome but are not prerequisites for the research pipeline."
   },
   "next_primary_stage_targets": [
-    "search repository/project conventions for the meaning and expected workflow of Palomar",
-    "inspect available tooling before defining Stage 3",
-    "run only the Palomar procedure supported by those conventions",
-    "preserve the conjecture as unproved and keep novelty UNRESOLVED_DO_NOT_CLAIM",
-    "after Palomar, proceed to the final comprehensive novelty/prior-art audit"
+    "run the official Palomar full predictive preflight against the complete Stage-3 branch snapshot",
+    "fix any mechanical diagnostic through the focused Stage-3 branch and rerun all ordinary checks",
+    "merge only after ordinary CI, local Comparator, and preparatory full preflight are green",
+    "require the pinned official full preflight to pass on the exact merged main commit and make no later commit",
+    "leave actual Palomar registration to the repository owner",
+    "preserve universal convergence as unproved and novelty as UNRESOLVED_DO_NOT_CLAIM"
   ],
   "formalisation_summary": {
     "claim_type": "FORMAL_SPECIFICATION_AND_ELEMENTARY_FORMAL_THEOREMS",
@@ -607,7 +609,7 @@
     "central_conjecture": "def LeadingDigitHailstoneConjecture : Prop := forall n : Nat, 0<n -> exists k : Nat, inDistinguishedCycle ((T^[k]) n)",
     "conjecture_status": "UNPROVED_PROP_NOT_ASSUMED",
     "positive_domain_equivalence": "The Nat-plus-positivity conjecture is formally equivalent to the PositiveNat formulation.",
-    "organisation": "Single compact Basic.lean file retained; no architecture split was justified.",
+    "organisation": "Core specification remains in Basic.lean; the independent theorem-level valuation-burst proof is in ValuationBurst.lean, with root Challenge/Solution modules for Palomar.",
     "deliberately_unformalised": "Large finite computational certificates and the enormous structured-cycle frontier remain reproducible computational evidence rather than Lean proof obligations.",
     "note": "notes/STAGE_2_LEAN_FORMALISATION.md"
   },
@@ -628,5 +630,24 @@
       "universal_convergence_not_assumed_or_faked": true
     },
     "interpretation": "Stage 2 is a formal-specification completion gate, not a proof of the Leading-Digit Hailstone Conjecture."
+  },
+  "stage_3_preparation": {
+    "status": "PALOMAR_PACKAGE_READY_FOR_PREFLIGHT",
+    "selected_theorem": "LeadingDigitHailstonePalomar.valuationBurstFamily",
+    "theorem_scope": "For every k>=0, n=2*10^k-1 has decimal-sector bounds for leading digit 1, odd numerator 6*10^k=3*2^(k+1)*5^k, exact divisibility by 2^(k+1) but not 2^(k+2), and accelerated quotient 3*5^k.",
+    "palomar_policy_commit": "792c7c0b9e798bd02719e795ef11fa2b5929e067",
+    "palomar_submission_commit": "a59f25bd8a66bf6faf3a4f4260d412989c0185ea",
+    "palomar_template_commit": "cb5c79b69a740d2dc299071fc35994627050d77a",
+    "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+    "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+    "comparator_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "official_full_preflight": "PENDING",
+    "registration": "NOT_PERFORMED_OWNER_ACTION",
+    "convergence": "CONJECTURE_UNPROVED",
+    "novelty": "UNRESOLVED_DO_NOT_CLAIM"
   }
 }
