@@ -22,7 +22,7 @@ Current parallel attack lines:
 
 The theorem that arbitrarily long initial exact-v2=1 runs exist permanently rules out arguments that assume a uniform bound on weak-division streaks.
 
-Current highest-value target: strengthen positive-cycle constraints far beyond the 5,000,000 minimum-element exclusion, preferably by coupling exact cycle identities to rigorous finite word/parameter exclusion.
+Current highest-value target: **Issue #10 — exclude or sharply constrain structured one-minimum accelerated cycles**, coupling the new cycle product window and q>=971 bound to rise/fall valuation blocks and rigorous decimal digit-word consistency.
 
 ## Stage 2 — Lean formalisation — ACTIVE ALONGSIDE STAGE 1
 
