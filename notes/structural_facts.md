@@ -90,7 +90,7 @@ Unless explicitly labelled otherwise, statements in the proved sections are **EL
 
    Because this bound is <2 at M>=5,000,001, the possible R is ceil(q log_2 3). If R_u/q_u is an exact upper approximation to log_2 3, R_l/q_l is an exact lower approximation, and R_u q_l-R_l q_u=1, then the Farey denominator theorem shows that no closer upper slope occurs before denominator q_u+q_l. For q>=q_u this also makes the upper absolute error R-q log_2 3 at least the error of R_u/q_u, so the same product-derived M_max applies throughout that whole denominator block.
 
-   Combining this transfer with the exact symbolic decimal-sector/2-adic rise checker excludes every structured period q<=64,497,106 under the 5M premise. Hence any remaining structured cycle has q>=64,497,107 and at least 26,768,717 consecutive exact-r=1 rise steps. The new symbolic range M<=3,112,972,388 dies at rise depth 31. This is a bounded structured-class consequence, not a global cycle exclusion. See notes/one_minimum_cycles.md.
+   Combining this transfer with the exact symbolic decimal-sector/2-adic rise checker now excludes every structured period q<=118,212,939 under the 5M premise. The first denominator beyond the preceding certificate, q=64,497,107, is the next exact upper record with R=102,225,496 and M_max=4,350,616,725; the complete range still dies at rise depth 31. Hence any remaining structured cycle has q>=118,212,940 and at least 49,062,802 consecutive exact-r=1 rise steps. This is a bounded structured-class consequence, not a global cycle exclusion. See notes/one_minimum_cycles.md.
 
 
 ## Heuristic direction, not theorem

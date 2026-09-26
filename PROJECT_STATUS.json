@@ -1,5 +1,5 @@
 {
-  "schema_version": 7,
+  "schema_version": 8,
   "project_title": "Leading-Digit Hailstone Dynamics",
   "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
   "frozen_object": {
@@ -38,7 +38,7 @@
     "1_independent_reproduction": "COMPLETE_WITH_ORIGINAL_RANDOM_SAMPLE_NON_REPLAYABLE",
     "2_dynamical_census": "EXHAUSTIVE_TO_5000000_PLUS_TARGETED_ADVERSARIAL_TESTS",
     "3_structural_decomposition": "MULTIPLE_ELEMENTARY_RESULTS_INCLUDING_ARBITRARILY_LONG_V2_ONE_RUNS",
-    "4_cycle_search": "GENERAL_Q_GE_971; ONE_RISE_ONE_FALL_EXCLUDED_THROUGH_Q_64497106_UNDER_5M_PREMISE",
+    "4_cycle_search": "GENERAL_Q_GE_971; ONE_RISE_ONE_FALL_EXCLUDED_THROUGH_Q_118212939_UNDER_5M_PREMISE",
     "5_prior_art_audit": "DEEPENED_NO_EXACT_OR_EQUIVALENT_MATCH_IDENTIFIED_NOVELTY_UNRESOLVED",
     "6_nearby_rule_comparison": "COMPLETE_SMALL_PRINCIPLED_NEIGHBOURHOOD_PLUS_1M_SURVIVOR_EXTENSION",
     "7_lean_specification": "COMPLETE_COMPACT_SPECIFICATION_CI_VERIFIED",
@@ -177,10 +177,10 @@
       "interpretation": "These examples do not exhibit one-step giant compensation; recovery is distributed across a longer block.",
       "claim_type": "FINITE_COMPUTATION"
     },
-    "proof_direction_update": "The one-rise/one-fall line strengthened again: Farey-neighbour control turns isolated powers-of-two/powers-of-three survivors into record blocks. Existing and one new symbolic M-range certificate now exclude the structured class through q=64,497,106. The next target is the first denominator not covered by the current record transfer, not a larger linear scan.",
+    "proof_direction_update": "The one-rise/one-fall line strengthened again: the first denominator beyond PR #12 is itself the next exact upper Farey record. Its larger theorem-derived M range still dies at rise depth 31, extending the structured exclusion through q=118,212,939. The main bottleneck is now theorem-level control of symbolic rise extinction as a function of M_max, not generation of another finite record.",
     "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses powers-of-2/powers-of-3 Diophantine approximation; no novelty claim is made for this strategy.",
     "structured_cycle_consequence": {
-      "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q >= 64,497,107 and at least 26,768,717 consecutive r=1 rise steps.",
+      "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q >= 118,212,940 and at least 49,062,802 consecutive r=1 rise steps.",
       "theorem_level_basis": [
         "one-rise/one-fall valuation word is equivalent above 19 to exactly one strict local minimum and one strict local maximum",
         "period-independent product envelope 1 < 2^R/3^q <= M(M-19)/(M^2-57M+361)",
@@ -213,9 +213,17 @@
             "covered_q_end": 64497106,
             "maximum_minimum_state": 3112972388,
             "first_impossible_rise_length": 31
+          },
+          {
+            "upper_q": 64497107,
+            "lower_q": 53715833,
+            "covered_q_start": 64497107,
+            "covered_q_end": 118212939,
+            "maximum_minimum_state": 4350616725,
+            "first_impossible_rise_length": 31
           }
         ],
-        "first_q_not_covered_by_current_farey_transfer": 64497107,
+        "first_q_not_covered_by_current_farey_transfer": 118212940,
         "new_terminal_rise_representatives": [
           1229721173,
           1380119257,
@@ -226,16 +234,38 @@
           3,
           2
         ],
-        "method": "exact power-side comparisons and Farey determinants; theorem-derived M_max; exact symbolic decimal-sector interval splitting plus exact 2-adic lifting"
+        "method": "exact power-side comparisons and Farey determinants; theorem-derived M_max; exact symbolic decimal-sector interval splitting plus exact 2-adic lifting",
+        "latest_record_symbolic_profile": {
+          "upper_q": 64497107,
+          "upper_R": 102225496,
+          "maximum_minimum_state": 4350616725,
+          "peak_cell_count": 276,
+          "peak_depths": [
+            16,
+            17
+          ],
+          "first_impossible_rise_length": 31,
+          "newly_added_interval_first_impossible_rise_length": 29,
+          "depth_30_representatives": [
+            1229721173,
+            1380119257,
+            1637781257
+          ],
+          "valuation_on_step_31": [
+            5,
+            3,
+            2
+          ]
+        }
       },
       "claim_type": "THEOREM_PLUS_FINITE_EXACT_ARITHMETIC_AND_SYMBOLIC_CERTIFICATE",
-      "caveat": "This excludes only the one-rise/one-fall structured class through the stated period bound; arbitrary cycles retain the separate general q>=971 consequence."
+      "caveat": "This excludes only the one-rise/one-fall structured class through the stated period bound under the 5M premise; arbitrary cycles retain the separate general q>=971 consequence."
     }
   },
   "current_lean_status": "ODD_AFFINE_NUMERATOR_DIRECTION_INEQUALITIES_CI_VERIFIED_GREEN",
   "immediate_stage_1_targets": [
-    "Issue #10: analyze the first denominator not covered by the current Farey transfer, q=64,497,107",
-    "seek a record-to-record theorem relating product-derived M_max growth to symbolic rise extinction, without claiming a uniform global weak-run bound",
+    "Issue #10: prove an explicit finite-range upper bound on exact-v2=1 rise length in [1,M_max], ideally O(log M_max), or isolate the obstruction",
+    "continue the Farey record chain only as needed to test or instantiate that symbolic theorem",
     "formalise leading-digit bounds and accelerated odd dynamics in Lean",
     "continue prior-art equivalence search without novelty claims"
   ],
@@ -243,13 +273,13 @@
   "current_ci_status": {
     "python": "GREEN",
     "lean": "GREEN",
-    "verified_on_research_branch": "research/farey-structured-extension",
-    "verified_commit": "edcd53a6d09d2469b24b95372690bf357012584a",
-    "verification_note": "Python and Lean PR #12 workflows passed for the Farey structured-cycle extension. This status-only synchronization commit follows that verified research head."
+    "verified_on_research_branch": "research/farey-next-record",
+    "verified_commit": "3d4ef526559573aed406201a8f91fbce434f13c0",
+    "verification_note": "Python and Lean PR #14 workflows passed on the complete next-record research head. This status-only synchronization commit follows that verified head."
   },
   "highest_value_next_target": {
     "issue": 10,
-    "title": "Analyze the next Farey approximation record",
-    "reason": "The Farey-neighbour transfer now excludes every one-rise/one-fall period through q=64,497,106. The next high-value question is whether the same record-to-record mechanism can be iterated with a mathematical bound on symbolic extinction as M_max grows, beginning at q=64,497,107."
+    "title": "Bound finite-range symbolic rise length",
+    "reason": "Three Farey transfer blocks now exclude one-rise/one-fall periods through q=118,212,939, while the latest enlarged M range still dies after 31 rises. A theorem bounding realizable rise length in terms of M_max is the missing step toward an asymptotic structured-cycle exclusion."
   }
 }

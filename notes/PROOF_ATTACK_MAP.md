@@ -119,16 +119,17 @@ For the narrower one-rise/one-fall class of Issue #10, geometric state bounds on
 
 The original exact product-window scan through q=400,000 left six periods, all removed by symbolic decimal-sector / 2-adic rise coverage. The next increment replaces further linear scanning by a Farey-neighbour transfer lemma for alpha=log_2(3): an exact upper approximation R_u/q_u and an exact lower Farey neighbour R_l/q_l certify that no better upper absolute error can occur for q_u<=q<q_u+q_l.
 
-Two exact blocks now close:
+Three exact blocks now close:
 
 - the q=190,537 upper record, paired with 16,785,921/10,590,737 below alpha, transfers its M_max=589,078,792 and 29-rise symbolic extinction through q=10,781,273;
-- the next upper record 17,087,915/10,781,274 has M_max=3,112,972,388 and symbolic extinction at 31 rises; paired with 85,137,581/53,715,833 below alpha, it transfers through q=64,497,106.
+- the upper record 17,087,915/10,781,274 has M_max=3,112,972,388 and symbolic extinction at 31 rises; paired with 85,137,581/53,715,833 below alpha, it transfers through q=64,497,106;
+- the first previously uncovered denominator q=64,497,107 is the mediant 102,225,496/64,497,107, is exactly above alpha, has M_max=4,350,616,725, and the complete symbolic range still dies at rise 31. With the same lower neighbour it transfers through q=118,212,939.
 
-Therefore any remaining structured cycle has q>=64,497,107 and at least 26,768,717 consecutive r=1 rises. This is still a bounded structured-class result, not a global cycle exclusion.
+Therefore any remaining structured cycle has q>=118,212,940 and at least 49,062,802 consecutive r=1 rises. This is still a bounded structured-class result, not a global cycle exclusion.
 
-The symbolic mechanism is now clearer: in the new M range the exact cell count peaks at 263, then contracts to three residue-compatible seeds after 30 rises; their next valuations are 5, 3, and 2. The finite-range obstruction is a decimal-sector narrowing plus binary-modulus squeeze, not a uniform prohibition on long weak runs.
+The symbolic mechanism strengthened rather than weakened on the enlarged range: the exact cell count peaks at 276 at depths 16-17, contracts to the same three residue-compatible seeds after 30 rises, and dies at rise 31. The newly added interval 3,112,972,389<=M<=4,350,616,725 is already empty after 29 rises. The finite-range obstruction remains decimal-sector narrowing plus binary-modulus squeeze, not a uniform prohibition on long weak runs.
 
-The next precise target is the first period not covered by the current Farey transfer, q=64,497,107: determine whether the record-to-record transfer can be iterated with a theorem controlling symbolic extinction as M_max grows, or identify the first record where that mechanism genuinely fails.
+The next precise target is theorem-level: prove an explicit upper bound on realizable exact-r=1 rise length inside [1,M_max], ideally O(log M_max), or identify why such a bound fails. This is the missing step needed to turn the record-to-record Farey certificates into a genuine asymptotic exclusion framework.
 
 ### What would weaken/falsify this approach
 

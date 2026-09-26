@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "claim_type": "THEOREM_PLUS_FINITE_EXACT_ARITHMETIC_AND_SYMBOLIC_CERTIFICATE",
+  "premise": "one-rise/one-fall accelerated cycle entirely above 19 with minimum odd state >= 5000001",
+  "premise_source": "structured product envelope plus exhaustive seed census through 5000000",
+  "previous_upper": {
+    "q": 10781274,
+    "R": 17087915
+  },
+  "lower_neighbour": {
+    "q": 53715833,
+    "R": 85137581,
+    "power_relation": "2^R < 3^q"
+  },
+  "next_upper_record": {
+    "q": 64497107,
+    "R": 102225496,
+    "power_relation": "2^R > 3^q",
+    "is_mediant_of_previous_upper_and_lower": true,
+    "determinant_with_lower_neighbour": 1,
+    "required_minimum_rise": 26768718,
+    "maximum_minimum_state": 4350616725,
+    "first_impossible_rise_length": 31
+  },
+  "symbolic_range": {
+    "minimum": 5000001,
+    "maximum": 4350616725,
+    "first_impossible_rise_length": 31,
+    "cell_counts_by_rise_depth": [
+      27, 47, 61, 79, 97, 115, 132, 149, 167, 185, 203, 220, 238,
+      256, 270, 276, 276, 271, 259, 233, 194, 151, 124, 87, 50, 32,
+      20, 13, 6, 3, 0
+    ],
+    "peak_cell_count": 276,
+    "peak_depths": [16, 17],
+    "depth_30_unique_representatives": [
+      1229721173,
+      1380119257,
+      1637781257
+    ],
+    "valuation_on_step_31": [5, 3, 2],
+    "newly_added_interval": {
+      "minimum": 3112972389,
+      "maximum": 4350616725,
+      "first_impossible_rise_length": 29
+    }
+  },
+  "farey_transfer_block": {
+    "covered_q_start": 64497107,
+    "covered_q_end": 118212939,
+    "next_possible_better_upper_denominator": 118212940
+  },
+  "structured_q_excluded_through": 118212939,
+  "first_q_not_covered_by_farey_transfer": 118212940,
+  "certified_minimum_rise_length_for_any_remaining_structured_cycle": 49062802,
+  "rise_bound_note": "At q=118212940 the next mediant numerator is 187363077. From the exact signs of the current upper and lower neighbours, its absolute error is between -1 and 1, hence ceil(q log_2 3) <= 187363078. Monotonicity of 2q-ceil(q log_2 3) gives a >= 49062802 for every remaining q.",
+  "mechanism_note": "Expanding M_max from 3112972388 to 4350616725 introduces no new depth-30 representatives: the added interval is already empty after 29 rises. The full enlarged range still has the same three depth-30 representatives and becomes empty at rise 31.",
+  "interpretation": "The first previously uncovered denominator is itself the next exact upper Farey record. Its theorem-derived minimum range is eliminated by the same finite-range decimal-sector/binary-lift squeeze, extending the one-rise/one-fall exclusion through q=118212939 under the 5M premise. This is not a global structured-cycle exclusion and does not change the arbitrary-cycle q>=971 bound."
+}
