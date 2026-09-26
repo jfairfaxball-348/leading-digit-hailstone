@@ -30,7 +30,7 @@ theorem cycleSucc_bijective (q : ℕ) (hq : 0 < q) :
     simp +decide [Nat.mod_eq_of_lt]
 
 /-- Cyclic successor packaged as an equivalence for product reindexing. -/
-def cycleSuccEquiv {q : ℕ} (hq : 0 < q) : Equiv.Perm (Fin q) :=
+noncomputable def cycleSuccEquiv {q : ℕ} (hq : 0 < q) : Equiv.Perm (Fin q) :=
   Equiv.ofBijective (fun i : Fin q => cycleSucc hq i) (cycleSucc_bijective q hq)
 
 /-- A finite accelerated affine cycle with corrections in the decimal
