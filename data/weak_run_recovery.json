@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "claim_type": "FINITE_COMPUTATION",
+  "purpose": "Test whether explicit long v2=1 runs are immediately erased by a single compensating high-valuation accelerated step.",
+  "source": "data/constructed_low_v2_runs.json",
+  "accelerated_step_cap": 10000,
+  "examples": [
+    {
+      "initial_v2_one_run_length": 32,
+      "first_non_one_valuation": 2,
+      "one_step_compensation_threshold": 21,
+      "accelerated_steps_to_first_below_seed": 51,
+      "peak": "2548191810586998682992998510599136352539062500000000263444843462577",
+      "peak_decimal_digits": 67,
+      "first_below_seed_state": "1039204770116681956761482788343912540167997965445678794939841",
+      "valuations_from_first_non_one": [2, 1, 1, 1, 3, 2, 2, 4, 9, 4, 4, 2],
+      "requested_run_length": 30,
+      "seed": "2333333333333333333333333333333333333333333333333333574565023",
+      "seed_decimal_digits": 61
+    },
+    {
+      "initial_v2_one_run_length": 50,
+      "first_non_one_valuation": 3,
+      "one_step_compensation_threshold": 31,
+      "accelerated_steps_to_first_below_seed": 128,
+      "peak": "148778350049944903610795154946799812023527920246124267578125000000000000000000000000000000000000204346284359524842036023",
+      "peak_decimal_digits": 120,
+      "first_below_seed_state": "106998644019268774592643428847250587182718367327386541333381205361387639166765828810948218006801910434338962359",
+      "valuations_from_first_non_one": [3, 1, 4, 1, 1, 2, 2, 1, 1, 1, 5, 1],
+      "requested_run_length": 50,
+      "seed": "233333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333653815444257951",
+      "seed_decimal_digits": 111
+    },
+    {
+      "initial_v2_one_run_length": 100,
+      "first_non_one_valuation": 2,
+      "one_step_compensation_threshold": 61,
+      "accelerated_steps_to_first_below_seed": 304,
+      "peak": "2772492785893528021557375901169204503681127217257562231019348614861115606721423169767060564776060973787749327004736876745027984725311398506164550781250000000000000000000000000000000000000000000000000001065521278927112991779095471774865613999136052337",
+      "peak_decimal_digits": 250,
+      "first_below_seed_state": "207195495769945311424411223147343165870639700112176746833307362215471953477178624360662412256985946121972606135366593232343332469846863364729883184001851687994364488954233764882588017400895772923131628296391200279991820954627719603",
+      "valuations_from_first_non_one": [2, 1, 3, 1, 1, 1, 1, 1, 1, 2, 1, 1],
+      "requested_run_length": 100,
+      "seed": "233333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333423007735017856781916545891487",
+      "seed_decimal_digits": 231
+    }
+  ],
+  "interpretation": "The tested long weak runs are not followed by one-step compensation; recovery below the starting seed is distributed over many accelerated steps."
+}
