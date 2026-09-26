@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "leading-digit-hailstone"
 version = "0.1.0"
-description = "Controlled pilot for a leading-digit-dependent integer dynamical system"
+description = "Research programme for a leading-digit-dependent integer dynamical system"
 requires-python = ">=3.11"
 
 [tool.setuptools.packages.find]
