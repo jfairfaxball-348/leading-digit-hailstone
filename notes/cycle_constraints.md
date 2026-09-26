@@ -195,3 +195,11 @@ The product window is useful because it restricts (q,R) before digit-word enumer
 - The direction lemma and minimum anchor are **ELEMENTARY FACTS**.
 - The 971 statement depends on the 5M census plus a finite exact arithmetic certificate.
 - No statement here excludes all competing positive cycles.
+
+
+## Bounded-range residue locking
+
+For a fixed exact-(r=1) rise digit word, the unique start residues satisfy a one-bit lift law
+(ho_{s+1}=ho_s+b_s2^{s+1}). Thus the lift choices are the binary digits of the required start. If starts are restricted to (Mle U) and (B=lfloorlog_2Ufloor), then (2^{B+1}>U) forces (M=ho_B) for any start surviving (B) rises, and all later compatible lift bits are zero.
+
+This gives deterministic residue-position control after the bit-length threshold, but no uniform bound on the ensuing zero-lift tail is known. It therefore does not change the arbitrary-cycle lower bound (qge971) or globally exclude the one-rise/one-fall class. See `notes/residue_position_locking.md`.
