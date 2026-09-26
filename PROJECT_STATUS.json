@@ -547,10 +547,11 @@
   "immediate_stage_1_targets": [],
   "synchronized_date": "2026-09-26",
   "current_ci_status": {
-    "python": "PENDING_ON_CURRENT_RESEARCH_HEAD",
-    "lean": "PENDING_ON_CURRENT_RESEARCH_HEAD",
-    "verified_previous_main_commit": "ac7d0eb1ebdc2ef51f31d01e3e6debc2371acd7e",
-    "verification_note": "The final Stage-1 red-team branch has not yet completed its final GitHub Actions verification. Status is updated again only after the current head is green."
+    "python": "GREEN",
+    "lean": "GREEN",
+    "verified_on_research_branch": "research/phase-residue-termination-certificate",
+    "verified_commit": "3e74d84e482e54bc68d5ff68f19d50755bb91f6a",
+    "verification_note": "Python/tests and Lean workflows passed on the complete Stage-1 red-team code/certificate head 3e74d84e482e54bc68d5ff68f19d50755bb91f6a. Subsequent commits only polish closeout documentation and synchronize this status; the final PR head is rechecked before merge."
   },
   "highest_value_next_target": {
     "stage": 2,
