@@ -60,6 +60,30 @@ Unless explicitly labelled otherwise, statements in the proved sections are **EL
 
     Consequently there is no uniform finite bound on consecutive growth-favouring v2=1 accelerated steps. This is an elementary existence fact, not a divergence result.
 
+## Additional accelerated block facts
+
+16. **Direction above 19 is determined by the exact valuation.** For odd x>19, write the accelerated successor as x'=(3x+c)/2^r with c=2L(x)+1<=19. If r=1 then x'>x. If r>=2 then x'<x. Therefore every large accelerated-cycle minimum leaves with r=1 and is entered with r>=2.
+
+17. **Exact multiplicative cycle identity.** For an accelerated odd cycle x_0,...,x_(q-1),
+
+   2^R/3^q = product_i (1+c_i/(3x_i)).
+
+   Hence if M=min_i x_i,
+
+   1 < 2^R/3^q <= (1+19/(3M))^q.
+
+   This is the map-specific cycle window used in notes/cycle_constraints.md. The general powers-of-2/powers-of-3 approximation strategy has classical Collatz-cycle prior art.
+
+18. **Weak-run growth and one-step compensation.** If s consecutive accelerated steps have exact valuation 1, then
+
+   2^s x_s = 3^s x_0 + sum_(j=0)^(s-1) 3^(s-1-j)c_j 2^j,
+
+   and therefore x_s>(3/2)^s x_0. If the next accelerated step has valuation r and already returns to x_(s+1)<=x_0, then necessarily
+
+   2^(r+s)>3^(s+1).
+
+   Thus arbitrarily long weak runs cannot in general be neutralized by a valuation bound independent of the run length. See notes/weak_run_compensation.md.
+
 ## Heuristic direction, not theorem
 
 The exact interval-density result in item 5 gives the same geometric valuation profile as the usual accelerated Collatz heuristic. If actual large odd trajectory states behaved as though they sampled these classes without strong bias, then `E[v2]≈2` and the dominant multiplicative log drift would be `log 3 - 2 log 2 = log(3/4) < 0`, with additive correction `(2L(n)+1)/n` small at large `n`.
