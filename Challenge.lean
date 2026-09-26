@@ -1,4 +1,4 @@
-import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic
 
 /-!
 # Leading-Digit Hailstone valuation-burst family
