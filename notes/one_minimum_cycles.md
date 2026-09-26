@@ -603,12 +603,30 @@ For fixed L,U, the number of relevant decimal boundaries at each depth is bounde
 
 is constant. Hence J_s(L,U)=O(s), and (19) gives a linear, rather than exponential, finite-range word-complexity bound.
 
-For any one fixed decimal-sector word, the exact r=1 conditions determine one residue class modulo 2^(s+1). Consequently the number of starts in [L,U] realizing s exact rises is bounded by
+For any one fixed decimal-sector word d_0,...,d_(s-1), let A_s be the rise-word additive term from (1). The s exact-r=1 parity conditions collapse to the single terminal congruence
+
+3^s M + A_s
+==
+2^s
+(mod 2^(s+1)).                                            (20)
+
+Indeed, writing Y_i=3^i M+A_i, the recurrence gives
+
+Y_(i+1)=3Y_i+(2d_i+1)2^i.
+
+If Y_(i+1)==2^(i+1) (mod 2^(i+2)), then the oddness of 2d_i+1 forces Y_i==2^i (mod 2^(i+1)); backward induction recovers every earlier exact-r=1 condition. Conversely an exact rise word plainly gives (20). Since 3 is invertible modulo powers of two, the unique starting residue is explicitly
+
+M
+==
+3^(-s)(2^s-A_s)
+(mod 2^(s+1)).                                            (21)
+
+Consequently the number of starts in [L,U] realizing s exact rises is bounded by
 
 (20 J_s(L,U)+1)
 (
 floor((U-L)/2^(s+1))+1
-).                                                         (20)
+).                                                         (22)
 
 This is substantially stronger than treating all leading-digit words as independent branches.
 
