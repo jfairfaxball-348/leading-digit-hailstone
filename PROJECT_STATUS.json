@@ -419,7 +419,7 @@
       "limitation": "The finite maximum tail 6 through B=220 is not a universal bound. No explicit scale-aware F(B) or F(M) has been proved, and neither cycle frontier changes."
     }
   },
-  "current_lean_status": "POST_LOCK_CARRY_AND_VALUATION_IDENTITIES_CI_VERIFIED_GREEN",
+  "current_lean_status": "POST_LOCK_SCALE_GEOMETRY_ALGEBRAIC_CORES_CI_VERIFIED_GREEN",
   "immediate_stage_1_targets": [
     "Issue #10: prove a scale-aware parity/congruence obstruction for deterministic post-lock valuation-one tails once the decimal itinerary is frozen to the homogeneous (3/2)^t phase",
     "combine carry parity with exact homogeneous leading-digit words, mixed 2^m5^n congruences, or another unbounded scale coordinate",
@@ -430,9 +430,9 @@
   "current_ci_status": {
     "python": "GREEN",
     "lean": "GREEN",
-    "verified_on_research_branch": "research/post-lock-deterministic-tail",
-    "verified_commit": "cefc119473a2965e8842fe4e213075da4099ad70",
-    "verification_note": "Python/tests and Lean PR #16 workflows passed on the complete post-lock deterministic-tail research head. This status-only synchronization commit follows that verified code head; the final PR head is rechecked before merge."
+    "verified_on_research_branch": "research/post-lock-scale-geometry",
+    "verified_commit": "517a0f92d323d622e7d514e587d4ba2657bf07f0",
+    "verification_note": "Python/tests and Lean PR #17 workflows passed on the complete post-lock scale-geometry research head. This status-only synchronization commit follows that verified head; the final PR head is rechecked before merge."
   },
   "highest_value_next_target": {
     "issue": 10,
