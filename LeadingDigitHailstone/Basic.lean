@@ -64,6 +64,15 @@ theorem odd_maps_to_even (n : ℕ) (hodd : n % 2 = 1) : T n % 2 = 0 := by
   rw [T_of_odd n hodd]
   omega
 
+/-- Two values below the same positive modulus are equal once their residues
+modulo that modulus agree. This is the formal core used by bounded-range
+residue locking. -/
+theorem bounded_congruence_unique (a b modulus : ℕ)
+    (ha : a < modulus) (hb : b < modulus)
+    (hres : a % modulus = b % modulus) : a = b := by
+  rw [Nat.mod_eq_of_lt ha, Nat.mod_eq_of_lt hb] at hres
+  exact hres
+
 theorem cycle_1_to_6 : T 1 = 6 := by native_decide
 theorem cycle_6_to_3 : T 6 = 3 := by native_decide
 theorem cycle_3_to_16 : T 3 = 16 := by native_decide

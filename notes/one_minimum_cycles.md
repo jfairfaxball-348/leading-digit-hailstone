@@ -761,3 +761,26 @@ and
 a>=369,648,535,671.
 
 The Farey record mechanism and low finite-range word complexity now form a genuine asymptotic framework, but the result is still a sequence of finite certificates. The highest-value next target is a uniform residue-position or deterministic transition obstruction showing that the explicit word-dependent 2-adic representative eventually misses its decimal-consistency cell.
+
+
+## Residue-position locking update
+
+The fixed-word residue obstruction has been sharpened without extending the Farey record chain. If (ho_s) is the unique start residue modulo (2^{s+1}), appending one exact-(r=1) digit chooses a bit (b_sin{0,1}) with
+
+[
+ho_{s+1}=ho_s+b_s2^{s+1}.
+]
+
+Hence the (b_s) are exactly the binary digits of the required starting residue. For a bounded range (Mle U), put (B=lfloorlog_2 Ufloor). Since (2^{B+1}>U), any start surviving (B) rises must satisfy (M=ho_B), and every later compatible lift bit is zero.
+
+Combining this with the established boundary-localization theorem gives at most
+
+[
+180Bleft(leftlceillog_{10}rac{U+19}{L}ightceil+1ight)+1
+]
+
+possible starts in ([L,U]) at the lock depth. This is candidate compression, not a rise-extinction law. The remaining target is a uniform bound on the post-lock zero-lift tail.
+
+For the largest already processed range (5{,}000{,}001le Mle42{,}285{,}421{,}502{,}900), lock occurs at depth 45. Exact symbolic coverage leaves two starts at that depth, (26{,}501{,}219{,}601{,}103) and (39{,}751{,}829{,}401{,}657); their exact-(r=1) runs end at total depths 48 and 47. This is a finite diagnostic of the theorem and does not change the structured period bound.
+
+See `notes/residue_position_locking.md` and `data/residue_position_locking.json`.

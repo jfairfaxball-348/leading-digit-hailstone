@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "claim_type": "THEOREM_PLUS_FINITE_EXACT_SYMBOLIC_AND_DIRECT_DIAGNOSTIC",
+  "theorem_level_results": {
+    "lift_update": "For a prescribed rise word, if H_s=(3^s*rho_s+A_s-2^s)/2^(s+1), then the appended digit d_s selects the unique b_s in {0,1} satisfying b_s == 1+H_s+d_s (mod 2), and rho_(s+1)=rho_s+b_s*2^(s+1).",
+    "binary_digit_identity": "rho_s = 1 + sum_{j=0}^{s-1} b_j*2^(j+1); the lift bits are exactly the successive binary digits of the required starting residue above its forced odd least-significant bit.",
+    "normalized_update": "theta_s=rho_s/2^(s+1) satisfies theta_(s+1)=(theta_s+b_s)/2.",
+    "bounded_range_locking": "For 1<=M<=U, let B=floor(log_2 U), equivalently 2^(B+1)>U. If M realizes B prescribed exact-r=1 rises, then M=rho_B. Any further compatible extension must keep the same residue and therefore has lift bits b_B=b_(B+1)=...=0.",
+    "candidate_compression": "At B=floor(log_2 U), starts in [L,U] surviving B rises are at most 20*J_B(L,U)+1. Moreover J_s(L,U)<=9*s*(ceil(log_10((U+19)/L))+1), so the explicit lock-depth candidate bound is 180*B*(ceil(log_10((U+19)/L))+1)+1."
+  },
+  "processed_record_lock_bounds": [
+    {
+      "q": 64497107,
+      "maximum_minimum_state": 4350616725,
+      "first_impossible_rise_length": 31,
+      "lock_depth": 32,
+      "residue_modulus": 8589934592,
+      "boundary_count_upper_bound": 1152,
+      "candidate_start_upper_bound": 23041,
+      "extinction_depth_minus_lock_depth": -1
+    },
+    {
+      "q": 118212940,
+      "maximum_minimum_state": 7221856344,
+      "first_impossible_rise_length": 31,
+      "lock_depth": 32,
+      "residue_modulus": 8589934592,
+      "boundary_count_upper_bound": 1440,
+      "candidate_start_upper_bound": 28801,
+      "extinction_depth_minus_lock_depth": -1
+    },
+    {
+      "q": 171928773,
+      "maximum_minimum_state": 21238350355,
+      "first_impossible_rise_length": 35,
+      "lock_depth": 34,
+      "residue_modulus": 34359738368,
+      "boundary_count_upper_bound": 1530,
+      "candidate_start_upper_bound": 30601,
+      "extinction_depth_minus_lock_depth": 1
+    },
+    {
+      "q": 397573379,
+      "maximum_minimum_state": 359020668782,
+      "first_impossible_rise_length": 38,
+      "lock_depth": 38,
+      "residue_modulus": 549755813888,
+      "boundary_count_upper_bound": 2052,
+      "candidate_start_upper_bound": 41041,
+      "extinction_depth_minus_lock_depth": 0
+    },
+    {
+      "q": 6586818670,
+      "maximum_minimum_state": 3753781445604,
+      "first_impossible_rise_length": 41,
+      "lock_depth": 41,
+      "residue_modulus": 4398046511104,
+      "boundary_count_upper_bound": 2583,
+      "candidate_start_upper_bound": 51661,
+      "extinction_depth_minus_lock_depth": 0
+    },
+    {
+      "q": 72057431991,
+      "maximum_minimum_state": 6895437822163,
+      "first_impossible_rise_length": 41,
+      "lock_depth": 42,
+      "residue_modulus": 8796093022208,
+      "boundary_count_upper_bound": 3024,
+      "candidate_start_upper_bound": 60481,
+      "extinction_depth_minus_lock_depth": -1
+    },
+    {
+      "q": 137528045312,
+      "maximum_minimum_state": 42285421502900,
+      "first_impossible_rise_length": 49,
+      "lock_depth": 45,
+      "residue_modulus": 70368744177664,
+      "boundary_count_upper_bound": 3240,
+      "candidate_start_upper_bound": 64801,
+      "extinction_depth_minus_lock_depth": 4
+    }
+  ],
+  "finite_exact_diagnostics": {
+    "midrange_lock_candidates": [
+      {
+        "start": 16670166793,
+        "lock_depth": 34,
+        "digit_word_at_lock": "1235811246912347112358112469123471",
+        "total_exact_r1_rises": 34,
+        "post_lock_zero_lift_tail": 0,
+        "next_valuation": 2
+      }
+    ],
+    "largest_processed_range_lock_candidates": [
+      {
+        "start": 26501219601103,
+        "lock_depth": 45,
+        "digit_word_at_lock": "235812346112357112358112461123571123581124691",
+        "total_exact_r1_rises": 48,
+        "post_lock_zero_lift_tail": 3,
+        "next_valuation": 2
+      },
+      {
+        "start": 39751829401657,
+        "lock_depth": 45,
+        "digit_word_at_lock": "358123461123571123581124611235711235811246912",
+        "total_exact_r1_rises": 47,
+        "post_lock_zero_lift_tail": 2,
+        "next_valuation": 2
+      }
+    ],
+    "largest_terminal_word": "235812346112357112358112461123571123581124691235",
+    "largest_terminal_residue": 26501219601103,
+    "largest_terminal_lift_bits_low_to_high": "111001101010011111000111101001001011000000110000"
+  },
+  "interpretation": "The residue-position problem is now rigid after the bit-length threshold: modular lift ambiguity disappears and only zero-lift tails remain. This is a genuine deterministic residue-position theorem and gives polylogarithmic candidate compression for fixed lower endpoint, but it does not bound the possible zero-lift tail length. Therefore it does not prove an explicit global finite-range rise bound, does not globally exclude one-rise/one-fall cycles, and does not alter the arbitrary-cycle q>=971 bound."
+}
