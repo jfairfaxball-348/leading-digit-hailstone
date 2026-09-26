@@ -251,3 +251,17 @@ Trajectory states are not known to sample residue classes independently or equid
 Computation should now be attached to a specific lemma, obstruction, or bounded exclusion. Larger undirected sweeps are lower value than exact certificates that close a mathematically stated case.
 
 The central conjecture remains the right working statement only so long as falsification attempts do not produce a competing cycle, escaping orbit, or structural reason to weaken it.
+
+## Phase-frozen boundary separation
+
+The post-lock width-19 corridor now has an exact recurrence-spacing theorem. For a lock state `X>38`, two distinct scaled decimal-boundary hits `n` steps apart imply
+
+`X <= 171*3^n`.
+
+Equal scaled hits can recur only in the exact short chains `2->3` and `4->6->9`. Thus exceptional decimal ambiguity is separated on a logarithmic scale in `X`.
+
+Between those exceptional hits, the digit word is forced by the homogeneous rational orbit `(3/2)^tX`. The full exact-r=1 prefix then collapses to the already proved terminal 2-adic residue condition for that one word.
+
+The current candidate certificates terminate at forced words `2357`, `357`, and `1124691`, giving tails 3, 2, and 6. The noncoincident ambiguity thresholds for their lock states are 41, 41, and 61 steps.
+
+The remaining theorem target is no longer decimal phase localization itself. It is a scale-aware bound on how long a **phase-frozen homogeneous digit word** can keep matching the required 2-adic residue prefixes.
