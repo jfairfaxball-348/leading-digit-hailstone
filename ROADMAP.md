@@ -22,7 +22,7 @@ Current parallel attack lines:
 
 The theorem that arbitrarily long initial exact-v2=1 runs exist permanently rules out arguments that assume a uniform bound on weak-division streaks.
 
-Current highest-value target: **Issue #10 — analyze the next Farey record at q=64,497,107**. The structured product envelope, an exact Farey-neighbour transfer for powers-of-two / powers-of-three approximations, and exact decimal-sector/2-adic symbolic coverage now eliminate every one-rise/one-fall period through q=64,497,106 under the 5M minimum premise. The next step is not another linear period scan: determine whether the record-to-record transfer can be iterated with a theorem controlling symbolic extinction as the product-derived M_max grows, or identify the first record where that finite-range modulus squeeze fails.
+Current highest-value target: **Issue #10 — control sparse terminal residue positions**. Exact Stern-Brocot/Farey iteration and finite symbolic certificates now exclude the one-rise/one-fall class through q=890,638,885,192 under the 5M premise. The record-to-record Diophantine mechanism itself scales cleanly, and a normalized weak-run strip theorem proves linear symbolic-cell growth in the rise depth on every fixed finite M range. The remaining high-value question is whether the isolated residue representatives that remain after the binary modulus dominates the M interval can be ruled out uniformly; extending the finite record chain again is secondary.
 
 ## Stage 2 — Lean formalisation — ACTIVE ALONGSIDE STAGE 1
 
