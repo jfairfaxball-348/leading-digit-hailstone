@@ -31,9 +31,9 @@
     "3_structural_decomposition": "STARTED_MULTIPLE_ELEMENTARY_RESULTS",
     "4_cycle_search": "STARTED_CYCLE_EQUATION_AND_MINIMUM_ELEMENT_EXCLUSION_TO_5000000",
     "5_prior_art_audit": "STARTED_BROAD_INITIAL_EQUIVALENCE_AUDIT",
-    "6_pilot_decision": "NOT_STARTED"
+    "6_pilot_decision": "COMPLETE_CONTINUE_STRUCTURAL"
   },
-  "pilot_gate": null,
+  "pilot_gate": "CONTINUE_STRUCTURAL",
   "allowed_gate_values": [
     "STOP_TRIVIAL",
     "STOP_PRIOR_ART",
@@ -64,5 +64,14 @@
     },
     "evidence_type": "FINITE_COMPUTATION"
   },
-  "prior_art_status": "INITIAL_AUDIT_ONLY; CYCLE_HAS_5X_PLUS_1_PRIOR_ART; FULL_MAP_NOVELTY_UNRESOLVED"
+  "prior_art_status": "INITIAL_AUDIT_ONLY; CYCLE_HAS_5X_PLUS_1_PRIOR_ART; FULL_MAP_NOVELTY_UNRESOLVED",
+  "pilot_gate_date": "2026-09-26",
+  "pilot_gate_basis": [
+    "Exact finite convergence census through 5000000 with no competing cycle observed.",
+    "Incoming named computational records independently reproduced; original random sample explicitly non-replayable and replaced only by a separate deterministic experiment.",
+    "Elementary structure includes exact 2-adic residue classes, decimal-boundary jumps, inverse-image constraints, and accelerated cycle equations.",
+    "Distinguished cycle has direct 5x+1 prior art; full frozen map not identified as an exact prior-art match in the initial equivalence audit.",
+    "Frozen map is not a finite-modulus residue-class-wise affine map, so it does not collapse into that standard generalized-Collatz class.",
+    "Evidence is insufficient for CONTINUE_PROOF_TARGET; novelty remains unresolved."
+  ]
 }
