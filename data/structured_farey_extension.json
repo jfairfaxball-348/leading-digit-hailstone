@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "claim_type": "THEOREM_PLUS_FINITE_EXACT_ARITHMETIC_AND_SYMBOLIC_CERTIFICATE",
+  "premise": "one-rise/one-fall accelerated cycle entirely above 19 with minimum odd state >= 5000001",
+  "premise_source": "structured product envelope plus exhaustive seed census through 5000000",
+  "transfer_lemma": "If R_u/q_u > log_2(3) > R_l/q_l are Farey neighbours and q_u <= q < q_u+q_l, then every upper approximation R/q has R-q log_2(3) >= R_u-q_u log_2(3).",
+  "preexisting_structured_q_excluded_through": 400000,
+  "farey_blocks": [
+    {
+      "upper": {
+        "q": 190537,
+        "R": 301994,
+        "power_relation": "2^R > 3^q",
+        "maximum_minimum_state": 589078792,
+        "first_impossible_rise_length": 29
+      },
+      "lower": {
+        "q": 10590737,
+        "R": 16785921,
+        "power_relation": "2^R < 3^q"
+      },
+      "determinant": 1,
+      "covered_q_start": 400001,
+      "covered_q_end": 10781273,
+      "next_possible_better_upper_denominator": 10781274,
+      "required_rise_lower_bound_at_block_start": 166015
+    },
+    {
+      "upper": {
+        "q": 10781274,
+        "R": 17087915,
+        "power_relation": "2^R > 3^q",
+        "maximum_minimum_state": 3112972388,
+        "first_impossible_rise_length": 31
+      },
+      "lower": {
+        "q": 53715833,
+        "R": 85137581,
+        "power_relation": "2^R < 3^q"
+      },
+      "determinant": 1,
+      "covered_q_start": 10781274,
+      "covered_q_end": 64497106,
+      "next_possible_better_upper_denominator": 64497107,
+      "required_rise_lower_bound_at_block_start": 4474633
+    }
+  ],
+  "new_record_upper_is_mediant_of_first_pair": true,
+  "new_record_upper": {
+    "q": 10781274,
+    "R": 17087915
+  },
+  "new_symbolic_range": {
+    "minimum": 5000001,
+    "maximum": 3112972388,
+    "first_impossible_rise_length": 31,
+    "cell_counts_by_rise_depth": [
+      26,
+      45,
+      58,
+      76,
+      93,
+      111,
+      127,
+      143,
+      159,
+      177,
+      194,
+      211,
+      228,
+      244,
+      257,
+      263,
+      263,
+      257,
+      244,
+      216,
+      177,
+      132,
+      107,
+      72,
+      38,
+      26,
+      15,
+      11,
+      6,
+      3,
+      0
+    ],
+    "depth_30_unique_representatives": [
+      1229721173,
+      1380119257,
+      1637781257
+    ],
+    "valuation_on_step_31": [
+      5,
+      3,
+      2
+    ]
+  },
+  "structured_q_excluded_through": 64497106,
+  "first_q_not_covered_by_farey_transfer": 64497107,
+  "certified_minimum_rise_length_for_any_remaining_structured_cycle": 26768717,
+  "rise_bound_note": "At q=64497107 the mediant numerator 102225496 is within one of q*log_2(3), so ceil(q log_2(3)) <= 102225497; monotonicity of 2q-bit_length(3^q) then gives a >= 26768717 for every remaining q.",
+  "interpretation": "The Farey-neighbour transfer eliminates whole period blocks without scanning each q. Any different positive one-rise/one-fall accelerated cycle consistent with the 5M minimum-element exclusion must have q >= 64497107 and at least 26768717 consecutive r=1 rise steps. This remains a structured-class result, not a global cycle exclusion."
+}
