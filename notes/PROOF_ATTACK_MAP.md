@@ -140,7 +140,7 @@ A purely range-independent finite acyclic transition graph also cannot finish th
 
 A second false route is now explicit. The start 43,574,304,770,317,398,119 has bit-length lock depth 65 and 71 initial exact-r=1 rises, so its deterministic post-lock tail has length 6 before valuation 7. Hence universal constant post-lock tail bounds <=5 are false. This finite exact example does not show unbounded tails.
 
-The highest-value continuation is therefore not another broad q scan: seek a scale-aware F(B) or F(M) bound for deterministic post-lock tails, using decimal phase/discrepancy or scale-aware congruence information, or rigorously construct a family showing why such a bound cannot be strong enough.
+The highest-value continuation is therefore not another broad q scan. A new finite-horizon coordinate sharpens the phase route: if x_0,...,x_N is any exact-r=1 run and g_s=x_N(2/3)^(N-s), then 0<=g_s-x_s<19 uniformly in N and scale. Hence every disagreement between the true leading digit and the single homogeneous guide is confined to a width-19 window above a decimal boundary. In addition, a fixed digit d>=2 can persist for only one rise source in a decimal sector, and digit 1 for at most two. The remaining target is to couple this nearly homogeneous decimal itinerary to the exact 2-adic parity condition and obtain a scale-aware F(B) or F(M) bound, or rigorously show why that coupling cannot be strong enough.
 
 ### What would weaken/falsify this approach
 
@@ -189,10 +189,10 @@ Accelerated division by variable powers of two can cross many sector boundaries 
 
 ### Concrete next lemmas
 
-1. Give exact interval images for one accelerated step at fixed (d,r).
-2. Bound the number and location of possible output leading digits.
-3. Derive symbolic consistency inequalities for finite (digit,valuation) words.
-4. Prove stability of realizable words under sufficiently large decimal scaling when additive corrections are controlled.
+1. **Completed local lemma:** at exact r=1, every fixed digit sector d>=2 is exited in one step, while digit 1 persists for at most two rise sources.
+2. Use the terminally anchored homogeneous guide g_s=x_N(2/3)^(N-s), whose exact discrepancy from x_s is always <19, to isolate all possible digit-itinerary disagreements to width-19 decimal-boundary windows.
+3. Bound the number and location of those boundary near-hits for one long finite run by exact rational/Diophantine inequalities, not heuristic equidistribution.
+4. Couple the forced homogeneous digit word away from boundary windows to the exact mod-4/mod-2^m valuation-one constraints.
 
 ### What would weaken/falsify this approach
 
