@@ -441,3 +441,17 @@ for candidate-specific termination arguments, the decimal itinerary can now be
 compared to a single terminally anchored homogeneous phase with a fixed
 absolute tolerance, while the remaining hard condition is still the exact
 2-adic valuation-one parity.
+
+## Boundary-hit separation after PR #17
+
+PR #17 confines every compatible post-lock exact-r=1 tail to a normalized width-19 corridor and shows that an actual/homogeneous digit mismatch requires a scaled decimal-boundary hit. PR #19 adds the complementary terminally anchored width-19 guide for any fixed finite segment.
+
+The follow-up theorem in `notes/post_lock_phase_separation.md` quantifies the forward-corridor exceptional hits. If two **distinct** scaled boundary values inside `(X,X+19)` occur `n` steps apart, then
+
+`X <= 171*3^n`.
+
+The only exact equal-value coincidences at different times are the short chains `2->3`, `4->6`, `6->9`, and `4->9` across gaps one or two.
+
+Consequently, on every boundary-free horizon the leading-digit word is forced by the homogeneous `(3/2)^t` phase. The existing terminal residue theorem then reduces survival of the whole prefix to one congruence modulo `2^(h+1)`.
+
+Exact phase/residue certificates recover the current post-lock tails 3, 2, and 6 without using direct post-lock orbit following as the certificate itself. This is scale-aware phase sparsity plus a candidate-specific termination method, not a uniform `F(B)` or `F(M)` tail bound.
