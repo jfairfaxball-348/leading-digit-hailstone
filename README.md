@@ -48,6 +48,17 @@ The theorem on arbitrarily long v2=1 runs means no proof may assume a global bou
 
 See ROADMAP.md and notes/PROOF_ATTACK_MAP.md for the current research plan.
 
+### First Stage-1 progress
+
+**ELEMENTARY FACTS.** For any accelerated odd cycle,
+2^R/3^q = product_i(1+c_i/(3x_i)). If M is the minimum odd state, this gives
+1 < 2^R/3^q <= (1+19/(3M))^q. Also, above 19 an accelerated step rises exactly when its valuation is 1 and falls whenever its valuation is at least 2. After s consecutive valuation-1 steps, a single next step returning to or below the pre-run height must satisfy 2^(r+s)>3^(s+1).
+
+**FINITE EXACT CONSEQUENCE.** Combining the product window with the exhaustive 5,000,000-seed cycle exclusion yields an exact-integer certificate excluding q<=970 for any different positive accelerated cycle. Thus any such cycle must contain at least 971 odd states. This is a bounded consequence, not a global no-cycle theorem.
+
+**MECHANISM-TARGETED COMPUTATION.** The explicit long weak-run examples do not exhibit immediate giant compensation: the observed 32-, 50-, and 100-step runs first exit with valuations 2, 3, and 2 and return below their starting seeds after 51, 128, and 304 accelerated steps. This makes multi-step block compensation a higher-value target than a one-step reset hypothesis.
+
+
 ## Reproducibility
 
 Python reference and verification implementations live under src/leading_digit_hailstone. Key scripts and machine-readable summaries live under scripts/ and data/.
