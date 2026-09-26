@@ -350,9 +350,9 @@
   "current_ci_status": {
     "python": "GREEN",
     "lean": "GREEN",
-    "verified_on_research_branch": "research/farey-record-chain-symbolic-complexity",
-    "verified_commit": "c46ddd8df82621d877009bdc57e5273cb7e51ad8",
-    "verification_note": "Python and Lean PR #13 workflows passed on the reconciled Issue #10 record-chain head, including the stronger rational-log/Farey framework and the preserved PR #14 next-record script/data/test certificate. This status-only synchronization commit follows that verified head."
+    "verified_on_research_branch": "research/residue-position-lift-coordinate",
+    "verified_commit": "8b89382d75207db7aa557a2d40c59535c29de8df",
+    "verification_note": "Python/tests and Lean PR #15 workflows passed on the complete residue-position locking research head. This status-only synchronization commit follows that verified head."
   },
   "highest_value_next_target": {
     "issue": 10,
