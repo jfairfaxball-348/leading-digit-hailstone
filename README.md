@@ -16,7 +16,7 @@ The distinguished observed cycle is
 
 This is a conjecture, not a theorem.
 
-The completed discovery pilot reached the gate **CANDIDATE_DISTINCTIVE_CONJECTURE**. The project has therefore moved into **Stage 1: mathematical proof/conjecture research**, with Lean formalisation and prior-art work continuing in parallel.
+The completed discovery pilot reached the gate **CANDIDATE_DISTINCTIVE_CONJECTURE**. The declared Stage-1 red-team/mathematical exploration programme is now frozen with status **COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST**. The conjecture remains unproved. **Stage 2: Lean formalisation** is now the next primary stage.
 
 The map is **not claimed to be new or previously unknown**. Historical novelty remains unresolved, and mathematically equivalent prior art under different notation counts.
 
@@ -30,23 +30,21 @@ The distinguished cycle itself is not novel: on single-digit odd inputs L(n)=n, 
 
 **FINITE COMPARISON.** In the predeclared family c_b(d)=2d+b with b in {-3,-1,1,3,5}, all four nonfrozen shifts had multiple observed cycles while the frozen b=1 rule had one observed cycle through seeds 1..1,000,000. Of 18 one-coordinate perturbations c(d) -> c(d)+/-2, 11 had multiple observed cycles through 100,000; all 7 one-cycle survivors remained one-cycle through 1,000,000.
 
-**FINITE ADVERSARIAL TESTING.** All 9,000 boundary seeds d*10^k +/- 1 for d=1..9 and k=1..500 entered the distinguished cycle within the stated cap. Explicit residue-lifted examples with at least 30, 50, and 100 consecutive initial v2=1 accelerated steps also entered the distinguished cycle within the stated cap.
+**FINITE ADVERSARIAL TESTING.** All 9,000 boundary seeds d*10^k +/- 1 for d=1..9 and k=1..500 entered the distinguished cycle within the stated cap. The final declared Stage-1 campaign additionally tests 756 multi-offset decimal-boundary starts at exponents 600..2000, 350 deterministic random odd starts at 20..2000 decimal digits, 1,476 inverse-tree-derived hostile starts, and exact residue-engineered starts requesting 150, 300, 500, 750 and 1000 initial v2=1 accelerated steps. Every tested seed in these declared campaigns entered the distinguished cycle within the stated raw-step cap. This is finite computation, not a proof.
 
 **LITERATURE STATUS.** The 5x+1 cycle is prior art; standard finite-modulus generalized-Collatz/RCWA frameworks are close analogues but do not contain this leading-decimal-sector map as a finite-modulus instance; active leading-digit integer dynamics exists elsewhere. No exact or mathematically equivalent full-map construction has yet been identified in the current audit. This is negative search evidence, not a novelty claim.
 
-## Active mathematical programme
+## Stage 1 outcome and next stage
 
-Stage 1 develops several approaches in parallel:
+Stage 1 is intentionally complete as a declared falsification programme, not because universal convergence has been proved.
 
-- accelerated odd dynamics and deterministic descent;
-- cycle exclusion from exact valuation/digit constraints;
-- inverse-tree structure;
-- decimal-sector geometry;
-- targeted computation for theorem discovery and falsification.
+The conjecture survived the agreed stress-test gate: no competing positive cycle, apparent escape within the declared caps, structural contradiction, or statement defect was found. The project retains the strong partial mathematics developed during Stage 1, including the arbitrary-cycle q>=971 consequence, the structured one-rise/one-fall frontier, residue locking, deterministic post-lock reduction, and width-19 phase guides.
 
-The theorem on arbitrarily long v2=1 runs means no proof may assume a global bound on consecutive weak divisions.
+A new elementary red-team family is also recorded: for n=2*10^k-1, the odd-branch numerator is exactly 6*10^k, so its 2-adic valuation is k+1. Thus arbitrarily large single valuation bursts occur.
 
-See ROADMAP.md and notes/PROOF_ATTACK_MAP.md for the current research plan.
+The next primary stage is Lean formalisation/audit of the frozen object and conjecture. A proof of universal convergence is not a pipeline requirement.
+
+See ROADMAP.md and notes/STAGE_1_FINAL_STRESS_TEST.md.
 
 ### First Stage-1 progress
 
@@ -71,6 +69,6 @@ Python reference and verification implementations live under src/leading_digit_h
 
 ## Lean
 
-A Lean 4 layer under LeadingDigitHailstone/ specifies the map and central conjecture and proves stable elementary facts. The universal conjecture remains an unproved Prop; no sorry placeholder is used. Formalisation is now expanded alongside Stage-1 mathematics while CI is kept green.
+A Lean 4 layer under LeadingDigitHailstone/ already specifies the map and central conjecture and proves stable elementary facts. The universal conjecture remains an unproved Prop; no sorry placeholder is used. Stage 2 now makes this formalisation/audit the primary project task.
 
 See RESEARCH_RULES.md, PROJECT_STATUS.json, notes/CANDIDATE_ASSESSMENT.md, notes/cycle_constraints.md, and literature/DEEP_AUDIT_2026-09-26.md before making stronger claims.
