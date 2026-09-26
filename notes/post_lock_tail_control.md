@@ -150,3 +150,198 @@ What is still missing is a theorem bounding those deterministic tails as a funct
 - a congruence/scale state whose nonrecurrence is provable.
 
 No universal-convergence claim follows from this increment.
+
+## 7. A normalized corridor of width less than 19
+
+There is a useful exact coordinate once the lock state itself is taken as the
+origin.  Let
+
+`X_0=X`
+
+be a concrete post-lock odd state, and suppose the next `t` accelerated steps
+all have exact valuation one.  Write
+
+`c_j=2L(X_j)+1`,
+
+so `3 <= c_j <= 19`, and
+
+`2 X_(j+1) = 3 X_j + c_j`.
+
+Define
+
+`Z_j = (2/3)^j X_j`.
+
+Then direct substitution gives the exact recurrence
+
+`Z_(j+1)-Z_j = (c_j/3)(2/3)^j`.
+
+Hence
+
+`Z_t-X = (1/3) sum_(j=0)^(t-1) c_j (2/3)^j`,
+
+and therefore
+
+`3(1-(2/3)^t) <= Z_t-X <= 19(1-(2/3)^t) < 19.`
+
+Equivalently, every exact-r=1 post-lock state has the form
+
+`X_t = (3/2)^t (X + delta_t)`
+
+with
+
+`3(1-(2/3)^t) <= delta_t < 19.`
+
+This is an **elementary exact theorem**.  The striking point is that the
+normalized uncertainty does not grow with the length of the tail: the whole
+future exact-r=1 segment stays in one interval of width less than 19 above the
+single locked state `X`.
+
+In the original unscaled coordinate this gives
+
+`3((3/2)^t-1) <= X_t-(3/2)^t X <= 19((3/2)^t-1)`.
+
+The absolute error grows, but only because the common homogeneous scale grows.
+
+## 8. Exact decimal-boundary corridor
+
+Let
+
+`Y_t=(3/2)^t X`
+
+be the homogeneous state.  The preceding theorem gives `X_t>Y_t`.  If the
+actual leading digit of `X_t` differs from the leading digit of `Y_t), then
+some decimal leading-digit boundary
+
+`C=d 10^k`
+
+must lie strictly between them.  Scaling back by `(2/3)^t` gives
+
+`X < C(2/3)^t < X+19`.
+
+After clearing denominators this is the exact integer inequality
+
+`X 3^t < C 2^t < (X+19)3^t.`
+
+Thus:
+
+> **Decimal-boundary corridor lemma.**  A post-lock leading-digit disagreement
+> with the homogeneous `(3/2)^t X` itinerary is possible only if a scaled
+> decimal boundary lies in the fixed length-19 interval `(X,X+19)`.
+
+No logarithm or floating-point approximation is needed to certify the
+condition for a concrete locked candidate.  Conversely, absence of such a
+boundary hit forces the actual and homogeneous leading digits to agree at
+that time.
+
+This is useful phase control, but it is not a tail bound: valuation one also
+requires the exact 2-adic parity condition, and that parity may continue even
+when the digit itinerary is completely frozen.
+
+## 9. Exact same-sector exit bounds
+
+The local affine geometry is even more rigid than the boundary corridor first
+suggests.
+
+Suppose a valuation-one source lies in the decimal sector
+
+`d 10^k <= x < (d+1)10^k`.
+
+Because
+
+`x'=(3x+2d+1)/2 > (3/2)x`,
+
+the following hold.
+
+- If `d>=2`, one valuation-one step already exits that sector upward.
+- If `d=1`, at most two consecutive source states can remain in the
+  digit-one sector.  Indeed two digit-one steps give
+  `4x_2=9x_0+15>8*10^k`.
+- Six consecutive valuation-one steps increase the state by more than
+  `(3/2)^6=729/64>10`.  Therefore every six-step valuation-one segment
+  crosses at least one power-of-ten boundary.
+
+These are **elementary theorems**.  Their algebraic cores are formalized in
+`LeadingDigitHailstone/Basic.lean`.
+
+They do not supply a global post-lock bound: a long tail can keep traversing
+new sectors and new decades.
+
+## 10. Complete own-bit lock scan through 220 bits
+
+The new exact diagnostic in
+
+`scripts/post_lock_scale_geometry.py`
+
+partitions starts by their own bit-length depth `B`:
+
+`2^B < M < 2^(B+1)`.
+
+For each complete interval it performs exact decimal/2-adic symbolic coverage
+through depth `B`.  Since the depth-`B` residue modulus is `2^(B+1)`,
+every surviving cell contains at most one concrete start, equal to its
+canonical residue.  The script then follows that concrete orbit directly.
+
+The machine-readable certificate is
+
+`data/post_lock_scale_geometry.json`.
+
+For every `1 <= B <= 220`, equivalently for every start in the complete
+own-bit bins below `2^221` that survives to its own lock depth, the exact
+scan finds:
+
+- 96 locked candidates in total;
+- 41 with a positive post-lock valuation-one tail;
+- tail histogram
+  `{0:55, 1:16, 2:13, 3:7, 4:1, 5:3, 6:1}`;
+- maximum observed post-lock tail 6.
+
+The successive positive records are
+
+- `B=33`, `M=16,670,166,793`, tail 1;
+- `B=44`, `M=26,501,219,601,103`, tail 4;
+- `B=65`, `M=43,574,304,770,317,398,119`, tail 6.
+
+There are three further tail-5 starts through the scan, at bit depths 65,
+103, and 216.
+
+This is **finite exact symbolic/direct computation**, not a theorem that the
+tail is universally at most 6.
+
+A more informative negative diagnostic is that all 41 positive-tail
+candidates have:
+
+- zero scaled decimal-boundary corridor hits during their post-lock tail; and
+- zero disagreement between the actual leading digits and the exact
+  homogeneous `(3/2)^t X` leading digits.
+
+Thus the observed post-lock tails do not require repeated decimal-boundary
+near-hits.  In this complete finite scan, their decimal itinerary is already
+phase-frozen.
+
+## 11. Sharpened obstruction and next target
+
+The width-19 corridor makes the decimal geometry much cleaner, but the exact
+scan shows why decimal separation alone is insufficient.  Once the
+homogeneous itinerary is safely away from every boundary, the remaining
+condition is the post-lock parity rule
+
+`(X_t-1)/2 + L(X_t) == 1 (mod 2)`
+
+at every step.
+
+Accordingly, the highest-value next theorem is now a **scale-aware
+parity/congruence obstruction along a phase-frozen homogeneous digit
+itinerary**.  Useful forms would combine the exact `(3/2)^t` digit word with
+the carry parity, mixed `2^m5^n` congruences, or another monotone scale
+coordinate.
+
+A separate high-value falsification route is to extend the exact own-bit scan
+and deliberately search for a tail longer than 6 or for a recursively
+extendable family.  Until such a theorem or family is established, no
+universal `F(B)` or `F(M)` bound is claimed.
+
+The structured one-rise/one-fall frontier remains
+`q>=1,643,749,725,074` with
+`a>=682,217,775,335` under the existing 5M premise.  The arbitrary-cycle
+bound remains separately `q>=971`.
+
