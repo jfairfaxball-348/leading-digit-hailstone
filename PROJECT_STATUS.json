@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "project_title": "Leading-Digit Hailstone Dynamics",
   "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
   "frozen_object": {
@@ -38,7 +38,7 @@
     "1_independent_reproduction": "COMPLETE_WITH_ORIGINAL_RANDOM_SAMPLE_NON_REPLAYABLE",
     "2_dynamical_census": "EXHAUSTIVE_TO_5000000_PLUS_TARGETED_ADVERSARIAL_TESTS",
     "3_structural_decomposition": "MULTIPLE_ELEMENTARY_RESULTS_INCLUDING_ARBITRARILY_LONG_V2_ONE_RUNS",
-    "4_cycle_search": "CYCLE_EQUATION_AND_MINIMUM_ELEMENT_EXCLUSION_TO_5000000",
+    "4_cycle_search": "GENERAL_Q_GE_971; ONE_RISE_ONE_FALL_Q_GE_79335_UNDER_5M_PREMISE",
     "5_prior_art_audit": "DEEPENED_NO_EXACT_OR_EQUIVALENT_MATCH_IDENTIFIED_NOVELTY_UNRESOLVED",
     "6_nearby_rule_comparison": "COMPLETE_SMALL_PRINCIPLED_NEIGHBOURHOOD_PLUS_1M_SURVIVOR_EXTENSION",
     "7_lean_specification": "COMPLETE_COMPACT_SPECIFICATION_CI_VERIFIED",
@@ -147,7 +147,10 @@
       "If M is the minimum odd state of a cycle then 1 < 2^R/3^q <= (1+19/(3M))^q.",
       "For odd x>19, accelerated r=1 steps strictly increase and r>=2 steps strictly decrease.",
       "A large accelerated-cycle minimum leaves with r=1 and is entered with r>=2.",
-      "After s consecutive r=1 steps, one-step return to the pre-run height requires 2^(r+s)>3^(s+1)."
+      "After s consecutive r=1 steps, one-step return to the pre-run height requires 2^(r+s)>3^(s+1).",
+      "For a one-rise/one-fall accelerated cycle above 19, the valuation word is equivalent to exactly one strict local minimum and one strict local maximum; a unique global minimum alone is not sufficient.",
+      "One-rise/one-fall cycles satisfy the period-independent product envelope 1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).",
+      "If E is the sum over falling steps of (r_i-2), then R=2q-a+E and a-E=2q-R."
     ],
     "bounded_exact_consequence": {
       "statement": "Any different positive accelerated cycle consistent with the exhaustive 5,000,000-seed census must contain at least 971 odd states.",
@@ -173,14 +176,23 @@
       "interpretation": "These examples do not exhibit one-step giant compensation; recovery is distributed across a longer block.",
       "claim_type": "FINITE_COMPUTATION"
     },
-    "proof_direction_update": "Cycle Diophantine constraints strengthened. One-step weak-run compensation weakened as a general strategy; multi-step block compensation is the higher-value descent target.",
-    "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses powers-of-2/powers-of-3 Diophantine approximation; no novelty claim is made for this strategy."
+    "proof_direction_update": "Structured cycle exclusion strengthened sharply: the one-rise/one-fall geometry gives a q-independent product window and q>=79335 under the 5M premise. The next bottleneck is decimal/2-adic consistency at the first surviving period, not further coarse product estimates.",
+    "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses powers-of-2/powers-of-3 Diophantine approximation; no novelty claim is made for this strategy.",
+    "structured_cycle_consequence": {
+      "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must contain at least 79,335 odd states and at least 32,927 consecutive r=1 rise steps.",
+      "first_period_not_excluded_by_uniform_window": 79335,
+      "unique_total_valuation_at_first_period": 125743,
+      "first_period_relation": "a-E=32927, where E=sum_fall(r_i-2); equivalently a=32927+E and b=46408-E.",
+      "basis": "period-independent structured product envelope plus 5M minimum-element exclusion plus exact integer verification",
+      "claim_type": "FINITE_EXACT_ARITHMETIC_CONSEQUENCE",
+      "caveat": "The structured class is not globally excluded and q=79335 is not asserted realizable."
+    }
   },
-  "current_lean_status": "BRANCH_AFFINE_LEMMAS_CI_VERIFIED_GREEN",
+  "current_lean_status": "ODD_AFFINE_NUMERATOR_DIRECTION_INEQUALITIES_ADDED_PENDING_CI",
   "immediate_stage_1_targets": [
-    "Issue #10: exclude or sharply constrain structured one-minimum accelerated cycles",
-    "derive multi-step block compensation inequalities after arbitrary weak runs",
-    "formalise leading-digit interval/bounds and accelerated definitions in Lean",
+    "Issue #10: exclude the first surviving one-rise/one-fall period q=79335 using R=125743, a-E=32927, decimal intervals, and exact 2-adic lifting",
+    "extend structured block methods only where they yield rigorous coverage beyond the one-rise/one-fall class",
+    "formalise leading-digit bounds and accelerated odd dynamics in Lean",
     "continue prior-art equivalence search without novelty claims"
   ],
   "synchronized_date": "2026-09-26",
@@ -192,7 +204,7 @@
   },
   "highest_value_next_target": {
     "issue": 10,
-    "title": "Exclude structured one-minimum accelerated cycles",
-    "reason": "This class directly combines the new q>=971 product-window bound, the valuation direction lemma, weak-run block formulas, and decimal-sector consistency while remaining substantially more structured than arbitrary cycles."
+    "title": "Exclude the first surviving structured period q=79,335",
+    "reason": "The new period-independent product envelope already excludes q<=79,334 and fixes R=125,743 at the first survivor; decimal digit-word intervals and exact 2-adic lifting are now the main map-specific constraints left to exploit."
   }
 }
