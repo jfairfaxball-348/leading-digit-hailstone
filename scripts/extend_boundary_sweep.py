@@ -26,6 +26,30 @@ def analyze_independent(seed: int, cap: int = 200_000) -> dict:
     raise AssertionError("unreachable")
 
 
+def compact_integer(n: int) -> dict | str:
+    s = str(n)
+    if len(s) <= 80:
+        return s
+    return {
+        "decimal_digits": len(s),
+        "prefix_50": s[:50],
+        "suffix_50": s[-50:],
+    }
+
+
+def compact_row(row: dict) -> dict:
+    return {
+        "k": row["k"],
+        "d": row["d"],
+        "offset": row["offset"],
+        "seed_form": f'{row["d"]}*10^{row["k"]}{row["offset"]:+d}',
+        "seed": compact_integer(int(row["seed"])),
+        "status": row["status"],
+        "steps": row["steps"],
+        "peak": compact_integer(row["peak"]),
+    }
+
+
 def run(max_k: int = 500) -> dict:
     count = 0
     failures: list[dict] = []
@@ -49,7 +73,7 @@ def run(max_k: int = 500) -> dict:
                 }
 
                 if result["status"] != "DISTINGUISHED_CYCLE":
-                    failures.append(row)
+                    failures.append(compact_row(row))
 
                 if worst is None or (result["steps"] or -1) > (worst["steps"] or -1):
                     worst = row
@@ -59,6 +83,10 @@ def run(max_k: int = 500) -> dict:
                     max_ratio = (ratio, row)
 
     ratio, ratio_row = max_ratio
+    ratio_compact = compact_row(ratio_row)
+    ratio_compact["ratio_numerator"] = ratio.numerator
+    ratio_compact["ratio_denominator"] = ratio.denominator
+
     return {
         "schema_version": 1,
         "evidence_type": "FINITE_COMPUTATION",
@@ -68,12 +96,9 @@ def run(max_k: int = 500) -> dict:
         "tested_seed_count": count,
         "all_entered_distinguished_cycle": not failures,
         "failure_count": len(failures),
-        "worst_cycle_entry": worst,
-        "max_excursion_ratio_case": {
-            **ratio_row,
-            "ratio_numerator": ratio.numerator,
-            "ratio_denominator": ratio.denominator,
-        },
+        "failures": failures,
+        "worst_cycle_entry": compact_row(worst),
+        "max_excursion_ratio_case": ratio_compact,
     }
 
 
