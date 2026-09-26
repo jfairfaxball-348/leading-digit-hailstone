@@ -1,5 +1,5 @@
 {
-  "schema_version": 9,
+  "schema_version": 10,
   "project_title": "Leading-Digit Hailstone Dynamics",
   "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
   "frozen_object": {
@@ -154,7 +154,10 @@
       "Farey-neighbour upper/lower approximations to log_2(3) transfer a record product ratio across a complete denominator block, avoiding period-by-period scanning.",
       "For M>=5000001, if t=log(2^R/3^q)>0 satisfies the structured product window then M<39/t; for a determinant-one final Farey neighbour pair before the next upper record this gives M_max<39*q_next/log(2).",
       "Finite-range decimal-boundary localization: through s exact r=1 rises on [L,U], at most 20*J_s(L,U)+1 decimal-sector words occur, where J_s counts relevant scaled decimal boundaries; for fixed [L,U], J_s=O(s).",
-      "For a fixed exact-r=1 rise digit word with affine term A_s, all s parity conditions are equivalent to 3^s M + A_s == 2^s (mod 2^(s+1)), hence M == 3^(-s)(2^s-A_s) (mod 2^(s+1))."
+      "For a fixed exact-r=1 rise digit word with affine term A_s, all s parity conditions are equivalent to 3^s M + A_s == 2^s (mod 2^(s+1)), hence M == 3^(-s)(2^s-A_s) (mod 2^(s+1)).",
+      "For a fixed exact-r=1 rise word, the unique residues satisfy rho_(s+1)=rho_s+b_s*2^(s+1); the lift bits b_s are exactly the successive binary digits of the required starting residue above its forced odd bit.",
+      "Bounded-range residue locking: for starts M<=U, at B=floor(log_2 U) the congruence forces M=rho_B, and every later compatible lift bit is zero.",
+      "Combining bit-length locking with decimal-boundary localization gives at most 180*B*(ceil(log_10((U+19)/L))+1)+1 starts surviving B rises in [L,U]; for fixed L this is O((log U)^2) candidate compression."
     ],
     "bounded_exact_consequence": {
       "statement": "Any different positive accelerated cycle consistent with the exhaustive 5,000,000-seed census must contain at least 971 odd states.",
@@ -180,7 +183,7 @@
       "interpretation": "These examples do not exhibit one-step giant compensation; recovery is distributed across a longer block.",
       "claim_type": "FINITE_COMPUTATION"
     },
-    "proof_direction_update": "The one-rise/one-fall line strengthened from two transferred blocks to a scalable exact record-chain certificate. Seven further upper Farey records are excluded, extending the structured bound through q=890,638,885,192. A new boundary-localization lemma proves linear finite-range decimal-word complexity; the precise remaining obstruction is control of the positions of the word-dependent 2-adic residue representatives, not merely cell width.",
+    "proof_direction_update": "The Farey/product framework remains sufficient for the current structured attack, while the residue obstruction has been sharpened. Exact one-bit lifting shows that lift choices are the binary digits of the required start. At B=floor(log_2 U), every bounded start surviving B rises is locked to its canonical residue and all later compatible lift bits are zero. Boundary localization then gives explicit polylogarithmic candidate compression at B. The missing theorem is now a quantitative bound on the post-lock zero-lift tail, not residue placement in general.",
     "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses powers-of-2/powers-of-3 Diophantine approximation; no novelty claim is made for this strategy.",
     "structured_cycle_consequence": {
       "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q >= 890,638,885,193 and at least 369,648,535,671 consecutive r=1 rise steps.",
@@ -191,7 +194,8 @@
         "Farey-neighbour transfer lemma for upper absolute errors R-q log_2(3)",
         "inverse-error product scale M<39/t for t=log(2^R/3^q)",
         "finite-range decimal-boundary localization and 20 J_s(L,U)+1 sector-word bound",
-        "explicit terminal 2-adic residue formula for a fixed rise digit word"
+        "explicit terminal 2-adic residue formula for a fixed rise digit word",
+        "bounded-range bit-length residue locking and explicit lock-depth candidate compression"
       ],
       "finite_exact_coverage": {
         "previous_period_scan_limit": 400000,
@@ -298,13 +302,48 @@
       },
       "claim_type": "THEOREM_PLUS_FINITE_EXACT_RATIONAL_ARITHMETIC_AND_SYMBOLIC_CERTIFICATE",
       "caveat": "This excludes only the one-rise/one-fall structured class through the stated period bound; arbitrary cycles retain the separate general q>=971 consequence. The record chain is not yet an all-record theorem."
+    },
+    "residue_position_locking": {
+      "claim_type": "THEOREM_PLUS_FINITE_EXACT_SYMBOLIC_AND_DIRECT_DIAGNOSTIC",
+      "theorem_level": [
+        "rho_(s+1)=rho_s+b_s*2^(s+1), with b_s determined by the exact carry/digit parity",
+        "rho_s=1+sum_j b_j*2^(j+1), so lift bits are binary digits of the required start residue",
+        "theta_(s+1)=(theta_s+b_s)/2 for theta_s=rho_s/2^(s+1)",
+        "if B=floor(log_2 U) and M<=U realizes B prescribed rises then M=rho_B and every later compatible lift bit is zero",
+        "at lock depth B, starts are bounded by 20*J_B(L,U)+1 and explicitly by 180*B*(ceil(log_10((U+19)/L))+1)+1"
+      ],
+      "finite_exact_diagnostics": {
+        "largest_processed_range": [
+          5000001,
+          42285421502900
+        ],
+        "lock_depth": 45,
+        "explicit_candidate_bound_at_lock": 64801,
+        "exact_locked_starts": [
+          26501219601103,
+          39751829401657
+        ],
+        "their_total_exact_r1_rises": [
+          48,
+          47
+        ],
+        "their_post_lock_zero_lift_tails": [
+          3,
+          2
+        ],
+        "their_next_valuations": [
+          2,
+          2
+        ]
+      },
+      "limitation": "No uniform zero-lift-tail bound and therefore no explicit general s_max(X) bound has been proved. The structured q frontier is unchanged."
     }
   },
   "current_lean_status": "ODD_AFFINE_NUMERATOR_DIRECTION_INEQUALITIES_CI_VERIFIED_GREEN",
   "immediate_stage_1_targets": [
-    "Issue #10: control the positions of word-dependent 2-adic residue representatives inside narrow decimal cells, beginning at the next upper record q=890638885193",
-    "seek a deterministic finite transition obstruction or a rigorous residue-position theorem strong enough to turn the record-chain framework into an all-record argument",
-    "formalise leading-digit bounds and accelerated odd dynamics in Lean",
+    "Issue #10: prove a quantitative bound on post-lock zero-lift tails for starts M<=U, or isolate a rigorous recursively extendable family that obstructs such a bound",
+    "treat further Farey-record extension as secondary unless needed to instantiate or falsify a zero-lift-tail theorem",
+    "formalise stable residue/congruence lemmas in Lean without giant numerical certificates",
     "continue prior-art equivalence search without novelty claims"
   ],
   "synchronized_date": "2026-09-26",
@@ -317,7 +356,7 @@
   },
   "highest_value_next_target": {
     "issue": 10,
-    "title": "Control symbolic residue positions",
-    "reason": "The record-chain framework now excludes one-rise/one-fall periods through q=890638885192 under the 5M premise and proves linear finite-range decimal-word complexity. The missing global step is a deterministic theorem controlling the explicit word-dependent 2-adic residue representative relative to its decimal-consistency cell."
+    "title": "Control post-lock zero-lift tails",
+    "reason": "Bit-length locking now identifies every bounded surviving start with its exact 2-adic residue and forces all subsequent lift bits to zero. The missing structured-cycle step is a uniform quantitative bound on how long that zero-lift tail can remain decimal-consistent."
   }
 }
