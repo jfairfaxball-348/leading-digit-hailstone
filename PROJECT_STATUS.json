@@ -241,11 +241,11 @@
   ],
   "synchronized_date": "2026-09-26",
   "current_ci_status": {
-    "python": "PENDING",
-    "lean": "PENDING",
+    "python": "GREEN",
+    "lean": "GREEN",
     "verified_on_research_branch": "research/farey-structured-extension",
-    "verified_commit": null,
-    "verification_note": "Awaiting PR workflow verification for the Farey structured-cycle extension."
+    "verified_commit": "edcd53a6d09d2469b24b95372690bf357012584a",
+    "verification_note": "Python and Lean PR #12 workflows passed for the Farey structured-cycle extension. This status-only synchronization commit follows that verified research head."
   },
   "highest_value_next_target": {
     "issue": 10,
