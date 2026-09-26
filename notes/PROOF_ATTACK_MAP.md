@@ -119,17 +119,20 @@ For the narrower one-rise/one-fall class of Issue #10, geometric state bounds on
 
 The original exact product-window scan through q=400,000 left six periods, all removed by symbolic decimal-sector / 2-adic rise coverage. The next increment replaces further linear scanning by a Farey-neighbour transfer lemma for alpha=log_2(3): an exact upper approximation R_u/q_u and an exact lower Farey neighbour R_l/q_l certify that no better upper absolute error can occur for q_u<=q<q_u+q_l.
 
-Three exact blocks now close:
+The record-to-record mechanism has now been iterated substantially further. Seven additional exact upper records, beginning at q=64,497,107, are certified using rigorous rational bounds for log 2, log 3, and the structured product envelope rather than constructing giant powers. Their theorem-derived M_max ranges are eliminated by complete decimal-sector / 2-adic symbolic coverage at rise depths 31, 31, 35, 38, 41, 41, and 49.
 
-- the q=190,537 upper record, paired with 16,785,921/10,590,737 below alpha, transfers its M_max=589,078,792 and 29-rise symbolic extinction through q=10,781,273;
-- the upper record 17,087,915/10,781,274 has M_max=3,112,972,388 and symbolic extinction at 31 rises; paired with 85,137,581/53,715,833 below alpha, it transfers through q=64,497,106;
-- the first previously uncovered denominator q=64,497,107 is the mediant 102,225,496/64,497,107, is exactly above alpha, has M_max=4,350,616,725, and the complete symbolic range still dies at rise 31. With the same lower neighbour it transfers through q=118,212,939.
+The resulting bounded structured consequence is
 
-Therefore any remaining structured cycle has q>=118,212,940 and at least 49,062,802 consecutive r=1 rises. This is still a bounded structured-class result, not a global cycle exclusion.
+- q>=890,638,885,193;
+- a>=369,648,535,671.
 
-The symbolic mechanism strengthened rather than weakened on the enlarged range: the exact cell count peaks at 276 at depths 16-17, contracts to the same three residue-compatible seeds after 30 rises, and dies at rise 31. The newly added interval 3,112,972,389<=M<=4,350,616,725 is already empty after 29 rises. The finite-range obstruction remains decimal-sector narrowing plus binary-modulus squeeze, not a uniform prohibition on long weak runs.
+The largest processed record is q=137,528,045,312 with M_max=42,285,421,502,900. Its symbolic family peaks at 727 cells, contracts to one residue-compatible representative after 48 rises, and becomes empty at rise 49. The next unprocessed upper record is (q,R)=(890,638,885,193,1,411,629,234,715).
 
-The next precise target is theorem-level: prove an explicit upper bound on realizable exact-r=1 rise length inside [1,M_max], ideally O(log M_max), or identify why such a bound fails. This is the missing step needed to turn the record-to-record Farey certificates into a genuine asymptotic exclusion framework.
+Two theorem-level scale statements now sharpen the interpretation. If t=log(2^R/3^q), then the structured envelope gives M<39/t for M>=5,000,001. For a determinant-one upper/lower Farey pair, p delta+q epsilon=1; at the final lower neighbour before the next upper mediant this gives delta>1/q_next, hence M_max<39 q_next/log 2. Separately, decimal-boundary localization gives only O(s) possible finite-range decimal-sector words at rise depth s for a fixed [L,U], up to an explicit boundary count.
+
+This is now a genuine asymptotic framework, but still only a sequence of finite certificates. The precise missing step is control of the positions of the word-dependent 2-adic residue representatives inside the narrow decimal cells. Cell widths and polynomial/linear word counts alone do not force emptiness once the modulus exceeds the interval width.
+
+The highest-value continuation is therefore not another broad q scan: prove a deterministic residue-position/transition obstruction for long exact-r=1 words, or show rigorously why such an obstruction cannot hold.
 
 ### What would weaken/falsify this approach
 

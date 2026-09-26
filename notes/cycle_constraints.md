@@ -153,29 +153,27 @@ Therefore:
 
 This is stronger than the minimum-element exclusion alone, but it is still not a global no-cycle theorem. In particular q=971 is **not** claimed to be realizable.
 
-## Structured one-rise/one-fall cycles — ELEMENTARY FACT + FINITE EXACT SYMBOLIC EXCLUSION
+## Structured one-rise/one-fall cycles — ELEMENTARY FACTS + FINITE EXACT SYMBOLIC EXCLUSION
 
-Issue #10 studies the narrower class whose valuation word, after rotation to the minimum, has one nonempty block of r=1 steps followed by one nonempty block of r>=2 steps. Above 19 this is equivalent to exactly one strict local minimum and one strict local maximum, not merely to having a unique global minimum.
+Issue #10 studies the narrower class whose valuation word, after rotation to the minimum, has one nonempty block of r=1 steps followed by one nonempty block of r>=2 steps. Above 19 this is equivalent to exactly one strict local minimum and one strict local maximum, not merely a unique global minimum.
 
 The block geometry yields the period-independent product estimate
 
 1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).             (3)
 
-Unlike (1), this upper bound does not grow with q.
+Under M>=5,000,001 the right side is less than 2, so the only possible total valuation at fixed q is R=ceil(q log_2 3). Farey-neighbour control transfers the product-ratio lower bound across complete denominator blocks.
 
-Under M>=5,000,001, exact integer enumeration of (3) leaves only six product-window periods through q=400,000:
-
-79,335; 158,670; 190,537; 269,872; 349,207; 381,074.
-
-For each such q, monotonicity of the right side of (3) gives an exact finite upper bound M_max on the cycle minimum. An exact symbolic checker then intersects the affine decimal-sector intervals for the forced rise block with the unique binary residue lift for successive exact-r=1 steps. All six surviving periods are eliminated well before their required rise lengths.
+The first certificate scanned q<=400,000 exactly and eliminated its six product-window survivors. PR #12 then transferred two Farey blocks through q=64,497,106. The current record-chain certificate iterates the same exact mechanism through seven further upper records, using rigorous rational logarithm bounds with explicit remainder estimates for the power-side and M_max decisions, together with complete decimal-sector / 2-adic symbolic rise coverage.
 
 Therefore:
 
-> **Bounded structured corollary.** Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q>=400,001.
+> **Bounded structured corollary.** Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q>=890,638,885,193 and at least 369,648,535,671 consecutive exact-r=1 rise steps.
 
-Moreover every remaining structured cycle must have at least 166,015 consecutive r=1 rise steps.
+The largest processed M range is 5,000,001<=M<=42,285,421,502,900 and becomes symbolically empty at rise 49. The next unprocessed upper record is (q,R)=(890,638,885,193,1,411,629,234,715).
 
-See notes/one_minimum_cycles.md and scripts/structured_one_minimum_bound.py for the theorem, coverage proof, exact M_max values, and machine-readable certificate. This does **not** exclude arbitrary cycles or the structured class globally.
+A new finite-range boundary-localization lemma bounds the number of possible decimal-sector words through s rises by 20J_s(L,U)+1, where J_s counts relevant scaled decimal boundaries. For fixed [L,U], J_s=O(s). This proves low symbolic complexity but not eventual extinction: after the residue modulus exceeds the interval width, each word can still carry one residue representative. Controlling those representative positions is the remaining structured-class obstruction.
+
+See notes/one_minimum_cycles.md, scripts/structured_record_chain.py, and data/structured_record_chain.json. This does **not** change the arbitrary-cycle bound q>=971.
 
 ## Why this matters for the next cycle search
 
