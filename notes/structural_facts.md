@@ -84,11 +84,13 @@ Unless explicitly labelled otherwise, statements in the proved sections are **EL
 
    Thus arbitrarily long weak runs cannot in general be neutralized by a valuation bound independent of the run length. See notes/weak_run_compensation.md.
 
-19. **One-rise/one-fall cycles have a period-independent product envelope.** Consider an accelerated cycle entirely above 19 whose valuation word, after rotation to its minimum M, consists of a nonempty r=1 rise block followed by a nonempty r>=2 fall block. This is equivalent to exactly one strict local minimum and one strict local maximum per period. Rise states satisfy x_i>=(3/2)^i M, with strict inequality away from the minimum. Reading the fall block backward from M gives x_(q-t)>=19+(4/3)^t(M-19). Inserting these geometric state bounds into the exact product identity yields
+19. **One-rise/one-fall cycles have a period-independent product envelope and Farey block transfer.** Consider an accelerated cycle entirely above 19 whose valuation word, after rotation to its minimum M, consists of a nonempty r=1 rise block followed by a nonempty r>=2 fall block. This is equivalent to exactly one strict local minimum and one strict local maximum per period. Rise states satisfy x_i>=(3/2)^i M, with strict inequality away from the minimum. Reading the fall block backward from M gives x_(q-t)>=19+(4/3)^t(M-19). Inserting these geometric state bounds into the exact product identity yields
 
    1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).
 
-   With the finite census premise M>=5,000,001, exact integer product-window enumeration plus exact symbolic decimal-sector/2-adic rise-word coverage excludes every structured period q<=400,000. Hence any remaining structured cycle has q>=400,001 and at least 166,015 consecutive r=1 rise steps. This is a bounded structured-class consequence, not a global cycle exclusion. See notes/one_minimum_cycles.md.
+   Because this bound is <2 at M>=5,000,001, the possible R is ceil(q log_2 3). If R_u/q_u is an exact upper approximation to log_2 3, R_l/q_l is an exact lower approximation, and R_u q_l-R_l q_u=1, then the Farey denominator theorem shows that no closer upper slope occurs before denominator q_u+q_l. For q>=q_u this also makes the upper absolute error R-q log_2 3 at least the error of R_u/q_u, so the same product-derived M_max applies throughout that whole denominator block.
+
+   Combining this transfer with the exact symbolic decimal-sector/2-adic rise checker excludes every structured period q<=64,497,106 under the 5M premise. Hence any remaining structured cycle has q>=64,497,107 and at least 26,768,717 consecutive exact-r=1 rise steps. The new symbolic range M<=3,112,972,388 dies at rise depth 31. This is a bounded structured-class consequence, not a global cycle exclusion. See notes/one_minimum_cycles.md.
 
 
 ## Heuristic direction, not theorem
