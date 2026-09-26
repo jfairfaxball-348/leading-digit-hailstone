@@ -52,6 +52,14 @@ Unless explicitly labelled otherwise, statements in the proved sections are **EL
 
 14. **Odd-predecessor multiplicity is essentially unique.** If two valid odd predecessors have leading digits `d1<d2`, then `d2-d1` is `3` or `6`, and the predecessors differ by `2` or `4`. For predecessors at least `10`, two integers this close can only have equal leading digits, adjacent leading digits across an internal decimal boundary, or leading digits `9` and `1` across a power of ten; none has digit difference `3` or `6`. Checking the remaining small case leaves one exception: `T(7)=T(11)=36`. Hence every positive target other than `36` has at most one odd predecessor, while `36` has exactly odd predecessors `7` and `11` (plus even predecessor `72`).
 
+## Long weak-division stretches
+
+15. **Arbitrarily long initial runs with exact valuation 1 exist.** For every m >= 1 there is a positive odd seed whose first m accelerated odd steps all satisfy v2(3n+2L(n)+1)=1.
+
+    Proof idea: choose a real mantissa whose first m homogeneous multiplications by 3/2 avoid all decimal leading-digit boundaries, so the corresponding digit word is stable on an open interval. For that fixed digit word, the requirement that each accelerated state remain odd selects exactly one lift at each binary digit, hence one residue class modulo 2^(m+1). A sufficiently large decimal scaling of the stable interval is longer than this modulus and contains a representative of that class. The additive digit corrections are bounded at fixed m, so at sufficiently large scale they do not change the prescribed leading-digit word. The full proof is in notes/arbitrarily_long_weak_division.md.
+
+    Consequently there is no uniform finite bound on consecutive growth-favouring v2=1 accelerated steps. This is an elementary existence fact, not a divergence result.
+
 ## Heuristic direction, not theorem
 
 The exact interval-density result in item 5 gives the same geometric valuation profile as the usual accelerated Collatz heuristic. If actual large odd trajectory states behaved as though they sampled these classes without strong bias, then `E[v2]≈2` and the dominant multiplicative log drift would be `log 3 - 2 log 2 = log(3/4) < 0`, with additive correction `(2L(n)+1)/n` small at large `n`.
