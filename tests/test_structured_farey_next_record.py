@@ -41,7 +41,7 @@ class StructuredFareyNextRecordTests(unittest.TestCase):
 
     def test_symbolic_squeeze_persists(self) -> None:
         symbolic = self.payload["symbolic_range"]
-        self.assertEqual(symbolic["first_impossible_rise_length"] if "first_impossible_rise_length" in symbolic else self.payload["next_upper_record"]["first_impossible_rise_length"], 31)
+        self.assertEqual(symbolic["first_impossible_rise_length"], 31)
         self.assertEqual(symbolic["peak_cell_count"], 276)
         self.assertEqual(symbolic["peak_depths"], [16, 17])
         self.assertEqual(symbolic["cell_counts_by_rise_depth"][-2:], [3, 0])
