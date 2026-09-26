@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "claim_type": "FINITE_EXACT_ARITHMETIC_CONSEQUENCE",
+  "premise": "one-rise/one-fall accelerated cycle entirely above 19 with minimum odd state >= 5000001",
+  "premise_source": "one-minimum block theorem plus exhaustive seed census through 5000000",
+  "uniform_product_bound": "1 < 2^R/3^q <= M(M-19)/(M^2-57M+361)",
+  "minimum_odd_state_used": 5000001,
+  "uniform_bound_numerator": 24999914999982,
+  "uniform_bound_denominator": 24999725000305,
+  "q_excluded_through": 79334,
+  "first_q_not_excluded_by_uniform_window": 79335,
+  "unique_R_at_first_not_excluded_q": 125743,
+  "minimum_rise_length_for_any_surviving_structured_cycle": 32927,
+  "first_survivor_relation": "for q=79335, write E=sum_fall(r_i-2); then a=32927+E and b=46408-E",
+  "interpretation": "Any different positive one-rise/one-fall accelerated cycle consistent with the 5M minimum-element exclusion must have at least 79335 odd states and at least 32927 consecutive r=1 rise steps. q=79335 is not asserted to be realizable."
+}
