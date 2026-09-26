@@ -80,10 +80,11 @@ Arbitrarily long r=1 runs exist. Therefore descent cannot follow from a bounded 
 
 ### Concrete next lemmas
 
-1. Quantify how much an r>=k step cancels a preceding run of s weak divisions.
-2. Classify short valuation words by exact affine multiplier/additive term.
-3. Add leading-digit consistency and determine which net-growth words are actually realizable.
-4. Seek a finite family of "reset" words whose occurrence implies descent below the start of the preceding weak run.
+1. **Completed first lemma:** after s weak divisions, one-step return to the pre-run height requires 2^(r+s)>3^(s+1); see notes/weak_run_compensation.md.
+2. Extend this to **multi-step compensation blocks**, because the constructed 32-, 50-, and 100-step weak runs are not followed by immediate large valuations and recover below their starts only after 51, 128, and 304 accelerated steps.
+3. Classify short valuation words by exact affine multiplier/additive term.
+4. Add leading-digit consistency and determine which net-growth words are actually realizable.
+5. Seek a finite family of multi-step "reset" blocks whose occurrence implies descent below the start of the preceding weak run.
 
 ### What would weaken/falsify this approach
 
