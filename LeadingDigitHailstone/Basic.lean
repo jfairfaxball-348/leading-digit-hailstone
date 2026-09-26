@@ -94,6 +94,49 @@ theorem next_state_is_twice_next_carry_plus_one (H d : ℕ)
       2 * ((1 + 3 * H + d) / 2) + 1 := by
   omega
 
+/-- Any positive-correction affine halving grows by strictly more than the
+homogeneous factor 3/2. -/
+theorem affine_half_strict_growth (x y correction : ℕ)
+    (hstep : 2 * y = 3 * x + correction)
+    (hcorrection : 0 < correction) :
+    3 * x < 2 * y := by
+  omega
+
+/-- If a decimal-style sector has lower endpoint at least twice its width,
+one positive-correction affine halving exits the sector upward.  For
+[d*10^k,(d+1)*10^k), this applies to every d >= 2. -/
+theorem affine_half_exits_wide_sector
+    (x y lower width correction : ℕ)
+    (hstep : 2 * y = 3 * x + correction)
+    (hcorrection : 0 < correction)
+    (hx : lower ≤ x)
+    (hwide : 2 * width ≤ lower) :
+    lower + width < y := by
+  omega
+
+/-- Two consecutive digit-one valuation-one affine steps leave the
+digit-one sector [scale,2*scale). -/
+theorem two_digit_one_halvings_exit_sector
+    (x y z scale : ℕ)
+    (hxy : 2 * y = 3 * x + 3)
+    (hyz : 2 * z = 3 * y + 3)
+    (hx : scale ≤ x) :
+    2 * scale < z := by
+  omega
+
+/-- Six successive steps each growing strictly faster than 3/2 increase
+the state by more than a factor ten. -/
+theorem six_three_halves_growth_steps_cross_factor_ten
+    (x0 x1 x2 x3 x4 x5 x6 : ℕ)
+    (h01 : 3 * x0 < 2 * x1)
+    (h12 : 3 * x1 < 2 * x2)
+    (h23 : 3 * x2 < 2 * x3)
+    (h34 : 3 * x3 < 2 * x4)
+    (h45 : 3 * x4 < 2 * x5)
+    (h56 : 3 * x5 < 2 * x6) :
+    10 * x0 < x6 := by
+  omega
+
 theorem cycle_1_to_6 : T 1 = 6 := by native_decide
 theorem cycle_6_to_3 : T 6 = 3 := by native_decide
 theorem cycle_3_to_16 : T 3 = 16 := by native_decide
