@@ -94,6 +94,25 @@ theorem next_state_is_twice_next_carry_plus_one (H d : ℕ)
       2 * ((1 + 3 * H + d) / 2) + 1 := by
   omega
 
+/-- In any fixed decimal sector with leading digit d >= 2, one
+valuation-one affine halving already reaches the next sector boundary.
+The scale parameter can be any natural number; decimal applications use
+scale = 10^k. -/
+theorem affine_half_exits_nonone_sector (x d scale : ℕ)
+    (hdlo : 2 ≤ d) (hdhi : d ≤ 9) (hx : d * scale ≤ x) :
+    (d + 1) * scale ≤ (3 * x + 2 * d + 1) / 2 := by
+  interval_cases d <;> omega
+
+/-- In the leading-digit-one sector, two repeated affine halvings with
+correction 3 necessarily reach the next sector boundary. Hence digit 1
+can occur as the source digit of at most two consecutive valuation-one
+steps within one decimal decade. -/
+theorem affine_half_twice_exits_one_sector (x scale : ℕ)
+    (hx : scale ≤ x) :
+    2 * scale ≤
+      (3 * ((3 * x + 3) / 2) + 3) / 2 := by
+  omega
+
 theorem cycle_1_to_6 : T 1 = 6 := by native_decide
 theorem cycle_6_to_3 : T 6 = 3 := by native_decide
 theorem cycle_3_to_16 : T 3 = 16 := by native_decide
