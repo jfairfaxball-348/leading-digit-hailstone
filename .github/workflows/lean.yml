@@ -10,8 +10,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: leanprover/lean-action@v1.5.0
+      - name: Install Lean
+        uses: leanprover/lean-action@v1.5.0
         with:
-          build: true
-          nanoda: true
-          nanoda-allow-sorry: false
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-github-cache: false
+          use-mathlib-cache: false
+          nanoda: false
+      - name: Resolve Lean dependencies
+        run: lake update
+      - name: Fetch Mathlib cache
+        run: lake exe cache get
+      - name: Build Lean specification
+        run: lake build
+      - name: Reject sorry placeholders
+        run: |
+          if grep -R -n -E '\bsorry\b' LeadingDigitHailstone.lean LeadingDigitHailstone; then
+            echo "Lean source contains a sorry placeholder."
+            exit 1
+          fi
