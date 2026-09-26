@@ -94,6 +94,60 @@ theorem next_state_is_twice_next_carry_plus_one (H d : ℕ)
       2 * ((1 + 3 * H + d) / 2) + 1 := by
   omega
 
+/-- Any exact one-halving affine step grows strictly faster than the
+homogeneous multiplier 3/2. -/
+theorem exact_one_halving_strict_growth (x y d : ℕ)
+    (hstep : 2 * y = 3 * x + 2 * d + 1) :
+    3 * x < 2 * y := by
+  omega
+
+/-- The correction interval 3 <= c <= 19 gives a one-step lower shifted
+tube that iterates to the post-lock normalized lower bound. -/
+theorem exact_one_halving_lower_shift_three (x y c : ℕ)
+    (hstep : 2 * y = 3 * x + c) (hc : 3 ≤ c) :
+    3 * (x + 3) ≤ 2 * (y + 3) := by
+  omega
+
+/-- The correction interval 3 <= c <= 19 gives a one-step upper shifted
+tube that iterates to the post-lock normalized upper bound. -/
+theorem exact_one_halving_upper_shift_nineteen (x y c : ℕ)
+    (hstep : 2 * y = 3 * x + c) (hc : c ≤ 19) :
+    2 * (y + 19) ≤ 3 * (x + 19) := by
+  omega
+
+/-- In a fixed decimal sector with leading digit at least two, one exact
+valuation-one affine step leaves that sector. -/
+theorem exact_one_halving_exits_sector_of_digit_ge_two
+    (x y d scale : ℕ)
+    (hstep : 2 * y = 3 * x + 2 * d + 1)
+    (hdlo : 2 ≤ d) (hdhi : d ≤ 9)
+    (hx : d * scale ≤ x) :
+    (d + 1) * scale ≤ y := by
+  interval_cases d <;> omega
+
+/-- Even the digit-one sector cannot contain three consecutive source states:
+two exact valuation-one digit-one steps already cross its upper boundary. -/
+theorem two_digit_one_halvings_exit_sector
+    (x y z scale : ℕ)
+    (hxy : 2 * y = 3 * x + 3)
+    (hyz : 2 * z = 3 * y + 3)
+    (hx : scale ≤ x) :
+    2 * scale < z := by
+  omega
+
+/-- Six consecutive steps each growing faster than 3/2 multiply the state
+by more than ten. This is the formal core of the one-decade escape bound. -/
+theorem six_weak_rises_gt_ten_mul
+    (x0 x1 x2 x3 x4 x5 x6 : ℕ)
+    (h0 : 3 * x0 < 2 * x1)
+    (h1 : 3 * x1 < 2 * x2)
+    (h2 : 3 * x2 < 2 * x3)
+    (h3 : 3 * x3 < 2 * x4)
+    (h4 : 3 * x4 < 2 * x5)
+    (h5 : 3 * x5 < 2 * x6) :
+    10 * x0 < x6 := by
+  omega
+
 theorem cycle_1_to_6 : T 1 = 6 := by native_decide
 theorem cycle_6_to_3 : T 6 = 3 := by native_decide
 theorem cycle_3_to_16 : T 3 = 16 := by native_decide
