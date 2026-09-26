@@ -31,7 +31,7 @@ Every substantive claim should be identifiable as one of:
 11. Expand Lean alongside stable mathematics. Do not assert the central conjecture as a theorem, and do not use sorry merely to create the appearance of formal progress.
 12. The familiar 1 -> 6 -> 3 -> 16 -> 8 -> 4 -> 2 -> 1 cycle must be explicitly identified as 5x+1 prior art.
 13. Keep PROJECT_STATUS.json synchronized with the actual epistemic state.
-14. Do not begin paper/arXiv packaging while major mathematical or novelty questions remain unresolved.
+14. Do not begin paper/arXiv packaging before the final novelty/prior-art audit is complete and the formal/reproducibility state is ready. A proof of the central convergence conjecture is not a publication prerequisite.
 15. Counterexamples, escaping orbits, competing cycles, weakened conjectures, and prior-art discoveries are positive research outcomes when correct.
 
 ## Reproducibility rule
@@ -40,13 +40,15 @@ Incoming numerical observations remain provisional until independently reproduce
 
 ## Stage discipline
 
-The intended progression is:
+The intended progression is now:
 
-1. proof/conjecture research;
+1. bounded red-team / mathematical exploration;
 2. Lean formalisation;
-3. final comprehensive prior-art audit;
-4. Palomar;
+3. Palomar;
+4. final comprehensive novelty / prior-art audit;
 5. research paper;
 6. arXiv submission.
+
+Stage 1 has a declared stopping gate. If the conjecture survives the agreed falsification programme without a competing cycle, apparent escape within the declared caps, structural contradiction, or statement defect, the stage may close while the conjecture remains unproved. An open-ended attempt to prove universal convergence is not a pipeline requirement.
 
 Evidence may move the project backward. Stage labels must describe actual readiness, not aspiration.
