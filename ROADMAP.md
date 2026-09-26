@@ -34,21 +34,21 @@ The final bounded red-team increment adds:
 - 350 deterministic large random odd starts at 20 through 2000 decimal digits;
 - 1,476 inverse-tree-derived hostile starts from sparse depth-45 frontier points;
 - residue-engineered starts requesting 150, 300, 500, 750 and 1000 initial valuation-one accelerated steps, all of which enter the distinguished cycle in the finite computation;
-- an exact extension of the complete own-bit post-lock diagnostic from (Ble220) through (Ble300), with no tail longer than the previously observed record 6;
-- the elementary family (n=2cdot10^k-1), whose odd-branch valuation is exactly (k+1), proving that single valuation bursts are unbounded.
+- an exact extension of the complete own-bit post-lock diagnostic from `B <= 220` through `B <= 300`, with no tail longer than the previously observed record 6;
+- the elementary family `n = 2*10^k - 1`, whose odd-branch valuation is exactly `k+1`, proving that single valuation bursts are unbounded.
 
 These are not a proof of universal convergence.
 
 Existing supporting mathematics remains part of the project, including:
 
-- arbitrary competing accelerated cycles must satisfy (qge971), conditional on the established exhaustive 5,000,000-seed minimum exclusion;
+- arbitrary competing accelerated cycles must satisfy `q >= 971`, conditional on the established exhaustive 5,000,000-seed minimum exclusion;
 - for the structured one-rise/one-fall class under the same premise,
-  (qge1,643,749,725,074) and
-  (age682,217,775,335);
+  `q >= 1,643,749,725,074` and
+  `a >= 682,217,775,335`;
 - exact residue locking and deterministic post-lock reduction;
 - the width-19 normalized corridor and terminally anchored guide;
-- arbitrarily long initial exact-(v_2=1) runs;
-- the exact tail-6 counterexample to proposed universal post-lock bounds (le5).
+- arbitrarily long initial exact-`v2=1` runs;
+- the exact tail-6 counterexample to proposed universal post-lock bounds `<=5`.
 
 These are supporting results, not unfinished obligations that must be pushed to infinity.
 
@@ -62,9 +62,9 @@ Lean should clearly and `sorry`-freely expose:
 
 1. the positive-integer domain convention;
 2. decimal leading digit;
-3. the frozen map (T);
+3. the frozen map `T`;
 4. the distinguished 7-cycle;
-5. iterates of (T);
+5. iterates of `T`;
 6. the Leading-Digit Hailstone Conjecture as an **unproved proposition**;
 7. selected stable supporting lemmas already established mathematically.
 
