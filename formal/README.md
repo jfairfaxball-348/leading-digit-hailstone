@@ -13,4 +13,4 @@ The Lean layer:
 - proves that an odd input maps to an even output;
 - contains no theorem asserting the central conjecture and no sorry placeholder.
 
-The project is pinned to the Lean/mathlib v4.34.0 release pair. CI builds the specification and asks nanoda to reject sorryAx.
+The project is pinned to the Lean/mathlib v4.34.0 release pair. CI resolves the pinned dependency, builds the specification, and explicitly rejects `sorry` placeholders.
