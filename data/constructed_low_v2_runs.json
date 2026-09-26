@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-26",
+  "evidence_type": "FINITE_COMPUTATION_SUPPORTING_AN_ELEMENTARY_CONSTRUCTION",
+  "construction": "bit-lift unique residue modulo 2^(m+1) for a fixed safe leading-digit word from alpha=7/3",
+  "examples": [
+    {
+      "requested_run_length": 30,
+      "decimal_scale": 60,
+      "seed": "2333333333333333333333333333333333333333333333333333574565023",
+      "seed_decimal_digits": 61,
+      "initial_v2_one_run_length_observed": 32,
+      "trajectory_status": "DISTINGUISHED_CYCLE",
+      "cycle_entry_steps": 1771,
+      "peak": "7644575431760996048978995531797409057617187500000000790334530387736",
+      "peak_decimal_digits": 67
+    },
+    {
+      "requested_run_length": 50,
+      "decimal_scale": 110,
+      "seed": "233333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333653815444257951",
+      "seed_decimal_digits": 111,
+      "initial_v2_one_run_length_observed": 50,
+      "trajectory_status": "DISTINGUISHED_CYCLE",
+      "cycle_entry_steps": 2835,
+      "peak": "446335050149834710832385464840399436070583760738372802734375000000000000000000000000000000000000613038853078574526108072",
+      "peak_decimal_digits": 120
+    },
+    {
+      "requested_run_length": 100,
+      "decimal_scale": 230,
+      "seed": "233333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333423007735017856781916545891487",
+      "seed_decimal_digits": 231,
+      "initial_v2_one_run_length_observed": 100,
+      "trajectory_status": "DISTINGUISHED_CYCLE",
+      "cycle_entry_steps": 6051,
+      "peak": "8317478357680584064672127703507613511043381651772686693058045844583346820164269509301181694328182921363247981014210630235083954175934195518493652343750000000000000000000000000000000000000000000000000003196563836781338975337286415324596841997408157016",
+      "peak_decimal_digits": 250
+    }
+  ]
+}
