@@ -1,6 +1,6 @@
 # Leading-Digit Hailstone Dynamics
 
-A controlled conjecture-discovery project for
+A mathematical research programme studying the frozen map
 
 T(n) = n/2 when n is even, and T(n) = 3n + 2L(n) + 1 when n is odd,
 
@@ -10,44 +10,50 @@ The distinguished observed cycle is
 
 1 -> 6 -> 3 -> 16 -> 8 -> 4 -> 2 -> 1.
 
-## Candidate conjecture
+## Central conjecture
 
 **Leading-Digit Hailstone Conjecture.** Every positive integer eventually enters the distinguished 7-cycle.
 
-This is a conjecture, not a theorem. The current project gate is **CANDIDATE_DISTINCTIVE_CONJECTURE**: the object has survived the present falsification work and has enough structural and comparative content to justify continued study as a named conjecture candidate. This gate is deliberately weaker than a novelty determination.
+This is a conjecture, not a theorem.
 
-The map is **not claimed to be new or previously unknown**. Equivalent mathematics under different notation counts as prior art.
+The completed discovery pilot reached the gate **CANDIDATE_DISTINCTIVE_CONJECTURE**. The project has therefore moved into **Stage 1: mathematical proof/conjecture research**, with Lean formalisation and prior-art work continuing in parallel.
+
+The map is **not claimed to be new or previously unknown**. Historical novelty remains unresolved, and mathematically equivalent prior art under different notation counts.
 
 The distinguished cycle itself is not novel: on single-digit odd inputs L(n)=n, so the odd rule is 5n+1 and the displayed cycle is the familiar positive 5x+1 cycle.
 
 ## Current evidence, kept separate by type
 
-**FINITE COMPUTATION.** Exact exhaustive testing through 5,000,000 found every tested seed entering the distinguished cycle and no competing cycle. The current cycle-entry record in that census is seed 4,625,895 at 713 raw iterations; the current maximum-excursion record is seed 4,449,695 reaching 1,265,270,503,548. Consequently any different positive cycle, if one exists, has minimum element greater than 5,000,000.
+**FINITE COMPUTATION.** Exact exhaustive testing through 5,000,000 found every tested seed entering the distinguished cycle and no competing positive cycle. The cycle-entry record is seed 4,625,895 at 713 raw iterations; the maximum-excursion record is seed 4,449,695 reaching 1,265,270,503,548. Consequently any different positive cycle, if one exists, has minimum element greater than 5,000,000.
 
-**ELEMENTARY FACTS.** The repository records exact 2-adic residue classes, decimal-boundary jumps, strong inverse-image restrictions, an accelerated-cycle equation, a proof that the full map is not a standard finite-modulus residue-class-wise affine map, and a constructive proof that arbitrarily long initial runs with exact accelerated valuation v2=1 exist.
+**ELEMENTARY FACTS.** The repository records exact 2-adic residue classes, decimal-sector affine structure and boundary jumps, strong inverse-image restrictions, an accelerated-cycle equation, a proof that the full map is not a finite-modulus residue-class-wise affine map, and a constructive proof that arbitrarily long initial runs with exact accelerated valuation v2=1 exist.
 
-**FINITE COMPARISON.** In the predeclared family c_b(d)=2d+b with b in {-3,-1,1,3,5}, all four nonfrozen shifts had multiple observed cycles while the frozen b=1 rule had one observed cycle, unchanged through seeds 1..1,000,000. Of 18 one-coordinate perturbations c(d) -> c(d)+/-2, 11 already had multiple observed cycles through 100,000; all 7 one-cycle survivors remained one-cycle through 1,000,000. This supports distinctiveness but also shows that finite single-attractor behavior is locally robust in several directions.
+**FINITE COMPARISON.** In the predeclared family c_b(d)=2d+b with b in {-3,-1,1,3,5}, all four nonfrozen shifts had multiple observed cycles while the frozen b=1 rule had one observed cycle through seeds 1..1,000,000. Of 18 one-coordinate perturbations c(d) -> c(d)+/-2, 11 had multiple observed cycles through 100,000; all 7 one-cycle survivors remained one-cycle through 1,000,000.
 
-**FINITE ADVERSARIAL TESTING.** All 9,000 boundary seeds d*10^k +/- 1 for d=1..9 and k=1..500 entered the distinguished cycle within the explicit cap; the longest boundary case took 13,678 raw steps at 7*10^498-1. Explicit residue-lifted examples with at least 30, 50, and 100 consecutive initial v2=1 accelerated steps also entered the distinguished cycle within the explicit cap. These finite outcomes are separate from the elementary theorem that such weak-division runs can be arbitrarily long.
+**FINITE ADVERSARIAL TESTING.** All 9,000 boundary seeds d*10^k +/- 1 for d=1..9 and k=1..500 entered the distinguished cycle within the stated cap. Explicit residue-lifted examples with at least 30, 50, and 100 consecutive initial v2=1 accelerated steps also entered the distinguished cycle within the stated cap.
 
-**LITERATURE STATUS.** The 5x+1 cycle is prior art; standard generalized-Collatz/RCWA frameworks are close analogues but do not contain this leading-decimal-sector rule as a finite-modulus instance; active leading-digit integer dynamics exists in other digit-map literature. The current deeper audit has not identified an exact or equivalent full-map construction. That remains negative search evidence, not a novelty claim.
+**LITERATURE STATUS.** The 5x+1 cycle is prior art; standard finite-modulus generalized-Collatz/RCWA frameworks are close analogues but do not contain this leading-decimal-sector map as a finite-modulus instance; active leading-digit integer dynamics exists elsewhere. No exact or mathematically equivalent full-map construction has yet been identified in the current audit. This is negative search evidence, not a novelty claim.
+
+## Active mathematical programme
+
+Stage 1 develops several approaches in parallel:
+
+- accelerated odd dynamics and deterministic descent;
+- cycle exclusion from exact valuation/digit constraints;
+- inverse-tree structure;
+- decimal-sector geometry;
+- targeted computation for theorem discovery and falsification.
+
+The theorem on arbitrarily long v2=1 runs means no proof may assume a global bound on consecutive weak divisions.
+
+See ROADMAP.md and notes/PROOF_ATTACK_MAP.md for the current research plan.
 
 ## Reproducibility
 
-Python reference and verification implementations live under src/leading_digit_hailstone. Key scripts include:
+Python reference and verification implementations live under src/leading_digit_hailstone. Key scripts and machine-readable summaries live under scripts/ and data/.
 
-- scripts/reproduce_incoming.py
-- scripts/sweep.py
-- scripts/compare_nearby_rules.py
-- scripts/extend_nearby_rules.py
-- scripts/adversarial_search.py
-- scripts/extend_boundary_sweep.py
-- scripts/construct_low_v2_runs.py
+## Lean
 
-Machine-readable summaries are under data/.
+A Lean 4 layer under LeadingDigitHailstone/ specifies the map and central conjecture and proves stable elementary facts. The universal conjecture remains an unproved Prop; no sorry placeholder is used. Formalisation is now expanded alongside Stage-1 mathematics while CI is kept green.
 
-## Lean specification
-
-A compact Lean 4 layer lives in LeadingDigitHailstone/. It defines the leading digit, frozen map, iteration proposition, and distinguished cycle; states LeadingDigitHailstoneConjecture as a Prop; checks all seven cycle transitions; and proves that odd inputs map to even outputs. It contains no proof of the central conjecture and no sorry placeholder.
-
-See RESEARCH_RULES.md, ROADMAP.md, notes/CANDIDATE_ASSESSMENT.md, and literature/DEEP_AUDIT_2026-09-26.md before making stronger claims.
+See RESEARCH_RULES.md, PROJECT_STATUS.json, notes/CANDIDATE_ASSESSMENT.md, notes/cycle_constraints.md, and literature/DEEP_AUDIT_2026-09-26.md before making stronger claims.
