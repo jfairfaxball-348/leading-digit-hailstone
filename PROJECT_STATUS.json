@@ -1,5 +1,5 @@
 {
-  "schema_version": 5,
+  "schema_version": 6,
   "project_title": "Leading-Digit Hailstone Dynamics",
   "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
   "frozen_object": {
@@ -38,7 +38,7 @@
     "1_independent_reproduction": "COMPLETE_WITH_ORIGINAL_RANDOM_SAMPLE_NON_REPLAYABLE",
     "2_dynamical_census": "EXHAUSTIVE_TO_5000000_PLUS_TARGETED_ADVERSARIAL_TESTS",
     "3_structural_decomposition": "MULTIPLE_ELEMENTARY_RESULTS_INCLUDING_ARBITRARILY_LONG_V2_ONE_RUNS",
-    "4_cycle_search": "GENERAL_Q_GE_971; ONE_RISE_ONE_FALL_Q_GE_79335_UNDER_5M_PREMISE",
+    "4_cycle_search": "GENERAL_Q_GE_971; ONE_RISE_ONE_FALL_EXCLUDED_THROUGH_Q_400000_UNDER_5M_PREMISE",
     "5_prior_art_audit": "DEEPENED_NO_EXACT_OR_EQUIVALENT_MATCH_IDENTIFIED_NOVELTY_UNRESOLVED",
     "6_nearby_rule_comparison": "COMPLETE_SMALL_PRINCIPLED_NEIGHBOURHOOD_PLUS_1M_SURVIVOR_EXTENSION",
     "7_lean_specification": "COMPLETE_COMPACT_SPECIFICATION_CI_VERIFIED",
@@ -176,22 +176,36 @@
       "interpretation": "These examples do not exhibit one-step giant compensation; recovery is distributed across a longer block.",
       "claim_type": "FINITE_COMPUTATION"
     },
-    "proof_direction_update": "Structured cycle exclusion strengthened sharply: the one-rise/one-fall geometry gives a q-independent product window and q>=79335 under the 5M premise. The next bottleneck is decimal/2-adic consistency at the first surviving period, not further coarse product estimates.",
+    "proof_direction_update": "The one-rise/one-fall line strengthened substantially: a q-independent product envelope makes each Diophantine survivor imply a finite minimum range, and exact decimal/2-adic symbolic coverage eliminates every survivor through q=400000. Continue this theorem-driven survivor analysis; do not revert to an undirected seed census.",
     "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses powers-of-2/powers-of-3 Diophantine approximation; no novelty claim is made for this strategy.",
     "structured_cycle_consequence": {
-      "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must contain at least 79,335 odd states and at least 32,927 consecutive r=1 rise steps.",
-      "first_period_not_excluded_by_uniform_window": 79335,
-      "unique_total_valuation_at_first_period": 125743,
-      "first_period_relation": "a-E=32927, where E=sum_fall(r_i-2); equivalently a=32927+E and b=46408-E.",
-      "basis": "period-independent structured product envelope plus 5M minimum-element exclusion plus exact integer verification",
-      "claim_type": "FINITE_EXACT_ARITHMETIC_CONSEQUENCE",
-      "caveat": "The structured class is not globally excluded and q=79335 is not asserted realizable."
+      "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q >= 400001 and at least 166015 consecutive r=1 rise steps.",
+      "theorem_level_basis": [
+        "one-rise/one-fall valuation word is equivalent above 19 to exactly one strict local minimum and one strict local maximum",
+        "period-independent product envelope 1 < 2^R/3^q <= M(M-19)/(M^2-57M+361)",
+        "fall-excess identity R=2q-a+E"
+      ],
+      "finite_exact_coverage": {
+        "period_scan_limit": 400000,
+        "product_window_survivors": [
+          79335,
+          158670,
+          190537,
+          269872,
+          349207,
+          381074
+        ],
+        "method": "exact integer product-window enumeration; exact theorem-derived M_max for each survivor; exact symbolic decimal-sector interval splitting plus exact 2-adic lifting for the forced r=1 rise block",
+        "all_survivors_excluded": true
+      },
+      "claim_type": "FINITE_EXACT_SYMBOLIC_ENUMERATION",
+      "caveat": "This excludes only the one-rise/one-fall structured class through the stated period bound; arbitrary cycles retain the separate general q>=971 consequence."
     }
   },
   "current_lean_status": "ODD_AFFINE_NUMERATOR_DIRECTION_INEQUALITIES_ADDED_PENDING_CI",
   "immediate_stage_1_targets": [
-    "Issue #10: exclude the first surviving one-rise/one-fall period q=79335 using R=125743, a-E=32927, decimal intervals, and exact 2-adic lifting",
-    "extend structured block methods only where they yield rigorous coverage beyond the one-rise/one-fall class",
+    "Issue #10: extend exact one-rise/one-fall exclusion beyond q=400000 by enumerating the next product-window survivors and their theorem-derived M ranges",
+    "if a long admissible rise family survives symbolic coverage, analyze its digit word and valuation structure rather than increasing bounds blindly",
     "formalise leading-digit bounds and accelerated odd dynamics in Lean",
     "continue prior-art equivalence search without novelty claims"
   ],
@@ -204,7 +218,7 @@
   },
   "highest_value_next_target": {
     "issue": 10,
-    "title": "Exclude the first surviving structured period q=79,335",
-    "reason": "The new period-independent product envelope already excludes q<=79,334 and fixes R=125,743 at the first survivor; decimal digit-word intervals and exact 2-adic lifting are now the main map-specific constraints left to exploit."
+    "title": "Extend structured-cycle exclusion beyond q=400,000",
+    "reason": "All product-window survivors through q=400,000 are now eliminated by exact decimal-sector/2-adic symbolic coverage. The next useful increment is to locate the next exact Diophantine survivors and determine where this symbolic mechanism first stops closing the case."
   }
 }
