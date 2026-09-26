@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "claim_type": "THEOREM_PLUS_FINITE_EXACT_RATIONAL_ARITHMETIC_AND_SYMBOLIC_CERTIFICATE",
+  "premise": "one-rise/one-fall accelerated cycle entirely above 19 with minimum odd state >= 5000001",
+  "exact_log_certificate": {
+    "identity": "log(x)=2*sum_{k>=0} z^(2k+1)/(2k+1), z=(x-1)/(x+1)",
+    "tail_bound": "tail_N <= 2*z^(2N+1)/((2N+1)*(1-z^2))",
+    "log_2_and_log_3_terms": 90,
+    "structured_bound_log_terms": 4,
+    "arithmetic": "fractions.Fraction exact rational arithmetic"
+  },
+  "starting_upper": {
+    "q": 10781274,
+    "R": 17087915
+  },
+  "starting_lower": {
+    "q": 53715833,
+    "R": 85137581
+  },
+  "new_upper_records": [
+    {
+      "q": 64497107,
+      "R": 102225496,
+      "power_relation": "2^R > 3^q",
+      "lower_neighbor_at_record": {
+        "q": 53715833,
+        "R": 85137581
+      },
+      "final_lower_neighbor_before_next_upper": {
+        "q": 53715833,
+        "R": 85137581
+      },
+      "lower_updates_before_next_upper": 0,
+      "farey_determinant": 1,
+      "next_upper_record": {
+        "q": 118212940,
+        "R": 187363077
+      },
+      "covered_q_start": 64497107,
+      "covered_q_end": 118212939,
+      "maximum_minimum_state": 4350616725,
+      "required_minimum_rise": 26768718,
+      "first_impossible_rise_length": 31,
+      "peak_symbolic_cells": 276
+    },
+    {
+      "q": 118212940,
+      "R": 187363077,
+      "power_relation": "2^R > 3^q",
+      "lower_neighbor_at_record": {
+        "q": 53715833,
+        "R": 85137581
+      },
+      "final_lower_neighbor_before_next_upper": {
+        "q": 53715833,
+        "R": 85137581
+      },
+      "lower_updates_before_next_upper": 0,
+      "farey_determinant": 1,
+      "next_upper_record": {
+        "q": 171928773,
+        "R": 272500658
+      },
+      "covered_q_start": 118212940,
+      "covered_q_end": 171928772,
+      "maximum_minimum_state": 7221856344,
+      "required_minimum_rise": 49062803,
+      "first_impossible_rise_length": 31,
+      "peak_symbolic_cells": 301
+    },
+    {
+      "q": 171928773,
+      "R": 272500658,
+      "power_relation": "2^R > 3^q",
+      "lower_neighbor_at_record": {
+        "q": 53715833,
+        "R": 85137581
+      },
+      "final_lower_neighbor_before_next_upper": {
+        "q": 225644606,
+        "R": 357638239
+      },
+      "lower_updates_before_next_upper": 1,
+      "farey_determinant": 1,
+      "next_upper_record": {
+        "q": 397573379,
+        "R": 630138897
+      },
+      "covered_q_start": 171928773,
+      "covered_q_end": 397573378,
+      "maximum_minimum_state": 21238350355,
+      "required_minimum_rise": 71356888,
+      "first_impossible_rise_length": 35,
+      "peak_symbolic_cells": 350
+    },
+    {
+      "q": 397573379,
+      "R": 630138897,
+      "power_relation": "2^R > 3^q",
+      "lower_neighbor_at_record": {
+        "q": 225644606,
+        "R": 357638239
+      },
+      "final_lower_neighbor_before_next_upper": {
+        "q": 6189245291,
+        "R": 9809721694
+      },
+      "lower_updates_before_next_upper": 15,
+      "farey_determinant": 1,
+      "next_upper_record": {
+        "q": 6586818670,
+        "R": 10439860591
+      },
+      "covered_q_start": 397573379,
+      "covered_q_end": 6586818669,
+      "maximum_minimum_state": 359020668782,
+      "required_minimum_rise": 165007861,
+      "first_impossible_rise_length": 38,
+      "peak_symbolic_cells": 485
+    },
+    {
+      "q": 6586818670,
+      "R": 10439860591,
+      "power_relation": "2^R > 3^q",
+      "lower_neighbor_at_record": {
+        "q": 6189245291,
+        "R": 9809721694
+      },
+      "final_lower_neighbor_before_next_upper": {
+        "q": 65470613321,
+        "R": 103768467013
+      },
+      "lower_updates_before_next_upper": 9,
+      "farey_determinant": 1,
+      "next_upper_record": {
+        "q": 72057431991,
+        "R": 114208327604
+      },
+      "covered_q_start": 6586818670,
+      "covered_q_end": 72057431990,
+      "maximum_minimum_state": 3753781445604,
+      "required_minimum_rise": 2733776749,
+      "first_impossible_rise_length": 41,
+      "peak_symbolic_cells": 603
+    },
+    {
+      "q": 72057431991,
+      "R": 114208327604,
+      "power_relation": "2^R > 3^q",
+      "lower_neighbor_at_record": {
+        "q": 65470613321,
+        "R": 103768467013
+      },
+      "final_lower_neighbor_before_next_upper": {
+        "q": 65470613321,
+        "R": 103768467013
+      },
+      "lower_updates_before_next_upper": 0,
+      "farey_determinant": 1,
+      "next_upper_record": {
+        "q": 137528045312,
+        "R": 217976794617
+      },
+      "covered_q_start": 72057431991,
+      "covered_q_end": 137528045311,
+      "maximum_minimum_state": 6895437822163,
+      "required_minimum_rise": 29906536378,
+      "first_impossible_rise_length": 41,
+      "peak_symbolic_cells": 636
+    },
+    {
+      "q": 137528045312,
+      "R": 217976794617,
+      "power_relation": "2^R > 3^q",
+      "lower_neighbor_at_record": {
+        "q": 65470613321,
+        "R": 103768467013
+      },
+      "final_lower_neighbor_before_next_upper": {
+        "q": 753110839881,
+        "R": 1193652440098
+      },
+      "lower_updates_before_next_upper": 5,
+      "farey_determinant": 1,
+      "next_upper_record": {
+        "q": 890638885193,
+        "R": 1411629234715
+      },
+      "covered_q_start": 137528045312,
+      "covered_q_end": 890638885192,
+      "maximum_minimum_state": 42285421502900,
+      "required_minimum_rise": 57079296007,
+      "first_impossible_rise_length": 49,
+      "peak_symbolic_cells": 727
+    }
+  ],
+  "structured_q_excluded_through": 890638885192,
+  "first_q_not_covered_by_this_certificate": 890638885193,
+  "next_unprocessed_upper_record": {
+    "q": 890638885193,
+    "R": 1411629234715,
+    "lower_neighbor": {
+      "q": 753110839881,
+      "R": 1193652440098
+    },
+    "power_relation": "2^R > 3^q",
+    "farey_determinant": 1
+  },
+  "certified_minimum_rise_length_for_any_remaining_structured_cycle": 369648535671,
+  "largest_processed_symbolic_range": {
+    "minimum": 5000001,
+    "maximum": 42285421502900,
+    "first_impossible_rise_length": 49,
+    "terminal_depth": 48,
+    "terminal_representatives": [
+      {
+        "cell_lo": 26465544205035,
+        "cell_hi": 26666666666617,
+        "cell_width": 201122461583,
+        "representative": 26501219601103,
+        "digit_word": "235812346112357112358112461123571123581124691235",
+        "state_after_rises": 7510109955360948316615,
+        "next_valuation": 2
+      }
+    ],
+    "cell_counts_by_rise_depth": [
+      63, 111, 145, 187, 229, 271, 312, 353, 395, 437, 479, 520, 562,
+      604, 642, 672, 696, 715, 727, 725, 710, 691, 687, 667, 642, 627,
+      589, 563, 516, 484, 443, 405, 353, 293, 222, 166, 113, 67, 36,
+      18, 12, 5, 4, 3, 2, 2, 2, 1, 0
+    ],
+    "profile_tail_from_depth_32": [
+      {"rise_depth":32,"cells":405,"total_cell_width":41973104106827,"minimum_cell_width":167071465,"maximum_cell_width":2031067790349,"distinct_digit_words":195,"distinct_residues":192,"binary_range_misses":129,"valuation_misses":392},
+      {"rise_depth":33,"cells":353,"total_cell_width":41581123033279,"minimum_cell_width":606596708,"maximum_cell_width":2031067790348,"distinct_digit_words":198,"distinct_residues":196,"binary_range_misses":149,"valuation_misses":342},
+      {"rise_depth":34,"cells":293,"total_cell_width":40809245366737,"minimum_cell_width":410447296,"maximum_cell_width":2031067790347,"distinct_digit_words":194,"distinct_residues":191,"binary_range_misses":152,"valuation_misses":287},
+      {"rise_depth":35,"cells":222,"total_cell_width":38915711635903,"minimum_cell_width":273631530,"maximum_cell_width":2031067790346,"distinct_digit_words":170,"distinct_residues":168,"binary_range_misses":151,"valuation_misses":235},
+      {"rise_depth":36,"cells":166,"total_cell_width":36271449197321,"minimum_cell_width":4885535453,"maximum_cell_width":2031067790345,"distinct_digit_words":136,"distinct_residues":136,"binary_range_misses":129,"valuation_misses":165},
+      {"rise_depth":37,"cells":113,"total_cell_width":30656628998939,"minimum_cell_width":4885535452,"maximum_cell_width":1909453776813,"distinct_digit_words":98,"distinct_residues":98,"binary_range_misses":125,"valuation_misses":112},
+      {"rise_depth":38,"cells":67,"total_cell_width":23576497795187,"minimum_cell_width":13262398555,"maximum_cell_width":1909453776812,"distinct_digit_words":59,"distinct_residues":59,"binary_range_misses":107,"valuation_misses":68},
+      {"rise_depth":39,"cells":36,"total_cell_width":16977586007309,"minimum_cell_width":13262398554,"maximum_cell_width":1909453776811,"distinct_digit_words":35,"distinct_residues":35,"binary_range_misses":71,"valuation_misses":37},
+      {"rise_depth":40,"cells":18,"total_cell_width":8973797294579,"minimum_cell_width":13262398553,"maximum_cell_width":1909453776810,"distinct_digit_words":18,"distinct_residues":18,"binary_range_misses":35,"valuation_misses":19},
+      {"rise_depth":41,"cells":12,"total_cell_width":5801255923681,"minimum_cell_width":137896095386,"maximum_cell_width":1909453776809,"distinct_digit_words":12,"distinct_residues":12,"binary_range_misses":18,"valuation_misses":6},
+      {"rise_depth":42,"cells":5,"total_cell_width":1895595636229,"minimum_cell_width":265247971720,"maximum_cell_width":481709164296,"distinct_digit_words":5,"distinct_residues":5,"binary_range_misses":12,"valuation_misses":7},
+      {"rise_depth":43,"cells":4,"total_cell_width":1465968536467,"minimum_cell_width":265247971719,"maximum_cell_width":481709164295,"distinct_digit_words":4,"distinct_residues":4,"binary_range_misses":5,"valuation_misses":1},
+      {"rise_depth":44,"cells":3,"total_cell_width":984259372169,"minimum_cell_width":265247971718,"maximum_cell_width":397871957599,"distinct_digit_words":3,"distinct_residues":3,"binary_range_misses":4,"valuation_misses":1},
+      {"rise_depth":45,"cells":2,"total_cell_width":663119929315,"minimum_cell_width":265247971717,"maximum_cell_width":397871957598,"distinct_digit_words":2,"distinct_residues":2,"binary_range_misses":3,"valuation_misses":1},
+      {"rise_depth":46,"cells":2,"total_cell_width":663119929313,"minimum_cell_width":265247971716,"maximum_cell_width":397871957597,"distinct_digit_words":2,"distinct_residues":2,"binary_range_misses":2,"valuation_misses":0},
+      {"rise_depth":47,"cells":2,"total_cell_width":566931664115,"minimum_cell_width":265247971715,"maximum_cell_width":301683692400,"distinct_digit_words":2,"distinct_residues":2,"binary_range_misses":4,"valuation_misses":0},
+      {"rise_depth":48,"cells":1,"total_cell_width":201122461583,"minimum_cell_width":201122461583,"maximum_cell_width":201122461583,"distinct_digit_words":1,"distinct_residues":1,"binary_range_misses":4,"valuation_misses":1},
+      {"rise_depth":49,"cells":0,"total_cell_width":0,"minimum_cell_width":0,"maximum_cell_width":0,"distinct_digit_words":0,"distinct_residues":0,"binary_range_misses":1,"valuation_misses":1}
+    ]
+  },
+  "finite_range_symbolic_complexity_diagnostic": {
+    "rise_depth": 48,
+    "scaled_decimal_boundary_count_J": 2997,
+    "proved_decimal_sector_word_bound_1_plus_20J": 59941,
+    "residue_capacity_per_fixed_word": 1,
+    "interpretation": "The boundary-window lemma gives polynomial/linear finite-range word complexity, but at sub-modulus scale it only bounds each word to at most one residue representative. It does not force that representative to miss its decimal cell."
+  },
+  "interpretation": "Seven further exact upper Farey records are eliminated by their theorem-derived product windows and complete decimal-sector/2-adic symbolic rise coverage. Any different positive one-rise/one-fall accelerated cycle consistent with the 5M minimum-element exclusion must have q >= 890638885193 and at least 369648535671 consecutive r=1 rise steps. This remains a finite structured-class result, not a global cycle exclusion and not a result for arbitrary cycles."
+}
