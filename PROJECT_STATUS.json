@@ -1,5 +1,5 @@
 {
-  "schema_version": 8,
+  "schema_version": 9,
   "project_title": "Leading-Digit Hailstone Dynamics",
   "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
   "frozen_object": {
@@ -312,12 +312,12 @@
     "python": "GREEN",
     "lean": "GREEN",
     "verified_on_research_branch": "research/farey-record-chain-symbolic-complexity",
-    "verified_commit": "754691b4fa3f15f98ff024e4af2c29b05eb7d797",
-    "verification_note": "Python and Lean workflows passed on the full substantive Issue #10 record-chain increment, including exact rational-log certification, seven further Farey record blocks, symbolic-range regression, explicit rise-word residue formula, and terminal-word regression. This status-only synchronization commit follows that verified research head."
+    "verified_commit": "c46ddd8df82621d877009bdc57e5273cb7e51ad8",
+    "verification_note": "Python and Lean PR #13 workflows passed on the reconciled Issue #10 record-chain head, including the stronger rational-log/Farey framework and the preserved PR #14 next-record script/data/test certificate. This status-only synchronization commit follows that verified head."
   },
   "highest_value_next_target": {
     "issue": 10,
     "title": "Control symbolic residue positions",
-    "reason": "Farey record transfer now excludes the one-rise/one-fall class through q=890,638,885,192, while boundary localization proves low finite-range word complexity. The missing global step is to show that the unique word-dependent 2-adic residue representatives eventually miss their narrow decimal cells, or to identify a precise counter-obstruction."
+    "reason": "The record-chain framework now excludes one-rise/one-fall periods through q=890638885192 under the 5M premise and proves linear finite-range decimal-word complexity. The missing global step is a deterministic theorem controlling the explicit word-dependent 2-adic residue representative relative to its decimal-consistency cell."
   }
 }
