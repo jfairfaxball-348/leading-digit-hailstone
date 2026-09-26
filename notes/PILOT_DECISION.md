@@ -30,11 +30,11 @@ The deeper audit has not located an exact or mathematically equivalent full-map 
 
 **Non-obviousness:** strong enough for a conjecture candidate. The leading digit is a nonperiodic state selector, and finite-modulus Collatz machinery does not absorb it directly.
 
-**Computational robustness:** strong as finite evidence. Exhaustive 5M testing, targeted boundaries, low-v2 construction, and large arbitrary-precision examples all support the same observed attractor. None is universal evidence.
+**Computational robustness:** strong as finite evidence. Exhaustive 5M testing, boundary-adjacent starts through exponent 500, and deliberately engineered low-v2 examples all support the same observed attractor. None is universal evidence.
 
-**Structural richness:** strong. The project already has exact local affine sectors, boundary jumps, valuation classes, inverse restrictions, and cycle equations.
+**Structural richness:** strong. The project has exact local affine sectors, boundary jumps, valuation classes, inverse restrictions, cycle equations, and a proof that arbitrarily long local v2=1 growth stretches exist.
 
-**Distinctiveness from nearby rules:** meaningful but not absolute. The frozen map is exceptional among the four global shifts tested; the one-coordinate neighbourhood is mixed, with 7 of 18 perturbations still showing a single observed cycle.
+**Distinctiveness from nearby rules:** meaningful but not absolute. The frozen map remains the only one-cycle member of the tested global-shift family through 1M seeds; the one-coordinate neighbourhood is mixed, and all seven 100k one-cycle survivors remain one-cycle through 1M. This is evidence against both “generic everywhere” and “uniquely isolated.”
 
 **Prior-art risk:** materially unresolved. No exact/equivalent full-map match has been found in the present audit, but the search is not yet strong enough for priority language.
 
