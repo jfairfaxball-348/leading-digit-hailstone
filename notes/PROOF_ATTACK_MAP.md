@@ -154,6 +154,12 @@ X 3^t < C 2^t < (X+19)3^t.
 
 There are also exact local sector-exit bounds: an r=1 source with leading digit d>=2 leaves its sector in one step, a digit-1 sector supplies at most two consecutive source states, and six consecutive r=1 steps force a power-of-ten crossing.
 
+There is now a complementary finite-horizon coordinate as well.  For any fixed exact-r=1 segment x_0,...,x_N, the terminally anchored guide g_s=x_N(2/3)^(N-s) satisfies
+
+g_s-x_s=sum_(j=s)^(N-1) (c_j/3)(2/3)^(j-s),
+
+hence 0<=g_s-x_s<19 uniformly in N and scale.  Thus one concrete homogeneous orbit stays within absolute distance 19 above every earlier state of the segment.  Any disagreement between x_s and this terminal guide again forces a decimal boundary inside a width-19 interval, now in the unscaled state coordinate.  This is useful for candidate-specific phase certificates, but the guide depends on the terminal state and therefore is not by itself a uniform F(B) theorem.
+
 These geometric facts still do not force termination. The exact own-bit lock diagnostic through B=220 finds 96 locked candidates and 41 positive post-lock tails, with maximum observed tail 6. Every one of those 41 positive tails has zero scaled-boundary corridor hits and zero disagreement with its homogeneous leading-digit itinerary. This is finite exact computation only, but it shows that decimal-boundary near-hits are not necessary for the observed long tails.
 
 The highest-value continuation is therefore not another broad q scan: seek a scale-aware parity or congruence obstruction along the phase-frozen homogeneous (3/2)^t digit itinerary, or rigorously construct a family showing why such a bound cannot be strong enough. Mixed 2^m5^n information, carry parity, or another unbounded scale coordinate are natural next targets.
