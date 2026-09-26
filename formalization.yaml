@@ -28,7 +28,7 @@ classification:
 sources:
   - title: "Accelerated Cycle Constraints"
     id: "https://github.com/jfairfaxball-348/leading-digit-hailstone/blob/042765a1d01d104e364e4eeee08dd6def1b36112/notes/cycle_constraints.md"
-    type: "research note"
+    type: "other"
     location: "notes/cycle_constraints.md, Exact 5M consequence: at least 971 odd states"
     relationship: "formalizes"
     note: >-
@@ -41,7 +41,7 @@ sources:
   - title: "The 3x+1 problem: new lower bounds on nontrivial cycle lengths"
     authors: ["Shalom Eliahou"]
     id: "https://doi.org/10.1016/0012-365X(93)90052-U"
-    type: "article"
+    type: "paper"
     relationship: "background"
     note: >-
       Classical prior work using product inequalities and one-sided
@@ -51,11 +51,29 @@ sources:
   - title: "Theoretical and computational bounds for m-cycles of the 3n+1-problem"
     authors: ["John Simons", "Benne de Weger"]
     id: "https://doi.org/10.4064/aa117-1-3"
-    type: "article"
+    type: "paper"
     relationship: "background"
     note: >-
       Related cycle-restriction literature using transcendental and
       computational Diophantine methods for ordinary 3n+1 cycles.
+  - title: "The 3x+1 Problem: An Overview"
+    authors: ["Jeffrey C. Lagarias"]
+    id: "https://arxiv.org/abs/2111.02635"
+    type: "paper"
+    relationship: "background"
+    note: >-
+      Survey context for the 3x+1 problem and its generalizations, including
+      the viewpoint of generalized Collatz maps as arithmetic discrete
+      dynamical systems.
+  - title: "The Collatz Problem generalized to 3x+k"
+    authors: ["Franz Wegner"]
+    id: "https://arxiv.org/abs/2101.08060"
+    type: "paper"
+    relationship: "background"
+    note: >-
+      Example of established generalized-Collatz literature for constant
+      odd corrections. It does not match the present leading-digit-dependent
+      correction.
 
 related_formalizations:
   - id: "https://github.com/tangentproofs/eliahou-collatz-bounds"
