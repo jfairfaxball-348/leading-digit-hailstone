@@ -71,39 +71,61 @@ theorem periodLowerBound_of_productWindow {q R : ℕ}
   have hupperRaised :
       ((2 ^ R * cycleMinimumFloor ^ q) : ℕ) ^ 306 ≤
         ((3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ q) ^ 306 := by
-    exact Nat.pow_le_pow_left hupper
+    exact Nat.pow_le_pow_left hupper 306
 
   have hfixedRaised :
       ((3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ 306 : ℕ) ^ q <
         (2 ^ 485 * cycleMinimumFloor ^ 306) ^ q := by
     exact Nat.pow_lt_pow_left upper_power_certificate (Nat.ne_of_gt hq)
 
+  have hupperRaw :
+      ((2 : ℕ) ^ R) ^ 306 * (cycleMinimumFloor ^ q) ^ 306 ≤
+        ((3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ q) ^ 306 := by
+    simpa only [mul_pow] using hupperRaised
+
+  have hfixedRaw :
+      ((3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ 306) ^ q <
+        ((2 : ℕ) ^ 485) ^ q * (cycleMinimumFloor ^ 306) ^ q := by
+    simpa only [mul_pow] using hfixedRaised
+
+  have hmiddle :
+      ((3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ q) ^ 306 =
+        ((3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ 306) ^ q := by
+    simp only [pow_mul]
+    rw [Nat.mul_comm q 306]
+
+  have hfloor :
+      (cycleMinimumFloor ^ 306) ^ q = (cycleMinimumFloor ^ q) ^ 306 := by
+    simp only [pow_mul]
+    rw [Nat.mul_comm 306 q]
+
   have hcombined :
-      (2 : ℕ) ^ (306 * R) * cycleMinimumFloor ^ (306 * q) <
-        2 ^ (485 * q) * cycleMinimumFloor ^ (306 * q) := by
-    have h₁ :
-        (2 : ℕ) ^ (306 * R) * cycleMinimumFloor ^ (306 * q) ≤
-          (3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ (306 * q) := by
-      simpa [mul_pow, pow_mul, Nat.mul_comm, Nat.mul_left_comm, Nat.mul_assoc] using
-        hupperRaised
-    have h₂ :
-        (3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ (306 * q) <
-          (2 : ℕ) ^ (485 * q) * cycleMinimumFloor ^ (306 * q) := by
-      simpa [mul_pow, pow_mul, Nat.mul_comm, Nat.mul_left_comm, Nat.mul_assoc] using
-        hfixedRaised
-    exact h₁.trans_lt h₂
+      ((2 : ℕ) ^ R) ^ 306 * (cycleMinimumFloor ^ q) ^ 306 <
+        ((2 : ℕ) ^ 485) ^ q * (cycleMinimumFloor ^ q) ^ 306 := by
+    calc
+      ((2 : ℕ) ^ R) ^ 306 * (cycleMinimumFloor ^ q) ^ 306
+          ≤ ((3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ q) ^ 306 :=
+        hupperRaw
+      _ = ((3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ 306) ^ q := hmiddle
+      _ < ((2 : ℕ) ^ 485) ^ q * (cycleMinimumFloor ^ 306) ^ q := hfixedRaw
+      _ = ((2 : ℕ) ^ 485) ^ q * (cycleMinimumFloor ^ q) ^ 306 := by rw [hfloor]
+
+  have htwoHighRaw :
+      ((2 : ℕ) ^ R) ^ 306 < ((2 : ℕ) ^ 485) ^ q := by
+    exact (Nat.mul_lt_mul_right
+      (by norm_num [cycleMinimumFloor] :
+        0 < (cycleMinimumFloor ^ q) ^ 306)).mp hcombined
 
   have htwoHigh :
-      (2 : ℕ) ^ (306 * R) < 2 ^ (485 * q) := by
-    exact (Nat.mul_lt_mul_right (by
-      positivity : 0 < cycleMinimumFloor ^ (306 * q))).mp hcombined
+      (2 : ℕ) ^ (R * 306) < 2 ^ (485 * q) := by
+    simpa only [pow_mul] using htwoHighRaw
 
-  have hcrossHigh : 306 * R < 485 * q :=
+  have hcrossHigh : R * 306 < 485 * q :=
     (Nat.pow_lt_pow_iff_right (by norm_num : 1 < (2 : ℕ))).mp htwoHigh
 
   have hleft : (1054 : ℚ) / 665 < R / q := by
     rw [div_lt_div_iff₀] <;> norm_num at *
-    · exact_mod_cast hcrossLow
+    · exact_mod_cast (by simpa [Nat.mul_comm] using hcrossLow)
     · exact_mod_cast hq
 
   have hright : (R : ℚ) / q < 485 / 306 := by
