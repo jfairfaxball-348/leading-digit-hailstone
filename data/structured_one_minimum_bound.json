@@ -1,0 +1,61 @@
+{
+  "schema_version": 2,
+  "claim_type": "FINITE_EXACT_SYMBOLIC_ENUMERATION",
+  "premise": "one-rise/one-fall accelerated cycle entirely above 19 with minimum odd state >= 5000001",
+  "premise_source": "structured product envelope plus exhaustive seed census through 5000000",
+  "uniform_product_bound": "1 < 2^R/3^q <= M(M-19)/(M^2-57M+361)",
+  "minimum_odd_state_used": 5000001,
+  "uniform_bound_numerator": 24999914999982,
+  "uniform_bound_denominator": 24999725000305,
+  "period_scan_limit": 400000,
+  "exact_product_window_survivors_through_limit": [
+    {
+      "q": 79335,
+      "R": 125743,
+      "required_minimum_rise": 32927,
+      "maximum_minimum_state": 10369168,
+      "first_impossible_rise_length": 21
+    },
+    {
+      "q": 158670,
+      "R": 251486,
+      "required_minimum_rise": 65854,
+      "maximum_minimum_state": 5184598,
+      "first_impossible_rise_length": 17
+    },
+    {
+      "q": 190537,
+      "R": 301994,
+      "required_minimum_rise": 79080,
+      "maximum_minimum_state": 589078792,
+      "first_impossible_rise_length": 29
+    },
+    {
+      "q": 269872,
+      "R": 427737,
+      "required_minimum_rise": 112007,
+      "maximum_minimum_state": 10189804,
+      "first_impossible_rise_length": 21
+    },
+    {
+      "q": 349207,
+      "R": 553480,
+      "required_minimum_rise": 144934,
+      "maximum_minimum_state": 5139366,
+      "first_impossible_rise_length": 17
+    },
+    {
+      "q": 381074,
+      "R": 603988,
+      "required_minimum_rise": 158160,
+      "maximum_minimum_state": 294539410,
+      "first_impossible_rise_length": 28
+    }
+  ],
+  "all_product_window_survivors_through_limit_fail_required_rise": true,
+  "structured_q_excluded_through": 400000,
+  "minimum_rise_length_for_any_remaining_structured_cycle": 166015,
+  "symbolic_method": "exact affine decimal-sector interval splitting plus exact residue lifting modulo successive powers of two for r=1",
+  "symbolic_rise_check_cap": 128,
+  "interpretation": "Any different positive one-rise/one-fall accelerated cycle consistent with the 5M minimum-element exclusion must have q >= 400001 and at least 166015 consecutive r=1 rise steps. This remains a finite structured-class exclusion, not a global no-cycle theorem."
+}

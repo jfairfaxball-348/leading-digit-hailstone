@@ -84,6 +84,13 @@ Unless explicitly labelled otherwise, statements in the proved sections are **EL
 
    Thus arbitrarily long weak runs cannot in general be neutralized by a valuation bound independent of the run length. See notes/weak_run_compensation.md.
 
+19. **One-rise/one-fall cycles have a period-independent product envelope.** Consider an accelerated cycle entirely above 19 whose valuation word, after rotation to its minimum M, consists of a nonempty r=1 rise block followed by a nonempty r>=2 fall block. This is equivalent to exactly one strict local minimum and one strict local maximum per period. Rise states satisfy x_i>=(3/2)^i M, with strict inequality away from the minimum. Reading the fall block backward from M gives x_(q-t)>=19+(4/3)^t(M-19). Inserting these geometric state bounds into the exact product identity yields
+
+   1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).
+
+   With the finite census premise M>=5,000,001, exact integer product-window enumeration plus exact symbolic decimal-sector/2-adic rise-word coverage excludes every structured period q<=400,000. Hence any remaining structured cycle has q>=400,001 and at least 166,015 consecutive r=1 rise steps. This is a bounded structured-class consequence, not a global cycle exclusion. See notes/one_minimum_cycles.md.
+
+
 ## Heuristic direction, not theorem
 
 The exact interval-density result in item 5 gives the same geometric valuation profile as the usual accelerated Collatz heuristic. If actual large odd trajectory states behaved as though they sampled these classes without strong bias, then `E[v2]≈2` and the dominant multiplicative log drift would be `log 3 - 2 log 2 = log(3/4) < 0`, with additive correction `(2L(n)+1)/n` small at large `n`.

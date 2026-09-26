@@ -109,11 +109,19 @@ The 5M census already forces any competing cycle to have very large minimum. The
 4. Add decimal interval consistency to eliminate formally possible but unrealizable words.
 5. Search for modular obstructions to the cycle equation after digit-word fixing.
 
-### Current new bounded consequence
+### Current bounded consequences
 
-The exact-integer certificate in scripts/cycle_minimum_length_bound.py verifies that the multiplicative window excludes q<=970 when M>=5,000,001. Therefore any different positive cycle consistent with the 5M census must contain at least 971 odd states.
+For arbitrary accelerated cycles, the exact-integer certificate in scripts/cycle_minimum_length_bound.py verifies that the general multiplicative window excludes q<=970 when M>=5,000,001. Therefore any different positive cycle consistent with the 5M census must contain at least 971 odd states.
 
-This consequence uses both an elementary theorem and a finite exact arithmetic certificate; it is not a global cycle exclusion.
+For the narrower one-rise/one-fall class of Issue #10, geometric state bounds on both sides of the unique turning pair give the period-independent envelope
+
+1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).
+
+Exact product-window enumeration through q=400,000 leaves six periods. For each, the same envelope gives an exact finite M_max; exact symbolic decimal-sector interval splitting plus exact binary lifting shows that no M in its complete allowed range sustains the required r=1 rise block.
+
+Therefore the structured class is excluded through q=400,000 under the 5M premise. Any remaining structured cycle has q>=400,001 and a>=166,015.
+
+This substantially strengthens Issue #10 without closing it. The next precise target is to extend the theorem-driven survivor analysis beyond q=400,000, stopping if a product survivor produces a nonempty long-rise symbolic family rather than escalating to an undirected scan.
 
 ### What would weaken/falsify this approach
 

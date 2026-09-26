@@ -91,6 +91,18 @@ The smallest integer r satisfying (3) is:
 
 These examples do not say that such a compensating step must occur. They state only what its valuation would have to be if one single step is to undo the entire preceding weak run.
 
+## Structured multi-step compensation now available in the cycle setting
+
+For the one-rise/one-fall cycle class of Issue #10, the multi-step fall block can be controlled in reverse. Every falling step satisfies
+
+x_i - 19 >= (4/3)(x_(i+1)-19).
+
+Together with the forward rise bound, this forces states away from the cycle minimum geometrically on both sides of the unique turning pair. Inserting those state lower bounds into the exact cycle product identity yields the period-independent envelope
+
+1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).
+
+This is a genuine block-compensation theorem for the structured cycle problem; it is **not** a theorem that arbitrary forward weak runs must be followed by a comparable monotone fall block. Combined with theorem-derived minimum ranges and exact symbolic decimal/2-adic rise-word checks, it now excludes the structured class through q=400,000 under the 5M census premise. See notes/one_minimum_cycles.md.
+
 ## Interpretation
 
 The arbitrary-length weak-run theorem rules out a bounded waiting-time proof for r>=2.
