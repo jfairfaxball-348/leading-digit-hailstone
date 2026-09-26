@@ -1,0 +1,26 @@
+{
+  "status": "PROVISIONAL_INCOMING_EVIDENCE",
+  "do_not_treat_as_repository_verified": true,
+  "claims": {
+    "exhaustive_1_to_1000000": {
+      "all_entered_distinguished_cycle": true,
+      "other_cycles_observed": 0
+    },
+    "seed_917173": {
+      "raw_cycle_entry_iterations": 584
+    },
+    "seed_508701": {
+      "max_excursion": 133635233424,
+      "approx_excursion_ratio": 262699
+    },
+    "large_random_sample": {
+      "sample_count": 1000,
+      "decimal_digits_inclusive": [
+        10,
+        200
+      ],
+      "all_entered_distinguished_cycle_within_unspecified_cap": true,
+      "rng_seed_or_sample_list_supplied": false
+    }
+  }
+}

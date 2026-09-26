@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "project_title": "Leading-Digit Hailstone Dynamics",
+  "phase": "OBJECT_DISCOVERY_PILOT",
+  "frozen_object": {
+    "domain": "positive integers",
+    "base": 10,
+    "leading_digit": "first digit of the ordinary decimal expansion",
+    "even_branch": "n/2",
+    "odd_branch": "3n+2L(n)+1",
+    "distinguished_cycle": [
+      1,
+      6,
+      3,
+      16,
+      8,
+      4,
+      2
+    ]
+  },
+  "central_conjecture": {
+    "statement": "Every positive integer eventually enters the distinguished 7-cycle.",
+    "status": "CONJECTURE"
+  },
+  "novelty_status": "UNASSESSED_DO_NOT_CLAIM",
+  "incoming_evidence_status": "EXACT_FINITE_CLAIMS_REPRODUCED; ORIGINAL_RANDOM_SAMPLE_NON_REPLAYABLE; DETERMINISTIC_REPLACEMENT_PASSED",
+  "tasks": {
+    "0_scaffold": "COMPLETE",
+    "1_independent_reproduction": "PARTIAL_COMPLETE_RANDOM_ORIGINAL_NON_REPLAYABLE",
+    "2_dynamical_census": "NOT_STARTED",
+    "3_structural_decomposition": "STARTED_ELEMENTARY_NOTES",
+    "4_cycle_search": "NOT_STARTED",
+    "5_prior_art_audit": "NOT_STARTED",
+    "6_pilot_decision": "NOT_STARTED"
+  },
+  "pilot_gate": null,
+  "allowed_gate_values": [
+    "STOP_TRIVIAL",
+    "STOP_PRIOR_ART",
+    "STOP_UNINTERESTING",
+    "CONTINUE_COMPUTATIONAL",
+    "CONTINUE_STRUCTURAL",
+    "CONTINUE_PROOF_TARGET"
+  ]
+}
