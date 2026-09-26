@@ -377,44 +377,28 @@ Accordingly:
 
 ## 10. Post-lock deterministic reduction
 
-The carry coordinate now admits a sharper interpretation after bounded-range
-locking.  Since (ho_s=M),
+The carry coordinate has a sharper interpretation after bounded-range locking. Since `rho_s = M`,
 
-[
-3^sM+A_s=2^s+H_s2^{s+1},
-]
+`3^s M + A_s = 2^s + H_s 2^(s+1)`,
 
-and comparison with (2^sx_s=3^sM+A_s) gives
+while the rise formula is
 
-[
-oxed{x_s=1+2H_s}.
-]
+`2^s x_s = 3^s M + A_s`.
 
-Consequently, for (d_s=L(x_s)),
+Therefore
 
-[
-b_s=0
-iff
-H_s+d_sequiv1pmod2
-iff
-v_2(3x_s+2d_s+1)=1.
-]
+`x_s = 1 + 2 H_s`.
 
-Thus the post-lock zero-lift tail is not a further symbolic branching problem:
-it is exactly the deterministic accelerated orbit of the locked integer until
-the first valuation different from 1.  Symbolic decimal/2-adic coverage is
-needed only through the lock depth.
+Consequently, with `d_s = L(x_s)`,
 
-The companion note `notes/post_lock_tail_control.md` records the proof,
-a finite exact tail-6 counterexample to universal constant bounds (le5),
-and a lock-and-follow certificate for the next Farey record.  That certificate
-extends the one-rise/one-fall period exclusion through
+`b_s = 0  iff  H_s + d_s is odd  iff  v2(3 x_s + 2 d_s + 1) = 1`.
 
-[
-q=1{,}643{,}749{,}725{,}073,
-]
+Thus the post-lock zero-lift tail is not a further symbolic branching problem: it is exactly the deterministic accelerated orbit of the locked integer until the first valuation different from 1. Symbolic decimal/2-adic coverage is needed only through the lock depth.
 
-under the existing 5M minimum premise.  The arbitrary-cycle lower bound remains
-separately (qge971).
+The companion note `notes/post_lock_tail_control.md` records the proof, a finite exact tail-6 counterexample to universal constant bounds `<= 5`, and a lock-and-follow certificate for the next Farey record. That certificate extends the one-rise/one-fall period exclusion through
 
-No scale-aware (F(B)) or (F(M)) tail bound has been proved.
+`q = 1,643,749,725,073`
+
+under the existing 5M minimum premise. The arbitrary-cycle lower bound remains separately `q >= 971`.
+
+No scale-aware `F(B)` or `F(M)` tail bound has been proved.
