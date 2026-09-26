@@ -134,6 +134,7 @@ def run() -> dict:
         "symbolic_range": {
             "minimum": MINIMUM_ODD_STATE,
             "maximum": maximum_minimum,
+            "first_impossible_rise_length": first_impossible,
             "cell_counts_by_rise_depth": profile,
             "peak_cell_count": max(profile),
             "peak_depths": [
