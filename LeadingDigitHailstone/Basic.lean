@@ -102,6 +102,22 @@ theorem affine_half_strict_growth (x y correction : ℕ)
     3 * x < 2 * y := by
   omega
 
+/-- The lower correction bound c >= 3 yields a shifted one-step
+inequality whose iteration gives the lower post-lock normalized corridor. -/
+theorem affine_half_lower_shift_three (x y correction : ℕ)
+    (hstep : 2 * y = 3 * x + correction)
+    (hcorrection : 3 ≤ correction) :
+    3 * (x + 3) ≤ 2 * (y + 3) := by
+  omega
+
+/-- The upper correction bound c <= 19 yields a shifted one-step
+inequality whose iteration gives the upper post-lock normalized corridor. -/
+theorem affine_half_upper_shift_nineteen (x y correction : ℕ)
+    (hstep : 2 * y = 3 * x + correction)
+    (hcorrection : correction ≤ 19) :
+    2 * (y + 19) ≤ 3 * (x + 19) := by
+  omega
+
 /-- If a decimal-style sector has lower endpoint at least twice its width,
 one positive-correction affine halving exits the sector upward.  For
 [d*10^k,(d+1)*10^k), this applies to every d >= 2. -/
