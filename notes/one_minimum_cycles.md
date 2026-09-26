@@ -105,7 +105,7 @@ The exact cycle product identity is
 
 For the rise-source states x_0,...,x_(a-1), positivity of the corrections gives
 
-x_i > (3/2)^i M,
+x_i >= (3/2)^i M, with strict inequality for i>0,
 
 so
 
