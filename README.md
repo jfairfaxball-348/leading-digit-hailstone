@@ -74,3 +74,5 @@ Python reference and verification implementations live under src/leading_digit_h
 A Lean 4 layer under LeadingDigitHailstone/ specifies the map and central conjecture and proves stable elementary facts. The universal conjecture remains an unproved Prop; no sorry placeholder is used. Formalisation is now expanded alongside Stage-1 mathematics while CI is kept green.
 
 See RESEARCH_RULES.md, PROJECT_STATUS.json, notes/CANDIDATE_ASSESSMENT.md, notes/cycle_constraints.md, and literature/DEEP_AUDIT_2026-09-26.md before making stronger claims.
+
+A scaled post-lock phase coordinate further sharpens this reduction. If `X` is the lock state, every compatible valuation-one tail satisfies `X <= (2/3)^t x_t < X+19`. Distinct scaled decimal-boundary hits `n` steps apart therefore force `X<=171*3^n`, with only the exact short coincidences `2->3` and `4->6->9`. On boundary-free horizons the digit word is forced by the homogeneous `(3/2)^t` phase, and survival reduces to one exact 2-adic residue congruence. This is a scale-aware sparsity theorem and a new candidate-specific certificate, not yet a uniform tail-length bound.
