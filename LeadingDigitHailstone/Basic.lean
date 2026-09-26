@@ -73,6 +73,27 @@ theorem bounded_congruence_unique (a b modulus : ℕ)
   rw [Nat.mod_eq_of_lt ha, Nat.mod_eq_of_lt hb] at hres
   exact hres
 
+/-- Writing an odd state as x = 2H+1 turns one valuation-one affine
+halving into the post-lock carry/state recurrence. -/
+theorem odd_affine_half_from_carry (H d : ℕ) :
+    (3 * (2 * H + 1) + 2 * d + 1) / 2 = 3 * H + d + 2 := by
+  omega
+
+/-- For x = 2H+1, exact valuation one of the odd affine numerator is
+equivalent to the post-lock zero-lift parity H+d odd. -/
+theorem exact_one_halving_mod_four_iff (H d : ℕ) :
+    (3 * (2 * H + 1) + 2 * d + 1) % 4 = 2 ↔
+      (H + d) % 2 = 1 := by
+  omega
+
+/-- Under the valuation-one parity, the next odd state is again one plus
+twice the next carry. -/
+theorem next_state_is_twice_next_carry_plus_one (H d : ℕ)
+    (hr1 : (3 * (2 * H + 1) + 2 * d + 1) % 4 = 2) :
+    (3 * (2 * H + 1) + 2 * d + 1) / 2 =
+      2 * ((1 + 3 * H + d) / 2) + 1 := by
+  omega
+
 theorem cycle_1_to_6 : T 1 = 6 := by native_decide
 theorem cycle_6_to_3 : T 6 = 3 := by native_decide
 theorem cycle_3_to_16 : T 3 = 16 := by native_decide
