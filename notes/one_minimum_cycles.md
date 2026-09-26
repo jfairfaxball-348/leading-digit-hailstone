@@ -744,16 +744,16 @@ That theorem-specific question has **not** received a final prior-art determinat
 
 ## Research status
 
-The one-rise/one-fall class is **excluded through q=64,497,106 under the existing 5M minimum premise, but not globally excluded**.
+The one-rise/one-fall class is **excluded through q=890,638,885,192 under the existing 5M minimum premise, but not globally excluded**.
 
-The theorem-level ingredients are the period-independent product envelope (11), the fall-excess identity, and the Farey-neighbour transfer lemma for upper powers-of-two / powers-of-three approximations. The finite exact certificates combine those facts with exact power comparisons, theorem-derived M_max ranges, and exact symbolic decimal/2-adic rise coverage.
+The theorem-level ingredients now include the period-independent product envelope (11), the fall-excess identity, the Farey-neighbour transfer lemma, the inverse-error scale bound M<39/t and record-to-record consequence M_max<39 q_next/log 2, finite-range decimal-boundary localization, and the explicit word-dependent 2-adic residue formula. The finite exact certificates combine those facts with exact rational logarithmic certification and exact symbolic decimal/2-adic rise coverage.
 
 The current structured consequence is
 
-q>=64,497,107
+q>=890,638,885,193
 
-and, conservatively,
+and
 
-a>=26,768,717.
+a>=369,648,535,671.
 
-The first period not covered by the current Farey transfer is 64,497,107. The highest-value next target is to analyze that next approximation record and determine whether the same finite-range modulus squeeze can be made into a general record-to-record theorem, or where it first fails.
+The Farey record mechanism and low finite-range word complexity now form a genuine asymptotic framework, but the result is still a sequence of finite certificates. The highest-value next target is a uniform residue-position or deterministic transition obstruction showing that the explicit word-dependent 2-adic representative eventually misses its decimal-consistency cell.
