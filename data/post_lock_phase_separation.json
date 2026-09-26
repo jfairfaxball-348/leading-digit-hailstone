@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "claim_type": "THEOREM_PLUS_FINITE_EXACT_PHASE_RESIDUE_CERTIFICATES",
+  "theorem_level_results": {
+    "boundary_hit_separation": "For X>38, if two distinct scaled decimal-boundary hits inside (X,X+19) occur n steps apart, then X<=171*3^n.",
+    "exact_boundary_coincidences": "The only equal scaled-boundary hits at different times are 2->3, 4->6, 6->9 at gap 1 and 4->9 at gap 2.",
+    "phase_residue_reduction": "On a horizon with no scaled boundary hit, PR #17 forces the actual digit word to equal the homogeneous (3/2)^t digit word; exact-r=1 survival then reduces to the established single terminal 2-adic residue congruence."
+  },
+  "finite_exact_certificates": {
+    "farey_candidate_1": {
+      "lock_state": 2225217764551392093807,
+      "lock_state_bit_length": 71,
+      "minimum_noncoincident_boundary_gap": 41,
+      "forced_digits_through_failure": "2357",
+      "certified_exact_r1_tail": 3,
+      "first_impossible_r1_prefix": 4,
+      "mismatch_modulus": 32,
+      "required_residue": 31,
+      "lock_state_residue": 15,
+      "direct_next_valuation_cross_check": 2
+    },
+    "farey_candidate_2": {
+      "lock_state": 3337826646827088140713,
+      "lock_state_bit_length": 72,
+      "minimum_noncoincident_boundary_gap": 41,
+      "forced_digits_through_failure": "357",
+      "certified_exact_r1_tail": 2,
+      "first_impossible_r1_prefix": 3,
+      "mismatch_modulus": 16,
+      "required_residue": 1,
+      "lock_state_residue": 9,
+      "direct_next_valuation_cross_check": 2
+    },
+    "tail_six_counterexample": {
+      "lock_state": 12166406006866046930622304922581,
+      "lock_state_bit_length": 104,
+      "minimum_noncoincident_boundary_gap": 61,
+      "forced_digits_through_failure": "1124691",
+      "certified_exact_r1_tail": 6,
+      "first_impossible_r1_prefix": 7,
+      "mismatch_modulus": 256,
+      "required_residue": 85,
+      "lock_state_residue": 213,
+      "direct_next_valuation_cross_check": 7
+    }
+  },
+  "exact_boundary_coincidences": [
+    {"time_gap": 1, "decade_gap": 0, "from_digit": 2, "to_digit": 3},
+    {"time_gap": 1, "decade_gap": 0, "from_digit": 4, "to_digit": 6},
+    {"time_gap": 1, "decade_gap": 0, "from_digit": 6, "to_digit": 9},
+    {"time_gap": 2, "decade_gap": 0, "from_digit": 4, "to_digit": 9}
+  ],
+  "interpretation": "PR #17 showed that observed positive post-lock tails through B=220 are phase-frozen. This increment proves a scale-aware separation law for the exceptional boundary-hit times and turns phase-frozen blocks into direct 2-adic residue certificates. It still does not give a uniform F(B) or F(M) tail bound."
+}
