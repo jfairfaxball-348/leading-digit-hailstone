@@ -101,7 +101,7 @@ Together with the forward rise bound, this forces states away from the cycle min
 
 1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).
 
-This is a genuine block-compensation theorem for the structured cycle problem; it is **not** a theorem that arbitrary forward weak runs must be followed by a comparable monotone fall block. See notes/one_minimum_cycles.md.
+This is a genuine block-compensation theorem for the structured cycle problem; it is **not** a theorem that arbitrary forward weak runs must be followed by a comparable monotone fall block. Combined with theorem-derived minimum ranges and exact symbolic decimal/2-adic rise-word checks, it now excludes the structured class through q=400,000 under the 5M census premise. See notes/one_minimum_cycles.md.
 
 ## Interpretation
 
