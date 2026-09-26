@@ -6,6 +6,7 @@ from pathlib import Path
 
 from scripts.structured_farey_extension import UPPER_0, UPPER_1
 from scripts.structured_record_chain import (
+    cells_after_rises,
     certified_power_side,
     maximum_minimum_state_log,
     rise_residue_for_digits,
@@ -37,6 +38,24 @@ class StructuredRecordChainTests(unittest.TestCase):
         self.assertEqual(record["maximum_minimum_state"], 4_350_616_725)
         self.assertEqual(record["required_minimum_rise"], 26_768_718)
         self.assertEqual(record["first_impossible_rise_length"], 31)
+
+    def test_previous_terminal_words_match_direct_symbolic_cells(self) -> None:
+        cells = cells_after_rises(5_000_001, 3_112_972_388, 30)
+        observed = sorted(
+            (
+                "".join(str(digit) for digit in cell.digits),
+                cell.residue,
+            )
+            for cell in cells
+        )
+        self.assertEqual(
+            [word for word, _ in observed],
+            [
+                "112469123471123581124691234611",
+                "123461123571124691234611235711",
+                "123581124691234711235811246912",
+            ],
+        )
 
     def test_extended_structured_bound(self) -> None:
         self.assertEqual(
