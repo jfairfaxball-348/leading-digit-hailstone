@@ -69,5 +69,11 @@
   "runtime_observation": {
     "elapsed_seconds": 25.575,
     "maxrss_kib": 1450748
+  },
+  "provenance": {
+    "generated_from_commit": "ebd5f6b18f9df0d80d68d16ede02fc49b12d264c",
+    "implementation": "scripts/reproduce_incoming.py exhaustive_census + exact reference functions",
+    "python_version": "3.13.5",
+    "generated_on": "2026-09-26"
   }
 }
