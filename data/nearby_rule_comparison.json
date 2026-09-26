@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-26",
+  "evidence_type": "FINITE_COMPUTATION",
+  "cycle_census_range": [1, 100000],
+  "cycle_detection_step_cap": 100000,
+  "global_shift_family": {
+    "form": "c_b(d)=2d+b",
+    "results": [
+      {"b": -3, "num_cycles": 2, "unresolved": 0},
+      {"b": -1, "num_cycles": 4, "unresolved": 0},
+      {"b": 1, "num_cycles": 1, "unresolved": 0},
+      {"b": 3, "num_cycles": 4, "unresolved": 0},
+      {"b": 5, "num_cycles": 3, "unresolved": 0}
+    ]
+  },
+  "global_shift_metrics_1_to_10000": [
+    {"b": -3, "mean_preperiod": 57.5093, "max_preperiod_steps": 281, "max_preperiod_seed": 7241, "max_excursion_seed": 4075, "max_excursion_peak": 141231740},
+    {"b": -1, "mean_preperiod": 53.6726, "max_preperiod_steps": 246, "max_preperiod_seed": 9071, "max_excursion_seed": 5103, "max_excursion_peak": 27988364},
+    {"b": 1, "mean_preperiod": 72.3741, "max_preperiod_steps": 342, "max_preperiod_seed": 8403, "max_excursion_seed": 3569, "max_excursion_peak": 661617320},
+    {"b": 3, "mean_preperiod": 42.4647, "max_preperiod_steps": 243, "max_preperiod_seed": 7551, "max_excursion_seed": 8241, "max_excursion_peak": 23156168},
+    {"b": 5, "mean_preperiod": 45.089, "max_preperiod_steps": 259, "max_preperiod_seed": 8390, "max_excursion_seed": 1081, "max_excursion_peak": 1818500}
+  ],
+  "single_digit_perturbations": [
+    {"digit":1,"delta":-2,"num_cycles":3,"largest_basin":56919,"cycle_lengths":[3,6,16]},
+    {"digit":1,"delta":2,"num_cycles":4,"largest_basin":58075,"cycle_lengths":[4,16,17,88]},
+    {"digit":2,"delta":-2,"num_cycles":4,"largest_basin":52992,"cycle_lengths":[6,7,8,16]},
+    {"digit":2,"delta":2,"num_cycles":1,"largest_basin":100000,"cycle_lengths":[7]},
+    {"digit":3,"delta":-2,"num_cycles":2,"largest_basin":92329,"cycle_lengths":[8,8]},
+    {"digit":3,"delta":2,"num_cycles":1,"largest_basin":100000,"cycle_lengths":[15]},
+    {"digit":4,"delta":-2,"num_cycles":3,"largest_basin":44087,"cycle_lengths":[7,8,8]},
+    {"digit":4,"delta":2,"num_cycles":1,"largest_basin":100000,"cycle_lengths":[7]},
+    {"digit":5,"delta":-2,"num_cycles":1,"largest_basin":100000,"cycle_lengths":[7]},
+    {"digit":5,"delta":2,"num_cycles":2,"largest_basin":97468,"cycle_lengths":[7,88]},
+    {"digit":6,"delta":-2,"num_cycles":1,"largest_basin":100000,"cycle_lengths":[7]},
+    {"digit":6,"delta":2,"num_cycles":2,"largest_basin":60112,"cycle_lengths":[7,16]},
+    {"digit":7,"delta":-2,"num_cycles":2,"largest_basin":78278,"cycle_lengths":[7,22]},
+    {"digit":7,"delta":2,"num_cycles":2,"largest_basin":69641,"cycle_lengths":[7,30]},
+    {"digit":8,"delta":-2,"num_cycles":2,"largest_basin":90604,"cycle_lengths":[7,16]},
+    {"digit":8,"delta":2,"num_cycles":1,"largest_basin":100000,"cycle_lengths":[7]},
+    {"digit":9,"delta":-2,"num_cycles":2,"largest_basin":53943,"cycle_lengths":[6,7]},
+    {"digit":9,"delta":2,"num_cycles":1,"largest_basin":100000,"cycle_lengths":[7]}
+  ],
+  "summary": {
+    "nonfrozen_global_shifts_with_multiple_cycles": 4,
+    "nonfrozen_global_shifts_tested": 4,
+    "single_digit_perturbations_with_multiple_cycles": 11,
+    "single_digit_perturbations_with_one_cycle": 7,
+    "single_digit_perturbations_tested": 18
+  }
+}
