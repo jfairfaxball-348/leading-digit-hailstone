@@ -16,7 +16,7 @@ The distinguished observed cycle is
 
 This is a conjecture, not a theorem.
 
-The completed discovery pilot reached the gate **CANDIDATE_DISTINCTIVE_CONJECTURE**. The declared Stage-1 red-team/mathematical exploration programme is now frozen with status **COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST**. The conjecture remains unproved. **Stage 2: Lean formalisation** is now the next primary stage.
+The completed discovery pilot reached the gate **CANDIDATE_DISTINCTIVE_CONJECTURE**. The declared Stage-1 red-team/mathematical exploration programme is frozen with status **COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST**. The conjecture remains unproved. **Stage 2: Lean formalisation** has now completed its audit exit gate; **Stage 3: Palomar** is the next primary stage, with its repository conventions/tooling to be inspected before execution.
 
 The map is **not claimed to be new or previously unknown**. Historical novelty remains unresolved, and mathematically equivalent prior art under different notation counts.
 
@@ -42,7 +42,7 @@ The conjecture survived the agreed stress-test gate: no competing positive cycle
 
 A new elementary red-team family is also recorded: for n=2*10^k-1, the odd-branch numerator is exactly 6*10^k, so its 2-adic valuation is k+1. Thus arbitrarily large single valuation bursts occur.
 
-The next primary stage is Lean formalisation/audit of the frozen object and conjecture. A proof of universal convergence is not a pipeline requirement.
+The Lean formalisation audit now certifies the positive-domain convention, decimal leading-digit semantics and 1..9 bound, positivity preservation of the frozen map, the exact distinguished cycle and its invariance, iterates, and the central conjecture as an unproved proposition. A proof of universal convergence remains outside the pipeline requirement. See notes/STAGE_2_LEAN_FORMALISATION.md for the exact formalisation audit.
 
 See ROADMAP.md and notes/STAGE_1_FINAL_STRESS_TEST.md.
 
@@ -69,6 +69,6 @@ Python reference and verification implementations live under src/leading_digit_h
 
 ## Lean
 
-A Lean 4 layer under LeadingDigitHailstone/ already specifies the map and central conjecture and proves stable elementary facts. The universal conjecture remains an unproved Prop; no sorry placeholder is used. Stage 2 now makes this formalisation/audit the primary project task.
+The Lean 4 layer under LeadingDigitHailstone/ specifies the frozen map and central conjecture, proves the decimal leading-digit specification on positive naturals, proves positivity and cycle-invariance interfaces, and retains selected stable elementary facts. The universal conjecture remains an unproved Prop; no sorry placeholder is used. Stage 2 is complete and Stage 3 Palomar is next, subject first to inspection of repository conventions/tooling.
 
 See RESEARCH_RULES.md, PROJECT_STATUS.json, notes/CANDIDATE_ASSESSMENT.md, notes/cycle_constraints.md, and literature/DEEP_AUDIT_2026-09-26.md before making stronger claims.
