@@ -16,7 +16,7 @@ The distinguished observed cycle is
 
 This is a conjecture, not a theorem.
 
-The completed discovery pilot reached the gate **CANDIDATE_DISTINCTIVE_CONJECTURE**. The declared Stage-1 red-team/mathematical exploration programme is frozen with status **COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST**. The conjecture remains unproved. **Stage 2: Lean formalisation** has completed its audit exit gate. **Stage 3: Palomar registration preparation** is now active: the root Palomar package and local mechanical checks are complete, and the official pinned full predictive preflight is the current gate. Actual Palomar registration remains an owner action.
+The completed discovery pilot reached the gate **CANDIDATE_DISTINCTIVE_CONJECTURE**. The declared Stage-1 red-team/mathematical exploration programme is frozen with status **COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST**. The conjecture remains unproved. **Stage 2: Lean formalisation** has completed its audit exit gate. **Stage 3B: Palomar editorial remediation** is active. The first Palomar snapshot passed full mechanical verification but was rejected editorially because its sole selected valuation-burst theorem was too elementary to establish research interest. That immutable snapshot remains preserved. The remediation selects the substantially stronger conditional accelerated-cycle theorem: every positive accelerated cycle with all odd states at least 5,000,001 has at least 971 odd states. Universal convergence remains unproved.
 
 The map is **not claimed to be new or previously unknown**. Historical novelty remains unresolved, and mathematically equivalent prior art under different notation counts.
 
@@ -69,21 +69,35 @@ Python reference and verification implementations live under src/leading_digit_h
 
 ## Lean
 
-The Lean 4 layer under LeadingDigitHailstone/ specifies the frozen map and central conjecture, proves the decimal leading-digit specification on positive naturals, proves positivity and cycle-invariance interfaces, and retains selected stable elementary facts. The universal conjecture remains an unproved Prop; no sorry placeholder is used in the substantive development or Solution. For Palomar, the compared theorem is the Stage-1 valuation-burst family: n=2*10^k-1 has numerator 6*10^k, exact 2-adic valuation k+1, and quotient 3*5^k. Challenge.lean contains only the deliberate Comparator proof hole; Solution.lean supplies the genuine proof.
+The Lean 4 layer under LeadingDigitHailstone/ specifies the frozen map and central conjecture, proves the decimal leading-digit specification on positive naturals, and now formally proves the conditional 971-state accelerated-cycle restriction. The selected theorem derives a cyclic product identity, a product window from the correction bound 3..19 and minimum floor 5,000,001, and an exact Farey-neighbour exclusion. The finite 5M census is not imported into Lean; the minimum floor is an explicit theorem hypothesis. The universal conjecture remains an unproved Prop, and no sorry placeholder is used in the substantive development or Solution. Challenge.lean contains only the deliberate Comparator proof hole.
 
 See RESEARCH_RULES.md, PROJECT_STATUS.json, notes/CANDIDATE_ASSESSMENT.md, notes/cycle_constraints.md, and literature/DEEP_AUDIT_2026-09-26.md before making stronger claims.
 
 
-## Palomar Stage-3 preparation
+## Palomar Stage-3B editorial remediation
 
-The root project is pinned to Lean/Mathlib `v4.35.0-rc2` with a committed
-`lake-manifest.json`, Apache-2.0 licence, Mathlib-only `Challenge.lean`,
-proved `Solution.lean`, one `comparator.json`, and `formalization.yaml`.
-The reusable full preflight is pinned to PalomarSubmission commit
-`a59f25bd8a66bf6faf3a4f4260d412989c0185ea`.
+The historical Stage-3 snapshot `f3309bd7d47da7cc3f1a12119aea8022b8f6c98a`
+passed the official full mechanical verifier but was later rejected by
+Palomar's automated editorial review because the sole selected
+`valuationBurstFamily` result was an elementary substitution whose research
+interest had not been established. That commit is preserved unchanged.
 
-The Palomar result is deliberately narrower than the central conjecture. It
-formalises the theorem-level Stage-1 valuation-burst family and does **not**
-assert universal convergence. Historical novelty remains
-`UNRESOLVED_DO_NOT_CLAIM`. Registration is not performed by repository CI;
-the owner will register the exact final preflighted commit manually.
+The replacement Palomar result is
+`LeadingDigitHailstonePalomar.leadingDigitCyclePeriodLowerBound`: any positive
+accelerated periodic orbit satisfying the actual leading-decimal-digit
+numerators and having every odd state at least 5,000,001 has at least 971 odd
+states. The proof is entirely Lean/kernel checked and uses no Python
+certificate. It does **not** formalize the external 5M census, the much larger
+structured one-rise/one-fall finite certificate, or universal convergence.
+
+The targeted Stage-3B literature check records classical product-window and
+continued-fraction/Farey cycle-length methods as prior methodology, especially
+Eliahou (1993) and Simons--de Weger (2005). A current Lean formalization of
+Eliahou's ordinary-Collatz theorem is also recorded as related formal prior
+art. No exact decimal-leading-digit analogue was identified in the targeted
+search; novelty therefore remains `UNRESOLVED_DO_NOT_CLAIM`.
+
+The project remains pinned to Lean/Mathlib `v4.35.0-rc2`. The current official
+PalomarSubmission full-preflight revision remains
+`a59f25bd8a66bf6faf3a4f4260d412989c0185ea`. Registration is not performed
+by repository CI; final resubmission remains an owner action.

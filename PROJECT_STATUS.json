@@ -1,7 +1,7 @@
 {
-  "schema_version": 16,
+  "schema_version": 17,
   "project_title": "Leading-Digit Hailstone Dynamics",
-  "phase": "STAGE_3_PALOMAR_REGISTRATION_PREPARATION",
+  "phase": "STAGE_3B_PALOMAR_EDITORIAL_REMEDIATION",
   "frozen_object": {
     "domain": "positive integers",
     "base": 10,
@@ -214,12 +214,12 @@
   "programme_stage_status": {
     "1_red_team_mathematical_exploration": "COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST",
     "2_lean_formalisation": "COMPLETE_FORMAL_SPECIFICATION_AUDITED",
-    "3_palomar": "PALOMAR_PACKAGE_READY_FOR_PREFLIGHT",
+    "3_palomar": "STAGE_3B_PALOMAR_EDITORIAL_REMEDIATION",
     "4_final_novelty_prior_art_audit": "AFTER_PALOMAR",
     "5_research_paper": "NOT_STARTED",
     "6_arxiv_submission": "NOT_STARTED"
   },
-  "current_research_objective": "Run the pinned official Palomar full mechanical preflight, merge only after the package is mechanically clean, then require the same full preflight to pass on the exact merged main commit without any later commit.",
+  "current_research_objective": "Replace the editorially rejected valuation-burst Palomar selection with a kernel-checked conditional q>=971 accelerated-cycle theorem, complete a targeted theorem-specific prior-art audit, and pass the current official Palomar full preflight on one immutable replacement SHA without manual submission.",
   "active_attack_lines": [
     "Lean audit of positive-integer domain and decimal leading-digit specification",
     "Lean audit of the frozen map and distinguished 7-cycle",
@@ -649,5 +649,25 @@
     "registration": "NOT_PERFORMED_OWNER_ACTION",
     "convergence": "CONJECTURE_UNPROVED",
     "novelty": "UNRESOLVED_DO_NOT_CLAIM"
+  },
+  "stage_3b_palomar_remediation": {
+    "historical_snapshot": "f3309bd7d47da7cc3f1a12119aea8022b8f6c98a",
+    "historical_snapshot_policy": "IMMUTABLE_DO_NOT_REWRITE",
+    "historical_mechanical_result": "FULL_PALOMAR_MECHANICAL_VERIFICATION_PASSED",
+    "historical_editorial_result": "REJECTED_RESEARCH_INTEREST_NOT_ESTABLISHED_FOR_VALUATION_BURST_SELECTION",
+    "selected_candidate": "B",
+    "selected_theorem": "LeadingDigitHailstonePalomar.leadingDigitCyclePeriodLowerBound",
+    "statement": "Any positive accelerated periodic orbit satisfying the Leading-Digit Hailstone odd-step equations and having every odd state at least 5000001 has q>=971 odd states.",
+    "formal_trust_boundary": "The minimum threshold 5000001 is an explicit theorem hypothesis. The finite 5M census is not imported into Lean. The q>=971 implication is proved by Lean from a cyclic product identity, correction bounds, exact power inequalities, and a Farey-neighbour denominator argument.",
+    "candidate_A_disposition": "NOT_SELECTED_FOR_PALOMAR_AT_THIS_STAGE_BECAUSE_THE_HEADLINE_1643749725074_BOUND_DEPENDS_ON_EXTENSIVE_PYTHON_ONLY_FAREY_SYMBOLIC_AND_POST_LOCK_CERTIFICATES_NOT_YET_KERNEL_CHECKED",
+    "candidate_C_disposition": "FALLBACK_NOT_NEEDED",
+    "novelty_status": "UNRESOLVED_DO_NOT_CLAIM",
+    "targeted_prior_art": [
+      "Eliahou 1993: ordinary 3x+1 cycle lower bounds via product inequalities and one-sided Diophantine approximation",
+      "Simons and de Weger 2005: theoretical/computational m-cycle bounds for ordinary 3n+1",
+      "Wegner 2021: generalized 3x+k dynamics with constant k",
+      "tangentproofs/eliahou-collatz-bounds: current Lean formalization of Eliahou's ordinary-Collatz bounds"
+    ],
+    "targeted_search_conclusion": "Classical methodology is prior art. No exact decimal-leading-digit analogue of the selected theorem was identified in the targeted search; this is negative search evidence, not a novelty claim."
   }
 }

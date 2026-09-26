@@ -1,7 +1,13 @@
 {
   "challenge_module": "Challenge",
   "solution_module": "Solution",
-  "theorem_names": ["LeadingDigitHailstonePalomar.valuationBurstFamily"],
+  "theorem_names": [
+    "LeadingDigitHailstonePalomar.leadingDigitCyclePeriodLowerBound"
+  ],
   "definition_names": [],
-  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
 }
