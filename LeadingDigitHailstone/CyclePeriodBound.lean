@@ -91,13 +91,11 @@ theorem periodLowerBound_of_productWindow {q R : ℕ}
   have hmiddle :
       ((3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ q) ^ 306 =
         ((3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ 306) ^ q := by
-    simp only [pow_mul]
-    rw [Nat.mul_comm q 306]
+    rw [← pow_mul, ← pow_mul, Nat.mul_comm q 306]
 
   have hfloor :
       (cycleMinimumFloor ^ 306) ^ q = (cycleMinimumFloor ^ q) ^ 306 := by
-    simp only [pow_mul]
-    rw [Nat.mul_comm 306 q]
+    rw [← pow_mul, ← pow_mul, Nat.mul_comm 306 q]
 
   have hcombined :
       ((2 : ℕ) ^ R) ^ 306 * (cycleMinimumFloor ^ q) ^ 306 <
