@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-26",
+  "evidence_type": "FINITE_COMPUTATION",
+  "cycle_census_range": [1, 1000000],
+  "cycle_detection_step_cap": 100000,
+  "global_shifts": [
+    {"b": -3, "num_cycles": 2, "unresolved": 0},
+    {"b": -1, "num_cycles": 4, "unresolved": 0},
+    {"b": 1, "num_cycles": 1, "unresolved": 0},
+    {"b": 3, "num_cycles": 4, "unresolved": 0},
+    {"b": 5, "num_cycles": 3, "unresolved": 0}
+  ],
+  "single_digit_survivors_from_100k": [
+    {"digit": 2, "delta": 2, "num_cycles": 1, "unresolved": 0, "cycle": [1, 6, 3, 16, 8, 4, 2]},
+    {"digit": 3, "delta": 2, "num_cycles": 1, "unresolved": 0, "cycle": [3, 18, 9, 46, 23, 74, 37, 120, 60, 30, 15, 48, 24, 12, 6]},
+    {"digit": 4, "delta": 2, "num_cycles": 1, "unresolved": 0, "cycle": [1, 6, 3, 16, 8, 4, 2]},
+    {"digit": 5, "delta": -2, "num_cycles": 1, "unresolved": 0, "cycle": [1, 6, 3, 16, 8, 4, 2]},
+    {"digit": 6, "delta": -2, "num_cycles": 1, "unresolved": 0, "cycle": [1, 6, 3, 16, 8, 4, 2]},
+    {"digit": 8, "delta": 2, "num_cycles": 1, "unresolved": 0, "cycle": [1, 6, 3, 16, 8, 4, 2]},
+    {"digit": 9, "delta": 2, "num_cycles": 1, "unresolved": 0, "cycle": [1, 6, 3, 16, 8, 4, 2]}
+  ],
+  "interpretation": "All seven one-coordinate perturbations that had one observed cycle through 100000 still had one observed cycle through 1000000. Six retained the distinguished 7-cycle; the digit-3,+2 perturbation retained its distinct 15-cycle. This strengthens the caveat that finite single-attractor behavior is locally robust in several directions."
+}
