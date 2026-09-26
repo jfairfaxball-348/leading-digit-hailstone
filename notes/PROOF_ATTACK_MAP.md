@@ -229,3 +229,19 @@ Trajectory states are not known to sample residue classes independently or equid
 Computation should now be attached to a specific lemma, obstruction, or bounded exclusion. Larger undirected sweeps are lower value than exact certificates that close a mathematically stated case.
 
 The central conjecture remains the right working statement only so long as falsification attempts do not produce a competing cycle, escaping orbit, or structural reason to weaken it.
+
+## Post-lock scaled-phase refinement
+
+The deterministic-tail reduction has now been sharpened geometrically. From a lock state `X`, every compatible exact-r=1 tail satisfies
+
+`X <= (2/3)^t x_t < X+19`.
+
+Hence decimal ambiguity at time `t` is possible only when a scaled decimal boundary `d 10^k (2/3)^t` enters one fixed interval of width 19. Two distinct such hits `n` steps apart imply the exact rational separation bound
+
+`X <= 171*3^n`.
+
+Exact coincidences occur only in the short chains `2->3` and `4->6->9`. For the current lock states, noncoincident ambiguity gaps are therefore at least 41, 41, and 61 steps.
+
+This converts long post-lock stretches into forced homogeneous digit blocks. On any boundary-free block, the established terminal residue theorem reduces exact-r=1 survival to one 2-adic congruence. The next high-value target is to bound the length of such forced homogeneous blocks that can continue satisfying the congruence. A successful scale-aware bound here would combine directly with the sparse-boundary theorem.
+
+No structured period frontier changes in this increment: the one-rise/one-fall consequence remains `q>=1,643,749,725,074`, while arbitrary cycles retain `q>=971`.
