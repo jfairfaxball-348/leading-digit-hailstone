@@ -1,0 +1,29 @@
+name: lean
+
+on:
+  push:
+    branches: [main, "pilot/**"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lean toolchain manager
+        shell: bash
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve Lean dependencies
+        run: lake update
+      - name: Fetch Mathlib cache
+        run: lake exe cache get
+      - name: Build Lean specification
+        run: lake build
+      - name: Reject sorry placeholders
+        run: |
+          if grep -R -n -E '\bsorry\b' LeadingDigitHailstone.lean LeadingDigitHailstone; then
+            echo "Lean source contains a sorry placeholder."
+            exit 1
+          fi

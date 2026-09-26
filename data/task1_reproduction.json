@@ -1,0 +1,70 @@
+{
+  "exhaustive": {
+    "all_enter_distinguished_cycle": true,
+    "max_cycle_entry_time": {
+      "seed": 917173,
+      "steps": 584
+    },
+    "max_excursion_ratio": {
+      "max_excursion": 133635233424,
+      "ratio_denominator": 508701,
+      "ratio_numerator": 133635233424,
+      "seed": 508701
+    },
+    "other_cycle": null,
+    "range": [
+      1,
+      1000000
+    ]
+  },
+  "large_random_sample": {
+    "all_enter_distinguished_cycle": true,
+    "exact_reproduction_of_incoming_random_sample": false,
+    "failure_count": 0,
+    "max_cycle_entry_time": {
+      "sample_index": 622,
+      "seed": "5407268218125765181320977944532048435525061180047602375263500774252668784950325583054313911597161066369938501321150253769262409293458581491210341054661024604717674277726219254488342928710048098413491",
+      "steps": 5474
+    },
+    "median_cycle_entry_time": 2443.0,
+    "reason": "The incoming observation did not provide an RNG seed or sample list.",
+    "replacement_protocol": {
+      "decimal_digits_inclusive": [
+        10,
+        200
+      ],
+      "rng": "Python random.Random (Mersenne Twister)",
+      "rng_seed": 20260926,
+      "sample_count": 1000,
+      "step_cap": 100000
+    }
+  },
+  "map": "T(n)=n/2 if even; 3n+2L(n)+1 if odd, decimal leading digit L",
+  "schema_version": 1,
+  "specific_seeds": {
+    "508701": {
+      "cycle_entry_time": 508,
+      "cycle_entry_value": 6,
+      "detected_cycle": [],
+      "excursion_ratio_denominator": 169567,
+      "excursion_ratio_numerator": 44545077808,
+      "max_excursion": 133635233424,
+      "seed": 508701,
+      "status": "DISTINGUISHED_CYCLE",
+      "steps_examined": 508,
+      "stopping_time": 311
+    },
+    "917173": {
+      "cycle_entry_time": 584,
+      "cycle_entry_value": 6,
+      "detected_cycle": [],
+      "excursion_ratio_denominator": 917173,
+      "excursion_ratio_numerator": 712967756,
+      "max_excursion": 712967756,
+      "seed": 917173,
+      "status": "DISTINGUISHED_CYCLE",
+      "steps_examined": 584,
+      "stopping_time": 39
+    }
+  }
+}

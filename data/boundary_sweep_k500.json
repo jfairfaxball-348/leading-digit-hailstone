@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-26",
+  "evidence_type": "FINITE_COMPUTATION",
+  "protocol": "d*10^k +/- 1 for d=1..9, k=1..500",
+  "implementation": "independent string-leading-digit verifier",
+  "step_cap": 200000,
+  "tested_seed_count": 9000,
+  "all_entered_distinguished_cycle": true,
+  "failure_count": 0,
+  "failures": [],
+  "worst_cycle_entry": {
+    "k": 498,
+    "d": 7,
+    "offset": -1,
+    "seed_form": "7*10^498-1",
+    "seed": {
+      "decimal_digits": 499,
+      "prefix_50": "69999999999999999999999999999999999999999999999999",
+      "suffix_50": "99999999999999999999999999999999999999999999999999"
+    },
+    "status": "DISTINGUISHED_CYCLE",
+    "steps": 13678,
+    "peak": {
+      "decimal_digits": 501,
+      "prefix_50": "27649650722515176681781667866744101047515869140625",
+      "suffix_50": "00000000000000000000000000000000000000000000002536"
+    }
+  },
+  "max_excursion_ratio_case": {
+    "k": 14,
+    "d": 9,
+    "offset": 1,
+    "seed_form": "9*10^14+1",
+    "seed": "900000000000001",
+    "status": "DISTINGUISHED_CYCLE",
+    "steps": 520,
+    "peak": "8089497811387627412",
+    "ratio_numerator": 8089497811387627412,
+    "ratio_denominator": 900000000000001
+  }
+}

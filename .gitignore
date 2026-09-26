@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.lake/
+data/sweep_checkpoint.json
+data/*.tmp
+data/*.full.json

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "range": [
+    1,
+    5000000
+  ],
+  "exhaustive": {
+    "range": [
+      1,
+      5000000
+    ],
+    "all_enter_distinguished_cycle": true,
+    "other_cycle": null,
+    "max_cycle_entry_time": {
+      "steps": 713,
+      "seed": 4625895
+    },
+    "max_excursion_ratio": {
+      "seed": 4449695,
+      "max_excursion": 1265270503548,
+      "ratio_numerator": 1265270503548,
+      "ratio_denominator": 4449695
+    }
+  },
+  "first_descent": {
+    "all_seeds_2_to_stop_descended_within_cap": true,
+    "cap": 10000,
+    "record": {
+      "seed": 2862607,
+      "steps": 342
+    }
+  },
+  "odd_branch_v2": {
+    "odd_seed_range": [
+      1,
+      5000000
+    ],
+    "counts_exact": {
+      "1": 1249996,
+      "2": 625006,
+      "3": 312494,
+      "4": 156255,
+      "5": 78124,
+      "6": 39059,
+      "7": 19535,
+      "8": 9767,
+      "9": 4878,
+      "10": 2444,
+      "11": 1221,
+      "12": 611,
+      "13": 307,
+      "14": 153,
+      "15": 75,
+      "16": 38,
+      "17": 19,
+      "18": 10,
+      "19": 3,
+      "20": 2,
+      "21": 1,
+      "22": 1,
+      "23": 1
+    },
+    "max_observed": {
+      "v2": 23,
+      "seed": 2796201,
+      "odd_output": 8388608
+    }
+  },
+  "runtime_observation": {
+    "elapsed_seconds": 25.575,
+    "maxrss_kib": 1450748
+  },
+  "provenance": {
+    "generated_from_commit": "ebd5f6b18f9df0d80d68d16ede02fc49b12d264c",
+    "implementation": "scripts/reproduce_incoming.py exhaustive_census + exact reference functions",
+    "python_version": "3.13.5",
+    "generated_on": "2026-09-26"
+  },
+  "bounded_cycle_exclusion": {
+    "evidence_type": "FINITE_COMPUTATION_CONSEQUENCE",
+    "statement": "Any positive cycle other than the distinguished cycle, if one exists, has minimum element > 5000000.",
+    "basis": "Every starting value 1..5000000 was followed into the distinguished cycle."
+  }
+}
