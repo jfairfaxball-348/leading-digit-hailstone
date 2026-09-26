@@ -3,7 +3,7 @@ name: Palomar preflight
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, "research/stage3-palomar-preparation"]
 
 permissions:
   contents: read

@@ -16,7 +16,7 @@ The distinguished observed cycle is
 
 This is a conjecture, not a theorem.
 
-The completed discovery pilot reached the gate **CANDIDATE_DISTINCTIVE_CONJECTURE**. The declared Stage-1 red-team/mathematical exploration programme is frozen with status **COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST**. The conjecture remains unproved. **Stage 2: Lean formalisation** has now completed its audit exit gate; **Stage 3: Palomar** is the next primary stage, with its repository conventions/tooling to be inspected before execution.
+The completed discovery pilot reached the gate **CANDIDATE_DISTINCTIVE_CONJECTURE**. The declared Stage-1 red-team/mathematical exploration programme is frozen with status **COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST**. The conjecture remains unproved. **Stage 2: Lean formalisation** has completed its audit exit gate. **Stage 3: Palomar registration preparation** is now active: the root Palomar package and local mechanical checks are complete, and the official pinned full predictive preflight is the current gate. Actual Palomar registration remains an owner action.
 
 The map is **not claimed to be new or previously unknown**. Historical novelty remains unresolved, and mathematically equivalent prior art under different notation counts.
 
@@ -69,6 +69,21 @@ Python reference and verification implementations live under src/leading_digit_h
 
 ## Lean
 
-The Lean 4 layer under LeadingDigitHailstone/ specifies the frozen map and central conjecture, proves the decimal leading-digit specification on positive naturals, proves positivity and cycle-invariance interfaces, and retains selected stable elementary facts. The universal conjecture remains an unproved Prop; no sorry placeholder is used. Stage 2 is complete and Stage 3 Palomar is next, subject first to inspection of repository conventions/tooling.
+The Lean 4 layer under LeadingDigitHailstone/ specifies the frozen map and central conjecture, proves the decimal leading-digit specification on positive naturals, proves positivity and cycle-invariance interfaces, and retains selected stable elementary facts. The universal conjecture remains an unproved Prop; no sorry placeholder is used in the substantive development or Solution. For Palomar, the compared theorem is the Stage-1 valuation-burst family: n=2*10^k-1 has numerator 6*10^k, exact 2-adic valuation k+1, and quotient 3*5^k. Challenge.lean contains only the deliberate Comparator proof hole; Solution.lean supplies the genuine proof.
 
 See RESEARCH_RULES.md, PROJECT_STATUS.json, notes/CANDIDATE_ASSESSMENT.md, notes/cycle_constraints.md, and literature/DEEP_AUDIT_2026-09-26.md before making stronger claims.
+
+
+## Palomar Stage-3 preparation
+
+The root project is pinned to Lean/Mathlib `v4.35.0-rc2` with a committed
+`lake-manifest.json`, Apache-2.0 licence, Mathlib-only `Challenge.lean`,
+proved `Solution.lean`, one `comparator.json`, and `formalization.yaml`.
+The reusable full preflight is pinned to PalomarSubmission commit
+`a59f25bd8a66bf6faf3a4f4260d412989c0185ea`.
+
+The Palomar result is deliberately narrower than the central conjecture. It
+formalises the theorem-level Stage-1 valuation-burst family and does **not**
+assert universal convergence. Historical novelty remains
+`UNRESOLVED_DO_NOT_CLAIM`. Registration is not performed by repository CI;
+the owner will register the exact final preflighted commit manually.
