@@ -1,72 +1,45 @@
-# Pilot Decision
+# Conjecture-Candidate Decision
 
-## Gate
+## Current gate
 
-`CONTINUE_STRUCTURAL`
+**CANDIDATE_DISTINCTIVE_CONJECTURE**
 
 Date: 2026-09-26.
 
-This gate says the frozen object is sufficiently mathematically structured to justify a deeper structural phase. It is **not** a theorem claim, a novelty claim, or a decision to target a proof immediately.
+This replaces the earlier proof-oriented CONTINUE_STRUCTURAL gate. The project question is not whether a proof attempt is mature; it is whether the frozen object is sufficiently simple, non-obvious, robust under attempted falsification, structurally rich, and distinguishable from nearby rules to justify continued study as a named Collatz-adjacent conjecture.
 
-## Evidence supporting continuation
+## Why this gate is warranted
 
-### Exact finite computation
+The statement is elementary: one ordinary leading digit modifies the odd Collatz branch. Yet the rule is not just a finite congruence-class generalized Collatz map; it has decimal-sector discontinuities, exact 2-adic classes, a sparse inverse graph, and a state-consistent accelerated-cycle equation.
 
-- Every start `1 <= n <= 5,000,000` entered the distinguished cycle in the exact census.
-- No competing cycle was observed in that finite range.
-- The largest cycle-entry time in that range is currently 713 raw steps at seed `4625895`.
-- The current excursion-ratio record in that range is seed `4449695`, reaching `1265270503548`.
-- Therefore any other positive cycle, if one exists, has minimum element above `5,000,000`.
-- A deterministic replacement sample of 1,000 starts with 10–200 decimal digits also entered the distinguished cycle within its explicit cap. This replacement is not presented as replay of the original unspecified random experiment.
+Exact finite evidence is substantial for a pilot but remains finite: all starts through 5,000,000 enter the distinguished cycle, no competing cycle occurs there, and any different positive cycle must therefore have minimum element above 5,000,000.
 
-These are finite results only.
+The small comparison experiment is discriminating rather than uniformly flattering. Every nonfrozen global shift c_b(d)=2d+b tested at b=-3,-1,3,5 develops multiple observed cycles through 100,000. Among 18 single-digit +/-2 perturbations, 11 develop multiple observed cycles and 7 still show one observed cycle. Thus convergence-like behaviour is neither universal nor uniquely isolated in this neighbourhood.
 
-### Structural content already obtained
+Adversarial tests aimed at decimal boundaries and repeated minimal 2-adic contraction did not break the frozen rule under their explicit finite protocols, including 50-, 100-, and 200-digit constructed starts.
 
-The frozen map has several exact features that make it more than a bare parameter search:
+## Why this is not CANDIDATE_NOVEL_CONJECTURE
 
-- inside each decimal leading-digit sector, the odd branch is one of nine affine rules `3n+(2d+1)`;
-- exact 2-adic valuation classes can be described by one residue class modulo powers of two, with conditional interval density `2^(-r)`;
-- the odd branch has a characteristic downward jump across powers of ten and different jumps at other leading-digit boundaries;
-- the inverse graph is highly constrained: every target has its even predecessor, and all but target `36` have at most one odd predecessor; `36` has exactly `7` and `11`;
-- the map has no finite-modulus residue-class-wise affine representation on the positive integers;
-- accelerated cycles satisfy an exact state-dependent cycle equation and the necessary inequality `2^R>3^q`.
+The displayed 7-cycle is directly inherited from the known 5x+1 dynamics on single-digit odd states. Generalized Collatz maps, state-dependent arithmetic dynamics, and leading-digit-controlled digit maps provide meaningful neighboring literature.
 
-These properties support a structural programme in their own right.
+The deeper audit has not located an exact or mathematically equivalent full-map construction, but absence from the searches performed so far cannot establish novelty. Broader historical, recreational, thesis, non-English, and poorly indexed sources remain a real risk.
 
-## Prior-art effect on the decision
+## Assessment by dimension
 
-The prior-art audit changes how the object should be described.
+**Simplicity of statement:** strong. The rule can be stated in one parity split and one familiar decimal statistic.
 
-The distinguished cycle is not distinctive to this map: on single-digit odd inputs the frozen rule is `5n+1`, and the cycle
+**Non-obviousness:** strong enough for a conjecture candidate. The leading digit is a nonperiodic state selector, and finite-modulus Collatz machinery does not absorb it directly.
 
-`1 -> 6 -> 3 -> 16 -> 8 -> 4 -> 2 -> 1`
+**Computational robustness:** strong as finite evidence. Exhaustive 5M testing, targeted boundaries, low-v2 construction, and large arbitrary-precision examples all support the same observed attractor. None is universal evidence.
 
-is a standard `5x+1` cycle.
+**Structural richness:** strong. The project already has exact local affine sectors, boundary jumps, valuation classes, inverse restrictions, and cycle equations.
 
-The full rule also has close local `3x+k` analogues, and there is established literature both on digit-dependent integer dynamics and on leading digits of ordinary Collatz trajectories.
+**Distinctiveness from nearby rules:** meaningful but not absolute. The frozen map is exceptional among the four global shifts tested; the one-coordinate neighbourhood is mixed, with 7 of 18 perturbations still showing a single observed cycle.
 
-However, the initial equivalence audit has not identified the full frozen map as an exact known construction, and the elementary non-RCWA result shows it is not contained in the usual finite-modulus residue-class-wise affine class merely by changing notation.
+**Prior-art risk:** materially unresolved. No exact/equivalent full-map match has been found in the present audit, but the search is not yet strong enough for priority language.
 
-**Novelty remains unresolved.** The gate does not upgrade the object to `new`, `original`, `unique`, or `previously unknown`.
+**Suitability as a named Collatz-adjacent conjecture:** supported at the current pilot level. The name should be presented as a project label for the candidate statement, not as a claim of historical priority.
 
-## Why not the other continuation gate yet?
+## Next decision hinge
 
-### Not `CONTINUE_PROOF_TARGET`
-
-The negative-drift model is still heuristic, the finite census is tiny relative to a universal claim, and no global Lyapunov/descent mechanism or complete cycle exclusion is known. Proof-directed work may become justified later, but making it the pilot target now would overstate the evidence.
-
-### Why `CONTINUE_STRUCTURAL` rather than only `CONTINUE_COMPUTATIONAL`
-
-More computation is useful, but the pilot has already exposed exact mechanisms that deserve analysis independently of larger sweeps: the decimal-sector partition, power-of-ten discontinuities, rigid inverse branching, exact valuation classes, and state-consistent cycle equations. The next marginal value is therefore structural analysis coupled to targeted computation, rather than scale alone.
-
-## Next structural phase
-
-The next phase should concentrate on four linked questions:
-
-1. quantify how actual trajectories sample the exact `v2` classes and leading-digit sectors, testing where the geometric heuristic fails;
-2. exploit the near-unique inverse graph and cycle equation for rigorous bounded cycle exclusions;
-3. develop decimal-boundary transition lemmas strong enough to control changes of leading digit under the accelerated map;
-4. continue the equivalence audit in parallel, especially broader radix-dependent/state-dependent affine systems and sequence databases.
-
-The frozen rule remains unchanged throughout this phase.
+Continue equivalence-focused prior-art search and targeted falsification. A future upgrade to CANDIDATE_NOVEL_CONJECTURE should require substantially better coverage of generalized/state-dependent/radix-dependent literature and sequence/recreational sources, not merely more positive computation.
