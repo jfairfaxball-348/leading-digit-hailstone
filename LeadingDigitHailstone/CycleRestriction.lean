@@ -9,6 +9,30 @@ open Finset BigOperators
 set_option maxHeartbeats 4000000
 set_option exponentiation.threshold 100000000
 
+
+/-- Cyclic successor on the q indexed odd states of a nonempty periodic orbit. -/
+def cycleSucc {q : ℕ} (hq : 0 < q) (i : Fin q) : Fin q :=
+  ⟨(i.val + 1) % q, Nat.mod_lt _ hq⟩
+
+/-- Cyclic successor is a permutation of the finite orbit positions. -/
+theorem cycleSucc_bijective (q : ℕ) (hq : 0 < q) :
+    Function.Bijective (fun i : Fin q => cycleSucc hq i) := by
+  constructor
+  · intro i j
+    simp +decide [cycleSucc]
+    exact fun h => Fin.ext <|
+      Nat.mod_eq_of_lt i.2 ▸ Nat.mod_eq_of_lt j.2 ▸
+        (by simpa [← ZMod.natCast_eq_natCast_iff'] using h)
+  · intro i
+    use ⟨(i + q - 1) % q, Nat.mod_lt _ hq⟩
+    simp +decide [Fin.ext_iff, cycleSucc]
+    rw [Nat.sub_add_cancel (by linarith [Fin.is_lt i])]
+    simp +decide [Nat.mod_eq_of_lt]
+
+/-- Cyclic successor packaged as an equivalence for product reindexing. -/
+def cycleSuccEquiv {q : ℕ} (hq : 0 < q) : Equiv.Perm (Fin q) :=
+  Equiv.ofBijective (fun i : Fin q => cycleSucc hq i) (cycleSucc_bijective q hq)
+
 /-- A finite accelerated affine cycle with corrections in the decimal
 leading-digit range.  The successor is supplied as a permutation because the
 product argument only needs cyclic reindexing; an ordinary q-cycle is a
@@ -159,5 +183,30 @@ theorem leadingDigitCyclePeriodLowerBound
     exact odd_correction_le_nineteen_of_pos (state i) (hstatePos i)
   · intro i
     simpa [correction, Nat.add_assoc] using hstep i
+
+
+/-- Cycle-facing specialization with the hypotheses that make `q` the number
+of distinct odd positions in one accelerated periodic orbit.  Oddness,
+positive valuation exponents and injective state indexing are explicit even
+though the product/Farey argument itself only needs positivity, the minimum
+floor and the exact step equations. -/
+theorem leadingDigitCyclicPeriodLowerBound
+    {q : ℕ}
+    (hq : 0 < q)
+    (state valuation : Fin q → ℕ)
+    (hstatePos : ∀ i, 0 < state i)
+    (hstateOdd : ∀ i, state i % 2 = 1)
+    (hvaluationPos : ∀ i, 0 < valuation i)
+    (hstateInj : Function.Injective state)
+    (hmin : ∀ i, cycleMinimumFloor ≤ state i)
+    (hstep : ∀ i,
+      2 ^ valuation i * state (cycleSucc hq i) =
+        3 * state i + 2 * leadingDigit (state i) + 1) :
+    971 ≤ q := by
+  let next : Equiv.Perm (Fin q) := cycleSuccEquiv hq
+  apply leadingDigitCyclePeriodLowerBound
+    hq state valuation next hstatePos hmin
+  intro i
+  simpa [next, cycleSuccEquiv] using hstep i
 
 end LeadingDigitHailstone

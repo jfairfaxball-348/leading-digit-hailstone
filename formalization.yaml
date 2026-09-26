@@ -7,7 +7,7 @@ project:
     Formalisation of a leading-decimal-digit-dependent Collatz-type dynamical
     system. The selected theorem proves that any positive accelerated periodic
     orbit whose odd states are all at least 5,000,001 must contain at least
-    971 odd states. Lean proves the cyclic product identity and product window,
+    971 distinct odd states. The Challenge explicitly requires odd states, positive valuation exponents, injective state indexing, and the ordinary cyclic successor. Lean proves the cyclic product identity and product window,
     then applies an exact Farey-neighbour exclusion using kernel-checked power
     inequalities. The minimum-state threshold is an explicit theorem
     hypothesis: the repository's separate finite census motivating that
@@ -68,9 +68,7 @@ related_formalizations:
 
 status:
   scope: >-
-    The compared theorem is conditional: every state in the accelerated
-    periodic orbit is assumed positive and at least 5,000,001. It proves only
-    q >= 971 for that finite periodic orbit. It does not kernel-check the
+    The compared theorem is conditional: the accelerated orbit is indexed cyclically by q distinct odd states, with positive valuation exponents, and every state is assumed positive and at least 5,000,001. It proves only q >= 971 for that finite periodic orbit. It does not kernel-check the
     separate exhaustive seed census through 5,000,000, does not assert that
     every competing cycle satisfies the minimum premise without that external
     census, does not formalize the much larger one-rise/one-fall Stage-1
@@ -137,8 +135,7 @@ alignment:
       module: "Challenge"
       status: "adapted"
       note: >-
-        The Challenge states the decimal leading digit directly using Nat.log.
-        It makes the minimum-state threshold an explicit hypothesis and proves
+        The Challenge states the decimal leading digit directly using Nat.log and explicitly requires an injectively indexed cyclic odd-state orbit with positive valuation exponents. It makes the minimum-state threshold an explicit hypothesis and proves
         the same q >= 971 cycle restriction by an exact Farey/product-window
         proof. The finite census supplying the project-level motivation for
         the threshold is outside the selected theorem.

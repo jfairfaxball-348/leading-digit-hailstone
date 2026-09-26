@@ -48,8 +48,8 @@ The selected theorem is:
 
 Plain language:
 
-> Every positive accelerated Leading-Digit Hailstone periodic orbit whose odd
-> states are all at least 5,000,001 contains at least 971 odd states.
+> Every minimal positive accelerated Leading-Digit Hailstone periodic orbit whose odd
+> states are all at least 5,000,001 contains at least 971 distinct odd states.
 
 The minimum threshold is an explicit theorem hypothesis. The selected theorem
 does **not** formalize the separate exhaustive census through 5,000,000.
@@ -97,14 +97,15 @@ The selected theorem depends on:
 
 1. positivity and the ordinary decimal leading-digit specification from
    `LeadingDigitHailstone.Basic`;
-2. the exact bound `1 <= L(n) <= 9`, hence `3 <= 2L(n)+1 <= 19`;
-3. cyclic reindexing of a finite product by the successor permutation;
-4. the exact product identity obtained by multiplying
+2. explicit oddness, positive valuation exponents, injective state indexing, and ordinary cyclic successor so q denotes distinct odd states of one minimal cycle;
+3. the exact bound `1 <= L(n) <= 9`, hence `3 <= 2L(n)+1 <= 19`;
+4. cyclic reindexing of a finite product by the successor permutation;
+5. the exact product identity obtained by multiplying
    `2^r_i x_(i+1) = 3x_i+c_i`;
-5. the strict lower inequality `3^q < 2^R` from positive corrections;
-6. the upper product window induced by `x_i >= 5,000,001` and `c_i <= 19`;
-7. the two exact integer power certificates above;
-8. the determinant-one Farey denominator lemma.
+6. the strict lower inequality `3^q < 2^R` from positive corrections;
+7. the upper product window induced by `x_i >= 5,000,001` and `c_i <= 19`;
+8. the two exact integer power certificates above;
+9. the determinant-one Farey denominator lemma.
 
 This is the complete logical chain for the selected theorem. The 5M census and
 the larger structured-cycle Python certificates are outside it.
