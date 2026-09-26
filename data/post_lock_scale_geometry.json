@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "claim_type": "ELEMENTARY_THEOREMS_PLUS_FINITE_EXACT_SYMBOLIC_AND_DIRECT_DIAGNOSTIC",
+  "theorem_level_results": {
+    "normalized_corridor": "For a post-lock exact-r=1 segment X_0=X with 2*X_(j+1)=3*X_j+c_j and 3<=c_j<=19, Z_j=(2/3)^j X_j satisfies Z_(j+1)-Z_j=(c_j/3)(2/3)^j. Hence 3(1-(2/3)^t)<=Z_t-X<=19(1-(2/3)^t)<19.",
+    "decimal_boundary_corridor": "If the actual leading digit at post-lock time t differs from the leading digit of the homogeneous rational (3/2)^t X, then some decimal boundary C=d*10^k satisfies X*3^t < C*2^t < (X+19)*3^t.",
+    "same_sector_exit": "During exact-r=1 dynamics, a leading-digit sector d*10^k with d>=2 is left after one step; the digit-1 sector can supply at most two consecutive source states.",
+    "six_step_decade_crossing": "Six consecutive exact-r=1 steps increase the state by a factor strictly greater than (3/2)^6=729/64>10, so at least one power-of-ten boundary is crossed."
+  },
+  "finite_exact_bit_depth_scan": {
+    "bit_depth_range": [
+      1,
+      220
+    ],
+    "maximum_start_exclusive": "3369993333393829974333376885877453834204643052817571560137951281152",
+    "own_bit_locked_candidate_count": 96,
+    "positive_tail_candidate_count": 41,
+    "tail_histogram": {
+      "0": 55,
+      "1": 16,
+      "2": 13,
+      "3": 7,
+      "4": 1,
+      "5": 3,
+      "6": 1
+    },
+    "maximum_post_lock_tail": 6,
+    "record_tail_milestones": [
+      {
+        "bit_depth": 33,
+        "start": "16670166793",
+        "total_exact_r1_rises": 34,
+        "post_lock_tail": 1,
+        "next_valuation": 2
+      },
+      {
+        "bit_depth": 44,
+        "start": "26501219601103",
+        "total_exact_r1_rises": 48,
+        "post_lock_tail": 4,
+        "next_valuation": 2
+      },
+      {
+        "bit_depth": 65,
+        "start": "43574304770317398119",
+        "total_exact_r1_rises": 71,
+        "post_lock_tail": 6,
+        "next_valuation": 7
+      }
+    ],
+    "tail_at_least_four": [
+      {
+        "bit_depth": 44,
+        "start": "26501219601103",
+        "total_exact_r1_rises": 48,
+        "post_lock_tail": 4,
+        "next_valuation": 2
+      },
+      {
+        "bit_depth": 65,
+        "start": "43574304770317398119",
+        "total_exact_r1_rises": 71,
+        "post_lock_tail": 6,
+        "next_valuation": 7
+      },
+      {
+        "bit_depth": 65,
+        "start": "65361457155476097183",
+        "total_exact_r1_rises": 70,
+        "post_lock_tail": 5,
+        "next_valuation": 7
+      },
+      {
+        "bit_depth": 103,
+        "start": "15045347887059327205810549934185",
+        "total_exact_r1_rises": 108,
+        "post_lock_tail": 5,
+        "next_valuation": 3
+      },
+      {
+        "bit_depth": 216,
+        "start": "184849064275286606007331890819413293259043881717693153579673720193",
+        "total_exact_r1_rises": 221,
+        "post_lock_tail": 5,
+        "next_valuation": 5
+      }
+    ],
+    "positive_tail_boundary_hit_candidate_count": 0,
+    "positive_tail_homogeneous_digit_mismatch_candidate_count": 0
+  },
+  "interpretation": "The post-lock decimal itinerary is confined to an exact normalized corridor of width less than 19. In the complete own-bit lock scan through B=220, every positive post-lock tail already follows the homogeneous (3/2)^t leading-digit itinerary without a decimal-boundary corridor hit. Thus boundary proximity is not a necessary mechanism for the observed long tails; parity/congruence along a phase-frozen digit itinerary remains the sharper obstruction. The observed maximum tail 6 is finite computation, not a universal bound.",
+  "limitations": "No scale-aware F(B) or F(M) tail theorem is proved. The structured one-rise/one-fall frontier and the arbitrary-cycle q>=971 bound are unchanged."
+}
