@@ -1,5 +1,5 @@
 {
-  "schema_version": 7,
+  "schema_version": 8,
   "project_title": "Leading-Digit Hailstone Dynamics",
   "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
   "frozen_object": {
@@ -38,7 +38,7 @@
     "1_independent_reproduction": "COMPLETE_WITH_ORIGINAL_RANDOM_SAMPLE_NON_REPLAYABLE",
     "2_dynamical_census": "EXHAUSTIVE_TO_5000000_PLUS_TARGETED_ADVERSARIAL_TESTS",
     "3_structural_decomposition": "MULTIPLE_ELEMENTARY_RESULTS_INCLUDING_ARBITRARILY_LONG_V2_ONE_RUNS",
-    "4_cycle_search": "GENERAL_Q_GE_971; ONE_RISE_ONE_FALL_EXCLUDED_THROUGH_Q_64497106_UNDER_5M_PREMISE",
+    "4_cycle_search": "GENERAL_Q_GE_971; ONE_RISE_ONE_FALL_EXCLUDED_THROUGH_Q_890638885192_UNDER_5M_PREMISE",
     "5_prior_art_audit": "DEEPENED_NO_EXACT_OR_EQUIVALENT_MATCH_IDENTIFIED_NOVELTY_UNRESOLVED",
     "6_nearby_rule_comparison": "COMPLETE_SMALL_PRINCIPLED_NEIGHBOURHOOD_PLUS_1M_SURVIVOR_EXTENSION",
     "7_lean_specification": "COMPLETE_COMPACT_SPECIFICATION_CI_VERIFIED",
@@ -151,7 +151,10 @@
       "For a one-rise/one-fall accelerated cycle above 19, the valuation word is equivalent to exactly one strict local minimum and one strict local maximum; a unique global minimum alone is not sufficient.",
       "One-rise/one-fall cycles satisfy the period-independent product envelope 1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).",
       "If E is the sum over falling steps of (r_i-2), then R=2q-a+E and a-E=2q-R.",
-      "Farey-neighbour upper/lower approximations to log_2(3) transfer a record product ratio across a complete denominator block, avoiding period-by-period scanning."
+      "Farey-neighbour upper/lower approximations to log_2(3) transfer a record product ratio across a complete denominator block, avoiding period-by-period scanning.",
+      "For an exact r=1 run, the normalized state (2/3)^i x_i lies in an additive strip whose uncertainty width is <16.",
+      "On any fixed finite minimum range [L,U], the number of exact r=1 decimal-sector/binary-lift cells after s rises is bounded linearly in s by 17*s*D+1 with D=9*(ceil(log10((U+19)/L))+2).",
+      "For consecutive upper Farey records with denominators q and q_next, the upper absolute error delta satisfies delta>1/q_next, yielding M < 57 + 38*q_next/ln(2) for a structured-cycle minimum."
     ],
     "bounded_exact_consequence": {
       "statement": "Any different positive accelerated cycle consistent with the exhaustive 5,000,000-seed census must contain at least 971 odd states.",
@@ -177,15 +180,17 @@
       "interpretation": "These examples do not exhibit one-step giant compensation; recovery is distributed across a longer block.",
       "claim_type": "FINITE_COMPUTATION"
     },
-    "proof_direction_update": "The one-rise/one-fall line strengthened again: Farey-neighbour control turns isolated powers-of-two/powers-of-three survivors into record blocks. Existing and one new symbolic M-range certificate now exclude the structured class through q=64,497,106. The next target is the first denominator not covered by the current record transfer, not a larger linear scan.",
+    "proof_direction_update": "The one-rise/one-fall line now has a genuine record-to-record framework: exact Stern-Brocot/Farey iteration plus exact rational logarithmic certification extends the finite exclusion through q=890,638,885,192, while a normalized weak-run strip theorem bounds symbolic cell growth linearly in rise depth on each fixed finite M range. The remaining obstacle is a uniform theorem controlling the positions of the sparse terminal residue representatives.",
     "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses powers-of-2/powers-of-3 Diophantine approximation; no novelty claim is made for this strategy.",
     "structured_cycle_consequence": {
-      "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q >= 64,497,107 and at least 26,768,717 consecutive r=1 rise steps.",
+      "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q >= 890,638,885,193 and at least 369,648,535,671 consecutive r=1 rise steps.",
       "theorem_level_basis": [
         "one-rise/one-fall valuation word is equivalent above 19 to exactly one strict local minimum and one strict local maximum",
         "period-independent product envelope 1 < 2^R/3^q <= M(M-19)/(M^2-57M+361)",
         "fall-excess identity R=2q-a+E",
-        "Farey-neighbour transfer lemma for upper absolute errors R-q log_2(3)"
+        "Farey-neighbour transfer lemma for upper absolute errors R-q log_2(3)",
+        "record-to-record error bound delta>1/q_next and consequent M < 57 + 38*q_next/ln(2)",
+        "normalized weak-run uncertainty width <16 and linear finite-range symbolic-cell bound"
       ],
       "finite_exact_coverage": {
         "previous_period_scan_limit": 400000,
@@ -226,16 +231,27 @@
           3,
           2
         ],
-        "method": "exact power-side comparisons and Farey determinants; theorem-derived M_max; exact symbolic decimal-sector interval splitting plus exact 2-adic lifting"
+        "method": "exact power-side comparisons and Farey determinants; theorem-derived M_max; exact symbolic decimal-sector interval splitting plus exact 2-adic lifting",
+        "record_chain_extension": {
+          "certificate": "data/structured_record_chain.json",
+          "first_new_upper_q": 64497107,
+          "last_certified_q": 890638885192,
+          "first_uncovered_upper_q": 890638885193,
+          "first_uncovered_upper_R": 1411629234715,
+          "certified_minimum_rise_length": 369648535671,
+          "maximum_symbolic_extinction_depth_in_new_chain": 49,
+          "maximum_peak_symbolic_cell_count_in_new_chain": 727,
+          "method": "exact Stern-Brocot/Farey iteration; exact rational logarithm enclosures; theorem-derived exact M_max; exact symbolic decimal-sector/2-adic coverage"
+        }
       },
-      "claim_type": "THEOREM_PLUS_FINITE_EXACT_ARITHMETIC_AND_SYMBOLIC_CERTIFICATE",
-      "caveat": "This excludes only the one-rise/one-fall structured class through the stated period bound; arbitrary cycles retain the separate general q>=971 consequence."
+      "claim_type": "THEOREM_PLUS_FINITE_EXACT_RATIONAL_ARITHMETIC_AND_SYMBOLIC_CERTIFICATE",
+      "caveat": "This excludes only the one-rise/one-fall structured class through the stated period bound; arbitrary cycles retain the separate general q>=971 consequence, and no asymptotic/global structured exclusion is proved."
     }
   },
   "current_lean_status": "ODD_AFFINE_NUMERATOR_DIRECTION_INEQUALITIES_CI_VERIFIED_GREEN",
   "immediate_stage_1_targets": [
-    "Issue #10: analyze the first denominator not covered by the current Farey transfer, q=64,497,107",
-    "seek a record-to-record theorem relating product-derived M_max growth to symbolic rise extinction, without claiming a uniform global weak-run bound",
+    "Issue #10: prove a uniform residue-position obstruction for the sparse terminal representatives after the binary modulus dominates the finite M range",
+    "use the normalized weak-run strip and affine digit-word structure to seek an explicit logarithmic maximum-rise theorem on finite ranges",
     "formalise leading-digit bounds and accelerated odd dynamics in Lean",
     "continue prior-art equivalence search without novelty claims"
   ],
@@ -249,7 +265,7 @@
   },
   "highest_value_next_target": {
     "issue": 10,
-    "title": "Analyze the next Farey approximation record",
-    "reason": "The Farey-neighbour transfer now excludes every one-rise/one-fall period through q=64,497,106. The next high-value question is whether the same record-to-record mechanism can be iterated with a mathematical bound on symbolic extinction as M_max grows, beginning at q=64,497,107."
+    "title": "Control sparse terminal residue positions",
+    "reason": "The Farey record chain now scales cleanly and symbolic branching is theorem-level linear in rise depth on fixed finite ranges. The missing step for an asymptotic structured-cycle exclusion is a uniform argument forcing the final lifted residue representatives to leave their permitted decimal components."
   }
 }
