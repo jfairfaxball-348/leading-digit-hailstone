@@ -202,7 +202,7 @@
       "caveat": "This excludes only the one-rise/one-fall structured class through the stated period bound; arbitrary cycles retain the separate general q>=971 consequence."
     }
   },
-  "current_lean_status": "ODD_AFFINE_NUMERATOR_DIRECTION_INEQUALITIES_ADDED_PENDING_CI",
+  "current_lean_status": "ODD_AFFINE_NUMERATOR_DIRECTION_INEQUALITIES_CI_VERIFIED_GREEN",
   "immediate_stage_1_targets": [
     "Issue #10: extend exact one-rise/one-fall exclusion beyond q=400000 by enumerating the next product-window survivors and their theorem-derived M ranges",
     "if a long admissible rise family survives symbolic coverage, analyze its digit word and valuation structure rather than increasing bounds blindly",
@@ -213,8 +213,9 @@
   "current_ci_status": {
     "python": "GREEN",
     "lean": "GREEN",
-    "verified_on_research_branch": "research/post-pilot-cycle-constraints",
-    "verification_note": "Python and Lean PR workflows passed after Stage-1 code, data, tests, and Lean changes."
+    "verified_on_research_branch": "research/one-minimum-cycle-envelope",
+    "verified_commit": "c02b563870ec9f69f22ba0a87305a045b1217ed5",
+    "verification_note": "Python and Lean PR #11 workflows passed after the exact structured-cycle certificate, symbolic coverage tests, Lean numerator inequalities, and final mathematical wording corrections."
   },
   "highest_value_next_target": {
     "issue": 10,
