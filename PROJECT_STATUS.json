@@ -1,5 +1,5 @@
 {
-  "schema_version": 10,
+  "schema_version": 11,
   "project_title": "Leading-Digit Hailstone Dynamics",
   "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
   "frozen_object": {
@@ -157,7 +157,8 @@
       "For a fixed exact-r=1 rise digit word with affine term A_s, all s parity conditions are equivalent to 3^s M + A_s == 2^s (mod 2^(s+1)), hence M == 3^(-s)(2^s-A_s) (mod 2^(s+1)).",
       "For a fixed exact-r=1 rise word, the unique residues satisfy rho_(s+1)=rho_s+b_s*2^(s+1); the lift bits b_s are exactly the successive binary digits of the required starting residue above its forced odd bit.",
       "Bounded-range residue locking: for starts M<=U, at B=floor(log_2 U) the congruence forces M=rho_B, and every later compatible lift bit is zero.",
-      "Combining bit-length locking with decimal-boundary localization gives at most 180*B*(ceil(log_10((U+19)/L))+1)+1 starts surviving B rises in [L,U]; for fixed L this is O((log U)^2) candidate compression."
+      "Combining bit-length locking with decimal-boundary localization gives at most 180*B*(ceil(log_10((U+19)/L))+1)+1 starts surviving B rises in [L,U]; for fixed L this is O((log U)^2) candidate compression.",
+      "After locking, x_s=1+2H_s exactly, and b_s=0 is equivalent to the deterministic accelerated numerator at x_s having valuation one; hence symbolic lift/decimal branching is unnecessary after lock depth."
     ],
     "bounded_exact_consequence": {
       "statement": "Any different positive accelerated cycle consistent with the exhaustive 5,000,000-seed census must contain at least 971 odd states.",
@@ -183,10 +184,10 @@
       "interpretation": "These examples do not exhibit one-step giant compensation; recovery is distributed across a longer block.",
       "claim_type": "FINITE_COMPUTATION"
     },
-    "proof_direction_update": "The Farey/product framework remains sufficient for the current structured attack, while the residue obstruction has been sharpened. Exact one-bit lifting shows that lift choices are the binary digits of the required start. At B=floor(log_2 U), every bounded start surviving B rises is locked to its canonical residue and all later compatible lift bits are zero. Boundary localization then gives explicit polylogarithmic candidate compression at B. The missing theorem is now a quantitative bound on the post-lock zero-lift tail, not residue placement in general.",
+    "proof_direction_update": "Post-lock residue ambiguity has now been eliminated completely: once M=rho_B, the carry satisfies x_s=1+2H_s and a zero lift is exactly one deterministic valuation-one accelerated step. Thus exact symbolic branching is needed only through lock depth; later tail certification is direct orbit following of the finite locked candidate set. A finite exact tail-6 example rules out universal constant bounds <=5. The next Farey record is excluded by this lock-and-follow certificate, so the remaining target is a scale-aware F(B) or F(M) tail theorem rather than further symbolic lift control.",
     "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses powers-of-2/powers-of-3 Diophantine approximation; no novelty claim is made for this strategy.",
     "structured_cycle_consequence": {
-      "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q >= 890,638,885,193 and at least 369,648,535,671 consecutive r=1 rise steps.",
+      "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q >= 1,643,749,725,074 and at least 682,217,775,335 consecutive r=1 rise steps.",
       "theorem_level_basis": [
         "one-rise/one-fall valuation word is equivalent above 19 to exactly one strict local minimum and one strict local maximum",
         "period-independent product envelope 1 < 2^R/3^q <= M(M-19)/(M^2-57M+361)",
@@ -195,7 +196,8 @@
         "inverse-error product scale M<39/t for t=log(2^R/3^q)",
         "finite-range decimal-boundary localization and 20 J_s(L,U)+1 sector-word bound",
         "explicit terminal 2-adic residue formula for a fixed rise digit word",
-        "bounded-range bit-length residue locking and explicit lock-depth candidate compression"
+        "bounded-range bit-length residue locking and explicit lock-depth candidate compression",
+        "post-lock deterministic-tail reduction x_s=1+2H_s and b_s=0 iff the next accelerated valuation is one"
       ],
       "finite_exact_coverage": {
         "previous_period_scan_limit": 400000,
@@ -225,7 +227,7 @@
             "first_impossible_rise_length": 31
           }
         ],
-        "first_q_not_covered_by_current_farey_transfer": 890638885193,
+        "first_q_not_covered_by_current_farey_transfer": 1643749725074,
         "new_terminal_rise_representatives": [
           1229721173,
           1380119257,
@@ -281,13 +283,30 @@
             "first_impossible_rise_length": 49
           }
         ],
-        "structured_q_excluded_through": 890638885192,
+        "structured_q_excluded_through": 1643749725073,
         "next_unprocessed_upper_record": {
-          "q": 890638885193,
-          "R": 1411629234715,
+          "q": 1643749725074,
+          "R": 2605281674813,
           "lower_q": 753110839881,
           "lower_R": 1193652440098,
           "determinant": 1
+        },
+        "post_lock_record_extension": {
+          "q": 890638885193,
+          "R": 1411629234715,
+          "maximum_minimum_state": 48737068628469,
+          "lock_depth": 45,
+          "locked_starts": [
+            26501219601103,
+            39751829401657
+          ],
+          "their_total_exact_r1_rises": [
+            48,
+            47
+          ],
+          "first_impossible_rise_length": 49,
+          "covered_q_end": 1643749725073,
+          "certificate": "data/post_lock_tail.json"
         },
         "largest_processed_symbolic_range": {
           "minimum": 5000001,
@@ -300,7 +319,7 @@
           "scaled_decimal_boundary_count_J_at_terminal_depth": 2997
         }
       },
-      "claim_type": "THEOREM_PLUS_FINITE_EXACT_RATIONAL_ARITHMETIC_AND_SYMBOLIC_CERTIFICATE",
+      "claim_type": "THEOREM_PLUS_FINITE_EXACT_RATIONAL_ARITHMETIC_SYMBOLIC_AND_DIRECT_CERTIFICATE",
       "caveat": "This excludes only the one-rise/one-fall structured class through the stated period bound; arbitrary cycles retain the separate general q>=971 consequence. The record chain is not yet an all-record theorem."
     },
     "residue_position_locking": {
@@ -336,14 +355,41 @@
           2
         ]
       },
-      "limitation": "No uniform zero-lift-tail bound and therefore no explicit general s_max(X) bound has been proved. The structured q frontier is unchanged."
+      "limitation": "No uniform F(B) or F(M) zero-lift-tail bound and therefore no explicit general s_max(X) bound has been proved. A separate lock-and-follow certificate extends the structured q frontier, but only finitely."
+    },
+    "post_lock_deterministic_tail": {
+      "claim_type": "THEOREM_PLUS_FINITE_EXACT_SYMBOLIC_AND_DIRECT_CERTIFICATE",
+      "theorem_level": [
+        "after locking, rho_s=M implies x_s=1+2H_s exactly",
+        "b_s=0 iff H_s+L(x_s) is odd iff v2(3x_s+2L(x_s)+1)=1",
+        "post-lock zero-lift continuation is exactly deterministic accelerated orbit following, so no symbolic branching is needed after lock depth"
+      ],
+      "finite_exact_route_falsification": {
+        "start": 43574304770317398119,
+        "bit_length_lock_depth": 65,
+        "total_exact_r1_rises": 71,
+        "post_lock_tail": 6,
+        "next_valuation": 7,
+        "consequence": "universal constant post-lock tail bounds <=5 are false"
+      },
+      "finite_exact_record_extension": {
+        "record_q": 890638885193,
+        "record_R": 1411629234715,
+        "maximum_minimum_state": 48737068628469,
+        "lock_depth": 45,
+        "first_impossible_rise_length": 49,
+        "structured_q_excluded_through": 1643749725073,
+        "next_required_q": 1643749725074,
+        "next_required_rise": 682217775335
+      },
+      "limitation": "The reduction removes symbolic branching after lock but does not prove any scale-aware bound on deterministic tail length."
     }
   },
   "current_lean_status": "ODD_AFFINE_NUMERATOR_DIRECTION_INEQUALITIES_CI_VERIFIED_GREEN",
   "immediate_stage_1_targets": [
-    "Issue #10: prove a quantitative bound on post-lock zero-lift tails for starts M<=U, or isolate a rigorous recursively extendable family that obstructs such a bound",
-    "treat further Farey-record extension as secondary unless needed to instantiate or falsify a zero-lift-tail theorem",
-    "formalise stable residue/congruence lemmas in Lean without giant numerical certificates",
+    "Issue #10: prove a scale-aware quantitative bound F(B) or F(M) on deterministic post-lock valuation-one tails, or produce a rigorous family showing such a route is too weak",
+    "exploit x_s=1+2H_s to study decimal phase/discrepancy and congruence information without further symbolic lift branching",
+    "use further Farey records mainly as stress tests or consequences of a tail theorem rather than as the primary research direction",
     "continue prior-art equivalence search without novelty claims"
   ],
   "synchronized_date": "2026-09-26",
@@ -356,7 +402,7 @@
   },
   "highest_value_next_target": {
     "issue": 10,
-    "title": "Control post-lock zero-lift tails",
-    "reason": "Bit-length locking now identifies every bounded surviving start with its exact 2-adic residue and forces all subsequent lift bits to zero. The missing structured-cycle step is a uniform quantitative bound on how long that zero-lift tail can remain decimal-consistent."
+    "title": "Bound deterministic post-lock tails by scale",
+    "reason": "Post-lock lift ambiguity is gone: x_s=1+2H_s and zero lift is exactly a deterministic valuation-one accelerated step. A constant bound <=5 is false, so the next target is a rigorous scale-aware F(B) or F(M) bound, likely using decimal phase/discrepancy or scale-aware congruence information."
   }
 }
