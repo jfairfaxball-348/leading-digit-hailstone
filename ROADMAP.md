@@ -22,7 +22,7 @@ Current parallel attack lines:
 
 The theorem that arbitrarily long initial exact-v2=1 runs exist permanently rules out arguments that assume a uniform bound on weak-division streaks.
 
-Current highest-value target: **Issue #10 — analyze the next Farey record at q=64,497,107**. The structured product envelope, an exact Farey-neighbour transfer for powers-of-two / powers-of-three approximations, and exact decimal-sector/2-adic symbolic coverage now eliminate every one-rise/one-fall period through q=64,497,106 under the 5M minimum premise. The next step is not another linear period scan: determine whether the record-to-record transfer can be iterated with a theorem controlling symbolic extinction as the product-derived M_max grows, or identify the first record where that finite-range modulus squeeze fails.
+Current highest-value target: **Issue #10 — convert finite-range low symbolic complexity into a residue-position obstruction**. Exact Farey record transfer plus complete symbolic certificates now exclude one-rise/one-fall periods through q=890,638,885,192 under the 5M minimum premise. A proved decimal-boundary localization lemma shows that, on any fixed finite M interval, possible rise-sector words grow only linearly with rise depth up to an explicit boundary count. The missing step is no longer cell width: once cells are narrower than the power-of-two modulus, one compatible residue can still land inside each cell. The next step is to control those word-dependent residue positions (or prove a finite transition obstruction), beginning with the next upper record q=890,638,885,193. Do not revert to a large linear q scan.
 
 ## Stage 2 — Lean formalisation — ACTIVE ALONGSIDE STAGE 1
 
