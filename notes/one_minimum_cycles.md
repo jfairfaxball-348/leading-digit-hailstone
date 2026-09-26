@@ -777,50 +777,34 @@ The Farey record mechanism and low finite-range word complexity now form a genui
 
 For a fixed rise word, the exact residue lift satisfies
 
-[
-\rho_{s+1}=\rho_s+b_s2^{s+1},
-]
+`rho_(s+1) = rho_s + b_s 2^(s+1)`,
 
-so the lift bits are the binary digits of the required starting residue. For a bounded range (M\le U), put (B=\lfloor\log_2U\rfloor). Since (2^{B+1}>U), every start surviving (B) rises has (M=\rho_B), and every later compatible lift bit is zero.
+so the lift bits are the binary digits of the required starting residue. For a bounded range `M <= U`, put `B = floor(log_2 U)`. Since `2^(B+1) > U`, every start surviving `B` rises has `M = rho_B`, and every later compatible lift bit is zero.
 
 The post-lock dynamics now collapses further. From
 
-[
-3^sM+A_s=2^s+H_s2^{s+1}
-]
+`3^s M + A_s = 2^s + H_s 2^(s+1)`
 
-and (2^sx_s=3^sM+A_s),
+and `2^s x_s = 3^s M + A_s`, one gets
 
-[
-oxed{x_s=1+2H_s}.
-]
+`x_s = 1 + 2 H_s`.
 
-Hence, with (d_s=L(x_s)),
+Hence, with `d_s = L(x_s)`,
 
-[
-b_s=0
-iff
-H_s+d_s\equiv1\pmod2
-iff
-v_2(3x_s+2d_s+1)=1.
-]
+`b_s = 0  iff  H_s + d_s is odd  iff  v2(3 x_s + 2 d_s + 1) = 1`.
 
 Thus symbolic decimal/2-adic branching is required only through lock depth. Every later compatible zero lift is exactly one deterministic accelerated step of the concrete locked start.
 
 A finite exact counterexample rules out very small universal constants: the start
 
-[
-43{,}574{,}304{,}770{,}317{,}398{,}119
-]
+`43,574,304,770,317,398,119`
 
-has bit-length lock depth 65 and 71 initial exact-(r=1) rises, giving a post-lock tail of length 6 before valuation 7. This does not show that tails are unbounded.
+has bit-length lock depth 65 and 71 initial exact-r=1 rises, giving a post-lock tail of length 6 before valuation 7. This does not show that tails are unbounded.
 
 The lock-and-follow certificate for the next Farey record extends the structured exclusion through
 
-[
-q=1{,}643{,}749{,}725{,}073,
-]
+`q = 1,643,749,725,073`
 
-under the existing 5M premise. The arbitrary-cycle lower bound remains separately (q\ge971).
+under the existing 5M premise. The arbitrary-cycle lower bound remains separately `q >= 971`.
 
 See `notes/residue_position_locking.md`, `notes/post_lock_tail_control.md`, `data/residue_position_locking.json`, and `data/post_lock_tail.json`.
