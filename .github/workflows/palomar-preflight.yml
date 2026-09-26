@@ -1,0 +1,20 @@
+name: Palomar preflight
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  palomar-preflight:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@a59f25bd8a66bf6faf3a4f4260d412989c0185ea
+    with:
+      repository: ${{ github.repository }}
+      commit: ${{ github.sha }}
+      pipeline_commit: a59f25bd8a66bf6faf3a4f4260d412989c0185ea
+      request_id: ldhpf0000001
+      mode: full
+      options: '{"comparator_config_path":"comparator.json","authorization_relationship":"I am a responsible author or maintainer"}'

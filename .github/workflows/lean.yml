@@ -17,13 +17,22 @@ jobs:
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Resolve Lean dependencies
         run: lake update
+      - name: Require committed manifest to be current
+        run: git diff --exit-code -- lake-manifest.json
       - name: Fetch Mathlib cache
         run: lake exe cache get
-      - name: Build Lean specification
+      - name: Build Lean specification and Palomar modules
         run: lake build
-      - name: Reject sorry placeholders
+      - name: Reject sorry placeholders outside Challenge
         run: |
-          if grep -R -n -E '\bsorry\b' LeadingDigitHailstone.lean LeadingDigitHailstone; then
-            echo "Lean source contains a sorry placeholder."
+          if grep -R -n -E '\bsorry\b' LeadingDigitHailstone.lean LeadingDigitHailstone Solution.lean; then
+            echo "Substantive Lean source or Solution contains a sorry placeholder."
             exit 1
           fi
+      - name: Install bubblewrap for lake comparator
+        run: |
+          sudo apt-get update -qq >/dev/null
+          sudo apt-get install -y -qq bubblewrap >/dev/null
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - name: Run Palomar-style local Comparator check
+        run: ./scripts/verify-comparator.sh
