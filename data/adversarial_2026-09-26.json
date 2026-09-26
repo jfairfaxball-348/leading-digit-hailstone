@@ -1,17 +1,34 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "date": "2026-09-26",
   "evidence_type": "FINITE_COMPUTATION",
   "boundary_sweep": {
-    "protocol": "d*10^k +/- 1 for d=1..9, k=1..18",
-    "tested_seed_count": 324,
+    "protocol": "d*10^k +/- 1 for d=1..9, k=1..200",
+    "tested_seed_count": 3600,
     "step_cap": 200000,
     "all_entered_distinguished_cycle": true,
-    "worst_cycle_entry": {"seed": 9000000000001, "steps": 646, "peak": 45562500000048},
-    "max_excursion_ratio_case": {"seed": 900000000000001, "steps": 520, "peak": 8089497811387627412}
+    "worst_cycle_entry": {
+      "d": 8,
+      "k": 190,
+      "offset": -1,
+      "seed": "79999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+      "steps": 5672,
+      "peak": "768867187500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000320"
+    },
+    "max_excursion_ratio_case": {
+      "d": 9,
+      "k": 14,
+      "offset": 1,
+      "seed": "900000000000001",
+      "steps": 520,
+      "peak": "8089497811387627412"
+    }
   },
   "initial_v2_one_scan": {
-    "odd_seed_range": [1, 5000000],
+    "odd_seed_range": [
+      1,
+      5000000
+    ],
     "record_seed": 2826307,
     "initial_v2_one_run_length": 21,
     "next_valuation": 3,
