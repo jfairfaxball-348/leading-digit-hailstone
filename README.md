@@ -24,11 +24,11 @@ The distinguished cycle itself is not novel: on single-digit odd inputs L(n)=n, 
 
 **FINITE COMPUTATION.** Exact exhaustive testing through 5,000,000 found every tested seed entering the distinguished cycle and no competing cycle. The current cycle-entry record in that census is seed 4,625,895 at 713 raw iterations; the current maximum-excursion record is seed 4,449,695 reaching 1,265,270,503,548. Consequently any different positive cycle, if one exists, has minimum element greater than 5,000,000.
 
-**ELEMENTARY FACTS.** The repository records exact 2-adic residue classes, decimal-boundary jumps, strong inverse-image restrictions, an accelerated-cycle equation, and a proof that the full map is not a standard finite-modulus residue-class-wise affine map.
+**ELEMENTARY FACTS.** The repository records exact 2-adic residue classes, decimal-boundary jumps, strong inverse-image restrictions, an accelerated-cycle equation, a proof that the full map is not a standard finite-modulus residue-class-wise affine map, and a constructive proof that arbitrarily long initial runs with exact accelerated valuation v2=1 exist.
 
-**FINITE COMPARISON.** In the predeclared family c_b(d)=2d+b with b in {-3,-1,1,3,5}, all four nonfrozen shifts had multiple observed cycles among seeds 1..100,000, while the frozen b=1 rule had one observed cycle. In the 18 one-coordinate perturbations c(d) -> c(d)+/-2, 11 had multiple observed cycles and 7 had one. This is evidence that the frozen behaviour is not automatic in a tiny nearby neighbourhood; it is not evidence of uniqueness or a theorem-level phase boundary.
+**FINITE COMPARISON.** In the predeclared family c_b(d)=2d+b with b in {-3,-1,1,3,5}, all four nonfrozen shifts had multiple observed cycles while the frozen b=1 rule had one observed cycle, unchanged through seeds 1..1,000,000. Of 18 one-coordinate perturbations c(d) -> c(d)+/-2, 11 already had multiple observed cycles through 100,000; all 7 one-cycle survivors remained one-cycle through 1,000,000. This supports distinctiveness but also shows that finite single-attractor behavior is locally robust in several directions.
 
-**FINITE ADVERSARIAL TESTING.** All 3,600 boundary seeds d*10^k +/- 1 for d=1..9 and k=1..200 entered the distinguished cycle within the explicit cap. The longest initial run of accelerated odd steps with exact v2=1 found among odd seeds through 5,000,000 has length 21 at seed 2,826,307. Constructed 50-, 100-, and 200-digit near-boundary starts chosen to sustain low valuation also entered the cycle within the explicit cap.
+**FINITE ADVERSARIAL TESTING.** All 9,000 boundary seeds d*10^k +/- 1 for d=1..9 and k=1..500 entered the distinguished cycle within the explicit cap; the longest boundary case took 13,678 raw steps at 7*10^498-1. Explicit residue-lifted examples with at least 30, 50, and 100 consecutive initial v2=1 accelerated steps also entered the distinguished cycle within the explicit cap. These finite outcomes are separate from the elementary theorem that such weak-division runs can be arbitrarily long.
 
 **LITERATURE STATUS.** The 5x+1 cycle is prior art; standard generalized-Collatz/RCWA frameworks are close analogues but do not contain this leading-decimal-sector rule as a finite-modulus instance; active leading-digit integer dynamics exists in other digit-map literature. The current deeper audit has not identified an exact or equivalent full-map construction. That remains negative search evidence, not a novelty claim.
 
@@ -39,7 +39,10 @@ Python reference and verification implementations live under src/leading_digit_h
 - scripts/reproduce_incoming.py
 - scripts/sweep.py
 - scripts/compare_nearby_rules.py
+- scripts/extend_nearby_rules.py
 - scripts/adversarial_search.py
+- scripts/extend_boundary_sweep.py
+- scripts/construct_low_v2_runs.py
 
 Machine-readable summaries are under data/.
 
