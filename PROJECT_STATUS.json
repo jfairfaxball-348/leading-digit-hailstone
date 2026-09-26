@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "project_title": "Leading-Digit Hailstone Dynamics",
   "phase": "CONJECTURE_DISCOVERY_PILOT",
   "frozen_object": {
@@ -37,10 +37,10 @@
     "0_scaffold": "COMPLETE",
     "1_independent_reproduction": "COMPLETE_WITH_ORIGINAL_RANDOM_SAMPLE_NON_REPLAYABLE",
     "2_dynamical_census": "EXHAUSTIVE_TO_5000000_PLUS_TARGETED_ADVERSARIAL_TESTS",
-    "3_structural_decomposition": "MULTIPLE_ELEMENTARY_RESULTS",
+    "3_structural_decomposition": "MULTIPLE_ELEMENTARY_RESULTS_INCLUDING_ARBITRARILY_LONG_V2_ONE_RUNS",
     "4_cycle_search": "CYCLE_EQUATION_AND_MINIMUM_ELEMENT_EXCLUSION_TO_5000000",
     "5_prior_art_audit": "DEEPENED_NO_EXACT_OR_EQUIVALENT_MATCH_IDENTIFIED_NOVELTY_UNRESOLVED",
-    "6_nearby_rule_comparison": "COMPLETE_SMALL_PRINCIPLED_NEIGHBOURHOOD",
+    "6_nearby_rule_comparison": "COMPLETE_SMALL_PRINCIPLED_NEIGHBOURHOOD_PLUS_1M_SURVIVOR_EXTENSION",
     "7_lean_specification": "COMPLETE_COMPACT_SPECIFICATION_CI_VERIFIED",
     "8_candidate_assessment": "COMPLETE_CANDIDATE_DISTINCTIVE_CONJECTURE"
   },
@@ -67,44 +67,61 @@
     "evidence_type": "FINITE_COMPUTATION"
   },
   "nearby_rule_summary": {
-    "cycle_census_range": [
+    "baseline_cycle_census_range": [
       1,
       100000
     ],
+    "extension_cycle_census_range": [
+      1,
+      1000000
+    ],
     "global_nonfrozen_shifts_tested": 4,
-    "global_nonfrozen_shifts_with_multiple_observed_cycles": 4,
+    "global_nonfrozen_shifts_with_multiple_observed_cycles_through_1000000": 4,
+    "frozen_global_shift_observed_cycles_through_1000000": 1,
     "single_digit_perturbations_tested": 18,
-    "single_digit_perturbations_with_one_observed_cycle": 7,
-    "single_digit_perturbations_with_multiple_observed_cycles": 11,
+    "single_digit_perturbations_with_multiple_observed_cycles_by_100000": 11,
+    "single_digit_perturbations_with_one_observed_cycle_through_1000000": 7,
+    "of_those_retaining_distinguished_7_cycle": 6,
     "evidence_type": "FINITE_COMPUTATION"
   },
   "adversarial_summary": {
-    "decimal_boundary_seeds_tested": 3600,
-    "decimal_boundary_range": "d*10^k +/- 1 for d=1..9, k=1..200",
+    "decimal_boundary_seeds_tested": 9000,
+    "decimal_boundary_range": "d*10^k +/- 1 for d=1..9, k=1..500",
+    "boundary_implementation": "independent string-leading-digit verifier",
     "all_boundary_seeds_entered_distinguished_cycle": true,
-    "longest_initial_accelerated_v2_equals_1_run_with_seed_at_most_5000000": {
+    "worst_boundary_cycle_entry": {
+      "seed": "7*10^498-1",
+      "steps": 13678
+    },
+    "finite_scan_longest_initial_accelerated_v2_equals_1_run_with_seed_at_most_5000000": {
       "seed": 2826307,
       "run_length": 21
     },
-    "large_constructed_decimal_lengths": [
+    "elementary_fact": "For every m>=1, some positive odd seed has at least m consecutive initial accelerated steps with exact v2=1.",
+    "explicit_residue_lifted_requested_run_lengths": [
+      30,
       50,
-      100,
-      200
+      100
     ],
-    "large_constructed_examples_entered_distinguished_cycle": true,
-    "evidence_type": "FINITE_COMPUTATION",
-    "worst_boundary_cycle_entry": {
-      "seed": "8*10^190 - 1",
-      "steps": 5672
-    }
+    "explicit_residue_lifted_observed_run_lengths": [
+      32,
+      50,
+      100
+    ],
+    "explicit_residue_lifted_examples_entered_distinguished_cycle": true,
+    "evidence_types": [
+      "FINITE_COMPUTATION",
+      "ELEMENTARY_FACT"
+    ]
   },
-  "prior_art_status": "DISTINGUISHED_CYCLE_HAS_5X_PLUS_1_PRIOR_ART; STANDARD_FINITE_MODULUS_GENERALIZED_COLLATZ_CLASSES_DO_NOT_CONTAIN_THE_FULL_MAP; LEADING_DIGIT_ACTIVE_DYNAMICS_EXISTS_IN_OTHER_DIGIT_MAPS; NO_EXACT_OR_EQUIVALENT_FULL_MAP_MATCH_IDENTIFIED_IN_CURRENT_AUDIT; NOVELTY_UNRESOLVED",
+  "prior_art_status": "DISTINGUISHED_CYCLE_HAS_5X_PLUS_1_PRIOR_ART; FINITE_MODULUS_GENERALIZED_COLLATZ_CLASSES_DO_NOT_CONTAIN_THE_FULL_MAP; RADIX_AWARE_AND_LEADING_DIGIT_ACTIVE_INTEGER_DYNAMICS_EXIST_AS_CLOSE_ANALOGUES; NO_EXACT_OR_EQUIVALENT_FULL_MAP_MATCH_IDENTIFIED_IN_CURRENT_AUDIT; NOVELTY_UNRESOLVED",
   "pilot_gate_date": "2026-09-26",
   "pilot_gate_basis": [
-    "The statement is elementary to state and the full map has nontrivial decimal-sector, 2-adic, inverse, and cycle-equation structure.",
+    "The statement is elementary to state and the full map has nontrivial decimal-sector, 2-adic, inverse, cycle-equation, and arbitrarily-long weak-division structure.",
     "Exact finite testing through 5000000 found no competing positive cycle and gives a minimum-element exclusion for any different positive cycle in that range.",
-    "A small predeclared nearby family is behaviorally mixed: all four nonfrozen global shifts tested have multiple observed cycles through 100000, while 11 of 18 single-digit +/-2 perturbations do and 7 do not.",
-    "Targeted boundary and low-v2 adversarial tests did not falsify the frozen conjecture: all 3600 seeds d*10^k +/- 1 for d=1..9, k=1..200 entered the distinguished cycle, as did constructed 50-, 100-, and 200-digit starts.",
+    "The predeclared nearby family is behaviorally mixed: all four nonfrozen global shifts have multiple observed cycles through 1000000, while all seven one-coordinate perturbations that were one-cycle at 100000 remain one-cycle through 1000000.",
+    "Targeted falsification did not break the frozen conjecture: all 9000 boundary-adjacent seeds through exponent 500 entered the distinguished cycle, as did explicit residue-lifted starts with at least 30, 50, and 100 consecutive initial v2=1 accelerated steps.",
+    "Arbitrarily long initial v2=1 runs exist by an elementary construction, so local growth stretches cannot be ruled out by a uniform bound.",
     "The distinguished 7-cycle is old 5x+1 behavior and is not evidence of novelty.",
     "Current prior-art work has not located an exact or mathematically equivalent full-map construction, but negative search evidence is insufficient for a novelty claim."
   ]
