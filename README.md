@@ -1,67 +1,50 @@
 # Leading-Digit Hailstone Dynamics
 
-A controlled object-discovery and conjecture-testing pilot for the map
+A controlled conjecture-discovery project for
 
-\[
-T(n)=\begin{cases}
-n/2,&n\text{ even},\\
-3n+2L(n)+1,&n\text{ odd},
-\end{cases}
-\]
+T(n) = n/2 when n is even, and T(n) = 3n + 2L(n) + 1 when n is odd,
 
-where `L(n)` is the leading decimal digit of the positive integer `n`.
+where L(n) is the leading decimal digit of the positive integer n.
 
 The distinguished observed cycle is
 
-`1 → 6 → 3 → 16 → 8 → 4 → 2 → 1`.
+1 -> 6 -> 3 -> 16 -> 8 -> 4 -> 2 -> 1.
 
-## Epistemic status
+## Candidate conjecture
 
-The central statement
+**Leading-Digit Hailstone Conjecture.** Every positive integer eventually enters the distinguished 7-cycle.
 
-> Every positive integer eventually enters the distinguished 7-cycle.
+This is a conjecture, not a theorem. The current project gate is **CANDIDATE_DISTINCTIVE_CONJECTURE**: the object has survived the present falsification work and has enough structural and comparative content to justify continued study as a named conjecture candidate. This gate is deliberately weaker than a novelty determination.
 
-is a **conjecture**, not a theorem. The map is **not claimed to be novel**. Finite computation is evidence only. Equivalent mathematics under different notation counts as prior art.
+The map is **not claimed to be new or previously unknown**. Equivalent mathematics under different notation counts as prior art.
 
-The frozen pilot object is exactly the map above. Changes of multiplier, base, digit convention, or correction term belong in a separate comparison layer.
+The distinguished cycle itself is not novel: on single-digit odd inputs L(n)=n, so the odd rule is 5n+1 and the displayed cycle is the familiar positive 5x+1 cycle.
 
-## Exact conventions
+## Current evidence, kept separate by type
 
-For this repository:
+**FINITE COMPUTATION.** Exact exhaustive testing through 5,000,000 found every tested seed entering the distinguished cycle and no competing cycle. The current cycle-entry record in that census is seed 4,625,895 at 713 raw iterations; the current maximum-excursion record is seed 4,449,695 reaching 1,265,270,503,548. Consequently any different positive cycle, if one exists, has minimum element greater than 5,000,000.
 
-- `L(n)` means the first digit of the ordinary base-10 expansion of positive integer `n`, so `L(n) ∈ {1,…,9}`.
-- `stopping_time(n)` means the first raw iteration `k ≥ 1` for which `T^k(n) < n`.
-- `cycle_entry_time(n)` means the first raw iteration `k ≥ 0` for which `T^k(n)` is in `{1,2,3,4,6,8,16}`.
-- `max_excursion(n)` is the maximum value seen through first distinguished-cycle entry (or over the examined prefix if a cap/other cycle intervenes).
-- `excursion_ratio(n) = max_excursion(n)/n`, stored exactly as a rational pair where results are machine-readable.
+**ELEMENTARY FACTS.** The repository records exact 2-adic residue classes, decimal-boundary jumps, strong inverse-image restrictions, an accelerated-cycle equation, and a proof that the full map is not a standard finite-modulus residue-class-wise affine map.
+
+**FINITE COMPARISON.** In the predeclared family c_b(d)=2d+b with b in {-3,-1,1,3,5}, all four nonfrozen shifts had multiple observed cycles among seeds 1..100,000, while the frozen b=1 rule had one observed cycle. In the 18 one-coordinate perturbations c(d) -> c(d)+/-2, 11 had multiple observed cycles and 7 had one. This is evidence that the frozen behaviour is not automatic in a tiny nearby neighbourhood; it is not evidence of uniqueness or a theorem-level phase boundary.
+
+**FINITE ADVERSARIAL TESTING.** Boundary seeds d*10^k +/- 1 for d=1..9 and k=1..18 all entered the distinguished cycle. The longest initial run of accelerated odd steps with exact v2=1 found among odd seeds through 5,000,000 has length 21 at seed 2,826,307. Constructed 50-, 100-, and 200-digit near-boundary starts chosen to sustain low valuation also entered the cycle within the explicit cap.
+
+**LITERATURE STATUS.** The 5x+1 cycle is prior art; standard generalized-Collatz/RCWA frameworks are close analogues but do not contain this leading-decimal-sector rule as a finite-modulus instance; active leading-digit integer dynamics exists in other digit-map literature. The current deeper audit has not identified an exact or equivalent full-map construction. That remains negative search evidence, not a novelty claim.
 
 ## Reproducibility
 
-The reference implementation is `src/leading_digit_hailstone/core.py`. An independently written checker with a different leading-digit implementation is in `src/leading_digit_hailstone/verify.py`.
+Python reference and verification implementations live under src/leading_digit_hailstone. Key scripts include:
 
-```bash
-python -m pip install -e .
-python -m unittest discover -s tests
-python scripts/verify_implementations.py
-python scripts/reproduce_incoming.py
-```
+- scripts/reproduce_incoming.py
+- scripts/sweep.py
+- scripts/compare_nearby_rules.py
+- scripts/adversarial_search.py
 
-For a resumable batch sweep:
+Machine-readable summaries are under data/.
 
-```bash
-python scripts/sweep.py --stop 10000000 --checkpoint data/sweep_checkpoint.json
-```
+## Lean specification
 
-The incoming observations are preserved separately in `data/incoming_observations.json`. Reproduction output is written to `data/task1_reproduction.json`. The original 1,000-sample random claim did not include its RNG seed or sample list, so exact replay is impossible; the reproduction script runs a clearly labelled deterministic replacement sample instead.
+A compact Lean 4 layer lives in LeadingDigitHailstone/. It defines the leading digit, frozen map, iteration proposition, and distinguished cycle; states LeadingDigitHailstoneConjecture as a Prop; checks all seven cycle transitions; and proves that odd inputs map to even outputs. It contains no proof of the central conjecture and no sorry placeholder.
 
-## Pilot tasks
-
-0. Scaffold — repository structure, rules, status, reference/verification implementations and reproducibility conventions.
-1. Independent reproduction — reproduce incoming numerical claims without treating them as universal.
-2. Dynamical census — extend exhaustive testing and catalogue records.
-3. Structural decomposition — leading-digit intervals, parity, 2-adic valuation, transitions and inverse structure.
-4. Cycle search — forward/inverse methods for bounded nontrivial cycles.
-5. Prior-art audit — exact and mathematically equivalent constructions.
-6. Pilot decision — choose one of the explicit STOP/CONTINUE gate outcomes in `ROADMAP.md`.
-
-See `RESEARCH_RULES.md` before adding claims.
+See RESEARCH_RULES.md, ROADMAP.md, notes/CANDIDATE_ASSESSMENT.md, and literature/DEEP_AUDIT_2026-09-26.md before making stronger claims.
