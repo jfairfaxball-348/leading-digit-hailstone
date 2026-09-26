@@ -365,7 +365,7 @@
         "post-lock zero-lift continuation is exactly deterministic accelerated orbit following, so no symbolic branching is needed after lock depth"
       ],
       "finite_exact_route_falsification": {
-        "start": 43574304770317398119,
+        "start": 43574304770317400000,
         "bit_length_lock_depth": 65,
         "total_exact_r1_rises": 71,
         "post_lock_tail": 6,
@@ -385,7 +385,7 @@
       "limitation": "The reduction removes symbolic branching after lock but does not prove any scale-aware bound on deterministic tail length."
     }
   },
-  "current_lean_status": "ODD_AFFINE_NUMERATOR_DIRECTION_INEQUALITIES_CI_VERIFIED_GREEN",
+  "current_lean_status": "POST_LOCK_CARRY_AND_VALUATION_IDENTITIES_CI_VERIFIED_GREEN",
   "immediate_stage_1_targets": [
     "Issue #10: prove a scale-aware quantitative bound F(B) or F(M) on deterministic post-lock valuation-one tails, or produce a rigorous family showing such a route is too weak",
     "exploit x_s=1+2H_s to study decimal phase/discrepancy and congruence information without further symbolic lift branching",
@@ -396,9 +396,9 @@
   "current_ci_status": {
     "python": "GREEN",
     "lean": "GREEN",
-    "verified_on_research_branch": "research/residue-position-lift-coordinate",
-    "verified_commit": "8b89382d75207db7aa557a2d40c59535c29de8df",
-    "verification_note": "Python/tests and Lean PR #15 workflows passed on the complete residue-position locking research head. This status-only synchronization commit follows that verified head."
+    "verified_on_research_branch": "research/post-lock-deterministic-tail",
+    "verified_commit": "cefc119473a2965e8842fe4e213075da4099ad70",
+    "verification_note": "Python/tests and Lean PR #16 workflows passed on the complete post-lock deterministic-tail research head. This status-only synchronization commit follows that verified code head; the final PR head is rechecked before merge."
   },
   "highest_value_next_target": {
     "issue": 10,
