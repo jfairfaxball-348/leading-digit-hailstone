@@ -111,3 +111,38 @@ The present audit materially reduces the risk that the rule is just a standard f
 ## Remaining risk areas
 
 The next audit should emphasize older recreational mathematics, theses and dissertations, non-English sources, books and problem columns, poorly indexed digit-dependent recurrences, and broader radix/state-dependent affine systems. A human bibliographic search through generalized-Collatz bibliographies remains higher value than adding more literal web queries.
+
+## Addendum: further equivalence controls
+
+### Matthews-Watts finite-residue generalization
+
+K. R. Matthews and A. M. Watts, “A generalization of Hasse's generalization of the Syracuse algorithm,” Acta Arithmetica 43 (1984), 167–175, DOI 10.4064/aa-43-2-167-175, belongs to the older generalized-Collatz literature in which arithmetic branches are selected through finite congruence information.
+
+**Classification: close general framework, not an exact containment.**
+
+It reinforces the distinction already drawn above: the repository's non-RCWA argument separates the frozen leading-decimal-sector rule from fixed finite-residue affine systems.
+
+### Decimal digit operations composed with Collatz
+
+OEIS A129121 records an iteration applying a Collatz operation followed by decimal digit reversal.
+
+**Classification: close analogue.**
+
+This is useful prior art against any broad claim that decimal digit operations have not been combined with Collatz-like iteration. It is not equivalent to choosing the additive correction 3,5,...,19 from the leading digit.
+
+### Automaton implementation of ordinary Collatz
+
+“Automaton implementations of the process of generating a Collatz sequence,” Cybernetics and Systems Analysis (2012), DOI 10.1007/s10559-012-9380-4, studies an iterative-automaton implementation of the Hasse/Collatz process.
+
+**Classification: thematic only.**
+
+It shows that automata/transducer language is established around Collatz computation, but the source identified here implements the ordinary process rather than a leading-digit-controlled affine rule.
+
+### Thesis and recreational search layer
+
+Targeted searches combining generalized Collatz, digit dependence, leading/most-significant digit, thesis/dissertation terminology, and recreational mathematics did not identify an exact or equivalent full-map construction in this pass.
+
+**Classification: negative search evidence only.**
+
+This layer is especially incomplete because older theses, problem columns, books, and non-English sources can be poorly indexed. Its value is to document coverage, not to increase the novelty status.
+
