@@ -271,11 +271,11 @@
   ],
   "synchronized_date": "2026-09-26",
   "current_ci_status": {
-    "python": "PENDING_ON_RESEARCH_BRANCH",
-    "lean": "UNCHANGED_FROM_GREEN_PR12_BASE",
+    "python": "GREEN",
+    "lean": "GREEN",
     "verified_on_research_branch": "research/farey-next-record",
-    "verified_commit": null,
-    "verification_note": "Next-record arithmetic and symbolic certificate prepared; CI verification pending."
+    "verified_commit": "3d4ef526559573aed406201a8f91fbce434f13c0",
+    "verification_note": "Python and Lean PR #14 workflows passed on the complete next-record research head. This status-only synchronization commit follows that verified head."
   },
   "highest_value_next_target": {
     "issue": 10,
