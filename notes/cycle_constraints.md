@@ -163,17 +163,17 @@ The block geometry yields the period-independent product estimate
 
 Under M>=5,000,001 the right side is less than 2, so the only possible total valuation at fixed q is R=ceil(q log_2 3). Farey-neighbour control transfers the product-ratio lower bound across complete denominator blocks.
 
-The first certificate scanned q<=400,000 exactly and eliminated its six product-window survivors. PR #12 then transferred two Farey blocks through q=64,497,106. The current record-chain certificate iterates the same exact mechanism through seven further upper records, using rigorous rational logarithm bounds with explicit remainder estimates for the power-side and M_max decisions, together with complete decimal-sector / 2-adic symbolic rise coverage.
+The first certificate scanned q<=400,000 exactly and eliminated its six product-window survivors. PR #12 then transferred two Farey blocks through q=64,497,106. The seven-record chain certificate iterates the same exact mechanism through q=890,638,885,192, using rigorous rational logarithm bounds with explicit remainder estimates for the power-side and M_max decisions, together with complete decimal-sector / 2-adic symbolic rise coverage. A new post-lock certificate then processes the next upper record by symbolic coverage only through bit-length lock depth and deterministic direct continuation of the locked starts.
 
 Therefore:
 
-> **Bounded structured corollary.** Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q>=890,638,885,193 and at least 369,648,535,671 consecutive exact-r=1 rise steps.
+> **Bounded structured corollary.** Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q>=1,643,749,725,074 and at least 682,217,775,335 consecutive exact-r=1 rise steps.
 
-The largest processed M range is 5,000,001<=M<=42,285,421,502,900 and becomes symbolically empty at rise 49. The next unprocessed upper record is (q,R)=(890,638,885,193,1,411,629,234,715).
+The largest range in the new certificate is 5,000,001<=M<=48,737,068,628,469. Its lock depth is 45; exactly two starts survive to lock, and direct continuation gives total rise lengths 48 and 47, so the range is empty at rise 49. The next unprocessed upper record is (q,R)=(1,643,749,725,074,2,605,281,674,813).
 
-A new finite-range boundary-localization lemma bounds the number of possible decimal-sector words through s rises by 20J_s(L,U)+1, where J_s counts relevant scaled decimal boundaries. For fixed [L,U], J_s=O(s). This proves low symbolic complexity but not eventual extinction: after the residue modulus exceeds the interval width, each word can still carry one residue representative. Controlling those representative positions is the remaining structured-class obstruction.
+Finite-range boundary localization bounds the number of possible decimal-sector words through s rises by 20J_s(L,U)+1, where J_s counts relevant scaled decimal boundaries. For fixed [L,U], J_s=O(s). Bit-length locking then makes each surviving start concrete, and the exact identity x_s=1+2H_s shows that every later zero lift is simply a deterministic valuation-one accelerated step. This eliminates symbolic branching after lock, but no scale-aware bound on deterministic tail length is known.
 
-See notes/one_minimum_cycles.md, scripts/structured_record_chain.py, and data/structured_record_chain.json. This does **not** change the arbitrary-cycle bound q>=971.
+See notes/one_minimum_cycles.md, notes/post_lock_tail_control.md, scripts/structured_record_chain.py, scripts/post_lock_tail.py, data/structured_record_chain.json, and data/post_lock_tail.json. This does **not** change the arbitrary-cycle bound q>=971.
 
 ## Why this matters for the next cycle search
 
@@ -197,9 +197,32 @@ The product window is useful because it restricts (q,R) before digit-word enumer
 - No statement here excludes all competing positive cycles.
 
 
-## Bounded-range residue locking
+## Bounded-range residue locking and deterministic tails
 
-For a fixed exact-(r=1) rise digit word, the unique start residues satisfy a one-bit lift law
-(ho_{s+1}=ho_s+b_s2^{s+1}). Thus the lift choices are the binary digits of the required start. If starts are restricted to (Mle U) and (B=lfloorlog_2Ufloor), then (2^{B+1}>U) forces (M=ho_B) for any start surviving (B) rises, and all later compatible lift bits are zero.
+For a fixed exact-(r=1) rise digit word, the unique start residues satisfy
 
-This gives deterministic residue-position control after the bit-length threshold, but no uniform bound on the ensuing zero-lift tail is known. It therefore does not change the arbitrary-cycle lower bound (qge971) or globally exclude the one-rise/one-fall class. See `notes/residue_position_locking.md`.
+[
+\rho_{s+1}=\rho_s+b_s2^{s+1}.
+]
+
+Thus the lift choices are the binary digits of the required start. If starts are restricted to (M\le U) and (B=\lfloor\log_2U\rfloor), then (2^{B+1}>U) forces (M=\rho_B) for every start surviving (B) rises, and all later compatible lift bits are zero.
+
+After lock, the carry is exactly half the odd state minus one:
+
+[
+x_s=1+2H_s.
+]
+
+Consequently
+
+[
+b_s=0
+iff
+v_2(3x_s+2L(x_s)+1)=1.
+]
+
+So no symbolic lift/decimal branching remains after lock depth; the tail is deterministic direct orbit following.
+
+This still does not give a scale-aware tail bound. In fact the explicit start (43{,}574{,}304{,}770{,}317{,}398{,}119) locks at bit depth 65 and continues through 71 valuation-one rises, giving a post-lock tail of 6 before valuation 7. Hence universal constant tail bounds (le5) are false, while (F(B))- or (F(M))-type bounds remain open.
+
+The post-lock certificate extends only the structured one-rise/one-fall frontier. The arbitrary-cycle lower bound remains (q\ge971). See `notes/residue_position_locking.md` and `notes/post_lock_tail_control.md`.
