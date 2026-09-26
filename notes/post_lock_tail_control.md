@@ -150,3 +150,25 @@ What is still missing is a theorem bounding those deterministic tails as a funct
 - a congruence/scale state whose nonrecurrence is provable.
 
 No universal-convergence claim follows from this increment.
+
+## 7. Scaled-tube phase update
+
+A complementary exact coordinate is now recorded in `notes/post_lock_phase_tube.md`.
+
+If `X` is the lock state and a deterministic post-lock tail continues with exact valuation one, then
+
+`Y_t=(2/3)^t x_t`
+
+is strictly increasing and remains in the fixed interval
+
+`[X,X+19)`.
+
+Thus every true post-lock state lies in
+
+`[(3/2)^t X,(3/2)^t(X+19))`.
+
+This gives a scale-aware decimal-boundary separation theorem: two distinct scaled boundary hits `n` steps apart force `X<=171*3^n`, while exact coincident hits are confined to the short chains `2->3` and `4->6->9`.
+
+On a boundary-free horizon the leading-digit word is forced by the homogeneous phase, so survival reduces to the existing single terminal 2-adic residue congruence. Exact finite phase/residue certificates recover the known post-lock tails 3, 2, and 6 for the current locked examples without using post-lock orbit following as the certificate itself.
+
+This still does not prove a global `F(B)` or `F(M)` tail bound. The remaining obstruction is to bound how long a boundary-free homogeneous digit word can continue satisfying the required 2-adic residues.
