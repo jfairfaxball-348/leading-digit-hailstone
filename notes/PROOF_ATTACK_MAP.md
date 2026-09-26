@@ -109,11 +109,17 @@ The 5M census already forces any competing cycle to have very large minimum. The
 4. Add decimal interval consistency to eliminate formally possible but unrealizable words.
 5. Search for modular obstructions to the cycle equation after digit-word fixing.
 
-### Current new bounded consequence
+### Current bounded consequences
 
-The exact-integer certificate in scripts/cycle_minimum_length_bound.py verifies that the multiplicative window excludes q<=970 when M>=5,000,001. Therefore any different positive cycle consistent with the 5M census must contain at least 971 odd states.
+For arbitrary accelerated cycles, the exact-integer certificate in scripts/cycle_minimum_length_bound.py verifies that the general multiplicative window excludes q<=970 when M>=5,000,001. Therefore any different positive cycle consistent with the 5M census must contain at least 971 odd states.
 
-This consequence uses both an elementary theorem and a finite exact arithmetic certificate; it is not a global cycle exclusion.
+For the narrower one-rise/one-fall class of Issue #10, a stronger theorem is now available. Geometric lower bounds on states on both sides of the unique turning pair give the period-independent envelope
+
+1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).
+
+The exact certificate in scripts/structured_one_minimum_bound.py then excludes q<=79,334 under the same 5M minimum premise. The first period not excluded by this necessary window is q=79,335 with unique possible R=125,743. Every surviving structured cycle must also have at least 32,927 consecutive r=1 rises.
+
+This substantially constrains Issue #10 but does not exclude the class globally. The next precise target is the first surviving period q=79,335: combine R=125,743 and a-E=32,927 with exact decimal interval consistency and 2-adic valuation lifting.
 
 ### What would weaken/falsify this approach
 
