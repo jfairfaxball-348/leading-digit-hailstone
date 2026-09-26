@@ -90,7 +90,23 @@ Unless explicitly labelled otherwise, statements in the proved sections are **EL
 
    Because this bound is <2 at M>=5,000,001, the possible R is ceil(q log_2 3). If R_u/q_u is an exact upper approximation to log_2 3, R_l/q_l is an exact lower approximation, and R_u q_l-R_l q_u=1, then the Farey denominator theorem shows that no closer upper slope occurs before denominator q_u+q_l. For q>=q_u this also makes the upper absolute error R-q log_2 3 at least the error of R_u/q_u, so the same product-derived M_max applies throughout that whole denominator block.
 
-   Combining this transfer with the exact symbolic decimal-sector/2-adic rise checker excludes every structured period q<=64,497,106 under the 5M premise. Hence any remaining structured cycle has q>=64,497,107 and at least 26,768,717 consecutive exact-r=1 rise steps. The new symbolic range M<=3,112,972,388 dies at rise depth 31. This is a bounded structured-class consequence, not a global cycle exclusion. See notes/one_minimum_cycles.md.
+   Iterating the exact Farey/Stern-Brocot bracket with exact rational logarithmic enclosures and the same exact symbolic checker excludes every structured period q<=890,638,885,192 under the 5M premise. Hence any remaining structured cycle has q>=890,638,885,193 and at least 369,648,535,671 consecutive exact-r=1 rise steps. This is a bounded structured-class consequence, not a global cycle exclusion. See notes/one_minimum_cycles.md and notes/farey_symbolic_scaling.md.
+
+20. **Exact weak runs have a normalized width-<16 strip, giving linear finite-range symbolic complexity.** During s exact-r=1 rises from M,
+
+   (2/3)^i x_i = M + beta_i,
+
+   with
+
+   3(1-(2/3)^i) <= beta_i <= 19(1-(2/3)^i).
+
+   Thus the uncertainty in beta_i is <16. For M in a fixed finite interval [L,U], digit ambiguity at depth i can occur only in width-<16 preimage strips around decimal leading-digit boundaries. If D=9(ceil(log10((U+19)/L))+2), then after s rises there are at most 17sD+1 complete decimal-sector/binary-lift cells. If 2^(s+1)>U-L, each cell contains at most one seed. This is a finite-range complexity theorem, not a uniform upper bound on weak-run length.
+
+21. **Consecutive upper Farey records control M linearly in the next record denominator.** Let delta=R-q log_2(3)>0 at an upper record and q_next be the next upper record denominator along the exact Stern-Brocot path. The final lower neighbour before q_next gives delta>1/q_next. Combining 2^delta<=M(M-19)/(M^2-57M+361), 2^delta-1>delta ln 2, and B(M)-1<38/(M-57) yields
+
+   M < 57 + 38 q_next / ln 2.
+
+   This controls record-window growth but does not bound q_next/q, so it is not by itself an asymptotic cycle exclusion.
 
 
 ## Heuristic direction, not theorem
