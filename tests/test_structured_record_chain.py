@@ -35,6 +35,13 @@ class StructuredRecordChainTests(unittest.TestCase):
         record = self.payload["new_upper_records"][0]
         self.assertEqual((record["q"], record["R"]), (64_497_107, 102_225_496))
         self.assertEqual(record["farey_determinant"], 1)
+
+        # Independent exact-integer check requested for the first previously
+        # uncovered denominator: bit_length(3^q)=R means
+        # 2^(R-1) <= 3^q < 2^R, so R=ceil(q*log_2(3)).
+        three_to_q = 3 ** record["q"]
+        self.assertEqual(three_to_q.bit_length(), record["R"])
+
         self.assertEqual(record["maximum_minimum_state"], 4_350_616_725)
         self.assertEqual(record["required_minimum_rise"], 26_768_718)
         self.assertEqual(record["first_impossible_rise_length"], 31)
