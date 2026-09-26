@@ -410,9 +410,13 @@ and
 
 2^102225496 > 3^64497107.
 
-Thus q=64,497,107 is the next upper Farey/Stern-Brocot record generated from the previous neighbour pair.
+Thus q=64,497,107 is the next upper Farey/Stern-Brocot record generated from the previous neighbour pair. The regression suite independently constructs the exact integer 3^64,497,107 and verifies that its bit length is 102,225,496, i.e.
 
-Direct construction of 3^q is no longer a sensible certificate as the denominators grow. The script
+2^102225495 <= 3^64497107 < 2^102225496.
+
+This directly certifies R=ceil(q log_2 3) at the first previously uncovered denominator.
+
+Direct construction of 3^q is no longer a sensible certificate as the later denominators grow. The script
 
 scripts/structured_record_chain.py
 
