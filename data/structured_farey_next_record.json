@@ -25,6 +25,7 @@
   "symbolic_range": {
     "minimum": 5000001,
     "maximum": 4350616725,
+    "first_impossible_rise_length": 31,
     "cell_counts_by_rise_depth": [
       27, 47, 61, 79, 97, 115, 132, 149, 167, 185, 203, 220, 238,
       256, 270, 276, 276, 271, 259, 233, 194, 151, 124, 87, 50, 32,
