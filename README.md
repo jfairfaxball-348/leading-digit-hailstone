@@ -16,7 +16,7 @@ The distinguished observed cycle is
 
 This is a conjecture, not a theorem.
 
-The completed discovery pilot reached the gate **CANDIDATE_DISTINCTIVE_CONJECTURE**. The project has therefore moved into **Stage 1: mathematical proof/conjecture research**, with Lean formalisation and prior-art work continuing in parallel.
+The completed discovery pilot reached the gate **CANDIDATE_DISTINCTIVE_CONJECTURE**. The declared Stage-1 falsification programme is now intentionally frozen at **STAGE_1_STRESS_TEST_COMPLETE_CONJECTURE_SURVIVES**. This is not a proof: the conjecture remains unproved. **Stage 2: Lean formalisation** is the next primary stage.
 
 The map is **not claimed to be new or previously unknown**. Historical novelty remains unresolved, and mathematically equivalent prior art under different notation counts.
 
@@ -34,21 +34,15 @@ The distinguished cycle itself is not novel: on single-digit odd inputs L(n)=n, 
 
 **LITERATURE STATUS.** The 5x+1 cycle is prior art; standard finite-modulus generalized-Collatz/RCWA frameworks are close analogues but do not contain this leading-decimal-sector map as a finite-modulus instance; active leading-digit integer dynamics exists elsewhere. No exact or mathematically equivalent full-map construction has yet been identified in the current audit. This is negative search evidence, not a novelty claim.
 
-## Active mathematical programme
+## Stage 1 closeout and next stage
 
-Stage 1 develops several approaches in parallel:
+Stage 1 is complete as a deliberately bounded red-team programme, not as a convergence proof. The final campaign added deterministic large-start sampling, decimal-boundary tests at exponents up to 1500, engineered exact-v2=1 runs requested through length 384, inverse-tree-derived hostile residue seeds, and a 6,000-phase post-lock residue challenge. No competing positive cycle, cap-hit escape candidate, implementation ambiguity, or reason to rewrite the positive-integer conjecture was found in the declared campaign. No post-lock tail longer than the known finite record 6 was found; this remains finite evidence only.
 
-- accelerated odd dynamics and deterministic descent;
-- cycle exclusion from exact valuation/digit constraints;
-- inverse-tree structure;
-- decimal-sector geometry;
-- targeted computation for theorem discovery and falsification.
+The complete closeout is in `notes/STAGE_1_STRESS_TEST_CLOSEOUT.md`, with the compact certificate in `data/final_stage1_stress_test.json`. The theorem on arbitrarily long v2=1 runs remains an important negative result: no argument may assume a global bound on consecutive weak divisions.
 
-The theorem on arbitrarily long v2=1 runs means no proof may assume a global bound on consecutive weak divisions.
+The next primary stage is Lean formalisation and audit of the frozen object and unproved conjecture. `notes/PROOF_ATTACK_MAP.md` is retained as an archived record of Stage-1 proof exploration, not as an active requirement.
 
-See ROADMAP.md and notes/PROOF_ATTACK_MAP.md for the current research plan.
-
-### First Stage-1 progress
+### Retained Stage-1 mathematics
 
 **ELEMENTARY FACTS.** For any accelerated odd cycle,
 2^R/3^q = product_i(1+c_i/(3x_i)). If M is the minimum odd state, this gives
@@ -71,6 +65,6 @@ Python reference and verification implementations live under src/leading_digit_h
 
 ## Lean
 
-A Lean 4 layer under LeadingDigitHailstone/ specifies the map and central conjecture and proves stable elementary facts. The universal conjecture remains an unproved Prop; no sorry placeholder is used. Formalisation is now expanded alongside Stage-1 mathematics while CI is kept green.
+A Lean 4 layer under LeadingDigitHailstone/ already specifies the map and central conjecture and proves stable elementary facts. The universal conjecture remains an unproved Prop; no sorry placeholder is used. Consolidating and auditing this formal specification is now the next primary stage.
 
 See RESEARCH_RULES.md, PROJECT_STATUS.json, notes/CANDIDATE_ASSESSMENT.md, notes/cycle_constraints.md, and literature/DEEP_AUDIT_2026-09-26.md before making stronger claims.

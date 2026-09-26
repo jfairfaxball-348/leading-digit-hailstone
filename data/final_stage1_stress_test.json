@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-26",
+  "claim_type": "FINITE_EXACT_ADVERSARIAL_COMPUTATION_WITH_REUSED_THEOREM_CONTEXT",
+  "purpose": "bounded final Stage-1 falsification campaign; not a proof of universal convergence",
+  "random_large_odd_starts": {
+    "protocol": "50 deterministic random odd starts at each of 20,50,100,250,500,1000 decimal digits",
+    "rng_seed": 20260926,
+    "step_cap": 200000,
+    "tested_seed_count": 300,
+    "failure_count": 0,
+    "all_entered_distinguished_cycle": true,
+    "worst_cycle_entry": {
+      "decimal_digits": 1000,
+      "seed": {
+        "decimal_digits": 1000,
+        "prefix": "8732348844359657168189464628543902802658",
+        "suffix": "0528306839058933168407301183957980412711"
+      },
+      "status": "DISTINGUISHED_CYCLE",
+      "cycle_entry_steps": 25426,
+      "first_descent_steps": 8,
+      "peak": {
+        "decimal_digits": 1001,
+        "prefix": "3929556979961845725685259082844756261196",
+        "suffix": "7377380775765199257832855327810911857228"
+      },
+      "peak_decimal_digits": 1001,
+      "maximum_consecutive_r1": 12,
+      "maximum_accelerated_valuation": 14,
+      "maximum_monotone_accelerated_growth_block": 12
+    },
+    "worst_first_descent": {
+      "decimal_digits": 100,
+      "seed": {
+        "decimal_digits": 100,
+        "prefix": "6916928372649306702682016266515293373041",
+        "suffix": "3539473174225970642247563617754248377823"
+      },
+      "status": "DISTINGUISHED_CYCLE",
+      "cycle_entry_steps": 2358,
+      "first_descent_steps": 83,
+      "peak": {
+        "decimal_digits": 103,
+        "prefix": "1078151372935827865647214614509662250923",
+        "suffix": "8186259194421903094921547292499537556328"
+      },
+      "peak_decimal_digits": 103,
+      "maximum_consecutive_r1": 8,
+      "maximum_accelerated_valuation": 11,
+      "maximum_monotone_accelerated_growth_block": 8
+    },
+    "largest_consecutive_r1_case": {
+      "decimal_digits": 500,
+      "seed": {
+        "decimal_digits": 500,
+        "prefix": "6543102290717653919153471937619330870206",
+        "suffix": "1662965225861183388112105490204761381025"
+      },
+      "status": "DISTINGUISHED_CYCLE",
+      "cycle_entry_steps": 12112,
+      "first_descent_steps": 3,
+      "peak": {
+        "decimal_digits": 501,
+        "prefix": "1962930687215296175746041581285799261061",
+        "suffix": "4988895677583550164336316470614284143088"
+      },
+      "peak_decimal_digits": 501,
+      "maximum_consecutive_r1": 21,
+      "maximum_accelerated_valuation": 15,
+      "maximum_monotone_accelerated_growth_block": 21
+    },
+    "largest_accelerated_valuation_case": {
+      "decimal_digits": 500,
+      "seed": {
+        "decimal_digits": 500,
+        "prefix": "5074979264308633874730356811241612550052",
+        "suffix": "2996233870576639276713172788677559212197"
+      },
+      "status": "DISTINGUISHED_CYCLE",
+      "cycle_entry_steps": 11966,
+      "first_descent_steps": 37,
+      "peak": {
+        "decimal_digits": 502,
+        "prefix": "3292299872074517449976288518216618426772",
+        "suffix": "1143984913710907453091462400828948400416"
+      },
+      "peak_decimal_digits": 502,
+      "maximum_consecutive_r1": 10,
+      "maximum_accelerated_valuation": 20,
+      "maximum_monotone_accelerated_growth_block": 10
+    }
+  },
+  "large_decimal_boundary_offsets": {
+    "protocol": "k in {600,1000,1500}; all d=1..9 at offsets +/-1; d in {1,5,9} also at +/-9,+/-99",
+    "step_cap": 100000,
+    "tested_seed_count": 90,
+    "failure_count": 0,
+    "all_entered_distinguished_cycle": true,
+    "worst_cycle_entry": {
+      "seed_form": "5*10^1500-9",
+      "status": "DISTINGUISHED_CYCLE",
+      "cycle_entry_steps": 37939,
+      "first_descent_steps": 13,
+      "peak": {
+        "decimal_digits": 1502,
+        "prefix": "6494642050936818122863769531250000000000",
+        "suffix": "0000000000000000000000000000000000000572"
+      },
+      "peak_decimal_digits": 1502
+    },
+    "largest_peak_decimal_digits_case": {
+      "seed_form": "8*10^1500+1",
+      "status": "DISTINGUISHED_CYCLE",
+      "cycle_entry_steps": 35951,
+      "first_descent_steps": 3,
+      "peak": {
+        "decimal_digits": 1504,
+        "prefix": "1799696015777996767948110345969325862824",
+        "suffix": "0000000000000000000000000000000000049652"
+      },
+      "peak_decimal_digits": 1504
+    }
+  },
+  "engineered_long_r1_starts": {
+    "construction": "phase 7/3 homogeneous word plus unique residue modulo 2^(m+1)",
+    "cases": [
+      {
+        "requested_run_length": 150,
+        "decimal_scale": 350,
+        "seed": {
+          "decimal_digits": 351,
+          "prefix": "2333333333333333333333333333333333333333",
+          "suffix": "0160730616626340957275507185378808708255"
+        },
+        "seed_decimal_digits": 351,
+        "observed_initial_r1_run": 150,
+        "terminating_valuation": 4,
+        "status": "DISTINGUISHED_CYCLE",
+        "cycle_entry_steps": 8590,
+        "peak": {
+          "decimal_digits": 378,
+          "prefix": "1814625035641561462161398127726337784042",
+          "suffix": "8219232703944890377992869211359783975632"
+        },
+        "peak_decimal_digits": 378
+      },
+      {
+        "requested_run_length": 200,
+        "decimal_scale": 470,
+        "seed": {
+          "decimal_digits": 471,
+          "prefix": "2333333333333333333333333333333333333333",
+          "suffix": "5283274640538782327816479866478667381919"
+        },
+        "seed_decimal_digits": 471,
+        "observed_initial_r1_run": 205,
+        "terminating_valuation": 5,
+        "status": "DISTINGUISHED_CYCLE",
+        "cycle_entry_steps": 12887,
+        "peak": {
+          "decimal_digits": 507,
+          "prefix": "8786302400783568310298001286369571563433",
+          "suffix": "0133786605672432706011480430304217042912"
+        },
+        "peak_decimal_digits": 507
+      },
+      {
+        "requested_run_length": 256,
+        "decimal_scale": 610,
+        "seed": {
+          "decimal_digits": 611,
+          "prefix": "2333333333333333333333333333333333333333",
+          "suffix": "6455486495536978131665355583349232909471"
+        },
+        "seed_decimal_digits": 611,
+        "observed_initial_r1_run": 259,
+        "terminating_valuation": 2,
+        "status": "DISTINGUISHED_CYCLE",
+        "cycle_entry_steps": 15465,
+        "peak": {
+          "decimal_digits": 657,
+          "prefix": "2836182254799224227834540166725896042524",
+          "suffix": "1889672439873958028646891455259869001388"
+        },
+        "peak_decimal_digits": 657
+      },
+      {
+        "requested_run_length": 384,
+        "decimal_scale": 920,
+        "seed": {
+          "decimal_digits": 921,
+          "prefix": "2333333333333333333333333333333333333333",
+          "suffix": "6336313853012925441900979190006776478879"
+        },
+        "seed_decimal_digits": 921,
+        "observed_initial_r1_run": 384,
+        "terminating_valuation": 6,
+        "status": "DISTINGUISHED_CYCLE",
+        "cycle_entry_steps": 24210,
+        "peak": {
+          "decimal_digits": 989,
+          "prefix": "2911665746805564426277499918758979328152",
+          "suffix": "0893564869204313773371752840661263008448"
+        },
+        "peak_decimal_digits": 989
+      }
+    ],
+    "all_entered_distinguished_cycle": true
+  },
+  "inverse_tree_hostile_residues": {
+    "backward_depth": 20,
+    "unique_nodes_through_depth": 567,
+    "odd_nodes_through_depth": 127,
+    "missing_odd_residues_mod_128": [
+      7,
+      17,
+      29,
+      43,
+      45,
+      51,
+      53,
+      55,
+      67,
+      85,
+      91,
+      111,
+      123
+    ],
+    "hostile_seed_count": 39,
+    "hostile_failure_count": 0,
+    "all_hostile_seeds_entered_distinguished_cycle": true,
+    "hostile_worst_cycle_entry": {
+      "decimal_digits": 250,
+      "residue_mod_128": 45,
+      "seed": {
+        "decimal_digits": 250,
+        "prefix": "6531103582442988984390172044283984128696",
+        "suffix": "6325696060053925038848960052058860409005"
+      },
+      "cycle_entry_steps": 7229,
+      "peak": {
+        "decimal_digits": 251,
+        "prefix": "1959331074732896695317051613285195238608",
+        "suffix": "8977088180161775116546880156176581227028"
+      },
+      "peak_decimal_digits": 251
+    }
+  },
+  "phase_residue_post_lock_challenge": {
+    "claim_type": "FINITE_EXACT_PHASE_RESIDUE_SEARCH",
+    "phase_count": 6000,
+    "maximum_prefix_length": 256,
+    "grid_numerators": [
+      1000,
+      5999
+    ],
+    "grid_denominator": 1000,
+    "random_phase_count": 1000,
+    "rng_seed": 20260926,
+    "maximum_observed_post_lock_tail": 6,
+    "record": {
+      "phase_numerator": 4298,
+      "phase_denominator": 1000,
+      "certified_prefix_length": 71,
+      "start": "43574304770317398119",
+      "bit_length_lock_depth": 65,
+      "total_initial_r1_run": 71,
+      "post_lock_tail": 6,
+      "terminating_valuation": 7
+    },
+    "found_tail_longer_than_six": false
+  },
+  "nearby_rule_evidence_reused": {
+    "certificate": "data/nearby_rule_extension_1m.json",
+    "summary": "frozen global shift: one observed cycle through 1,000,000; all four other tested global shifts: multiple observed cycles; several one-coordinate perturbations also remain single-attractor through 1,000,000"
+  },
+  "gate_observations": {
+    "competing_positive_cycle_found": false,
+    "apparent_escaping_orbit_or_cap_hit_found": false,
+    "post_lock_tail_longer_than_six_found": false,
+    "conjecture_statement_requires_change": false,
+    "implementation_ambiguity_found": false
+  },
+  "limitations": "All trajectory outcomes are finite computation. No global convergence, no global absence of escaping orbits, and no universal post-lock tail bound is claimed."
+}

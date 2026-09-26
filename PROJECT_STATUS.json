@@ -1,7 +1,7 @@
 {
-  "schema_version": 13,
+  "schema_version": 14,
   "project_title": "Leading-Digit Hailstone Dynamics",
-  "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
+  "phase": "STAGE_2_LEAN_FORMALISATION",
   "frozen_object": {
     "domain": "positive integers",
     "base": 10,
@@ -112,7 +112,54 @@
     "evidence_types": [
       "FINITE_COMPUTATION",
       "ELEMENTARY_FACT"
-    ]
+    ],
+    "final_stage_1_stress_test": {
+      "claim_type": "FINITE_EXACT_ADVERSARIAL_COMPUTATION_WITH_REUSED_THEOREM_CONTEXT",
+      "certificate": "data/final_stage1_stress_test.json",
+      "note": "notes/STAGE_1_STRESS_TEST_CLOSEOUT.md",
+      "deterministic_random_large_odd_starts": 300,
+      "random_decimal_digit_sizes": [
+        20,
+        50,
+        100,
+        250,
+        500,
+        1000
+      ],
+      "random_failures_or_cap_hits": 0,
+      "large_decimal_boundary_seed_count": 90,
+      "large_decimal_boundary_exponents": [
+        600,
+        1000,
+        1500
+      ],
+      "large_decimal_boundary_failures_or_cap_hits": 0,
+      "engineered_requested_initial_r1_lengths": [
+        150,
+        200,
+        256,
+        384
+      ],
+      "engineered_observed_initial_r1_lengths": [
+        150,
+        205,
+        259,
+        384
+      ],
+      "engineered_cases_entered_distinguished_cycle": true,
+      "inverse_tree_depth": 20,
+      "inverse_tree_unique_nodes": 567,
+      "inverse_tree_odd_nodes": 127,
+      "inverse_hostile_seed_count": 39,
+      "inverse_hostile_failures_or_cap_hits": 0,
+      "phase_residue_phase_count": 6000,
+      "phase_residue_maximum_prefix": 256,
+      "maximum_observed_post_lock_tail": 6,
+      "post_lock_tail_longer_than_six_found": false,
+      "competing_positive_cycle_found": false,
+      "apparent_escaping_orbit_or_cap_hit_found": false,
+      "interpretation": "No declared adversarial line produced a compelling reason to abandon or rewrite the central conjecture. This is finite falsification evidence only, not a convergence proof."
+    }
   },
   "prior_art_status": "DISTINGUISHED_CYCLE_HAS_5X_PLUS_1_PRIOR_ART; FINITE_MODULUS_GENERALIZED_COLLATZ_CLASSES_DO_NOT_CONTAIN_THE_FULL_MAP; RADIX_AWARE_AND_LEADING_DIGIT_ACTIVE_INTEGER_DYNAMICS_EXIST_AS_CLOSE_ANALOGUES; NO_EXACT_OR_EQUIVALENT_FULL_MAP_MATCH_IDENTIFIED_IN_CURRENT_AUDIT; NOVELTY_UNRESOLVED",
   "pilot_gate_date": "2026-09-26",
@@ -126,20 +173,17 @@
     "Current prior-art work has not located an exact or mathematically equivalent full-map construction, but negative search evidence is insufficient for a novelty claim."
   ],
   "programme_stage_status": {
-    "1_proof_conjecture_research": "ACTIVE_HIGHEST_PRIORITY",
-    "2_lean_formalisation": "ACTIVE_IN_PARALLEL",
-    "3_final_prior_art_audit": "ACTIVE_IN_PARALLEL_NOT_FINAL",
-    "4_palomar": "NOT_STARTED",
+    "1_red_team_mathematical_exploration": "COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST",
+    "2_lean_formalisation": "NEXT_PRIMARY_STAGE",
+    "3_palomar": "AFTER_FORMALISATION",
+    "4_final_prior_art_audit": "AFTER_PALOMAR",
     "5_research_paper": "NOT_STARTED",
     "6_arxiv_submission": "NOT_STARTED"
   },
-  "current_research_objective": "Determine as much rigorous mathematics as possible about the frozen system while continuously attempting to falsify or sharpen universal convergence.",
+  "current_research_objective": "Stage 1 is intentionally frozen after the declared falsification programme. The next primary objective is Lean formalisation and audit of the frozen positive-integer map, distinguished cycle, iterates, unproved conjecture, and selected stable supporting lemmas.",
   "active_attack_lines": [
-    "accelerated odd dynamics and deterministic/blockwise descent",
-    "cycle exclusion from valuation words, leading-digit words, and exact cycle identities",
-    "inverse dynamics and inverse-tree coverage",
-    "decimal-sector geometry",
-    "mechanism-targeted computation"
+    "Lean specification audit and consolidation",
+    "formalise stable proved supporting lemmas without treating universal convergence as a proof obligation"
   ],
   "stage_1_progress": {
     "elementary_facts": [
@@ -368,7 +412,7 @@
         "post-lock zero-lift continuation is exactly deterministic accelerated orbit following, so no symbolic branching is needed after lock depth"
       ],
       "finite_exact_route_falsification": {
-        "start": 43574304770317398119,
+        "start": 43574304770317400000,
         "bit_length_lock_depth": 65,
         "total_exact_r1_rises": 71,
         "post_lock_tail": 6,
@@ -437,13 +481,8 @@
       "limitation": "The terminal guide depends on the finite segment endpoint. It sharpens candidate-specific phase certification but does not provide a uniform F(B) or F(M) tail bound or change either cycle frontier."
     }
   },
-  "current_lean_status": "TERMINALLY_ANCHORED_GUIDE_BACKSTEP_CI_VERIFIED_GREEN",
-  "immediate_stage_1_targets": [
-    "Issue #10: prove a scale-aware parity/congruence obstruction for deterministic post-lock valuation-one tails once the decimal itinerary is frozen to the homogeneous (3/2)^t phase",
-    "combine carry parity with exact homogeneous leading-digit words, mixed 2^m5^n congruences, or another unbounded scale coordinate",
-    "extend exact own-bit lock diagnostics primarily to falsify candidate F(B) bounds or find a tail longer than 6; use further Farey records only as secondary stress tests",
-    "continue prior-art equivalence search without novelty claims"
-  ],
+  "current_lean_status": "LEAN_SPECIFICATION_EXISTS_STAGE_2_NEXT_PRIMARY",
+  "immediate_stage_1_targets": [],
   "synchronized_date": "2026-09-26",
   "current_ci_status": {
     "python": "GREEN",
@@ -453,8 +492,25 @@
     "verification_note": "Python/tests and Lean PR #19 workflows passed on the complete terminally anchored guide research head a4a688549fa055e282adbfe11a9ee61cecd12d93. This status-only synchronization commit follows that verified code/documentation head; the final PR head is rechecked before merge."
   },
   "highest_value_next_target": {
-    "issue": 10,
-    "title": "Control phase-frozen post-lock parity by scale",
-    "reason": "The width-19 normalized corridor and exact B<=220 diagnostic show that observed positive post-lock tails can have completely frozen homogeneous leading-digit itineraries with no decimal-boundary near-hit. The remaining obstruction is the exact valuation-one parity/congruence condition along that scale-dependent itinerary; no F(B) or F(M) theorem is yet known."
+    "stage": 2,
+    "title": "Consolidate the Lean formal specification",
+    "reason": "Stage 1 passed its declared stress-test exit gate without finding a competing cycle, cap-hit escape candidate, structural contradiction, wording defect, or post-lock tail longer than 6 in the new finite challenge.",
+    "requirements": [
+      "formalise the positive-integer domain convention and decimal leading digit cleanly",
+      "formalise T, iterates, and the distinguished 7-cycle",
+      "retain LeadingDigitHailstoneConjecture as an unproved proposition",
+      "audit selected stable supporting lemmas and keep the Lean development sorry-free",
+      "do not resume an open-ended universal-convergence proof attempt"
+    ]
+  },
+  "stage_1_exit_gate": {
+    "status": "STAGE_1_STRESS_TEST_COMPLETE_CONJECTURE_SURVIVES",
+    "date": "2026-09-26",
+    "declared_conditions_passed_for_pipeline": true,
+    "conjecture_status": "CONJECTURE",
+    "novelty_status": "UNRESOLVED_DO_NOT_CLAIM",
+    "interpretation": "Stage 1 is intentionally frozen because the conjecture survived the declared bounded falsification programme. Future proof breakthroughs are welcome but are not prerequisites for the research pipeline.",
+    "certificate": "data/final_stage1_stress_test.json",
+    "closeout_note": "notes/STAGE_1_STRESS_TEST_CLOSEOUT.md"
   }
 }

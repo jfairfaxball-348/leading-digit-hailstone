@@ -1,5 +1,8 @@
 # Proof / Conjecture Attack Map
 
+> **STATUS — ARCHIVED STAGE-1 ATTACK MAP.** Stage 1 is intentionally frozen at `STAGE_1_STRESS_TEST_COMPLETE_CONJECTURE_SURVIVES`. The material below is retained as supporting mathematics and a record of falsified/prospective proof routes; it is no longer an active requirement to prove universal convergence or to push the structured-cycle frontier indefinitely. See `notes/STAGE_1_STRESS_TEST_CLOSEOUT.md` and `ROADMAP.md` for the current pipeline.
+
+
 **Phase:** Stage 1 mathematical research.
 
 **Central conjecture (CONJECTURE):** every positive integer eventually enters the distinguished 7-cycle.
