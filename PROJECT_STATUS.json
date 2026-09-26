@@ -1,5 +1,5 @@
 {
-  "schema_version": 12,
+  "schema_version": 13,
   "project_title": "Leading-Digit Hailstone Dynamics",
   "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
   "frozen_object": {
@@ -187,7 +187,7 @@
       "interpretation": "These examples do not exhibit one-step giant compensation; recovery is distributed across a longer block.",
       "claim_type": "FINITE_COMPUTATION"
     },
-    "proof_direction_update": "Post-lock decimal geometry now has a fixed normalized corridor of width less than 19. Any disagreement with the homogeneous (3/2)^t leading-digit itinerary requires an exact scaled decimal-boundary hit inside (X,X+19), while same-sector runs are locally bounded. A complete exact own-bit lock scan through B=220 finds 96 locked starts and 41 positive post-lock tails, maximum observed tail 6, with no boundary-corridor hit or homogeneous-digit mismatch in any positive tail. This finite diagnostic shows that boundary proximity is not necessary for the observed tails. No F(B) or F(M) theorem follows; the sharper target is scale-aware parity/congruence control along a phase-frozen digit itinerary.",
+    "proof_direction_update": "Post-lock decimal geometry now has two complementary width-19 coordinates. The forward normalized corridor keeps (2/3)^t x_t in a fixed interval above the lock state. For any fixed finite exact-r=1 segment, the terminally anchored guide g_s=x_N(2/3)^(N-s) stays less than 19 above every earlier x_s in absolute distance. Any disagreement with either corresponding homogeneous digit itinerary is localized to an explicit width-19 decimal-boundary window. The exact own-bit scan through B=220 still has maximum observed tail 6 and no forward-corridor digit mismatch in any positive tail. No F(B) or F(M) theorem follows; the sharper target remains scale-aware parity/congruence control along a phase-frozen digit itinerary.",
     "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses powers-of-2/powers-of-3 Diophantine approximation; no novelty claim is made for this strategy.",
     "structured_cycle_consequence": {
       "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q >= 1,643,749,725,074 and at least 682,217,775,335 consecutive r=1 rise steps.",
@@ -368,7 +368,7 @@
         "post-lock zero-lift continuation is exactly deterministic accelerated orbit following, so no symbolic branching is needed after lock depth"
       ],
       "finite_exact_route_falsification": {
-        "start": 43574304770317400000,
+        "start": 43574304770317398119,
         "bit_length_lock_depth": 65,
         "total_exact_r1_rises": 71,
         "post_lock_tail": 6,
@@ -417,6 +417,24 @@
         "certificate": "data/post_lock_scale_geometry.json"
       },
       "limitation": "The finite maximum tail 6 through B=220 is not a universal bound. No explicit scale-aware F(B) or F(M) has been proved, and neither cycle frontier changes."
+    },
+    "post_lock_terminal_guide": {
+      "claim_type": "ELEMENTARY_THEOREM_PLUS_FINITE_EXACT_DIAGNOSTIC",
+      "theorem_level": [
+        "for every finite exact-r=1 segment x_0,...,x_N, the terminally anchored guide g_s=x_N*(2/3)^(N-s) satisfies g_s-x_s=sum_(j=s)^(N-1)(c_j/3)(2/3)^(j-s), hence 0<=g_s-x_s<19",
+        "if x_s and the terminally anchored guide g_s lie in different leading-digit sectors, some decimal boundary C=d*10^k lies in (x_s,g_s], so 0<=g_s-C<19"
+      ],
+      "finite_exact_diagnostic": {
+        "lock_state": "12166406006866046930622304922581",
+        "post_lock_tail_length": 6,
+        "terminal_state": "138582968421958565819119692008831",
+        "next_valuation": 7,
+        "maximum_terminal_guide_gap_numerator": 235,
+        "maximum_terminal_guide_gap_denominator": 27,
+        "leading_digit_mismatch_depths": [],
+        "certificate": "data/post_lock_terminal_guide.json"
+      },
+      "limitation": "The terminal guide depends on the finite segment endpoint. It sharpens candidate-specific phase certification but does not provide a uniform F(B) or F(M) tail bound or change either cycle frontier."
     }
   },
   "current_lean_status": "POST_LOCK_SCALE_GEOMETRY_ALGEBRAIC_CORES_CI_VERIFIED_GREEN",
