@@ -1,3 +1,4 @@
 import LeadingDigitHailstone.Basic
 import LeadingDigitHailstone.ValuationBurst
 import LeadingDigitHailstone.CyclePeriodBound
+import LeadingDigitHailstone.CycleRestriction
