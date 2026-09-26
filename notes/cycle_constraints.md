@@ -29,3 +29,9 @@ A rigorous bounded cycle search should enforce:
 5. canonical rotation to avoid duplicate cycle words.
 
 Any exclusion must state its bounds on `q`, `R`, and/or state size. It is not a global proof unless those bounds are separately proved universal.
+
+## Finite cycle exclusion from the 5M census
+
+The exact exhaustive census in `data/task2_census_5m.json` followed every positive starting value `1 <= n <= 5,000,000` into the distinguished cycle and observed no other cycle.
+
+Therefore, as a **FINITE COMPUTATION** consequence, any different positive cycle (if one exists) must have minimum element strictly greater than `5,000,000`. This is a bounded exclusion only.

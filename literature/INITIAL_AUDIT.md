@@ -81,3 +81,13 @@ No exact implementation or paper matching the frozen formula surfaced in this fi
 - **no conclusion on novelty of the full frozen map is yet warranted**.
 
 Task 5 remains open. The next layer should target broader state-dependent/piecewise affine integer dynamics, automata/transducer-defined maps, radix-dependent arithmetic maps, OEIS/sequence signatures, and older generalized-Collatz bibliographies.
+
+## 7. Other leading-digit-controlled integer iterations
+
+The leading digit has been used as an active part of other integer dynamical rules. One recent example is the `b`-elated function, which multiplies the leading base-`b` digit by the sum of the squares of all digits.
+
+Source:
+
+- N. Bradley Fox, Nathan H. Fox, Helen G. Grundman, Rachel Lynn, Changningphaabi Namoijam, Mary Vanderschoot, *Elated Numbers*: https://arxiv.org/abs/2409.09863 (later published in *La Matematica*).
+
+**Classification:** meaningful adjacent prior art for the general idea of a leading digit actively controlling an integer iteration, but not an algebraic containment of the frozen map. It reinforces that any eventual distinctiveness claim must be about the specific leading-digit-dependent Collatz-style affine mechanism, not about the use of a leading digit in dynamics per se.

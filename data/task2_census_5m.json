@@ -75,5 +75,10 @@
     "implementation": "scripts/reproduce_incoming.py exhaustive_census + exact reference functions",
     "python_version": "3.13.5",
     "generated_on": "2026-09-26"
+  },
+  "bounded_cycle_exclusion": {
+    "evidence_type": "FINITE_COMPUTATION_CONSEQUENCE",
+    "statement": "Any positive cycle other than the distinguished cycle, if one exists, has minimum element > 5000000.",
+    "basis": "Every starting value 1..5000000 was followed into the distinguished cycle."
   }
 }

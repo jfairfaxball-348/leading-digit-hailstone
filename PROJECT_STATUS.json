@@ -29,8 +29,8 @@
     "1_independent_reproduction": "COMPLETE_WITH_ORIGINAL_RANDOM_SAMPLE_NON_REPLAYABLE",
     "2_dynamical_census": "STARTED_EXHAUSTIVE_TO_5000000",
     "3_structural_decomposition": "STARTED_MULTIPLE_ELEMENTARY_RESULTS",
-    "4_cycle_search": "STARTED_ACCELERATED_CYCLE_CONSTRAINTS",
-    "5_prior_art_audit": "STARTED_INITIAL_EQUIVALENCE_AUDIT",
+    "4_cycle_search": "STARTED_CYCLE_EQUATION_AND_MINIMUM_ELEMENT_EXCLUSION_TO_5000000",
+    "5_prior_art_audit": "STARTED_BROAD_INITIAL_EQUIVALENCE_AUDIT",
     "6_pilot_decision": "NOT_STARTED"
   },
   "pilot_gate": null,
