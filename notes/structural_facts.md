@@ -88,7 +88,8 @@ Unless explicitly labelled otherwise, statements in the proved sections are **EL
 
    1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).
 
-   With the finite census premise M>=5,000,001, exact integer arithmetic excludes q<=79,334 for this structured class; the first q not excluded by the window is 79,335 with R=125,743. Writing E=sum_fall(r_i-2), one has R=2q-a+E, and every surviving structured cycle must have a>=32,927. This is a structured bounded consequence, not a global cycle exclusion. See notes/one_minimum_cycles.md.
+   With the finite census premise M>=5,000,001, exact integer product-window enumeration plus exact symbolic decimal-sector/2-adic rise-word coverage excludes every structured period q<=400,000. Hence any remaining structured cycle has q>=400,001 and at least 166,015 consecutive r=1 rise steps. This is a bounded structured-class consequence, not a global cycle exclusion. See notes/one_minimum_cycles.md.
+
 
 ## Heuristic direction, not theorem
 
