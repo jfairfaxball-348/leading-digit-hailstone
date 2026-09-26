@@ -1,7 +1,7 @@
 {
-  "schema_version": 14,
+  "schema_version": 15,
   "project_title": "Leading-Digit Hailstone Dynamics",
-  "phase": "STAGE_2_LEAN_FORMALISATION",
+  "phase": "STAGE_3_PALOMAR_PREPARATION",
   "frozen_object": {
     "domain": "positive integers",
     "base": 10,
@@ -41,7 +41,7 @@
     "4_cycle_search": "GENERAL_Q_GE_971; ONE_RISE_ONE_FALL_EXCLUDED_THROUGH_Q_1643749725073_UNDER_5M_PREMISE",
     "5_prior_art_audit": "DEEPENED_NO_EXACT_OR_EQUIVALENT_MATCH_IDENTIFIED_NOVELTY_UNRESOLVED",
     "6_nearby_rule_comparison": "COMPLETE_SMALL_PRINCIPLED_NEIGHBOURHOOD_PLUS_1M_SURVIVOR_EXTENSION",
-    "7_lean_specification": "COMPLETE_COMPACT_SPECIFICATION_CI_VERIFIED",
+    "7_lean_specification": "COMPLETE_AUDITED_EXACT_SPECIFICATION_SORRY_FREE",
     "8_candidate_assessment": "COMPLETE_CANDIDATE_DISTINCTIVE_CONJECTURE"
   },
   "latest_finite_census": {
@@ -213,13 +213,13 @@
   ],
   "programme_stage_status": {
     "1_red_team_mathematical_exploration": "COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST",
-    "2_lean_formalisation": "NEXT_PRIMARY_STAGE",
-    "3_palomar": "AFTER_FORMALISATION",
+    "2_lean_formalisation": "COMPLETE_FORMAL_SPECIFICATION_AUDITED",
+    "3_palomar": "NEXT_PRIMARY_STAGE_INSPECT_CONVENTIONS_FIRST",
     "4_final_novelty_prior_art_audit": "AFTER_PALOMAR",
     "5_research_paper": "NOT_STARTED",
     "6_arxiv_submission": "NOT_STARTED"
   },
-  "current_research_objective": "Audit and consolidate the exact Lean specification of the frozen positive-integer map, distinguished cycle, iterates, and central conjecture as an unproved proposition; retain selected stable supporting lemmas without reopening an open-ended universal-convergence proof programme.",
+  "current_research_objective": "Inspect repository/project conventions and available tooling for Palomar, define the exact Stage-3 procedure from those sources, then run it without reopening Stage-1 universal-convergence proof research.",
   "active_attack_lines": [
     "Lean audit of positive-integer domain and decimal leading-digit specification",
     "Lean audit of the frozen map and distinguished 7-cycle",
@@ -543,20 +543,20 @@
       "note": "notes/STAGE_1_FINAL_STRESS_TEST.md"
     }
   },
-  "current_lean_status": "BASE_FORMAL_SPECIFICATION_EXISTS_STAGE_2_NEXT_PRIMARY",
+  "current_lean_status": "STAGE_2_COMPLETE_EXACT_SPECIFICATION_SORRY_FREE",
   "immediate_stage_1_targets": [],
   "synchronized_date": "2026-09-26",
   "current_ci_status": {
     "python": "GREEN",
     "lean": "GREEN",
-    "verified_on_research_branch": "research/phase-residue-termination-certificate",
-    "verified_commit": "3e74d84e482e54bc68d5ff68f19d50755bb91f6a",
-    "verification_note": "Python/tests and Lean workflows passed on the complete Stage-1 red-team code/certificate head 3e74d84e482e54bc68d5ff68f19d50755bb91f6a. Subsequent commits only polish closeout documentation and synchronize this status; the final PR head is rechecked before merge."
+    "verified_on_research_branch": "research/stage2-lean-formalisation-audit",
+    "verified_commit": "927fc20f864146a3c4f6b01090a74664eddf6962",
+    "verification_note": "Both pull-request workflows passed on the code-bearing Stage-2 formalisation commit 927fc20f864146a3c4f6b01090a74664eddf6962. Documentation/status commits follow; both workflows must be green again on the final PR head before merge."
   },
   "highest_value_next_target": {
-    "stage": 2,
-    "title": "Audit and complete the Lean formal specification",
-    "reason": "Stage 1 passed the declared stress-test exit gate. Universal convergence is not a pipeline prerequisite; the next task is exact formal specification of the frozen object and unproved conjecture."
+    "stage": 3,
+    "title": "Inspect and define the Palomar stage",
+    "reason": "Stage 2 has audited the frozen Lean object and unproved conjecture. The roadmap explicitly requires inspection of repository/project conventions and tooling before Palomar is defined or run."
   },
   "stage_1_exit_gate": {
     "status": "COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST",
@@ -575,10 +575,58 @@
     "interpretation": "Stage 1 is intentionally frozen. The conjecture survived the declared research/falsification programme but remains unproved; future proof breakthroughs are welcome but are not prerequisites for the research pipeline."
   },
   "next_primary_stage_targets": [
-    "audit PositiveNat/domain convention and decimal leadingDigit specification in Lean",
-    "audit the exact frozen map T and distinguishedCycle definitions",
-    "verify iterates and LeadingDigitHailstoneConjecture exactly match the intended mathematical statement",
-    "retain selected stable supporting lemmas and keep the build sorry-free",
-    "inspect project/tooling conventions for Palomar only after formalisation is complete"
-  ]
+    "search repository/project conventions for the meaning and expected workflow of Palomar",
+    "inspect available tooling before defining Stage 3",
+    "run only the Palomar procedure supported by those conventions",
+    "preserve the conjecture as unproved and keep novelty UNRESOLVED_DO_NOT_CLAIM",
+    "after Palomar, proceed to the final comprehensive novelty/prior-art audit"
+  ],
+  "formalisation_summary": {
+    "claim_type": "FORMAL_SPECIFICATION_AND_ELEMENTARY_FORMAL_THEOREMS",
+    "domain_convention": "Definitions are total on Nat; mathematical dynamics are on n>0, with PositiveNat={n : Nat // 0<n} available as an equivalent domain wrapper.",
+    "leading_digit": {
+      "definition": "leadingDigit n = if n=0 then 0 else n/(10^(Nat.log 10 n))",
+      "positive_specification": [
+        "10^(Nat.log 10 n) <= n",
+        "n < 10^((Nat.log 10 n)+1)",
+        "leadingDigit n = n/(10^(Nat.log 10 n))",
+        "1 <= leadingDigit n <= 9"
+      ]
+    },
+    "map": "T n = n/2 when n%2=0, otherwise 3*n+2*leadingDigit n+1; T preserves positivity.",
+    "distinguished_cycle": [
+      1,
+      6,
+      3,
+      16,
+      8,
+      4,
+      2
+    ],
+    "cycle_interface": "Each edge and seven-step closure are formally checked; membership is invariant under T and under all later iterates.",
+    "central_conjecture": "def LeadingDigitHailstoneConjecture : Prop := forall n : Nat, 0<n -> exists k : Nat, inDistinguishedCycle ((T^[k]) n)",
+    "conjecture_status": "UNPROVED_PROP_NOT_ASSUMED",
+    "positive_domain_equivalence": "The Nat-plus-positivity conjecture is formally equivalent to the PositiveNat formulation.",
+    "organisation": "Single compact Basic.lean file retained; no architecture split was justified.",
+    "deliberately_unformalised": "Large finite computational certificates and the enormous structured-cycle frontier remain reproducible computational evidence rather than Lean proof obligations.",
+    "note": "notes/STAGE_2_LEAN_FORMALISATION.md"
+  },
+  "stage_2_exit_gate": {
+    "status": "COMPLETE_FORMAL_SPECIFICATION_AUDITED",
+    "checks": {
+      "positive_integer_domain_formally_clear": true,
+      "decimal_leading_digit_semantically_specified": true,
+      "leading_digit_positive_bound_1_to_9_formalised": true,
+      "frozen_map_exact": true,
+      "positivity_preservation_formalised": true,
+      "distinguished_cycle_exact": true,
+      "cycle_invariance_formalised": true,
+      "iterates_represented_correctly": true,
+      "central_conjecture_exact_unproved_prop": true,
+      "selected_supporting_lemmas_formally_checked": true,
+      "no_sorry": true,
+      "universal_convergence_not_assumed_or_faked": true
+    },
+    "interpretation": "Stage 2 is a formal-specification completion gate, not a proof of the Leading-Digit Hailstone Conjecture."
+  }
 }

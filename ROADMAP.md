@@ -42,9 +42,9 @@ These are supporting results, not unfinished obligations that must be pushed to 
 
 See notes/STAGE_1_FINAL_STRESS_TEST.md for the exit-gate assessment.
 
-## Stage 2 — Lean formalisation — NEXT PRIMARY STAGE
+## Stage 2 — Lean formalisation — COMPLETE
 
-The next primary task is to consolidate and audit the formal specification of the research object.
+Stage 2 consolidated and audited the formal specification of the research object.
 
 Lean should clearly and sorry-freely expose:
 
@@ -58,9 +58,9 @@ Lean should clearly and sorry-freely expose:
 
 The conjecture is not to be asserted as a theorem and no placeholder proof is permitted.
 
-A substantial base already exists in LeadingDigitHailstone/Basic.lean; Stage 2 should audit completeness, interfaces and exact agreement with the frozen mathematical statement rather than reopening Stage 1 proof research.
+The completed audit retains the compact single-file organisation in LeadingDigitHailstone/Basic.lean. It formally certifies the positive-domain convention; decimal-scale and 1..9 leading-digit semantics; exact even/odd map branches; positivity preservation; the exact distinguished cycle and its one-step/iterate invariance; and equivalence of the Nat-plus-positivity and PositiveNat formulations of the central unproved proposition. Existing stable affine/post-lock lemmas are retained without accidental strengthening. See notes/STAGE_2_LEAN_FORMALISATION.md.
 
-## Stage 3 — Palomar — AFTER FORMALISATION
+## Stage 3 — Palomar — NEXT PRIMARY STAGE
 
 Do not infer what Palomar means from the name. When Stage 2 is complete, inspect repository/project conventions and available tooling before defining and running this stage.
 
@@ -106,7 +106,8 @@ Submission is appropriate only after a stable manuscript, final bibliography, re
 
 - Pilot gate: **CANDIDATE_DISTINCTIVE_CONJECTURE**
 - Stage 1: **COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST**
-- Current primary stage: **STAGE_2_LEAN_FORMALISATION**
+- Stage 2: **COMPLETE_FORMAL_SPECIFICATION_AUDITED**
+- Current primary stage: **STAGE_3_PALOMAR_PREPARATION**
 - Novelty status: **UNRESOLVED_DO_NOT_CLAIM**
 - Central conjecture: **CONJECTURE — UNPROVED**
 
