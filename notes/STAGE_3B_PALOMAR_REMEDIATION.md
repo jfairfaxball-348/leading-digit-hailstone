@@ -60,17 +60,17 @@ The Stage-1 source obtained the 971 frontier by exact scanning of the necessary
 product inequality for `q=1,...,970`. The Stage-3B Lean proof replaces that
 scan with a compact Farey gap:
 
-[
-  1054/665 < R/q < 485/306,
-]
+\[
+  1054/665 < R/q < 485/306.
+\]
 
 where
 
-[
-  485cdot665-1054cdot306=1
-  quad	ext{and}quad
+\[
+  485\cdot665-1054\cdot306=1
+  \quad\text{and}\quad
   665+306=971.
-]
+\]
 
 The lower side follows from the cycle product identity and the exact power
 comparison `2^1054 < 3^665`. The upper side follows from the minimum floor,
