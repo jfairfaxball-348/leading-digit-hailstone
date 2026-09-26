@@ -8,6 +8,7 @@ from scripts.structured_farey_extension import UPPER_0, UPPER_1
 from scripts.structured_record_chain import (
     certified_power_side,
     maximum_minimum_state_log,
+    rise_residue_for_digits,
     run,
 )
 
@@ -74,6 +75,29 @@ class StructuredRecordChainTests(unittest.TestCase):
                 }
             ],
         )
+
+    def test_explicit_rise_word_residue_formula(self) -> None:
+        from itertools import product
+
+        for rises in range(1, 5):
+            modulus = 1 << (rises + 1)
+            for digits in product(range(1, 10), repeat=rises):
+                residue = rise_residue_for_digits(digits)
+                self.assertEqual(residue % 2, 1)
+
+                x = residue
+                for digit in digits:
+                    numerator = 3 * x + 2 * digit + 1
+                    self.assertEqual(numerator % 4, 2)
+                    x = numerator // 2
+
+                additive = 0
+                for step, digit in enumerate(digits):
+                    additive = 3 * additive + (2 * digit + 1) * (1 << step)
+                self.assertEqual(
+                    (pow(3, rises, modulus) * residue + additive) % modulus,
+                    1 << rises,
+                )
 
     def test_boundary_window_diagnostic_is_sub_modulus_but_not_empty(self) -> None:
         diagnostic = self.payload["finite_range_symbolic_complexity_diagnostic"]
