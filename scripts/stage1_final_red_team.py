@@ -392,11 +392,60 @@ def weak_run_campaign() -> dict[str, object]:
     }
 
 
+def _seed_form(row: dict[str, object]) -> str:
+    offset = int(row["offset"])
+    return f'{row["d"]}*10^{row["k"]}{offset:+d}'
+
+
+def _compact_random_record(row: dict[str, object]) -> dict[str, object]:
+    seed = row["seed"]
+    if not isinstance(seed, dict):
+        raise AssertionError("large random record unexpectedly has a short seed")
+    return {
+        "decimal_digits": row["digits"],
+        "index": row["index"],
+        "cycle_entry_steps": row["cycle_entry_steps"],
+        "seed_prefix_40": seed["prefix_40"],
+        "seed_suffix_40": seed["suffix_40"],
+        "seed_sha256": seed["sha256"],
+    }
+
+
 def run() -> dict[str, object]:
     boundary = boundary_campaign()
     random_large = random_campaign()
     inverse_derived = inverse_campaign()
     weak_runs = weak_run_campaign()
+
+    boundary_worst = boundary["worst_cycle_entry"]
+    boundary_descent = boundary["longest_first_descent"]
+    boundary_valuation = boundary["largest_valuation"]
+    boundary_r1 = boundary["longest_consecutive_r1"]
+
+    random_worst = random_large["worst_cycle_entry"]
+    random_descent = random_large["longest_first_descent"]
+
+    inverse_worst = inverse_derived["worst_cycle_entry"]
+    inverse_descent = inverse_derived["longest_first_descent"]
+    inverse_r1 = inverse_derived["longest_consecutive_r1"]
+
+    weak_cases: list[dict[str, object]] = []
+    for case in weak_runs["cases"]:
+        seed = case["seed"]
+        peak = case["max_excursion"]
+        if not isinstance(seed, dict) or not isinstance(peak, dict):
+            raise AssertionError("engineered red-team case should be a large integer")
+        weak_cases.append(
+            {
+                "requested_r1_run": case["requested_r1_run"],
+                "decimal_scale": case["decimal_scale"],
+                "observed_initial_r1_run": case["observed_initial_r1_run"],
+                "cycle_entry_steps": case["cycle_entry_steps"],
+                "first_descent_steps": case["first_descent_steps"],
+                "max_excursion_decimal_digits": peak["decimal_digits"],
+                "seed": seed,
+            }
+        )
 
     return {
         "schema_version": 1,
@@ -405,22 +454,123 @@ def run() -> dict[str, object]:
             "ELEMENTARY_THEOREM_PLUS_FINITE_EXACT_FALSIFICATION_CAMPAIGN"
         ),
         "purpose": (
-            "Final declared Stage-1 red-team campaign; "
+            "Final declared Stage-1 adversarial stress test; "
             "not a proof of universal convergence."
         ),
         "theorem_level_result": {
-            "unbounded_single_valuation_family": (
-                "For every k>=0, n=2*10^k-1 lies in the leading-digit-1 "
-                "sector and 3n+2L(n)+1=6*10^k=3*2^(k+1)*5^k. "
-                "Thus its odd-branch valuation is exactly k+1 and its "
-                "accelerated successor is 3*5^k."
-            )
+            "unbounded_single_valuation_family": {
+                "statement": (
+                    "For every k>=0, n=2*10^k-1 has leading digit 1 and "
+                    "3n+2L(n)+1=6*10^k=3*2^(k+1)*5^k. Hence its odd-branch "
+                    "valuation is exactly k+1 and its accelerated successor "
+                    "is 3*5^k."
+                ),
+                "consequence": "Odd-branch valuation bursts are unbounded.",
+            }
         },
         "finite_exact_campaigns": {
-            "decimal_boundary_adversaries": boundary,
-            "deterministic_large_random_odds": random_large,
-            "inverse_tree_derived_adversaries": inverse_derived,
-            "engineered_long_r1_runs": weak_runs,
+            "decimal_boundary_adversaries": {
+                "protocol": boundary["protocol"],
+                "tested_seed_count": boundary["tested_seed_count"],
+                "seed_set_sha256": boundary["seed_set_sha256"],
+                "all_entered_distinguished_cycle": (
+                    boundary["all_entered_distinguished_cycle"]
+                ),
+                "competing_cycle_found": False,
+                "step_cap_hit": False,
+                "records": {
+                    "worst_cycle_entry": {
+                        "seed_form": _seed_form(boundary_worst),
+                        "cycle_entry_steps": boundary_worst["cycle_entry_steps"],
+                    },
+                    "longest_first_descent": {
+                        "seed_form": _seed_form(boundary_descent),
+                        "first_descent_steps": boundary_descent["first_descent_steps"],
+                        "cycle_entry_steps": boundary_descent["cycle_entry_steps"],
+                    },
+                    "largest_valuation": {
+                        "seed_form": _seed_form(boundary_valuation),
+                        "valuation": boundary_valuation["max_odd_branch_valuation"],
+                        "cycle_entry_steps": boundary_valuation["cycle_entry_steps"],
+                    },
+                    "longest_consecutive_r1": {
+                        "seed_form": _seed_form(boundary_r1),
+                        "run_length": boundary_r1["max_consecutive_r1"],
+                        "cycle_entry_steps": boundary_r1["cycle_entry_steps"],
+                    },
+                },
+            },
+            "deterministic_large_random_odds": {
+                "protocol": random_large["protocol"],
+                "tested_seed_count": random_large["tested_seed_count"],
+                "seed_set_sha256": random_large["seed_set_sha256"],
+                "all_entered_distinguished_cycle": (
+                    random_large["all_entered_distinguished_cycle"]
+                ),
+                "competing_cycle_found": False,
+                "step_cap_hit": False,
+                "records": {
+                    "worst_cycle_entry": _compact_random_record(random_worst),
+                    "longest_first_descent": {
+                        **_compact_random_record(random_descent),
+                        "first_descent_steps": random_descent["first_descent_steps"],
+                    },
+                    "largest_observed_valuation": (
+                        random_large["largest_valuation"][
+                            "max_odd_branch_valuation"
+                        ]
+                    ),
+                    "longest_consecutive_r1": (
+                        random_large["longest_consecutive_r1"][
+                            "max_consecutive_r1"
+                        ]
+                    ),
+                },
+            },
+            "inverse_tree_derived_adversaries": {
+                "protocol": inverse_derived["protocol"],
+                "tested_seed_count": inverse_derived["tested_seed_count"],
+                "seed_set_sha256": inverse_derived["seed_set_sha256"],
+                "all_entered_distinguished_cycle": (
+                    inverse_derived["all_entered_distinguished_cycle"]
+                ),
+                "competing_cycle_found": False,
+                "step_cap_hit": False,
+                "records": {
+                    "worst_cycle_entry": {
+                        "source": inverse_worst["source"],
+                        "requested_offset": inverse_worst["offset"],
+                        "seed": inverse_worst["seed"],
+                        "cycle_entry_steps": inverse_worst["cycle_entry_steps"],
+                    },
+                    "longest_first_descent": {
+                        "source": inverse_descent["source"],
+                        "requested_offset": inverse_descent["offset"],
+                        "seed": inverse_descent["seed"],
+                        "first_descent_steps": inverse_descent["first_descent_steps"],
+                        "cycle_entry_steps": inverse_descent["cycle_entry_steps"],
+                    },
+                    "longest_consecutive_r1": {
+                        "source": inverse_r1["source"],
+                        "requested_offset": inverse_r1["offset"],
+                        "seed": inverse_r1["seed"],
+                        "run_length": inverse_r1["max_consecutive_r1"],
+                        "cycle_entry_steps": inverse_r1["cycle_entry_steps"],
+                    },
+                    "largest_observed_valuation": (
+                        inverse_derived["largest_valuation"][
+                            "max_odd_branch_valuation"
+                        ]
+                    ),
+                },
+            },
+            "engineered_long_r1_runs": {
+                "protocol": weak_runs["protocol"],
+                "all_entered_distinguished_cycle": (
+                    weak_runs["all_entered_distinguished_cycle"]
+                ),
+                "cases": weak_cases,
+            },
         },
         "campaign_outcome": {
             "all_tested_seeds_entered_distinguished_cycle": all(
@@ -435,14 +585,15 @@ def run() -> dict[str, object]:
             "competing_cycle_found": False,
             "step_cap_hit": False,
             "apparent_escape_found": False,
+            "structural_contradiction_found": False,
             "conjecture_wording_change_required": False,
         },
         "limitations": (
-            "All convergence claims here are finite exact computation "
-            "over the declared protocols."
+            "Every convergence statement in this certificate is finite exact "
+            "computation over the declared protocol. None proves the central "
+            "conjecture."
         ),
     }
-
 
 def main() -> None:
     payload = run()
