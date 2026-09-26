@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "claim_type": "THEOREM_PLUS_FINITE_EXACT_PHASE_RESIDUE_CERTIFICATES",
+  "theorem_level_results": {
+    "normalized_post_lock_tube": "For a valuation-one tail from lock state X, Y_t=(2/3)^t x_t is increasing and remains in [X,X+19). Equivalently the true state lies in a multiplicative (3/2)^t image of one fixed width-19 interval.",
+    "sector_escape": "Within one decimal leading-digit sector, digit d>=2 exits in one valuation-one step; digit 1 exits within two. Six valuation-one steps increase the state by a factor greater than 10, so a single decimal decade cannot contain a longer source run.",
+    "boundary_separation": "If two distinct scaled decimal-boundary hits occur n steps apart inside [X,X+19], then X<=171*3^n. Exact coincident scaled hits are only 2->3, 4->6, 6->9 at gap 1 and 4->9 at gap 2.",
+    "phase_residue_reduction": "On any horizon with no tube/boundary ambiguity, the decimal digit word is forced by the homogeneous (3/2)^t phase, and exact-r=1 survival of a prefix reduces to the established single terminal 2-adic residue congruence."
+  },
+  "finite_exact_certificates": {
+    "farey_candidate_1": {
+      "lock_state": 2225217764551392093807,
+      "lock_state_bit_length": 71,
+      "minimum_noncoincident_boundary_gap": 41,
+      "phase_residue": {
+        "lock_state": 2225217764551392093807,
+        "status": "RESIDUE_MISMATCH",
+        "forced_prefix_length": 4,
+        "forced_digits": "2357",
+        "certified_exact_r1_tail": 3,
+        "first_impossible_r1_prefix": 4,
+        "mismatch_modulus": 32,
+        "required_residue": 31,
+        "lock_state_residue": 15,
+        "rows": [
+          {"prefix_length": 1, "digit": 2, "residue_modulus": 4, "required_residue": 3, "lock_state_residue": 3, "matches": true},
+          {"prefix_length": 2, "digit": 3, "residue_modulus": 8, "required_residue": 7, "lock_state_residue": 7, "matches": true},
+          {"prefix_length": 3, "digit": 5, "residue_modulus": 16, "required_residue": 15, "lock_state_residue": 15, "matches": true},
+          {"prefix_length": 4, "digit": 7, "residue_modulus": 32, "required_residue": 31, "lock_state_residue": 15, "matches": false}
+        ]
+      },
+      "direct_cross_check": {
+        "exact_r1_tail": 3,
+        "next_valuation": 2,
+        "terminal_source": 7510109955360948316615,
+        "next_odd_state": 5632582466520711237465
+      }
+    },
+    "farey_candidate_2": {
+      "lock_state": 3337826646827088140713,
+      "lock_state_bit_length": 72,
+      "minimum_noncoincident_boundary_gap": 41,
+      "phase_residue": {
+        "lock_state": 3337826646827088140713,
+        "status": "RESIDUE_MISMATCH",
+        "forced_prefix_length": 3,
+        "forced_digits": "357",
+        "certified_exact_r1_tail": 2,
+        "first_impossible_r1_prefix": 3,
+        "mismatch_modulus": 16,
+        "required_residue": 1,
+        "lock_state_residue": 9,
+        "rows": [
+          {"prefix_length": 1, "digit": 3, "residue_modulus": 4, "required_residue": 1, "lock_state_residue": 1, "matches": true},
+          {"prefix_length": 2, "digit": 5, "residue_modulus": 8, "required_residue": 1, "lock_state_residue": 1, "matches": true},
+          {"prefix_length": 3, "digit": 7, "residue_modulus": 16, "required_residue": 1, "lock_state_residue": 9, "matches": false}
+        ]
+      },
+      "direct_cross_check": {
+        "exact_r1_tail": 2,
+        "next_valuation": 2,
+        "terminal_source": 7510109955360948316615,
+        "next_odd_state": 5632582466520711237465
+      }
+    },
+    "tail_six_counterexample": {
+      "lock_state": 12166406006866046930622304922581,
+      "lock_state_bit_length": 104,
+      "minimum_noncoincident_boundary_gap": 61,
+      "phase_residue": {
+        "lock_state": 12166406006866046930622304922581,
+        "status": "RESIDUE_MISMATCH",
+        "forced_prefix_length": 7,
+        "forced_digits": "1124691",
+        "certified_exact_r1_tail": 6,
+        "first_impossible_r1_prefix": 7,
+        "mismatch_modulus": 256,
+        "required_residue": 85,
+        "lock_state_residue": 213,
+        "rows": [
+          {"prefix_length": 1, "digit": 1, "residue_modulus": 4, "required_residue": 1, "lock_state_residue": 1, "matches": true},
+          {"prefix_length": 2, "digit": 1, "residue_modulus": 8, "required_residue": 5, "lock_state_residue": 5, "matches": true},
+          {"prefix_length": 3, "digit": 2, "residue_modulus": 16, "required_residue": 5, "lock_state_residue": 5, "matches": true},
+          {"prefix_length": 4, "digit": 4, "residue_modulus": 32, "required_residue": 21, "lock_state_residue": 21, "matches": true},
+          {"prefix_length": 5, "digit": 6, "residue_modulus": 64, "required_residue": 21, "lock_state_residue": 21, "matches": true},
+          {"prefix_length": 6, "digit": 9, "residue_modulus": 128, "required_residue": 85, "lock_state_residue": 85, "matches": true},
+          {"prefix_length": 7, "digit": 1, "residue_modulus": 256, "required_residue": 85, "lock_state_residue": 213, "matches": false}
+        ]
+      },
+      "direct_cross_check": {
+        "exact_r1_tail": 6,
+        "next_valuation": 7,
+        "terminal_source": 138582968421958565819119692008831,
+        "next_odd_state": 3248038322389653886385617781457
+      }
+    }
+  },
+  "exact_boundary_coincidences": [
+    {"time_gap": 1, "decade_gap": 0, "from_digit": 2, "to_digit": 3},
+    {"time_gap": 1, "decade_gap": 0, "from_digit": 4, "to_digit": 6},
+    {"time_gap": 1, "decade_gap": 0, "from_digit": 6, "to_digit": 9},
+    {"time_gap": 2, "decade_gap": 0, "from_digit": 4, "to_digit": 9}
+  ],
+  "interpretation": "The phase route now has a rigorous scale-aware sparsity theorem for decimal ambiguity and a candidate-specific phase/residue termination certificate. It does not yet bound the total deterministic post-lock tail: long intervals with a fully forced homogeneous digit word can still satisfy successive 2-adic conditions."
+}
