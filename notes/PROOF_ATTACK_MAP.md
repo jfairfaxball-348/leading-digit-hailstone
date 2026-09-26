@@ -119,26 +119,28 @@ For the narrower one-rise/one-fall class of Issue #10, geometric state bounds on
 
 The original exact product-window scan through q=400,000 left six periods, all removed by symbolic decimal-sector / 2-adic rise coverage. The next increment replaces further linear scanning by a Farey-neighbour transfer lemma for alpha=log_2(3): an exact upper approximation R_u/q_u and an exact lower Farey neighbour R_l/q_l certify that no better upper absolute error can occur for q_u<=q<q_u+q_l.
 
-The record-to-record mechanism has now been iterated substantially further. Seven additional exact upper records, beginning at q=64,497,107, are certified using rigorous rational bounds for log 2, log 3, and the structured product envelope rather than constructing giant powers. Their theorem-derived M_max ranges are eliminated by complete decimal-sector / 2-adic symbolic coverage at rise depths 31, 31, 35, 38, 41, 41, and 49.
+The record-to-record mechanism has now been iterated substantially further. Seven additional exact upper records, beginning at q=64,497,107, are certified using rigorous rational bounds for log 2, log 3, and the structured product envelope rather than constructing giant powers. Their theorem-derived M_max ranges are eliminated by complete decimal-sector / 2-adic symbolic coverage at rise depths 31, 31, 35, 38, 41, 41, and 49. The next upper record q=890,638,885,193 is now excluded by the post-lock deterministic-tail certificate: symbolic coverage stops at the bit-length lock depth and the finite locked candidate set is followed directly.
 
 The resulting bounded structured consequence is
 
-- q>=890,638,885,193;
-- a>=369,648,535,671.
+- q>=1,643,749,725,074;
+- a>=682,217,775,335.
 
-The largest processed record is q=137,528,045,312 with M_max=42,285,421,502,900. Its symbolic family peaks at 727 cells, contracts to one residue-compatible representative after 48 rises, and becomes empty at rise 49. The next unprocessed upper record is (q,R)=(890,638,885,193,1,411,629,234,715).
+The largest fully symbolic record-chain range remains q=137,528,045,312 with M_max=42,285,421,502,900. The new post-lock certificate processes q=890,638,885,193 with M_max=48,737,068,628,469: lock occurs at depth 45, two concrete starts survive, and direct continuation shows that neither reaches 49 rises. The next unprocessed upper record is (q,R)=(1,643,749,725,074,2,605,281,674,813).
 
 Two theorem-level scale statements now sharpen the interpretation. If t=log(2^R/3^q), then the structured envelope gives M<39/t for M>=5,000,001. For a determinant-one upper/lower Farey pair, p delta+q epsilon=1; at the final lower neighbour before the next upper mediant this gives delta>1/q_next, hence M_max<39 q_next/log 2. Separately, decimal-boundary localization gives only O(s) possible finite-range decimal-sector words at rise depth s for a fixed [L,U], up to an explicit boundary count.
 
-The residue-position side is now more rigid. For a fixed rise word, write rho_s for the unique exact-r=1 start residue modulo 2^(s+1). Appending a digit chooses one bit b_s with rho_(s+1)=rho_s+b_s*2^(s+1); hence the lift bits are exactly the binary digits of the required start. If M<=U and B=floor(log_2 U), then 2^(B+1)>U, so any start surviving B rises satisfies M=rho_B. Every subsequent compatible lift bit must be zero. The earlier "one representative per narrow cell" obstruction is therefore replaced by a precise post-lock problem.
+The residue-position side is now more rigid. For a fixed rise word, write rho_s for the unique exact-r=1 start residue modulo 2^(s+1). Appending a digit chooses one bit b_s with rho_(s+1)=rho_s+b_s*2^(s+1); hence the lift bits are exactly the binary digits of the required start. If M<=U and B=floor(log_2 U), then 2^(B+1)>U, so any start surviving B rises satisfies M=rho_B. Every subsequent compatible lift bit must be zero. After lock the defining carry equation gives x_s=1+2H_s, and b_s=0 is exactly equivalent to v2(3x_s+2L(x_s)+1)=1. Thus there is no longer any symbolic lift or decimal-sector choice after B: the tail is the deterministic accelerated orbit of each locked start.
 
 Combining this locking theorem with the finite-range boundary count gives at most 20*J_B(L,U)+1 possible starts at depth B and the explicit bound J_s(L,U)<=9*s*(ceil(log_10((U+19)/L))+1). For fixed L this is O((log U)^2) candidates at the locking depth. It is not an extinction theorem: no general bound on the zero-lift tail has been proved.
 
-On the largest processed range, B=45 and complete exact symbolic coverage leaves exactly two locked starts, 26,501,219,601,103 and 39,751,829,401,657. Direct exact continuation gives total rise lengths 48 and 47 respectively, so their post-lock zero-lift tails have lengths 3 and 2. This reinterprets the existing depth-49 extinction without extending the q frontier.
+On the new product-window range 5,000,001<=M<=48,737,068,628,469, B=45 and exact symbolic coverage to lock still leaves exactly two starts, 26,501,219,601,103 and 39,751,829,401,657. Direct exact continuation gives total rise lengths 48 and 47 respectively, so the range is empty at rise 49. This is sufficient to exclude the record q=890,638,885,193 and transfer the structured frontier to q=1,643,749,725,073.
 
 A purely range-independent finite acyclic transition graph also cannot finish the problem: arbitrarily long exact-r=1 runs already exist globally, so any finite exact graph encoding all such prefixes has arbitrarily long paths and therefore a directed cycle. A useful finite-state method must retain scale/range or another unbounded coordinate.
 
-The highest-value continuation is therefore not another broad q scan: prove a uniform quantitative bound on post-lock zero-lift tails, or rigorously construct a family showing why no sufficiently strong bound can hold.
+A second false route is now explicit. The start 43,574,304,770,317,398,119 has bit-length lock depth 65 and 71 initial exact-r=1 rises, so its deterministic post-lock tail has length 6 before valuation 7. Hence universal constant post-lock tail bounds <=5 are false. This finite exact example does not show unbounded tails.
+
+The highest-value continuation is therefore not another broad q scan: seek a scale-aware F(B) or F(M) bound for deterministic post-lock tails, using decimal phase/discrepancy or scale-aware congruence information, or rigorously construct a family showing why such a bound cannot be strong enough.
 
 ### What would weaken/falsify this approach
 
