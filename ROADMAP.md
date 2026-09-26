@@ -60,9 +60,33 @@ The conjecture is not to be asserted as a theorem and no placeholder proof is pe
 
 The completed audit retains the compact single-file organisation in LeadingDigitHailstone/Basic.lean. It formally certifies the positive-domain convention; decimal-scale and 1..9 leading-digit semantics; exact even/odd map branches; positivity preservation; the exact distinguished cycle and its one-step/iterate invariance; and equivalence of the Nat-plus-positivity and PositiveNat formulations of the central unproved proposition. Existing stable affine/post-lock lemmas are retained without accidental strengthening. See notes/STAGE_2_LEAN_FORMALISATION.md.
 
-## Stage 3 — Palomar — NEXT PRIMARY STAGE
+## Stage 3 — Palomar — INITIAL MECHANICAL PASS; EDITORIAL REJECTION RECORDED
 
-Do not infer what Palomar means from the name. When Stage 2 is complete, inspect repository/project conventions and available tooling before defining and running this stage.
+The immutable Stage-3 snapshot `f3309bd7d47da7cc3f1a12119aea8022b8f6c98a`
+passed Palomar's full mechanical verifier. The subsequent automated editorial
+review rejected registration because the sole selected theorem
+`valuationBurstFamily` was an elementary substitution whose research interest
+had not been established. The failed attempt is part of project history and
+must not be erased or rewritten.
+
+## Stage 3B — Palomar editorial remediation — ACTIVE
+
+The remediation target is the conditional arbitrary-cycle restriction:
+every positive accelerated Leading-Digit Hailstone periodic orbit whose odd
+states are all at least 5,000,001 has at least 971 odd states.
+
+The Lean proof must kernel-check the theorem itself. The 5,000,000-seed census
+is not imported as a theorem or axiom; instead the minimum threshold is exposed
+as a hypothesis. The proof uses the exact cyclic product identity, the
+correction bound 3..19, the resulting product window, exact power comparisons,
+and a Farey-neighbour denominator gap. The much larger structured
+one-rise/one-fall frontier remains outside the selected theorem because its
+headline currently depends on extensive Python-only finite certificates.
+
+Historical novelty remains unresolved. A targeted theorem-specific literature
+audit is required before the replacement snapshot is frozen, followed by
+ordinary CI and the current official Palomar full predictive preflight.
+Manual registration remains an owner action.
 
 ## Stage 4 — Final comprehensive novelty / prior-art audit — AFTER PALOMAR
 
@@ -107,7 +131,7 @@ Submission is appropriate only after a stable manuscript, final bibliography, re
 - Pilot gate: **CANDIDATE_DISTINCTIVE_CONJECTURE**
 - Stage 1: **COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST**
 - Stage 2: **COMPLETE_FORMAL_SPECIFICATION_AUDITED**
-- Current primary stage: **STAGE_3_PALOMAR_PREPARATION**
+- Current primary stage: **STAGE_3B_PALOMAR_EDITORIAL_REMEDIATION**
 - Novelty status: **UNRESOLVED_DO_NOT_CLAIM**
 - Central conjecture: **CONJECTURE — UNPROVED**
 

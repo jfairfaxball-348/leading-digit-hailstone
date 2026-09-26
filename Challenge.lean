@@ -1,34 +1,45 @@
-import Mathlib.Tactic
+import Mathlib
 
 /-!
-# Leading-Digit Hailstone valuation-burst family
+# Leading-Digit Hailstone: conditional accelerated-cycle lower bound
 
-This is the small Palomar statement surface.  It uses only ordinary Mathlib
-arithmetic.  For `n = 2 * 10^k - 1`, the first two inequalities place `n`
-in the decimal sector `[10^k, 2*10^k)`, so its ordinary leading decimal digit
-is 1.  The Leading-Digit Hailstone odd-branch numerator is therefore
-`3*n + 2*1 + 1 = 3*n + 3`.
+Consider one minimal positive periodic orbit of the accelerated odd-state
+dynamics.  Its `q` distinct odd states are indexed cyclically by `Fin q`;
+`valuation i > 0` is the exact power-of-two exponent removed from the
+odd-branch numerator at position `i`.
 
-The remaining clauses give its exact factorisation, exact power of two, and
-accelerated quotient.  Since `k` is arbitrary, this records unbounded
-single-odd-branch 2-adic valuation bursts.  It says nothing about universal
-convergence.
+The decimal leading digit is written directly as
+`state i / 10^(Nat.log 10 (state i))`, so this Challenge depends only on
+Mathlib.  Under the explicit hypothesis that every odd state is at least
+5,000,001, the theorem proves that the accelerated period contains at least
+971 distinct odd states.
+
+The lower bound is conditional on that minimum-state hypothesis.  This theorem
+does not formalize the repository's finite census through 5,000,000, does not
+exclude every competing cycle, and does not prove the universal convergence
+conjecture.
 -/
 
 namespace LeadingDigitHailstonePalomar
 
-/-- For every `k`, the hostile family `2*10^k-1` lies in leading-digit
-sector 1 and its odd-branch numerator has exact 2-adic valuation `k+1`,
-with quotient `3*5^k`. -/
-theorem valuationBurstFamily (k : ℕ) :
-    let n := 2 * 10 ^ k - 1
-    10 ^ k ≤ n ∧
-      n < 2 * 10 ^ k ∧
-      3 * n + 3 = 6 * 10 ^ k ∧
-      6 * 10 ^ k = 3 * 2 ^ (k + 1) * 5 ^ k ∧
-      2 ^ (k + 1) ∣ 3 * n + 3 ∧
-      ¬ 2 ^ (k + 2) ∣ 3 * n + 3 ∧
-      (3 * n + 3) / 2 ^ (k + 1) = 3 * 5 ^ k := by
+/-- Any minimal positive accelerated Leading-Digit Hailstone periodic orbit
+whose odd states are all at least 5,000,001 contains at least 971 distinct odd
+states. -/
+theorem leadingDigitCyclePeriodLowerBound
+    {q : ℕ}
+    (hq : 0 < q)
+    (state valuation : Fin q → ℕ)
+    (hstatePos : ∀ i, 0 < state i)
+    (hstateOdd : ∀ i, state i % 2 = 1)
+    (hvaluationPos : ∀ i, 0 < valuation i)
+    (hstateInj : Function.Injective state)
+    (hmin : ∀ i, 5_000_001 ≤ state i)
+    (hstep : ∀ i,
+      2 ^ valuation i *
+          state ⟨(i.val + 1) % q, Nat.mod_lt _ hq⟩ =
+        3 * state i +
+          2 * (state i / (10 ^ Nat.log 10 (state i))) + 1) :
+    971 ≤ q := by
   sorry
 
 end LeadingDigitHailstonePalomar

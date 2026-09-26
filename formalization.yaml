@@ -4,12 +4,15 @@ version: "v0.4"
 project:
   name: "Leading-Digit Hailstone Dynamics"
   description: >-
-    Formalisation of a leading-decimal-digit-dependent integer dynamical
-    system. The Palomar entry records the elementary family
-    n_k = 2*10^k - 1, whose odd-branch numerator has exact 2-adic valuation
-    k+1 and accelerated quotient 3*5^k, establishing unbounded single
-    odd-branch valuation bursts. The repository also specifies the universal
-    convergence claim only as an unproved conjecture.
+    Formalisation of a leading-decimal-digit-dependent Collatz-type dynamical
+    system. The selected theorem proves that any positive accelerated periodic
+    orbit whose odd states are all at least 5,000,001 must contain at least
+    971 distinct odd states. The Challenge explicitly requires odd states, positive valuation exponents, injective state indexing, and the ordinary cyclic successor. Lean proves the cyclic product identity and product window,
+    then applies an exact Farey-neighbour exclusion using kernel-checked power
+    inequalities. The minimum-state threshold is an explicit theorem
+    hypothesis: the repository's separate finite census motivating that
+    threshold is not part of the selected Lean proof. Universal convergence
+    remains unproved and historical novelty remains unresolved.
   authors:
     - name: "John Fairfax-Ball"
       github: "jfairfaxball-348"
@@ -20,31 +23,79 @@ project:
 
 classification:
   arxiv: ["math.DS", "math.NT"]
-  msc2020: ["11B37"]
+  msc2020: ["11B83"]
 
 sources:
-  - title: "Stage 1 final adversarial stress test and exit gate"
-    id: "https://github.com/jfairfaxball-348/leading-digit-hailstone/blob/72e9e445264c5c1bd0178e6961820edb4d6f7f22/notes/STAGE_1_FINAL_STRESS_TEST.md"
-    type: "research note"
-    location: "notes/STAGE_1_FINAL_STRESS_TEST.md, section New theorem-level red-team result"
+  - title: "Accelerated Cycle Constraints"
+    id: "https://github.com/jfairfaxball-348/leading-digit-hailstone/blob/042765a1d01d104e364e4eeee08dd6def1b36112/notes/cycle_constraints.md"
+    type: "other"
+    location: "notes/cycle_constraints.md, Exact 5M consequence: at least 971 odd states"
     relationship: "formalizes"
     note: >-
-      The compared Lean declaration formalizes the theorem-level
-      valuation-burst family recorded in this pinned pre-Palomar source.
-      This provenance statement does not assert historical novelty; novelty
-      remains unresolved.
+      This is the pinned Stage-1 mathematical source for the conditional
+      971-state cycle restriction. The selected Lean proof isolates the
+      theorem conditional on minimum odd state at least 5,000,001 and replaces
+      the source note's finite q=1..970 scan by a compact exact Farey-neighbour
+      argument. The separate exhaustive census establishing the motivating
+      minimum exclusion is not formalized by this theorem.
+  - title: "The 3x+1 problem: new lower bounds on nontrivial cycle lengths"
+    authors: ["Shalom Eliahou"]
+    id: "https://doi.org/10.1016/0012-365X(93)90052-U"
+    type: "paper"
+    relationship: "background"
+    note: >-
+      Classical prior work using product inequalities and one-sided
+      Diophantine approximation of log_2(3) to obtain lower bounds on
+      hypothetical Collatz cycle lengths. It is methodological prior art, not
+      a source for the decimal-leading-digit theorem.
+  - title: "Theoretical and computational bounds for m-cycles of the 3n+1-problem"
+    authors: ["John Simons", "Benne de Weger"]
+    id: "https://doi.org/10.4064/aa117-1-3"
+    type: "paper"
+    relationship: "background"
+    note: >-
+      Related cycle-restriction literature using transcendental and
+      computational Diophantine methods for ordinary 3n+1 cycles.
+  - title: "The 3x+1 Problem: An Overview"
+    authors: ["Jeffrey C. Lagarias"]
+    id: "https://arxiv.org/abs/2111.02635"
+    type: "paper"
+    relationship: "background"
+    note: >-
+      Survey context for the 3x+1 problem and its generalizations, including
+      the viewpoint of generalized Collatz maps as arithmetic discrete
+      dynamical systems.
+  - title: "The Collatz Problem generalized to 3x+k"
+    authors: ["Franz Wegner"]
+    id: "https://arxiv.org/abs/2101.08060"
+    type: "paper"
+    relationship: "background"
+    note: >-
+      Example of established generalized-Collatz literature for constant
+      odd corrections. It does not match the present leading-digit-dependent
+      correction.
+
+related_formalizations:
+  - id: "https://github.com/tangentproofs/eliahou-collatz-bounds"
+    relationship: "independent"
+    note: >-
+      A current Lean formalization of Eliahou's ordinary-Collatz cycle-length
+      bounds. It does not formalize the present leading-decimal-digit map or
+      the selected 971-state theorem, but it is close methodological formal
+      prior art.
 
 status:
   scope: >-
-    The compared Palomar theorem proves only the exact arithmetic family
-    n_k = 2*10^k - 1: its decimal-sector bounds, numerator factorisation,
-    exact divisibility by 2^(k+1) but not 2^(k+2), and quotient 3*5^k.
-    It does not prove that all positive integers converge to the distinguished
-    cycle, and it does not formalize the large finite Stage-1 stress-test
-    certificates as theorem proofs.
+    The compared theorem is conditional: the accelerated orbit is indexed cyclically by q distinct odd states, with positive valuation exponents, and every state is assumed positive and at least 5,000,001. It proves only q >= 971 for that finite periodic orbit. It does not kernel-check the
+    separate exhaustive seed census through 5,000,000, does not assert that
+    every competing cycle satisfies the minimum premise without that external
+    census, does not formalize the much larger one-rise/one-fall Stage-1
+    certificate, and does not prove universal convergence.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Classical.choice", "Quot.sound"]
+  main_results:
+    - "Conditional accelerated-cycle lower bound q >= 971 above minimum state 5,000,001."
 
 automation:
   methods:
@@ -52,53 +103,63 @@ automation:
       models: ["GPT-5.6 Sol"]
       framework: "ChatGPT"
       tool_setup: >-
-        AI-assisted Lean proof drafting, repository editing, CI inspection,
-        and Palomar packaging through a GitHub connector. Formal checking is
-        performed by Lean/Mathlib, lake comparator, independent kernels in the
-        Palomar toolchain, and GitHub Actions.
+        AI-assisted theorem selection, Lean proof drafting, repository editing,
+        literature search, CI inspection, and Palomar packaging through GitHub
+        tooling. Formal checking is performed by Lean/Mathlib, lake comparator,
+        independent kernels in the Palomar toolchain, and GitHub Actions.
       cost:
         wall_time: "not separately tracked"
         spend_usd: "subscription-based / not separately tracked"
         hardware: "hosted tools and GitHub Actions"
       prompting_notes: >-
         Stage-gated prompts required preservation of the unproved convergence
-        conjecture, no novelty claim, and verification of one exact immutable
-        commit before owner registration.
+        conjecture, an immutable record of the rejected first Palomar attempt,
+        no novelty claim, and no substitution of unverified Python output for
+        a Lean-checked theorem.
   spend_usd: "subscription-based / not separately tracked"
   notes: >-
     Material AI assistance was used. Human author and responsible-maintainer
-    fields name only the human repository owner. The owner retains the
-    registration decision.
+    fields name only the human repository owner. The owner retains the final
+    Palomar submission decision.
 
 fidelity:
   divergences: >-
-    The Challenge expresses leading digit 1 by the exact decimal-sector bounds
-    10^k <= n_k < 2*10^k and then writes the resulting odd-branch numerator as
-    3*n_k+3. This avoids importing the project-private leadingDigit definition
-    into the trusted Challenge while preserving the cited theorem's arithmetic
-    content.
+    The Stage-1 source combines the 5,000,000-seed census with an exact finite
+    scan of the product-window inequality. The compared theorem deliberately
+    does not formalize that census. Instead it takes the resulting minimum
+    floor as an explicit hypothesis and proves q >= 971 by a new compact
+    Farey-neighbour argument from the same product window. This is a stronger
+    trust boundary for the selected theorem but a narrower claim about how the
+    minimum premise is obtained.
 
 review:
   status: "self-assessed"
   reviewers: []
   notes: >-
-    The statement/proof correspondence is self-audited and is subjected to
-    Lean CI, lake comparator, kernel replay, and the official Palomar full
-    mechanical preflight. No independent mathematical peer review is claimed.
+    The statement/proof correspondence is self-audited. A targeted
+    theorem-specific literature check on 2026-09-26 identified Eliahou (1993),
+    Simons--de Weger (2005), generalized 3x+k literature, and a current Lean
+    formalization of Eliahou as close methodological prior art. No exact
+    decimal-leading-digit analogue of the selected theorem was identified in
+    that targeted search; this negative search result is not a novelty claim.
+    Mechanical review includes Lean CI, local Comparator, kernel replay, and
+    the official Palomar full predictive preflight.
 
 alignment:
   namespace: "LeadingDigitHailstonePalomar"
   statements:
-    - source: "Stage 1 final adversarial stress test and exit gate, New theorem-level red-team result"
-      lean: "LeadingDigitHailstonePalomar.valuationBurstFamily"
+    - source: "Accelerated Cycle Constraints, Exact 5M consequence: at least 971 odd states"
+      lean: "LeadingDigitHailstonePalomar.leadingDigitCyclePeriodLowerBound"
       module: "Challenge"
-      status: "proved"
+      status: "adapted"
       note: >-
-        The decimal interval forces ordinary leading digit 1; the remaining
-        conjuncts state the exact odd-branch numerator factorisation,
-        exact two-adic divisibility, and accelerated quotient.
+        The Challenge states the decimal leading digit directly using Nat.log and explicitly requires an injectively indexed cyclic odd-state orbit with positive valuation exponents. It makes the minimum-state threshold an explicit hypothesis and proves
+        the same q >= 971 cycle restriction by an exact Farey/product-window
+        proof. The finite census supplying the project-level motivation for
+        the threshold is outside the selected theorem.
 
 acknowledgements: >-
-  Lean 4 and Mathlib provide the proof environment. The Palomar policy,
-  template, and reusable verification workflow informed the packaging and
-  mechanical checks.
+  Lean 4 and Mathlib provide the proof environment. Palomar's policy,
+  Comparator, and verification pipeline informed the packaging. Classical
+  Collatz cycle-length work of Eliahou and of Simons and de Weger supplies
+  methodological background for the product-window/Diophantine approach.
