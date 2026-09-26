@@ -199,30 +199,22 @@ The product window is useful because it restricts (q,R) before digit-word enumer
 
 ## Bounded-range residue locking and deterministic tails
 
-For a fixed exact-(r=1) rise digit word, the unique start residues satisfy
+For a fixed exact-r=1 rise digit word, the unique start residues satisfy
 
-[
-\rho_{s+1}=\rho_s+b_s2^{s+1}.
-]
+`rho_(s+1) = rho_s + b_s 2^(s+1)`.
 
-Thus the lift choices are the binary digits of the required start. If starts are restricted to (M\le U) and (B=\lfloor\log_2U\rfloor), then (2^{B+1}>U) forces (M=\rho_B) for every start surviving (B) rises, and all later compatible lift bits are zero.
+Thus the lift choices are the binary digits of the required start. If starts are restricted to `M <= U` and `B = floor(log_2 U)`, then `2^(B+1) > U` forces `M = rho_B` for every start surviving `B` rises, and all later compatible lift bits are zero.
 
 After lock, the carry is exactly half the odd state minus one:
 
-[
-x_s=1+2H_s.
-]
+`x_s = 1 + 2 H_s`.
 
 Consequently
 
-[
-b_s=0
-iff
-v_2(3x_s+2L(x_s)+1)=1.
-]
+`b_s = 0  iff  v2(3 x_s + 2 L(x_s) + 1) = 1`.
 
 So no symbolic lift/decimal branching remains after lock depth; the tail is deterministic direct orbit following.
 
-This still does not give a scale-aware tail bound. In fact the explicit start (43{,}574{,}304{,}770{,}317{,}398{,}119) locks at bit depth 65 and continues through 71 valuation-one rises, giving a post-lock tail of 6 before valuation 7. Hence universal constant tail bounds (le5) are false, while (F(B))- or (F(M))-type bounds remain open.
+This still does not give a scale-aware tail bound. In fact the explicit start `43,574,304,770,317,398,119` locks at bit depth 65 and continues through 71 valuation-one rises, giving a post-lock tail of 6 before valuation 7. Hence universal constant tail bounds `<= 5` are false, while `F(B)`- or `F(M)`-type bounds remain open.
 
-The post-lock certificate extends only the structured one-rise/one-fall frontier. The arbitrary-cycle lower bound remains (q\ge971). See `notes/residue_position_locking.md` and `notes/post_lock_tail_control.md`.
+The post-lock certificate extends only the structured one-rise/one-fall frontier. The arbitrary-cycle lower bound remains `q >= 971`. See `notes/residue_position_locking.md` and `notes/post_lock_tail_control.md`.
