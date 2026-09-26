@@ -29,8 +29,6 @@ theorem boundedCorrectionCyclePeriodLowerBound
   let R : ℕ := ∑ i : Fin q, valuation i
   let P : ℕ := ∏ i : Fin q, state i
 
-  have hfin : Nonempty (Fin q) := ⟨⟨0, hq⟩⟩
-
   have hnext :
       (∏ i : Fin q, state (next i)) = P := by
     dsimp [P]
@@ -68,7 +66,7 @@ theorem boundedCorrectionCyclePeriodLowerBound
     · intro i hi
       have hc := hcorrLower i
       omega
-    · exact @Finset.univ_nonempty (Fin q) _ hfin
+    · exact ⟨⟨0, hq⟩, Finset.mem_univ _⟩
 
   have hlowerScaled :
       (3 : ℕ) ^ q * P < 2 ^ R * P := by
