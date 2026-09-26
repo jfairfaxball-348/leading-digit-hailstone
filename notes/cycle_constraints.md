@@ -153,24 +153,29 @@ Therefore:
 
 This is stronger than the minimum-element exclusion alone, but it is still not a global no-cycle theorem. In particular q=971 is **not** claimed to be realizable.
 
-## Structured one-rise/one-fall cycles — ELEMENTARY FACT + FINITE EXACT CONSEQUENCE
+## Structured one-rise/one-fall cycles — ELEMENTARY FACT + FINITE EXACT SYMBOLIC EXCLUSION
 
 Issue #10 studies the narrower class whose valuation word, after rotation to the minimum, has one nonempty block of r=1 steps followed by one nonempty block of r>=2 steps. Above 19 this is equivalent to exactly one strict local minimum and one strict local maximum, not merely to having a unique global minimum.
 
-The block geometry yields a stronger product estimate. Rise-source states move away from the minimum at least geometrically by 3/2, while fall-source states, read backward from the minimum, move away at least geometrically by 4/3 after a fixed 19-offset. Summing the reciprocal state bounds inside the exact product identity gives
+The block geometry yields the period-independent product estimate
 
-1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).
+1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).             (3)
 
-Unlike (1), this upper bound is independent of q.
+Unlike (1), this upper bound does not grow with q.
 
-Combining it with M>=5,000,001 and checking the remaining powers-of-two/powers-of-three window by exact integer arithmetic excludes every structured period q<=79,334. Thus any different positive one-rise/one-fall accelerated cycle consistent with the 5M census must have at least 79,335 odd states. The first period not excluded by this necessary window is q=79,335, where the only possible total valuation is R=125,743.
+Under M>=5,000,001, exact integer enumeration of (3) leaves only six product-window periods through q=400,000:
 
-Writing E=sum_fall(r_i-2), the exact identity R=2q-a+E implies that every surviving structured cycle has at least 32,927 consecutive rise steps. At the first surviving period specifically,
+79,335; 158,670; 190,537; 269,872; 349,207; 381,074.
 
-a=32,927+E,
-b=46,408-E.
+For each such q, monotonicity of the right side of (3) gives an exact finite upper bound M_max on the cycle minimum. An exact symbolic checker then intersects the affine decimal-sector intervals for the forced rise block with the unique binary residue lift for successive exact-r=1 steps. All six surviving periods are eliminated well before their required rise lengths.
 
-See notes/one_minimum_cycles.md and scripts/structured_one_minimum_bound.py. These statements do **not** exclude the structured class globally, and q=79,335 is not asserted to be realizable.
+Therefore:
+
+> **Bounded structured corollary.** Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q>=400,001.
+
+Moreover every remaining structured cycle must have at least 166,015 consecutive r=1 rise steps.
+
+See notes/one_minimum_cycles.md and scripts/structured_one_minimum_bound.py for the theorem, coverage proof, exact M_max values, and machine-readable certificate. This does **not** exclude arbitrary cycles or the structured class globally.
 
 ## Why this matters for the next cycle search
 
