@@ -76,3 +76,5 @@ Prerequisites include a stable paper, complete bibliography, reproducible reposi
 - Central conjecture: unchanged and explicitly unproved.
 
 The immediate programme is to deepen the mathematics and try to break the conjecture, not to rush toward publication packaging.
+
+**Boundary-separation follow-up:** two distinct scaled decimal-boundary hits inside the post-lock width-19 corridor, separated by `n` steps, force `X<=171*3^n`; exact coincidences are limited to the short chains `2->3` and `4->6->9`. Hence long boundary-free blocks have a forced homogeneous digit word, and survival of such a block reduces to one terminal 2-adic residue congruence. The next target is to bound the length of these phase-frozen congruence-compatible blocks by scale.
