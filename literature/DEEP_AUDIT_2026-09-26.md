@@ -146,3 +146,24 @@ Targeted searches combining generalized Collatz, digit dependence, leading/most-
 
 This layer is especially incomplete because older theses, problem columns, books, and non-English sources can be poorly indexed. Its value is to document coverage, not to increase the novelty status.
 
+
+
+### Radix-based generalized Collatz via an abstract machine
+
+Nabarun Mondal and Partha P. Ghosh, “A General Class of Collatz Sequence and Ruin Problem,” arXiv:1203.2229 (2012), proposes a base-dependent generalized Collatz rule
+
+[
+f(n)=
+egin{cases}
+n/b,& nequiv0pmod b,\\
+(b+1)n+(b-nmod b),&	ext{otherwise}.
+end{cases}
+]
+
+The paper motivates this through left/right shifts and arithmetic in base (b), so it is relevant prior art for radix-aware Collatz generalization.
+
+**Classification: close radix-dependent analogue, not an equivalent formulation or direct containment.**
+
+Its branch selector and additive correction depend on the residue (nmod b), i.e. low-order base-(b) information. The frozen Leading-Digit Hailstone rule instead keeps the parity split and selects among corrections (3,5,ldots,19) using the most significant decimal digit. The two mechanisms are mathematically different, and the cited generalized formula does not produce the frozen rule by a parameter choice.
+
+This source narrows what can safely be claimed: “base- or digit-aware Collatz generalization” is certainly not new as a broad idea. It does not resolve prior art for this particular leading-digit-controlled affine map.
