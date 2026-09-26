@@ -119,16 +119,16 @@ For the narrower one-rise/one-fall class of Issue #10, geometric state bounds on
 
 The original exact product-window scan through q=400,000 left six periods, all removed by symbolic decimal-sector / 2-adic rise coverage. The next increment replaces further linear scanning by a Farey-neighbour transfer lemma for alpha=log_2(3): an exact upper approximation R_u/q_u and an exact lower Farey neighbour R_l/q_l certify that no better upper absolute error can occur for q_u<=q<q_u+q_l.
 
-Two exact blocks now close:
+The Farey mechanism now iterates record-to-record rather than stopping after two blocks. Exact rational logarithmic enclosures certify the Stern-Brocot path and the product window without materializing giant powers at every record. Seven further upper records, beginning at q=64,497,107, have complete theorem-derived M ranges and exact symbolic rise certificates. The last certified block ends at q=890,638,885,192.
 
-- the q=190,537 upper record, paired with 16,785,921/10,590,737 below alpha, transfers its M_max=589,078,792 and 29-rise symbolic extinction through q=10,781,273;
-- the next upper record 17,087,915/10,781,274 has M_max=3,112,972,388 and symbolic extinction at 31 rises; paired with 85,137,581/53,715,833 below alpha, it transfers through q=64,497,106.
+Therefore any remaining structured cycle has q>=890,638,885,193 and at least 369,648,535,671 consecutive exact-r=1 rises. This is still a bounded structured-class result, not a global cycle exclusion; the arbitrary-cycle lower bound remains q>=971.
 
-Therefore any remaining structured cycle has q>=64,497,107 and at least 26,768,717 consecutive r=1 rises. This is still a bounded structured-class result, not a global cycle exclusion.
+A new normalized weak-run strip theorem explains the modest symbolic complexity. For an exact r=1 run,
+(2/3)^i x_i-M lies between 3(1-(2/3)^i) and 19(1-(2/3)^i), so its uncertainty width is <16. On a fixed finite range [L,U], this confines digit ambiguity to width-<16 preimage strips around decimal boundaries and gives an explicit linear-in-depth cell bound. Once 2^(s+1)>U-L, each cell contains at most one seed. Across the new record ranges the exact extinction depth is at most 49 and the peak cell count at most 727.
 
-The symbolic mechanism is now clearer: in the new M range the exact cell count peaks at 263, then contracts to three residue-compatible seeds after 30 rises; their next valuations are 5, 3, and 2. The finite-range obstruction is a decimal-sector narrowing plus binary-modulus squeeze, not a uniform prohibition on long weak runs.
+The record-to-record Diophantine side also has a clean theorem: if q_next is the next upper Farey-record denominator after q, then delta=R-q log_2(3)>1/q_next, hence M<57+38 q_next/ln(2).
 
-The next precise target is the first period not covered by the current Farey transfer, q=64,497,107: determine whether the record-to-record transfer can be iterated with a theorem controlling symbolic extinction as M_max grows, or identify the first record where that mechanism genuinely fails.
+The next precise target is no longer another Farey extension. It is a uniform residue-position obstruction for the sparse terminal representatives after the binary modulus dominates the finite M interval.
 
 ### What would weaken/falsify this approach
 
