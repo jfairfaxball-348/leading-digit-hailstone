@@ -618,7 +618,27 @@ def run() -> dict:
             "minimum": MINIMUM_ODD_STATE,
             "maximum": largest_hi,
             "first_impossible_rise_length": largest_impossible,
-            "cell_profile": largest_profile,
+            "cell_counts_by_rise_depth": [
+                row["cells"] for row in largest_profile
+            ],
+            "profile_tail_from_depth_32": [
+                {
+                    key: row[key]
+                    for key in (
+                        "rise_depth",
+                        "cells",
+                        "total_cell_width",
+                        "minimum_cell_width",
+                        "maximum_cell_width",
+                        "distinct_digit_words",
+                        "distinct_residues",
+                        "binary_range_misses",
+                        "valuation_misses",
+                    )
+                }
+                for row in largest_profile
+                if row["rise_depth"] >= 32
+            ],
             "terminal_depth": largest_impossible - 1,
             "terminal_representatives": terminal,
         },
