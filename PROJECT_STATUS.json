@@ -1,5 +1,5 @@
 {
-  "schema_version": 11,
+  "schema_version": 12,
   "project_title": "Leading-Digit Hailstone Dynamics",
   "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
   "frozen_object": {
@@ -158,7 +158,11 @@
       "For a fixed exact-r=1 rise word, the unique residues satisfy rho_(s+1)=rho_s+b_s*2^(s+1); the lift bits b_s are exactly the successive binary digits of the required starting residue above its forced odd bit.",
       "Bounded-range residue locking: for starts M<=U, at B=floor(log_2 U) the congruence forces M=rho_B, and every later compatible lift bit is zero.",
       "Combining bit-length locking with decimal-boundary localization gives at most 180*B*(ceil(log_10((U+19)/L))+1)+1 starts surviving B rises in [L,U]; for fixed L this is O((log U)^2) candidate compression.",
-      "After locking, x_s=1+2H_s exactly, and b_s=0 is equivalent to the deterministic accelerated numerator at x_s having valuation one; hence symbolic lift/decimal branching is unnecessary after lock depth."
+      "After locking, x_s=1+2H_s exactly, and b_s=0 is equivalent to the deterministic accelerated numerator at x_s having valuation one; hence symbolic lift/decimal branching is unnecessary after lock depth.",
+      "Post-lock normalized tube: from lock state X, every compatible exact-r=1 tail satisfies X <= (2/3)^t x_t < X+19; equivalently x_t lies in [(3/2)^t X,(3/2)^t(X+19)).",
+      "Exact local sector escape: an exact-r=1 step leaves any fixed leading-digit sector with digit d>=2 immediately; digit 1 leaves within two such steps; six exact-r=1 steps increase the state by more than a factor 10.",
+      "Scaled decimal-boundary separation: if two distinct scaled boundary hits inside [X,X+19] occur n steps apart, then X<=171*3^n; exact coincident hits are only 2->3, 4->6, 6->9 at gap 1 and 4->9 at gap 2.",
+      "On a post-lock horizon whose width-19 tube crosses no decimal boundary, the digit word is forced by the homogeneous (3/2)^t phase and exact-r=1 survival reduces to the established single terminal 2-adic residue congruence."
     ],
     "bounded_exact_consequence": {
       "statement": "Any different positive accelerated cycle consistent with the exhaustive 5,000,000-seed census must contain at least 971 odd states.",
@@ -184,7 +188,7 @@
       "interpretation": "These examples do not exhibit one-step giant compensation; recovery is distributed across a longer block.",
       "claim_type": "FINITE_COMPUTATION"
     },
-    "proof_direction_update": "Post-lock residue ambiguity has now been eliminated completely: once M=rho_B, the carry satisfies x_s=1+2H_s and a zero lift is exactly one deterministic valuation-one accelerated step. Thus exact symbolic branching is needed only through lock depth; later tail certification is direct orbit following of the finite locked candidate set. A finite exact tail-6 example rules out universal constant bounds <=5. The next Farey record is excluded by this lock-and-follow certificate, so the remaining target is a scale-aware F(B) or F(M) tail theorem rather than further symbolic lift control.",
+    "proof_direction_update": "The post-lock deterministic tail now has an exact scale-aware phase coordinate. If X is the lock state then Y_t=(2/3)^t x_t stays in the fixed interval [X,X+19). Decimal ambiguity is therefore sparse: two distinct scaled boundary hits n steps apart force X<=171*3^n, apart from the exact short coincidence chains 2->3 and 4->6->9. On every boundary-free horizon the digit word is forced by the homogeneous phase and survival collapses to one terminal 2-adic residue congruence. This yields candidate-specific termination certificates but still no uniform F(B) or F(M) bound. The next target is to bound the length of forced homogeneous digit blocks that can continue satisfying the residue conditions.",
     "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses powers-of-2/powers-of-3 Diophantine approximation; no novelty claim is made for this strategy.",
     "structured_cycle_consequence": {
       "statement": "Any different positive one-rise/one-fall accelerated cycle consistent with the exhaustive 5,000,000-seed census must have q >= 1,643,749,725,074 and at least 682,217,775,335 consecutive r=1 rise steps.",
@@ -365,7 +369,7 @@
         "post-lock zero-lift continuation is exactly deterministic accelerated orbit following, so no symbolic branching is needed after lock depth"
       ],
       "finite_exact_route_falsification": {
-        "start": 43574304770317398119,
+        "start": 43574304770317400000,
         "bit_length_lock_depth": 65,
         "total_exact_r1_rises": 71,
         "post_lock_tail": 6,
@@ -383,26 +387,61 @@
         "next_required_rise": 682217775335
       },
       "limitation": "The reduction removes symbolic branching after lock but does not prove any scale-aware bound on deterministic tail length."
+    },
+    "post_lock_scaled_phase": {
+      "claim_type": "THEOREM_PLUS_FINITE_EXACT_PHASE_RESIDUE_CERTIFICATES",
+      "theorem_level": [
+        "for a compatible exact-r=1 tail from lock state X, Y_t=(2/3)^t x_t is increasing and remains in [X,X+19)",
+        "an exact-r=1 trajectory exits a fixed leading-digit sector in one step for digit >=2 and within two steps for digit 1; six such steps cross more than one decimal decade",
+        "two distinct scaled decimal-boundary hits n steps apart inside [X,X+19] force X<=171*3^n",
+        "exact coincident scaled boundary hits are only 2->3, 4->6, 6->9 at gap 1 and 4->9 at gap 2",
+        "on a boundary-free horizon, the homogeneous digit word is forced and survival reduces to the established terminal 2-adic residue congruence"
+      ],
+      "finite_exact_certificates": {
+        "farey_lock_state_1": {
+          "lock_state": 2.225217764551392e+21,
+          "minimum_noncoincident_boundary_gap": 41,
+          "forced_word_through_failure": "2357",
+          "certified_post_lock_tail": 3
+        },
+        "farey_lock_state_2": {
+          "lock_state": 3.337826646827088e+21,
+          "minimum_noncoincident_boundary_gap": 41,
+          "forced_word_through_failure": "357",
+          "certified_post_lock_tail": 2
+        },
+        "tail_six_lock_state": {
+          "lock_state": 1.2166406006866046e+31,
+          "minimum_noncoincident_boundary_gap": 61,
+          "forced_word_through_failure": "1124691",
+          "certified_post_lock_tail": 6,
+          "mismatch_modulus": 256,
+          "required_residue": 85,
+          "actual_residue": 213
+        },
+        "certificate": "data/post_lock_phase.json"
+      },
+      "limitation": "This proves scale-aware sparsity of decimal ambiguity and gives a phase/residue termination certificate for fixed candidates, but does not bound the total deterministic post-lock tail. Boundary-free forced homogeneous blocks may still satisfy many successive 2-adic conditions."
     }
   },
-  "current_lean_status": "POST_LOCK_CARRY_AND_VALUATION_IDENTITIES_CI_VERIFIED_GREEN",
+  "current_lean_status": "POST_LOCK_TUBE_AND_SECTOR_LEMMAS_BRANCH_PENDING_CI",
   "immediate_stage_1_targets": [
-    "Issue #10: prove a scale-aware quantitative bound F(B) or F(M) on deterministic post-lock valuation-one tails, or produce a rigorous family showing such a route is too weak",
-    "exploit x_s=1+2H_s to study decimal phase/discrepancy and congruence information without further symbolic lift branching",
-    "use further Farey records mainly as stress tests or consequences of a tail theorem rather than as the primary research direction",
+    "Issue #10: bound how long a boundary-free forced homogeneous post-lock digit block can continue satisfying the exact terminal 2-adic residue conditions",
+    "combine the width-19 scaled tube and X<=171*3^n boundary-separation theorem with scale-aware congruence or Diophantine control",
+    "treat further Farey records mainly as stress tests or consequences of a tail theorem rather than as the primary direction",
     "continue prior-art equivalence search without novelty claims"
   ],
   "synchronized_date": "2026-09-26",
   "current_ci_status": {
-    "python": "GREEN",
-    "lean": "GREEN",
-    "verified_on_research_branch": "research/post-lock-deterministic-tail",
-    "verified_commit": "cefc119473a2965e8842fe4e213075da4099ad70",
-    "verification_note": "Python/tests and Lean PR #16 workflows passed on the complete post-lock deterministic-tail research head. This status-only synchronization commit follows that verified code head; the final PR head is rechecked before merge."
+    "python": "PENDING_BRANCH_CI",
+    "lean": "PENDING_BRANCH_CI",
+    "verified_on_research_branch": "research/post-lock-scaled-tube",
+    "verified_commit": null,
+    "verification_note": "New post-lock scaled-tube, boundary-separation, phase/residue certificate, and Lean sector/tube lemmas are on the research branch awaiting complete CI verification."
   },
   "highest_value_next_target": {
     "issue": 10,
-    "title": "Bound deterministic post-lock tails by scale",
-    "reason": "Post-lock lift ambiguity is gone: x_s=1+2H_s and zero lift is exactly a deterministic valuation-one accelerated step. A constant bound <=5 is false, so the next target is a rigorous scale-aware F(B) or F(M) bound, likely using decimal phase/discrepancy or scale-aware congruence information."
+    "title": "Bound forced homogeneous post-lock blocks",
+    "reason": "The normalized post-lock tube has fixed width 19, so decimal ambiguity events are sparse at a scale growing with the lock state. Between them the digit word is forced by the homogeneous (3/2)^t phase and survival is a single 2-adic residue condition. The missing theorem is a scale-aware bound on how long those forced homogeneous blocks can keep satisfying the residue conditions."
   }
 }
