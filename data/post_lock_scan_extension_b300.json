@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-26",
+  "claim_type": "FINITE_EXACT_SYMBOLIC_AND_DIRECT_DIAGNOSTIC",
+  "bit_depth_range": [
+    221,
+    300
+  ],
+  "additional_locked_candidate_count": 37,
+  "additional_positive_tail_candidate_count": 17,
+  "tail_histogram": {
+    "0": 20,
+    "1": 11,
+    "2": 4,
+    "3": 2
+  },
+  "maximum_post_lock_tail_in_extension": 3,
+  "previous_complete_scan_maximum_tail": 6,
+  "combined_complete_scan_bit_depth_range": [
+    1,
+    300
+  ],
+  "combined_observed_maximum_post_lock_tail": 6,
+  "positive_tail_boundary_hit_candidate_count": 0,
+  "positive_tail_homogeneous_digit_mismatch_candidate_count": 0,
+  "tail_three_cases": [
+    {
+      "bit_depth": 269,
+      "start": "1056351908313112224451188801200261182454967607202503176425731685505998071295969797",
+      "state_at_lock": "246806905711492299991645286752216178330975533277404147947769754032352094069974819776696503375299776111915099677916105782988106847",
+      "total_exact_r1_rises": 272,
+      "post_lock_tail": 3,
+      "next_valuation": 2,
+      "homogeneous_digit_mismatch_steps": [],
+      "boundary_hit_steps": []
+    },
+    {
+      "bit_depth": 288,
+      "start": "825319682589165918742137473513355391319412602764714905365081840526594672541903982081075",
+      "state_at_lock": "427469182381020383413271594832892008315839131012915095884981444592792165491244119665194220888592905645601980791045467194210961134306542583",
+      "total_exact_r1_rises": 291,
+      "post_lock_tail": 3,
+      "next_valuation": 7,
+      "homogeneous_digit_mismatch_steps": [],
+      "boundary_hit_steps": []
+    }
+  ],
+  "interpretation": "The complete own-bit diagnostic is extended from B<=220 through B<=300. No post-lock tail longer than the previously observed record 6 is found. This is finite exact computation only and does not establish a universal tail bound."
+}

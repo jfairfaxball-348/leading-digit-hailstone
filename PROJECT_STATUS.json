@@ -1,7 +1,7 @@
 {
-  "schema_version": 13,
+  "schema_version": 14,
   "project_title": "Leading-Digit Hailstone Dynamics",
-  "phase": "STAGE_1_MATHEMATICAL_RESEARCH",
+  "phase": "STAGE_2_LEAN_FORMALISATION",
   "frozen_object": {
     "domain": "positive integers",
     "base": 10,
@@ -112,7 +112,93 @@
     "evidence_types": [
       "FINITE_COMPUTATION",
       "ELEMENTARY_FACT"
-    ]
+    ],
+    "final_declared_stage_1_campaign": {
+      "claim_type": "FINITE_EXACT_COMPUTATION_PLUS_ONE_ELEMENTARY_THEOREM",
+      "decimal_boundary_adversaries": {
+        "tested_seed_count": 756,
+        "exponents": [
+          600,
+          800,
+          1000,
+          1200,
+          1500,
+          1800,
+          2000
+        ],
+        "offsets": [
+          -999,
+          -99,
+          -19,
+          -9,
+          -3,
+          -1,
+          1,
+          3,
+          9,
+          19,
+          99,
+          999
+        ],
+        "all_entered_distinguished_cycle": true,
+        "worst_cycle_entry_steps": 52212
+      },
+      "deterministic_large_random_odds": {
+        "tested_seed_count": 350,
+        "decimal_digit_scales": [
+          20,
+          50,
+          100,
+          250,
+          500,
+          1000,
+          2000
+        ],
+        "all_entered_distinguished_cycle": true,
+        "worst_cycle_entry_steps": 50590
+      },
+      "inverse_tree_derived_adversaries": {
+        "inverse_depth": 45,
+        "frontier_nodes": 46860,
+        "frontier_nodes_without_odd_preimage": 34689,
+        "tested_seed_count": 1476,
+        "all_entered_distinguished_cycle": true
+      },
+      "engineered_long_r1_runs": {
+        "requested_run_lengths": [
+          150,
+          300,
+          500,
+          750,
+          1000
+        ],
+        "observed_run_lengths": [
+          150,
+          303,
+          500,
+          750,
+          1001
+        ],
+        "all_entered_distinguished_cycle": true,
+        "longest_first_descent_steps": 6530,
+        "longest_cycle_entry_steps": 63638
+      },
+      "post_lock_extension": {
+        "complete_bit_depth_range": [
+          1,
+          300
+        ],
+        "additional_locked_candidates_221_to_300": 37,
+        "additional_positive_tail_candidates_221_to_300": 17,
+        "maximum_new_tail": 3,
+        "combined_observed_maximum_tail": 6,
+        "tail_longer_than_six_found": false
+      },
+      "theorem_level_red_team_result": "For every k>=0, n=2*10^k-1 has leading digit 1 and odd-branch numerator 6*10^k=3*2^(k+1)*5^k, hence valuation exactly k+1 and accelerated successor 3*5^k.",
+      "certificate": "data/stage1_final_red_team.json",
+      "post_lock_certificate": "data/post_lock_scan_extension_b300.json",
+      "limitation": "All convergence findings are finite exact computation over declared protocols; the central conjecture remains unproved."
+    }
   },
   "prior_art_status": "DISTINGUISHED_CYCLE_HAS_5X_PLUS_1_PRIOR_ART; FINITE_MODULUS_GENERALIZED_COLLATZ_CLASSES_DO_NOT_CONTAIN_THE_FULL_MAP; RADIX_AWARE_AND_LEADING_DIGIT_ACTIVE_INTEGER_DYNAMICS_EXIST_AS_CLOSE_ANALOGUES; NO_EXACT_OR_EQUIVALENT_FULL_MAP_MATCH_IDENTIFIED_IN_CURRENT_AUDIT; NOVELTY_UNRESOLVED",
   "pilot_gate_date": "2026-09-26",
@@ -126,20 +212,20 @@
     "Current prior-art work has not located an exact or mathematically equivalent full-map construction, but negative search evidence is insufficient for a novelty claim."
   ],
   "programme_stage_status": {
-    "1_proof_conjecture_research": "ACTIVE_HIGHEST_PRIORITY",
-    "2_lean_formalisation": "ACTIVE_IN_PARALLEL",
-    "3_final_prior_art_audit": "ACTIVE_IN_PARALLEL_NOT_FINAL",
-    "4_palomar": "NOT_STARTED",
+    "1_red_team_mathematical_exploration": "COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST",
+    "2_lean_formalisation": "NEXT_PRIMARY_STAGE",
+    "3_palomar": "AFTER_FORMALISATION",
+    "4_final_novelty_prior_art_audit": "AFTER_PALOMAR",
     "5_research_paper": "NOT_STARTED",
     "6_arxiv_submission": "NOT_STARTED"
   },
-  "current_research_objective": "Determine as much rigorous mathematics as possible about the frozen system while continuously attempting to falsify or sharpen universal convergence.",
+  "current_research_objective": "Audit and consolidate the exact Lean specification of the frozen positive-integer map, distinguished cycle, iterates, and central conjecture as an unproved proposition; retain selected stable supporting lemmas without reopening an open-ended universal-convergence proof programme.",
   "active_attack_lines": [
-    "accelerated odd dynamics and deterministic/blockwise descent",
-    "cycle exclusion from valuation words, leading-digit words, and exact cycle identities",
-    "inverse dynamics and inverse-tree coverage",
-    "decimal-sector geometry",
-    "mechanism-targeted computation"
+    "Lean audit of positive-integer domain and decimal leading-digit specification",
+    "Lean audit of the frozen map and distinguished 7-cycle",
+    "Lean statement of the central conjecture as an unproved proposition",
+    "selection and cleanup of stable supporting formal lemmas",
+    "preparation for Palomar after formalisation"
   ],
   "stage_1_progress": {
     "elementary_facts": [
@@ -368,7 +454,7 @@
         "post-lock zero-lift continuation is exactly deterministic accelerated orbit following, so no symbolic branching is needed after lock depth"
       ],
       "finite_exact_route_falsification": {
-        "start": 43574304770317398119,
+        "start": "43574304770317398119",
         "bit_length_lock_depth": 65,
         "total_exact_r1_rises": 71,
         "post_lock_tail": 6,
@@ -435,26 +521,64 @@
         "certificate": "data/post_lock_terminal_guide.json"
       },
       "limitation": "The terminal guide depends on the finite segment endpoint. It sharpens candidate-specific phase certification but does not provide a uniform F(B) or F(M) tail bound or change either cycle frontier."
+    },
+    "final_declared_stress_test": {
+      "status": "COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST",
+      "claim_type": "PROJECT_GATE_BASED_ON_DECLARED_FINITE_FALSIFICATION_PROGRAMME",
+      "competing_positive_cycle_found": false,
+      "apparent_escape_found_within_declared_caps": false,
+      "structural_contradiction_found": false,
+      "conjecture_wording_change_required": false,
+      "post_lock_tail_longer_than_six_found": false,
+      "exact_new_theorem": "The family n=2*10^k-1 has odd-branch valuation k+1 for every k>=0.",
+      "retained_supporting_mathematics": [
+        "arbitrary-cycle q>=971 consequence under the established 5M minimum premise",
+        "one-rise/one-fall q>=1643749725074 and a>=682217775335 frontier under the same premise",
+        "residue locking and deterministic post-lock reduction",
+        "width-19 forward normalized corridor",
+        "terminally anchored width-19 guide",
+        "arbitrarily long initial exact-r=1 constructions",
+        "tail-6 counterexample to universal post-lock bounds <=5"
+      ],
+      "note": "notes/STAGE_1_FINAL_STRESS_TEST.md"
     }
   },
-  "current_lean_status": "TERMINALLY_ANCHORED_GUIDE_BACKSTEP_CI_VERIFIED_GREEN",
-  "immediate_stage_1_targets": [
-    "Issue #10: prove a scale-aware parity/congruence obstruction for deterministic post-lock valuation-one tails once the decimal itinerary is frozen to the homogeneous (3/2)^t phase",
-    "combine carry parity with exact homogeneous leading-digit words, mixed 2^m5^n congruences, or another unbounded scale coordinate",
-    "extend exact own-bit lock diagnostics primarily to falsify candidate F(B) bounds or find a tail longer than 6; use further Farey records only as secondary stress tests",
-    "continue prior-art equivalence search without novelty claims"
-  ],
+  "current_lean_status": "BASE_FORMAL_SPECIFICATION_EXISTS_STAGE_2_NEXT_PRIMARY",
+  "immediate_stage_1_targets": [],
   "synchronized_date": "2026-09-26",
   "current_ci_status": {
     "python": "GREEN",
     "lean": "GREEN",
-    "verified_on_research_branch": "research/terminally-anchored-post-lock-guide",
-    "verified_commit": "a4a688549fa055e282adbfe11a9ee61cecd12d93",
-    "verification_note": "Python/tests and Lean PR #19 workflows passed on the complete terminally anchored guide research head a4a688549fa055e282adbfe11a9ee61cecd12d93. This status-only synchronization commit follows that verified code/documentation head; the final PR head is rechecked before merge."
+    "verified_on_research_branch": "research/phase-residue-termination-certificate",
+    "verified_commit": "3e74d84e482e54bc68d5ff68f19d50755bb91f6a",
+    "verification_note": "Python/tests and Lean workflows passed on the complete Stage-1 red-team code/certificate head 3e74d84e482e54bc68d5ff68f19d50755bb91f6a. Subsequent commits only polish closeout documentation and synchronize this status; the final PR head is rechecked before merge."
   },
   "highest_value_next_target": {
-    "issue": 10,
-    "title": "Control phase-frozen post-lock parity by scale",
-    "reason": "The width-19 normalized corridor and exact B<=220 diagnostic show that observed positive post-lock tails can have completely frozen homogeneous leading-digit itineraries with no decimal-boundary near-hit. The remaining obstruction is the exact valuation-one parity/congruence condition along that scale-dependent itinerary; no F(B) or F(M) theorem is yet known."
-  }
+    "stage": 2,
+    "title": "Audit and complete the Lean formal specification",
+    "reason": "Stage 1 passed the declared stress-test exit gate. Universal convergence is not a pipeline prerequisite; the next task is exact formal specification of the frozen object and unproved conjecture."
+  },
+  "stage_1_exit_gate": {
+    "status": "COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST",
+    "checks": {
+      "no_competing_positive_cycle_found": true,
+      "no_apparent_escape_found_in_declared_campaign": true,
+      "no_structural_contradiction_found": true,
+      "adversarial_decimal_families_converged_in_all_tested_cases": true,
+      "engineered_long_weak_division_starts_converged_in_all_tested_cases": true,
+      "no_obvious_map_implementation_ambiguity": true,
+      "nearby_rule_comparison_retains_interest_with_local_robustness_caveat": true,
+      "nontrivial_exact_mathematical_structure_retained": true,
+      "conjecture_remains_simple_and_sharply_stated": true,
+      "finite_evidence_kept_separate_from_proof": true
+    },
+    "interpretation": "Stage 1 is intentionally frozen. The conjecture survived the declared research/falsification programme but remains unproved; future proof breakthroughs are welcome but are not prerequisites for the research pipeline."
+  },
+  "next_primary_stage_targets": [
+    "audit PositiveNat/domain convention and decimal leadingDigit specification in Lean",
+    "audit the exact frozen map T and distinguishedCycle definitions",
+    "verify iterates and LeadingDigitHailstoneConjecture exactly match the intended mathematical statement",
+    "retain selected stable supporting lemmas and keep the build sorry-free",
+    "inspect project/tooling conventions for Palomar only after formalisation is complete"
+  ]
 }
