@@ -153,7 +153,8 @@
       "If E is the sum over falling steps of (r_i-2), then R=2q-a+E and a-E=2q-R.",
       "Farey-neighbour upper/lower approximations to log_2(3) transfer a record product ratio across a complete denominator block, avoiding period-by-period scanning.",
       "For M>=5000001, if t=log(2^R/3^q)>0 satisfies the structured product window then M<39/t; for a determinant-one final Farey neighbour pair before the next upper record this gives M_max<39*q_next/log(2).",
-      "Finite-range decimal-boundary localization: through s exact r=1 rises on [L,U], at most 20*J_s(L,U)+1 decimal-sector words occur, where J_s counts relevant scaled decimal boundaries; for fixed [L,U], J_s=O(s)."
+      "Finite-range decimal-boundary localization: through s exact r=1 rises on [L,U], at most 20*J_s(L,U)+1 decimal-sector words occur, where J_s counts relevant scaled decimal boundaries; for fixed [L,U], J_s=O(s).",
+      "For a fixed exact-r=1 rise digit word with affine term A_s, all s parity conditions are equivalent to 3^s M + A_s == 2^s (mod 2^(s+1)), hence M == 3^(-s)(2^s-A_s) (mod 2^(s+1))."
     ],
     "bounded_exact_consequence": {
       "statement": "Any different positive accelerated cycle consistent with the exhaustive 5,000,000-seed census must contain at least 971 odd states.",
@@ -189,7 +190,8 @@
         "fall-excess identity R=2q-a+E",
         "Farey-neighbour transfer lemma for upper absolute errors R-q log_2(3)",
         "inverse-error product scale M<39/t for t=log(2^R/3^q)",
-        "finite-range decimal-boundary localization and 20 J_s(L,U)+1 sector-word bound"
+        "finite-range decimal-boundary localization and 20 J_s(L,U)+1 sector-word bound",
+        "explicit terminal 2-adic residue formula for a fixed rise digit word"
       ],
       "finite_exact_coverage": {
         "previous_period_scan_limit": 400000,
@@ -309,9 +311,9 @@
   "current_ci_status": {
     "python": "GREEN",
     "lean": "GREEN",
-    "verified_on_research_branch": "research/farey-structured-extension",
-    "verified_commit": "edcd53a6d09d2469b24b95372690bf357012584a",
-    "verification_note": "Python and Lean PR #12 workflows passed for the Farey structured-cycle extension. This status-only synchronization commit follows that verified research head."
+    "verified_on_research_branch": "research/farey-record-chain-symbolic-complexity",
+    "verified_commit": "754691b4fa3f15f98ff024e4af2c29b05eb7d797",
+    "verification_note": "Python and Lean workflows passed on the full substantive Issue #10 record-chain increment, including exact rational-log certification, seven further Farey record blocks, symbolic-range regression, explicit rise-word residue formula, and terminal-word regression. This status-only synchronization commit follows that verified research head."
   },
   "highest_value_next_target": {
     "issue": 10,
