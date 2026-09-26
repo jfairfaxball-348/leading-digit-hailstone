@@ -22,7 +22,7 @@ Current parallel attack lines:
 
 The theorem that arbitrarily long initial exact-v2=1 runs exist permanently rules out arguments that assume a uniform bound on weak-division streaks.
 
-Current highest-value target: **Issue #10 — extend the exact one-rise/one-fall exclusion beyond q=400,000**. The structured product envelope plus exact decimal-sector/2-adic symbolic coverage now eliminates every period through 400,000 under the 5M minimum premise. The next step is to enumerate the next theorem-driven product-window survivors and test their complete M ranges symbolically, stopping for mathematical analysis if a genuinely long admissible rise family survives.
+Current highest-value target: **Issue #10 — analyze the next Farey record at q=64,497,107**. The structured product envelope, an exact Farey-neighbour transfer for powers-of-two / powers-of-three approximations, and exact decimal-sector/2-adic symbolic coverage now eliminate every one-rise/one-fall period through q=64,497,106 under the 5M minimum premise. The next step is not another linear period scan: determine whether the record-to-record transfer can be iterated with a theorem controlling symbolic extinction as the product-derived M_max grows, or identify the first record where that finite-range modulus squeeze fails.
 
 ## Stage 2 — Lean formalisation — ACTIVE ALONGSIDE STAGE 1
 
