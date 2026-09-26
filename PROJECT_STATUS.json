@@ -178,8 +178,8 @@
   },
   "current_lean_status": "BRANCH_AFFINE_LEMMAS_CI_VERIFIED_GREEN",
   "immediate_stage_1_targets": [
+    "Issue #10: exclude or sharply constrain structured one-minimum accelerated cycles",
     "derive multi-step block compensation inequalities after arbitrary weak runs",
-    "combine q>=971 with valuation-word and decimal-sector consistency",
     "formalise leading-digit interval/bounds and accelerated definitions in Lean",
     "continue prior-art equivalence search without novelty claims"
   ],
@@ -189,5 +189,10 @@
     "lean": "GREEN",
     "verified_on_research_branch": "research/post-pilot-cycle-constraints",
     "verification_note": "Python and Lean PR workflows passed after Stage-1 code, data, tests, and Lean changes."
+  },
+  "highest_value_next_target": {
+    "issue": 10,
+    "title": "Exclude structured one-minimum accelerated cycles",
+    "reason": "This class directly combines the new q>=971 product-window bound, the valuation direction lemma, weak-run block formulas, and decimal-sector consistency while remaining substantially more structured than arbitrary cycles."
   }
 }
