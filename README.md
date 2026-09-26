@@ -56,9 +56,9 @@ See ROADMAP.md and notes/PROOF_ATTACK_MAP.md for the current research plan.
 
 **FINITE EXACT CONSEQUENCE.** Combining the general product window with the exhaustive 5,000,000-seed cycle exclusion yields an exact-integer certificate excluding q<=970 for any different positive accelerated cycle. Thus any such cycle must contain at least 971 odd states.
 
-**STRUCTURED-CYCLE THEOREM + FINITE EXACT CONSEQUENCE.** For the narrower class with one contiguous r=1 rise block followed by one contiguous r>=2 fall block, geometric state bounds on both sides of the unique local minimum/maximum pair sharpen the product window to
+**STRUCTURED-CYCLE THEOREM + FINITE EXACT SYMBOLIC CONSEQUENCE.** For the narrower class with one contiguous r=1 rise block followed by one contiguous r>=2 fall block, geometric state bounds on both sides of the unique local minimum/maximum pair sharpen the product window to
 1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).
-Under M>=5,000,001, exact integer arithmetic excludes q<=79,334. The first q not excluded by this necessary window is 79,335 with R=125,743, and any surviving structured cycle must contain at least 32,927 consecutive rise steps. This does not exclude arbitrary cycles or even the full structured class.
+Under M>=5,000,001, exact product-window enumeration leaves only six periods through q=400,000. For each, the theorem gives a finite M range; exact symbolic decimal-sector interval splitting plus exact 2-adic lifting then eliminates the forced rise block. Thus this structured class is excluded through q=400,000, and any remaining structured cycle must have at least 166,015 consecutive rise steps. This does not exclude arbitrary cycles or the structured class globally.
 
 **MECHANISM-TARGETED COMPUTATION.** The explicit long weak-run examples do not exhibit immediate giant compensation: the observed 32-, 50-, and 100-step runs first exit with valuations 2, 3, and 2 and return below their starting seeds after 51, 128, and 304 accelerated steps. This makes multi-step block compensation a higher-value target than a one-step reset hypothesis.
 
