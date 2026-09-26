@@ -24,7 +24,7 @@ def initial_v2_one_run(seed: int, limit: int = 100) -> tuple[int, list[dict]]:
 
 def boundary_sweep() -> dict:
     rows = []
-    for k in range(1, 19):
+    for k in range(1, 201):
         for d in range(1, 10):
             boundary = d * 10**k
             for offset in (-1, 1):
@@ -45,6 +45,8 @@ def boundary_sweep() -> dict:
     worst = max(rows, key=lambda row: row["steps"] if row["steps"] is not None else -1)
     ratio_case = max(rows, key=lambda row: Fraction(row["peak"], row["seed"]))
     return {
+        "protocol": "d*10^k +/- 1 for d=1..9, k=1..200",
+        "step_cap": 200_000,
         "tested_seed_count": len(rows),
         "all_entered_distinguished_cycle": all(row["status"] == "DISTINGUISHED_CYCLE" for row in rows),
         "worst_cycle_entry": worst,
