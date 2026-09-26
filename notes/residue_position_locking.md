@@ -369,10 +369,11 @@ The unresolved task is to bound the **zero-lift tail after bit-length locking** 
 
 Accordingly:
 
-- the one-rise/one-fall class is still only finitely excluded through \(q=890{,}638{,}885{,}192\) under the 5M minimum premise;
-- the arbitrary-cycle bound remains separately \(q\ge971\);
+- PR #15 itself excluded the one-rise/one-fall class through q=890,638,885,192 under the 5M minimum premise;
+- the later post-lock deterministic-tail certificate extends the current structured exclusion through q=1,643,749,725,073;
+- the arbitrary-cycle bound remains separately q>=971;
 - no universal-convergence claim is strengthened;
-- the Farey/product side should now be treated as essentially sufficient for this structured attack unless a residue-tail theorem needs another record as a test case.
+- the Farey/product side should be treated as essentially sufficient for this structured attack unless a scale-aware tail theorem needs another record as a test case.
 
 
 ## 10. Post-lock deterministic reduction
