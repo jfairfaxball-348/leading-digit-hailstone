@@ -314,6 +314,14 @@ The exact-r=1 requirements simultaneously impose the previously established uniq
 
 This is an exact finite check **only after** the digit and decade ranges have themselves been proved complete. No unbounded word enumeration is claimed here.
 
+## Prior-art status of this structured theorem
+
+The general strategy of forcing close powers-of-two / powers-of-three approximation from a hypothetical Collatz-type cycle is classical; the project already records Eliahou and Simons–de Weger as methodological prior art.
+
+The theorem-specific historical question is narrower: whether the state-dependent leading-digit corrections have previously been combined with one-rise/one-fall geometry to obtain the period-independent envelope (11), or with exact decimal-sector / 2-adic symbolic lifting to obtain a bounded structured-cycle exclusion of this form.
+
+That theorem-specific question has **not** received a final prior-art determination. No claim of novelty, originality, uniqueness, or priority is made here. It should be included explicitly in the final theorem-level prior-art audit.
+
 ## Research status
 
 The one-rise/one-fall class is **excluded through q=400,000 under the existing 5M minimum premise, but not globally excluded**.
