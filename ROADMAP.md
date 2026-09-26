@@ -1,42 +1,45 @@
-# Pilot Roadmap
+# Conjecture-Discovery Roadmap
 
-## Task 0 — Scaffold
+This project is not gated on proof readiness. Its purpose is to decide whether the frozen rule supports a worthwhile, distinctive, and plausibly novel Collatz-adjacent conjecture.
 
-Create the research rules, status schema, exact definition, two implementations, regression tests, reproducible scripts, and machine-readable data conventions.
+## Tasks
 
-**Exit condition:** repository can execute and cross-check the frozen map without ambiguity.
+### 0 — Scaffold and exact reproduction
+Freeze the object, implement it independently twice, reproduce incoming finite claims, and make all finite evidence reproducible.
 
-## Task 1 — Independent reproduction
+### 1 — Finite census and adversarial testing
+Extend exact finite testing, but prioritize falsification: competing cycles, decimal boundaries, long first descents, high excursions, low-v2 growth, inverse searches, and constructed large starts.
 
-Re-run the incoming sweep through `10^6`, verify the two named record seeds, and run a new deterministic 1,000-sample experiment for 10–200 digit starts because the original random sample is not exactly replayable from the supplied information.
+### 2 — Structural mathematics
+Record elementary exact facts about decimal sectors, parity, 2-adic valuation, inverse images, accelerated cycles, and boundary jumps. Structural work is valuable because it diagnoses whether the object is mathematically substantive, not because a proof is required.
 
-**Exit condition:** exact claims are either reproduced, contradicted, or explicitly marked non-replayable.
+### 3 — Prior-art audit
+Search for exact and equivalent constructions across generalized Collatz maps, state-dependent and piecewise-affine maps, radix/digit dynamics, automata/transducers, OEIS, papers, theses, recreational sources, repositories, MathOverflow/Math StackExchange, and older bibliographies.
 
-## Task 2 — Dynamical census
+Classify every serious candidate as: exact match; equivalent formulation; direct superclass containing the object essentially for free; close analogue; thematic only; irrelevant.
 
-Extend exhaustive testing substantially beyond `10^6`; catalogue cycle-entry time records, first-descent records, maximum excursions, excursion ratios, cap hits, and leading-digit boundary effects. Use checkpoints for large runs.
+### 4 — Nearby-rule comparison
+Use a small principled comparison family fixed in advance. Do not parameter-fish. The frozen rule remains primary.
 
-## Task 3 — Structural decomposition
+### 5 — Compact formal specification
+Formalise the domain, leading digit, map, iteration, cycle, conjecture proposition, seven cycle transitions, and elementary facts such as odd inputs mapping to even outputs. Do not turn the pilot into a Lean proof programme.
 
-Develop exact elementary results for parity, `v2(3n+2L(n)+1)`, fixed-leading-digit intervals, decimal-boundary transitions, the accelerated odd-to-odd map, and inverse images.
+### 6 — Candidate assessment
+Choose exactly one current gate:
 
-## Task 4 — Cycle search
+- REJECT_PRIOR_ART
+- REJECT_GENERIC
+- REJECT_UNINTERESTING
+- CONTINUE_AUDIT
+- CANDIDATE_DISTINCTIVE_CONJECTURE
+- CANDIDATE_NOVEL_CONJECTURE
 
-Use both forward enumeration and inverse constraints to find or exclude bounded nontrivial cycles. Any exclusion must state its exact bound and assumptions.
+CANDIDATE_DISTINCTIVE_CONJECTURE means the object is worth presenting and continuing to test as a named conjecture candidate, while novelty remains unresolved.
 
-## Task 5 — Prior-art audit
+CANDIDATE_NOVEL_CONJECTURE requires a substantially stronger prior-art audit than failure of literal-formula searches.
 
-Search generalized `an+b` and piecewise affine Collatz maps, residue-class-dependent maps, digit-dependent arithmetic dynamical systems, digit-sum/reversal dynamics, and leading-digit/Benford work around classical Collatz. Search for mathematical equivalence, not just the literal formula.
+## Current gate
 
-## Task 6 — Pilot decision
+CANDIDATE_DISTINCTIVE_CONJECTURE, dated 2026-09-26.
 
-Choose exactly one gate value:
-
-- `STOP_TRIVIAL`
-- `STOP_PRIOR_ART`
-- `STOP_UNINTERESTING`
-- `CONTINUE_COMPUTATIONAL`
-- `CONTINUE_STRUCTURAL`
-- `CONTINUE_PROOF_TARGET`
-
-No paper/priority/formalisation programme begins before this gate is documented with reasons.
+The next highest-value work is continued equivalence-focused prior-art audit and targeted falsification, not an attempt to prove universal convergence.
