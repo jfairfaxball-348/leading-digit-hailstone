@@ -22,7 +22,7 @@ Current parallel attack lines:
 
 The theorem that arbitrarily long initial exact-v2=1 runs exist permanently rules out arguments that assume a uniform bound on weak-division streaks.
 
-Current highest-value target: **Issue #10 — exclude or sharply constrain structured one-minimum accelerated cycles**, coupling the new cycle product window and q>=971 bound to rise/fall valuation blocks and rigorous decimal digit-word consistency.
+Current highest-value target: **Issue #10 — attack the first surviving one-rise/one-fall period q=79,335**. The structured product envelope now excludes q<=79,334 under the 5M minimum premise and fixes R=125,743 at the first surviving period. The next step is to combine the exact relation a-E=32,927 with decimal digit-word intervals and exact 2-adic valuation lifting.
 
 ## Stage 2 — Lean formalisation — ACTIVE ALONGSIDE STAGE 1
 
