@@ -6,5 +6,7 @@ __pycache__/
 *.egg-info/
 build/
 dist/
+.lake/
 data/sweep_checkpoint.json
 data/*.tmp
+data/*.full.json
