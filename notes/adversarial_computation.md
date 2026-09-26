@@ -10,15 +10,15 @@ All odd seeds
 
 d*10^k - 1 and d*10^k + 1
 
-were tested for d=1..9 and k=1..18, giving 324 boundary-adjacent starts.
+were tested for d=1..9 and k=1..200, giving 3,600 boundary-adjacent starts and reaching 201-digit decimal boundaries.
 
-All 324 entered the distinguished cycle within the 200,000-step cap.
+All 3,600 entered the distinguished cycle within the 200,000-step cap.
 
-The largest cycle-entry time in this boundary set was 646 raw steps for
+The largest cycle-entry time in this boundary set was 5,672 raw steps for the 191-digit seed
 
-9,000,000,000,001 = 9*10^12 + 1.
+8*10^190 - 1.
 
-The largest excursion ratio in this boundary set occurred at
+The largest excursion ratio in this boundary set still occurred at
 
 900,000,000,000,001 = 9*10^14 + 1,
 
@@ -52,6 +52,6 @@ These examples are deliberately constructed rather than uniformly random.
 
 ## Interpretation
 
-No tested adversarial family produced a competing cycle or cap hit. The evidence is stronger than another uniform sample because it directly targets two exact structural hazards: decimal discontinuities and repeated weak division by two.
+No tested adversarial family produced a competing cycle or cap hit. The boundary sweep now probes every leading-digit boundary at every decimal scale k=1..200, rather than stopping at machine-sized examples. The evidence is stronger than another uniform sample because it directly targets two exact structural hazards: decimal discontinuities and repeated weak division by two.
 
 It remains finite evidence only. Reproduce with scripts/adversarial_search.py; summary data is in data/adversarial_2026-09-26.json.
