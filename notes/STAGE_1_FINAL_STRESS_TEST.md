@@ -24,7 +24,7 @@ For every integer (kge 0), let
 n_k=2cdot 10^k-1.
 ]
 
-Then (10^kle n_k<2cdot10^k), so (L(n_k)=1). Therefore
+Then `10^k <= n_k < 2*10^k`, so `L(n_k)=1`. Therefore
 
 [
 3n_k+2L(n_k)+1
@@ -66,7 +66,7 @@ The new campaign tests all
 d10^k+c
 ]
 
-with (d=1,ldots,9),
+with `d=1,...,9`,
 
 [
 kin{600,800,1000,1200,1500,1800,2000},
@@ -120,7 +120,7 @@ The exact depth-45 diagnostic contains:
 - 34,689 frontier nodes having no odd one-step preimage.
 
 Take the 250 largest such frontier dead ends, perturb each by requested offsets
-(pm1,pm3,pm5), adjust an even result upward by one to obtain an odd seed,
+`+/-1,+/-3,+/-5`, adjust an even result upward by one to obtain an odd seed,
 and deduplicate. This produces 1,476 forward adversarial seeds.
 
 All 1,476 enter the distinguished cycle within the raw-step cap 200,000.
@@ -134,7 +134,7 @@ it is used only as a hostile seed generator.
 ### Engineered long weak-division starts
 
 Using the existing exact residue-lifting construction based on the safe
-homogeneous phase (alpha=7/3), the final campaign constructs starts
+homogeneous phase `alpha = 7/3`, the final campaign constructs starts
 requesting initial valuation-one runs of lengths
 
 [
@@ -162,17 +162,17 @@ This is strong adversarial finite evidence, not a convergence theorem.
 The complete own-bit lock diagnostic is extended exactly from (Ble220) to
 (Ble300).
 
-For the additional depths (221le Ble300):
+For the additional depths `221 <= B <= 300`:
 
 - 37 locked candidates occur;
 - 17 have positive post-lock tails;
 - the tail histogram is
-  ({0:20,1:11,2:4,3:2});
+  `{0:20,1:11,2:4,3:2}`;
 - the maximum new tail is 3;
 - none of the 17 positive tails has a scaled decimal-boundary corridor hit;
 - none has a homogeneous leading-digit mismatch.
 
-Therefore the combined finite observed post-lock record through (B=300)
+Therefore the combined finite observed post-lock record through `B=300`
 remains 6.
 
 This is **FINITE EXACT COMPUTATION ONLY**. It does not support a universal
@@ -239,15 +239,15 @@ Nothing correct is discarded.
 
 In particular the repository retains:
 
-- the arbitrary-cycle consequence (qge971) under the 5M minimum premise;
+- the arbitrary-cycle consequence `q >= 971` under the 5M minimum premise;
 - the one-rise/one-fall structured frontier
-  (qge1,643,749,725,074) and
-  (age682,217,775,335);
+  `q >= 1,643,749,725,074` and
+  `a >= 682,217,775,335`;
 - residue locking and deterministic post-lock reduction;
 - the width-19 forward normalized corridor;
 - the terminally anchored width-19 guide;
-- the tail-6 counterexample to universal post-lock bounds (le5);
-- the theorem that arbitrarily long initial exact-(r=1) runs exist.
+- the tail-6 counterexample to universal post-lock bounds `<=5`;
+- the theorem that arbitrarily long initial exact-`r=1` runs exist.
 
 No new (F(B)), (F(M)), full structured-cycle exclusion, or universal
 convergence theorem is claimed.
@@ -261,9 +261,9 @@ The formal layer should clearly expose:
 
 1. the positive-integer domain convention;
 2. decimal leading digit;
-3. the map (T);
+3. the map `T`;
 4. the distinguished 7-cycle;
-5. iterates of (T);
+5. iterates of `T`;
 6. the Leading-Digit Hailstone Conjecture as an unproved proposition;
 7. selected stable supporting lemmas.
 
