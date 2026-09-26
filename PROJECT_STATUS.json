@@ -58,7 +58,7 @@
     "boundary_seeds_tested": 9000,
     "arbitrary_initial_exact_v2_1_runs": "ELEMENTARY_FACT_FOR_EVERY_LENGTH",
     "nearby_rule_comparison": "MIXED_SINGLE_AND_MULTI_ATTRACTOR_BEHAVIOUR",
-    "lean_status": "COMPACT_SPECIFICATION_GREEN_CI",
+    "lean_status": "SPECIFICATION_PLUS_BRANCH_AFFINE_LEMMAS; CI_PENDING_ON_CURRENT_RESEARCH_BRANCH",
     "prior_art_status": "NO_EXACT_OR_EQUIVALENT_FULL_MAP_MATCH_IDENTIFIED; NOVELTY_UNRESOLVED"
   },
   "research_discipline": {
@@ -69,11 +69,22 @@
     "paper_packaging_blocked_until_math_and_novelty_stabilize": true
   },
   "immediate_stage_1_targets": [
-    "derive stronger necessary conditions for positive accelerated cycles",
-    "seek bounded but rigorous valuation/digit-word exclusions",
-    "identify deterministic descent blocks tolerant of arbitrarily long v2=1 runs",
-    "formalise stable elementary lemmas in Lean",
+    "derive multi-step block compensation inequalities after arbitrary weak runs",
+    "combine q>=971 with valuation-word and decimal-sector consistency",
+    "formalise leading-digit interval/bounds and accelerated definitions in Lean",
     "continue prior-art equivalence search without novelty claims"
   ],
-  "synchronized_date": "2026-09-26"
+  "synchronized_date": "2026-09-26",
+  "stage_1_progress": {
+    "new_elementary_facts": [
+      "Exact multiplicative accelerated-cycle identity: 2^R/3^q = product_i(1+c_i/(3x_i)).",
+      "For odd x>19, accelerated r=1 steps strictly increase and r>=2 steps strictly decrease.",
+      "A large cycle minimum leaves with r=1 and is entered with r>=2.",
+      "After s consecutive r=1 steps, one-step return to the pre-run height requires 2^(r+s)>3^(s+1)."
+    ],
+    "bounded_exact_consequence": "Using the 5M minimum-element exclusion and an exact integer product-window certificate, any different positive accelerated cycle must have at least 971 odd states.",
+    "mechanism_targeted_computation": "Constructed 32-, 50-, and 100-step v2=1 runs are followed first by valuations 2, 3, and 2 and return below their starting seeds after 51, 128, and 304 accelerated steps; compensation is distributed rather than one-step in these examples.",
+    "proof_direction_update": "Cycle Diophantine constraints strengthened. One-step weak-run compensation weakened as a general strategy; multi-step block compensation is now the higher-value descent target.",
+    "methodological_prior_art": "Classical ordinary-Collatz cycle work already uses close powers-of-2/powers-of-3 approximation methods; no novelty claim is made for this strategy."
+  }
 }
