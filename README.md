@@ -74,3 +74,5 @@ Python reference and verification implementations live under src/leading_digit_h
 A Lean 4 layer under LeadingDigitHailstone/ specifies the map and central conjecture and proves stable elementary facts. The universal conjecture remains an unproved Prop; no sorry placeholder is used. Formalisation is now expanded alongside Stage-1 mathematics while CI is kept green.
 
 See RESEARCH_RULES.md, PROJECT_STATUS.json, notes/CANDIDATE_ASSESSMENT.md, notes/cycle_constraints.md, and literature/DEEP_AUDIT_2026-09-26.md before making stronger claims.
+
+A further exact phase-separation theorem sharpens the post-lock picture: if two distinct scaled decimal-boundary hits inside the width-19 corridor occur `n` steps apart, then the lock state satisfies `X<=171*3^n`; exact coincidences are only the short chains `2->3` and `4->6->9`. On any boundary-free horizon the digit word is forced by the homogeneous `(3/2)^t` phase, so exact-r=1 survival reduces to one terminal 2-adic residue congruence. This gives candidate-specific termination certificates, not a universal tail bound.
