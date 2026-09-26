@@ -29,7 +29,7 @@ theorem boundedCorrectionCyclePeriodLowerBound
   let R : ℕ := ∑ i : Fin q, valuation i
   let P : ℕ := ∏ i : Fin q, state i
 
-  haveI : Nonempty (Fin q) := ⟨⟨0, hq⟩⟩
+  have hfin : Nonempty (Fin q) := ⟨⟨0, hq⟩⟩
 
   have hnext :
       (∏ i : Fin q, state (next i)) = P := by
@@ -39,7 +39,7 @@ theorem boundedCorrectionCyclePeriodLowerBound
   have hpows :
       (∏ i : Fin q, (2 : ℕ) ^ valuation i) = 2 ^ R := by
     dsimp [R]
-    exact Finset.prod_pow_eq_pow_sum
+    simpa using (Finset.prod_pow_eq_pow_sum Finset.univ valuation (2 : ℕ))
 
   have hprodIdentity :
       (∏ i : Fin q, (3 * state i + correction i)) =
@@ -64,11 +64,11 @@ theorem boundedCorrectionCyclePeriodLowerBound
         ∏ i : Fin q, (3 * state i + correction i) := by
     apply Finset.prod_lt_prod_of_nonempty₀
     · intro i hi
-      positivity
+      exact Nat.mul_pos (by norm_num) (hstatePos i)
     · intro i hi
       have hc := hcorrLower i
       omega
-    · exact Finset.univ_nonempty
+    · exact @Finset.univ_nonempty (Fin q) _ hfin
 
   have hlowerScaled :
       (3 : ℕ) ^ q * P < 2 ^ R * P := by
@@ -130,7 +130,7 @@ theorem boundedCorrectionCyclePeriodLowerBound
   have hupper :
       2 ^ R * cycleMinimumFloor ^ q ≤
         (3 * cycleMinimumFloor + cycleCorrectionCeiling) ^ q := by
-    exact (Nat.mul_le_mul_left P).mp hupperCommon
+    exact Nat.le_of_mul_le_mul_left hupperCommon hprodPos
 
   exact periodLowerBound_of_productWindow hq hlower hupper
 
