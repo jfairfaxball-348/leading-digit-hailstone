@@ -18,32 +18,24 @@ supporting results. They are not gates that must be pushed to infinity.
 
 ## New theorem-level red-team result
 
-For every integer (kge 0), let
+For every integer `k >= 0`, let
 
-[
-n_k=2cdot 10^k-1.
-]
+n_k=2* 10^k-1.
 
 Then `10^k <= n_k < 2*10^k`, so `L(n_k)=1`. Therefore
 
-[
 3n_k+2L(n_k)+1
-=3(2cdot10^k-1)+3
-=6cdot10^k
-=3cdot2^{k+1}5^k.
-]
+=3(2*10^k-1)+3
+=6*10^k
+=3*2^{k+1}5^k.
 
 Hence
 
-[
 v_2(3n_k+2L(n_k)+1)=k+1
-]
 
 and the accelerated odd successor is exactly
 
-[
-3cdot5^k.
-]
+3*5^k.
 
 Thus odd-branch valuation bursts are unbounded. This is an elementary theorem,
 not finite evidence. It is useful red-team information because very large
@@ -62,38 +54,28 @@ All statements in this section are **FINITE EXACT COMPUTATION**.
 
 The new campaign tests all
 
-[
 d10^k+c
-]
 
 with `d=1,...,9`,
 
-[
-kin{600,800,1000,1200,1500,1800,2000},
-]
+`k in {600,800,1000,1200,1500,1800,2000},
 
 and
 
-[
-cin{pm1,pm3,pm9,pm19,pm99,pm999}.
-]
+`c in {+/-1,+/-3,+/-9,+/-19,+/-99,+/-999}.
 
 This gives 756 exact arbitrary-precision seeds. Every tested seed enters the
 distinguished cycle within the raw-step cap 200,000.
 
 The worst cycle-entry case in this campaign is
 
-[
-5cdot10^{2000}-19,
-]
+5*10^{2000}-19,
 
 which enters after 52,212 raw iterations.
 
 The family member
 
-[
-2cdot10^{2000}-1
-]
+2*10^{2000}-1
 
 realizes valuation 2,001 exactly and still enters the distinguished cycle in
 the finite computation.
@@ -137,15 +119,11 @@ Using the existing exact residue-lifting construction based on the safe
 homogeneous phase `alpha = 7/3`, the final campaign constructs starts
 requesting initial valuation-one runs of lengths
 
-[
 150, 300, 500, 750, 1000.
-]
 
 The observed initial runs are
 
-[
 150, 303, 500, 750, 1001.
-]
 
 Every constructed start enters the distinguished cycle within the raw-step cap
 200,000.
@@ -159,8 +137,8 @@ This is strong adversarial finite evidence, not a convergence theorem.
 
 ## Post-lock record attack
 
-The complete own-bit lock diagnostic is extended exactly from (Ble220) to
-(Ble300).
+The complete own-bit lock diagnostic is extended exactly from `B <= 220` to
+`B <= 300`.
 
 For the additional depths `221 <= B <= 300`:
 
@@ -225,9 +203,7 @@ The declared gate is assessed as follows.
 
 Accordingly the Stage 1 project status is frozen as
 
-[
 oxed{	ext{COMPLETE_CONJECTURE_SURVIVES_DECLARED_STRESS_TEST}}.
-]
 
 This means the conjecture survived the declared research/falsification
 programme. It remains unproved. Future proof breakthroughs are welcome but are
