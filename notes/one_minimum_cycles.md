@@ -634,7 +634,7 @@ It is still explicitly finite-range. It does not contradict the proved existence
 
 ## Why the symbolic theorem does not yet close the class
 
-Equation (20) isolates the remaining obstruction precisely. Once
+Equations (21)–(22) isolate the remaining obstruction precisely. Once
 
 2^(s+1)>U-L,
 
