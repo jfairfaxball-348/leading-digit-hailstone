@@ -38,6 +38,8 @@ This does not exclude broader state-dependent piecewise-affine classes.
 
 Franz Wegner, “The Collatz Problem generalized to 3x+k,” arXiv:2101.08060 (2021), studies fixed odd corrections k.
 
+Felipe Gonçalves, Rachel Greenfeld, and Jose Madrid, “Generalized Collatz Maps with Almost Bounded Orbits,” arXiv:2111.06170 (2021), studies a fixed-parameter p,q Collatz-like family and proves an almost-bounded-orbit result under suitable conditions.
+
 Alex V. Kontorovich and Jeffrey C. Lagarias, “Stochastic Models for the 3x+1 and 5x+1 Problems,” arXiv:0910.1944, treats 3x+1 and 5x+1 stochastic behavior.
 
 **Classification: close analogue.**
@@ -76,11 +78,15 @@ Here the leading digit is an observed statistic, not the control variable select
 
 ### 6. Automata, transducers, and computability frameworks
 
-Conway’s “Unpredictable Iterations” (1972) and later generalized-Collatz undecidability work concern finite-residue affine programs broad enough to encode computation. Recent papers also encode ordinary Collatz digitwise using finite-state symbolic machinery.
+Conway’s “Unpredictable Iterations” (1972) and later generalized-Collatz undecidability work concern finite-residue affine programs broad enough to encode computation.
 
-**Classification: broad computational framework / thematic.**
+Didier Caucal and Chloé Rispal, “Synchronizable functions on integers,” arXiv:2205.14018 (2022), realize the fixed-parameter functions f_(a,b,d), with n/d on multiples of d and an+b otherwise, by input-deterministic letter-to-letter transducers. Their family includes the ordinary Collatz function as f_(3,1,2).
 
-A sufficiently general automaton or program can encode the leading-digit map, but that is not an identification of the mathematical construction and does not constitute exact prior art for the conjecture. The standard finite-residue Collatz class remains excluded by the repository’s non-RCWA result.
+Tristan Stérin and Damien Woods, “The Collatz process embeds a base conversion algorithm,” arXiv:2007.06979 (2020), gives a quasi-cellular automaton that exactly simulates ordinary Collatz iteration and exposes nontrivial base-2/base-3 computation.
+
+**Classification: close representation analogues / broad computational framework, not an equivalent formulation.**
+
+These papers make automata/transducer language materially relevant to Collatz-like affine arithmetic. However, the sources identified here do not use the leading decimal digit to select among the corrections 3,5,...,19 and do not state the frozen map or its universal convergence conjecture. A sufficiently broad transducer formalism can encode many computable maps; representability by itself is not an informative prior-art identification of this particular object. The repository’s non-RCWA result still separates the frozen map from the standard finite-residue affine class.
 
 ### 7. OEIS, repository, and forum search
 
@@ -150,20 +156,14 @@ This layer is especially incomplete because older theses, problem columns, books
 
 ### Radix-based generalized Collatz via an abstract machine
 
-Nabarun Mondal and Partha P. Ghosh, “A General Class of Collatz Sequence and Ruin Problem,” arXiv:1203.2229 (2012), proposes a base-dependent generalized Collatz rule
-
-[
-f(n)=
-egin{cases}
-n/b,& nequiv0pmod b,\\
-(b+1)n+(b-nmod b),&	ext{otherwise}.
-end{cases}
-]
-
-The paper motivates this through left/right shifts and arithmetic in base (b), so it is relevant prior art for radix-aware Collatz generalization.
+Nabarun Mondal and Partha P. Ghosh, “A General Class of Collatz Sequence and Ruin Problem,” arXiv:1203.2229 (2012), proposes a base-dependent generalized Collatz sequence using an abstract machine performing arithmetic operations in different numerical bases. The ordinary Collatz sequence appears as a special case in base 2.
 
 **Classification: close radix-dependent analogue, not an equivalent formulation or direct containment.**
 
-Its branch selector and additive correction depend on the residue (nmod b), i.e. low-order base-(b) information. The frozen Leading-Digit Hailstone rule instead keeps the parity split and selects among corrections (3,5,ldots,19) using the most significant decimal digit. The two mechanisms are mathematically different, and the cited generalized formula does not produce the frozen rule by a parameter choice.
+This is meaningful prior art against any broad claim that radix-aware or digitally motivated Collatz generalization is itself new. The construction described there is not the frozen parity map whose odd correction is selected by the most significant decimal digit, and the present audit has not found a parameter choice or reformulation that yields the frozen map.
 
-This source narrows what can safely be claimed: “base- or digit-aware Collatz generalization” is certainly not new as a broad idea. It does not resolve prior art for this particular leading-digit-controlled affine map.
+### Audit update: what the added sources change
+
+The Caucal–Rispal and Stérin–Woods papers strengthen the representation-side prior art: affine Collatz-like arithmetic and ordinary Collatz can be described through digit transducers or automata. The Gonçalves–Greenfeld–Madrid paper strengthens the modern fixed-parameter generalized-Collatz comparison. Mondal–Ghosh strengthens the radix-aware comparison.
+
+None of these sources is currently classified as an exact match, equivalent formulation, or informative direct superclass containing the frozen leading-digit-controlled map essentially for free. They therefore **reduce the scope of any eventual distinctiveness claim** without resolving the novelty question. The audit status remains: no exact/equivalent full-map match identified; novelty unresolved.
