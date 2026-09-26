@@ -140,7 +140,23 @@ A purely range-independent finite acyclic transition graph also cannot finish th
 
 A second false route is now explicit. The start 43,574,304,770,317,398,119 has bit-length lock depth 65 and 71 initial exact-r=1 rises, so its deterministic post-lock tail has length 6 before valuation 7. Hence universal constant post-lock tail bounds <=5 are false. This finite exact example does not show unbounded tails.
 
-The highest-value continuation is therefore not another broad q scan: seek a scale-aware F(B) or F(M) bound for deterministic post-lock tails, using decimal phase/discrepancy or scale-aware congruence information, or rigorously construct a family showing why such a bound cannot be strong enough.
+A new post-lock scale coordinate sharpens the decimal side. Starting from a concrete lock state X, let X_j be an exact-r=1 tail and put Z_j=(2/3)^j X_j. Then
+
+Z_(j+1)-Z_j=(c_j/3)(2/3)^j,
+
+so
+
+3(1-(2/3)^t) <= Z_t-X <= 19(1-(2/3)^t) < 19.
+
+Thus all normalized post-lock states stay in a fixed corridor of width less than 19. If the actual leading digit at time t differs from that of the homogeneous rational (3/2)^t X, some decimal boundary C=d*10^k must satisfy the exact integer inequality
+
+X 3^t < C 2^t < (X+19)3^t.
+
+There are also exact local sector-exit bounds: an r=1 source with leading digit d>=2 leaves its sector in one step, a digit-1 sector supplies at most two consecutive source states, and six consecutive r=1 steps force a power-of-ten crossing.
+
+These geometric facts still do not force termination. The exact own-bit lock diagnostic through B=220 finds 96 locked candidates and 41 positive post-lock tails, with maximum observed tail 6. Every one of those 41 positive tails has zero scaled-boundary corridor hits and zero disagreement with its homogeneous leading-digit itinerary. This is finite exact computation only, but it shows that decimal-boundary near-hits are not necessary for the observed long tails.
+
+The highest-value continuation is therefore not another broad q scan: seek a scale-aware parity or congruence obstruction along the phase-frozen homogeneous (3/2)^t digit itinerary, or rigorously construct a family showing why such a bound cannot be strong enough. Mixed 2^m5^n information, carry parity, or another unbounded scale coordinate are natural next targets.
 
 ### What would weaken/falsify this approach
 
