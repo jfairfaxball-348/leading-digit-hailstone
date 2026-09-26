@@ -470,21 +470,31 @@ alpha
 
 is exactly 1.
 
-Therefore the seven record blocks exclude every structured period through
+Therefore the original seven-record chain certificate excludes every structured period through
 
 q=890,638,885,192.
 
-The first period not covered by this finite certificate is
+A separate post-lock deterministic-tail certificate now processes the next exact upper record
 
-q=890,638,885,193,
+(q,R)=(890,638,885,193,1,411,629,234,715).
 
-where the exact upper record has R=1,411,629,234,715. Since k(q)=2q-ceil(q alpha) is nondecreasing, every remaining one-rise/one-fall cycle under the 5M minimum premise must satisfy
+Its exact product window gives M_max=48,737,068,628,469 and lock depth 45. Symbolic coverage through lock leaves exactly two starts, 26,501,219,601,103 and 39,751,829,401,657. Direct deterministic continuation gives total exact-r=1 rise lengths 48 and 47, so no start in the complete record range reaches rise 49. Since the record requires a>=369,648,535,671, it is excluded.
 
-q>=890,638,885,193
+The following upper record is
+
+(q,R)=(1,643,749,725,074,2,605,281,674,813),
+
+with the same determinant-one lower neighbour and no intervening lower update. Farey transfer therefore excludes every structured period through
+
+q=1,643,749,725,073.
+
+Hence every remaining one-rise/one-fall cycle under the 5M minimum premise must satisfy
+
+q>=1,643,749,725,074
 
 and
 
-a>=369,648,535,671.
+a>=682,217,775,335.
 
 This remains a bounded structured-class consequence. It says nothing stronger about arbitrary cycles, whose separate current lower bound remains q>=971.
 
@@ -748,39 +758,53 @@ That theorem-specific question has **not** received a final prior-art determinat
 
 ## Research status
 
-The one-rise/one-fall class is **excluded through q=890,638,885,192 under the existing 5M minimum premise, but not globally excluded**.
+The one-rise/one-fall class is **excluded through q=1,643,749,725,073 under the existing 5M minimum premise, but not globally excluded**.
 
-The theorem-level ingredients now include the period-independent product envelope (11), the fall-excess identity, the Farey-neighbour transfer lemma, the inverse-error scale bound M<39/t and record-to-record consequence M_max<39 q_next/log 2, finite-range decimal-boundary localization, and the explicit word-dependent 2-adic residue formula. The finite exact certificates combine those facts with exact rational logarithmic certification and exact symbolic decimal/2-adic rise coverage.
+The theorem-level ingredients now include the period-independent product envelope (11), the fall-excess identity, the Farey-neighbour transfer lemma, the inverse-error scale bound M<39/t and record-to-record consequence M_max<39 q_next/log 2, finite-range decimal-boundary localization, the explicit word-dependent 2-adic residue formula, bounded-range bit-length locking, and the post-lock identity x_s=1+2H_s with zero lift equivalent to one deterministic valuation-one accelerated step. The finite exact certificates combine those facts with exact rational logarithmic certification, exact symbolic decimal/2-adic coverage through lock, and direct deterministic continuation afterwards.
 
 The current structured consequence is
 
-q>=890,638,885,193
+q>=1,643,749,725,074
 
 and
 
-a>=369,648,535,671.
+a>=682,217,775,335.
 
-The Farey record mechanism and low finite-range word complexity now form a genuine asymptotic framework, but the result is still a sequence of finite certificates. The highest-value next target is a uniform residue-position or deterministic transition obstruction showing that the explicit word-dependent 2-adic representative eventually misses its decimal-consistency cell.
+The Farey record mechanism and low finite-range word complexity now form a genuine asymptotic framework, but the result is still a sequence of finite certificates. The highest-value next target is a scale-aware F(B) or F(M) bound on deterministic post-lock tails, not further symbolic residue placement.
 
 
-## Residue-position locking update
+## Residue-position locking and post-lock reduction update
 
-The fixed-word residue obstruction has been sharpened without extending the Farey record chain. If (ho_s) is the unique start residue modulo (2^{s+1}), appending one exact-(r=1) digit chooses a bit (b_sin{0,1}) with
+For a fixed rise word, the exact residue lift satisfies
 
-[
-ho_{s+1}=ho_s+b_s2^{s+1}.
-]
+`rho_(s+1) = rho_s + b_s 2^(s+1)`,
 
-Hence the (b_s) are exactly the binary digits of the required starting residue. For a bounded range (Mle U), put (B=lfloorlog_2 Ufloor). Since (2^{B+1}>U), any start surviving (B) rises must satisfy (M=ho_B), and every later compatible lift bit is zero.
+so the lift bits are the binary digits of the required starting residue. For a bounded range `M <= U`, put `B = floor(log_2 U)`. Since `2^(B+1) > U`, every start surviving `B` rises has `M = rho_B`, and every later compatible lift bit is zero.
 
-Combining this with the established boundary-localization theorem gives at most
+The post-lock dynamics now collapses further. From
 
-[
-180Bleft(leftlceillog_{10}rac{U+19}{L}ightceil+1ight)+1
-]
+`3^s M + A_s = 2^s + H_s 2^(s+1)`
 
-possible starts in ([L,U]) at the lock depth. This is candidate compression, not a rise-extinction law. The remaining target is a uniform bound on the post-lock zero-lift tail.
+and `2^s x_s = 3^s M + A_s`, one gets
 
-For the largest already processed range (5{,}000{,}001le Mle42{,}285{,}421{,}502{,}900), lock occurs at depth 45. Exact symbolic coverage leaves two starts at that depth, (26{,}501{,}219{,}601{,}103) and (39{,}751{,}829{,}401{,}657); their exact-(r=1) runs end at total depths 48 and 47. This is a finite diagnostic of the theorem and does not change the structured period bound.
+`x_s = 1 + 2 H_s`.
 
-See `notes/residue_position_locking.md` and `data/residue_position_locking.json`.
+Hence, with `d_s = L(x_s)`,
+
+`b_s = 0  iff  H_s + d_s is odd  iff  v2(3 x_s + 2 d_s + 1) = 1`.
+
+Thus symbolic decimal/2-adic branching is required only through lock depth. Every later compatible zero lift is exactly one deterministic accelerated step of the concrete locked start.
+
+A finite exact counterexample rules out very small universal constants: the start
+
+`43,574,304,770,317,398,119`
+
+has bit-length lock depth 65 and 71 initial exact-r=1 rises, giving a post-lock tail of length 6 before valuation 7. This does not show that tails are unbounded.
+
+The lock-and-follow certificate for the next Farey record extends the structured exclusion through
+
+`q = 1,643,749,725,073`
+
+under the existing 5M premise. The arbitrary-cycle lower bound remains separately `q >= 971`.
+
+See `notes/residue_position_locking.md`, `notes/post_lock_tail_control.md`, `data/residue_position_locking.json`, and `data/post_lock_tail.json`.
