@@ -153,6 +153,25 @@ Therefore:
 
 This is stronger than the minimum-element exclusion alone, but it is still not a global no-cycle theorem. In particular q=971 is **not** claimed to be realizable.
 
+## Structured one-rise/one-fall cycles — ELEMENTARY FACT + FINITE EXACT CONSEQUENCE
+
+Issue #10 studies the narrower class whose valuation word, after rotation to the minimum, has one nonempty block of r=1 steps followed by one nonempty block of r>=2 steps. Above 19 this is equivalent to exactly one strict local minimum and one strict local maximum, not merely to having a unique global minimum.
+
+The block geometry yields a stronger product estimate. Rise-source states move away from the minimum at least geometrically by 3/2, while fall-source states, read backward from the minimum, move away at least geometrically by 4/3 after a fixed 19-offset. Summing the reciprocal state bounds inside the exact product identity gives
+
+1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).
+
+Unlike (1), this upper bound is independent of q.
+
+Combining it with M>=5,000,001 and checking the remaining powers-of-two/powers-of-three window by exact integer arithmetic excludes every structured period q<=79,334. Thus any different positive one-rise/one-fall accelerated cycle consistent with the 5M census must have at least 79,335 odd states. The first period not excluded by this necessary window is q=79,335, where the only possible total valuation is R=125,743.
+
+Writing E=sum_fall(r_i-2), the exact identity R=2q-a+E implies that every surviving structured cycle has at least 32,927 consecutive rise steps. At the first surviving period specifically,
+
+a=32,927+E,
+b=46,408-E.
+
+See notes/one_minimum_cycles.md and scripts/structured_one_minimum_bound.py. These statements do **not** exclude the structured class globally, and q=79,335 is not asserted to be realizable.
+
 ## Why this matters for the next cycle search
 
 A rigorous bounded cycle search should now enforce at least:
