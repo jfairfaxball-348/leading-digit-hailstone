@@ -44,6 +44,22 @@ theorem T_of_odd_leadingDigit (n d : ℕ) (hodd : n % 2 = 1)
     T n = 3 * n + 2 * d + 1 := by
   rw [T_of_odd n hodd, hld]
 
+/-- The odd-branch additive correction is at most 19 once the leading digit is known to be at most 9. -/
+theorem odd_correction_le_nineteen (n : ℕ) (hld : leadingDigit n ≤ 9) :
+    2 * leadingDigit n + 1 ≤ 19 := by
+  omega
+
+/-- The odd affine numerator is always strictly larger than twice the input. -/
+theorem odd_affine_gt_two_mul (n : ℕ) :
+    2 * n < 3 * n + 2 * leadingDigit n + 1 := by
+  omega
+
+/-- Above 19, a leading digit at most 9 makes the odd affine numerator strictly less than four times the input. -/
+theorem odd_affine_lt_four_mul (n : ℕ) (hlarge : 19 < n)
+    (hld : leadingDigit n ≤ 9) :
+    3 * n + 2 * leadingDigit n + 1 < 4 * n := by
+  omega
+
 theorem odd_maps_to_even (n : ℕ) (hodd : n % 2 = 1) : T n % 2 = 0 := by
   rw [T_of_odd n hodd]
   omega
