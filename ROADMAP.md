@@ -22,7 +22,7 @@ Current parallel attack lines:
 
 The theorem that arbitrarily long initial exact-v2=1 runs exist permanently rules out arguments that assume a uniform bound on weak-division streaks.
 
-Current highest-value target: **Issue #10 — attack the first surviving one-rise/one-fall period q=79,335**. The structured product envelope now excludes q<=79,334 under the 5M minimum premise and fixes R=125,743 at the first surviving period. The next step is to combine the exact relation a-E=32,927 with decimal digit-word intervals and exact 2-adic valuation lifting.
+Current highest-value target: **Issue #10 — extend the exact one-rise/one-fall exclusion beyond q=400,000**. The structured product envelope plus exact decimal-sector/2-adic symbolic coverage now eliminates every period through 400,000 under the 5M minimum premise. The next step is to enumerate the next theorem-driven product-window survivors and test their complete M ranges symbolically, stopping for mathematical analysis if a genuinely long admissible rise family survives.
 
 ## Stage 2 — Lean formalisation — ACTIVE ALONGSIDE STAGE 1
 
