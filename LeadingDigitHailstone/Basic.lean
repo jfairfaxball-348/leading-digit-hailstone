@@ -137,6 +137,15 @@ theorem six_three_halves_growth_steps_cross_factor_ten
     10 * x0 < x6 := by
   omega
 
+/-- One exact affine halving, read backward over the rationals, differs
+from the homogeneous factor 2/3 by exactly one third of the additive
+correction. Iterating this identity gives the terminally anchored
+finite-horizon guide used in the post-lock analysis. -/
+theorem backward_homogeneous_gap_step (x y c : ℚ)
+    (hstep : 2 * y = 3 * x + c) :
+    (2 / 3 : ℚ) * y - x = c / 3 := by
+  linarith
+
 theorem cycle_1_to_6 : T 1 = 6 := by native_decide
 theorem cycle_6_to_3 : T 6 = 3 := by native_decide
 theorem cycle_3_to_16 : T 3 = 16 := by native_decide
