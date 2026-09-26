@@ -76,3 +76,5 @@ Prerequisites include a stable paper, complete bibliography, reproducible reposi
 - Central conjecture: unchanged and explicitly unproved.
 
 The immediate programme is to deepen the mathematics and try to break the conjecture, not to rush toward publication packaging.
+
+**Scaled-phase refinement:** the post-lock state now has a fixed-width normalized tube: for lock state `X`, every compatible valuation-one tail obeys `X <= (2/3)^t x_t < X+19`. Distinct scaled decimal-boundary hits `n` steps apart force `X<=171*3^n`, apart from the exact short chains `2->3` and `4->6->9`. Boundary-free horizons therefore have a forced homogeneous digit word, after which survival reduces to the existing terminal 2-adic residue congruence. The next target is to bound how long such forced homogeneous blocks can keep satisfying the congruence; this is sharper than continuing Farey records.
