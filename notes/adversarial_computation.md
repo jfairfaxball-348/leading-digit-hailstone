@@ -36,7 +36,13 @@ The accelerated states begin
 
 with v2=1 for 21 consecutive accelerated transitions; the next valuation is 3.
 
-This is an adversarial growth mechanism, not evidence of divergence.
+This finite record is an adversarial growth mechanism, not evidence of divergence.
+
+More strongly, notes/arbitrarily_long_weak_division.md proves the following **ELEMENTARY FACT**: for every m there exists a positive odd start whose first m accelerated steps all have exact valuation v2=1. Thus no proof can rely on a uniform bound on consecutive weak-division steps.
+
+The constructive residue-lifting script gives explicit examples requesting 30, 50, and 100 such steps. The observed initial runs have lengths 32, 50, and 100 respectively; all three explicit trajectories enter the distinguished cycle within the 200,000-step cap. These trajectory outcomes are FINITE COMPUTATION; the arbitrary-length existence statement is the separate elementary proof.
+
+Reproduce with scripts/construct_low_v2_runs.py; data is in data/constructed_low_v2_runs.json.
 
 ## Large constructed starts
 
