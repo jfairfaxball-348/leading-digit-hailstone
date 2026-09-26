@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from fractions import Fraction
 from pathlib import Path
 
 from leading_digit_hailstone.core import accelerated_odd_step, analyze
@@ -42,7 +43,7 @@ def boundary_sweep() -> dict:
                 )
 
     worst = max(rows, key=lambda row: row["steps"] if row["steps"] is not None else -1)
-    ratio_case = max(rows, key=lambda row: row["peak"] / row["seed"])
+    ratio_case = max(rows, key=lambda row: Fraction(row["peak"], row["seed"]))
     return {
         "tested_seed_count": len(rows),
         "all_entered_distinguished_cycle": all(row["status"] == "DISTINGUISHED_CYCLE" for row in rows),
