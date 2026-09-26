@@ -84,7 +84,7 @@ Unless explicitly labelled otherwise, statements in the proved sections are **EL
 
    Thus arbitrarily long weak runs cannot in general be neutralized by a valuation bound independent of the run length. See notes/weak_run_compensation.md.
 
-19. **One-rise/one-fall cycles have a period-independent product envelope.** Consider an accelerated cycle entirely above 19 whose valuation word, after rotation to its minimum M, consists of a nonempty r=1 rise block followed by a nonempty r>=2 fall block. This is equivalent to exactly one strict local minimum and one strict local maximum per period. Rise states satisfy x_i>(3/2)^i M. Reading the fall block backward from M gives x_(q-t)>=19+(4/3)^t(M-19). Inserting these geometric state bounds into the exact product identity yields
+19. **One-rise/one-fall cycles have a period-independent product envelope.** Consider an accelerated cycle entirely above 19 whose valuation word, after rotation to its minimum M, consists of a nonempty r=1 rise block followed by a nonempty r>=2 fall block. This is equivalent to exactly one strict local minimum and one strict local maximum per period. Rise states satisfy x_i>=(3/2)^i M, with strict inequality away from the minimum. Reading the fall block backward from M gives x_(q-t)>=19+(4/3)^t(M-19). Inserting these geometric state bounds into the exact product identity yields
 
    1 < 2^R/3^q <= M(M-19)/(M^2-57M+361).
 
