@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "title": "Leading-Digit Hailstone Dynamics",
+  "slug": "leading-digit-hailstone",
+  "status": "Active research",
+  "headline": "A Collatz-adjacent leading-digit dynamical system with an open universal convergence conjecture and a formally verified conditional restriction on hypothetical accelerated cycles.",
+  "year": 2026,
+  "description": "This project studies the map $T(n)=n/2$ for even $n$ and $T(n)=3n+2L(n)+1$ for odd $n$, where $L(n)$ is the leading decimal digit. Exhaustive computation through 5,000,000 and targeted adversarial tests found no competing positive cycle, but universal convergence to the distinguished 7-cycle remains a conjecture. The Lean 4 development formally specifies the map and proves that any positive accelerated periodic orbit whose odd states are all at least 5,000,001 has at least 971 distinct odd states; the finite 5,000,000 census is not imported into that theorem.",
+  "topics": [
+    "Number theory",
+    "Arithmetic dynamics",
+    "Collatz-type dynamics",
+    "Integer dynamical systems",
+    "Formal verification",
+    "Lean 4",
+    "Computational mathematics"
+  ],
+  "github_url": "https://github.com/jfairfaxball-348/leading-digit-hailstone",
+  "palomar_id": null,
+  "palomar_url": null,
+  "paper_url": null,
+  "arxiv_id": null,
+  "arxiv_url": null,
+  "doi": null,
+  "formalisation_system": "Lean 4",
+  "verification": "The Stage-2 formal specification is audited, and the conditional 971-state accelerated-cycle restriction is proved in Lean from the map-specific cycle equations and explicit minimum-state hypothesis. The central universal convergence conjecture remains unproved.",
+  "attribution": "This repository records John Fairfax-Ball's research programme on the leading-decimal-digit-controlled hailstone map, including computational investigation and Lean formalisation. The distinguished 7-cycle is known 5x+1 behaviour, classical Collatz cycle-product and Diophantine methods are prior methodology, and historical novelty of the full map remains unresolved.",
+  "original_source": null,
+  "featured": true,
+  "additional_links": []
+}
